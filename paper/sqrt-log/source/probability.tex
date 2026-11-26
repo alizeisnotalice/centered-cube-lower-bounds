@@ -1,0 +1,210 @@
+\subsection{\Text{有界变量的指数矩、区间质量与一致中偏差}{Exponential moments, interval masses, and uniform moderate deviations}}\label{sec:probability}
+\Text{以下三角阵在每一行内独立同分布，行分布可以变化。所用经典工具与对行分布一致的中偏差界如下。}{The triangular arrays below are iid within each row, while the row distribution may vary. The following classical tools yield a moderate-deviation bound uniform over row distributions.}
+
+\noindent\textbf{\Text{Bernstein 不等式。}{Bernstein's inequality.}}
+\Text{设 $W_1,\ldots,W_n$ 独立，$\E W_i=0$，$|W_i|\le b$ 几乎处处，记 $v=\sum_i\E W_i^2$。则对 $x>0$，}{Let $W_1,\ldots,W_n$ be independent, with $\E W_i=0$ and $|W_i|\le b$ almost surely, and put $v=\sum_i\E W_i^2$. For $x>0$,}
+\begin{equation}\label{eq:bernstein}
+ \P\left\{\sum_{i=1}^nW_i\ge x\right\}\le
+ \exp\left(-\frac{x^2}{2(v+bx/3)}\right).
+\end{equation}
+\Text{将 $W_i$ 换成 $-W_i$ 得下尾界，两侧合并即得带前因子 2 的双侧界。相应指数矩式为}{Replacing $W_i$ by $-W_i$ gives the lower tail; taking the union gives the two-sided bound with prefactor two. The corresponding exponential-moment bound is}
+\[\log\E\exp\left(\lambda\sum_iW_i\right)
+ \le\frac{\lambda^2v}{2(1-\lambda b/3)},\qquad0<\lambda<3/b.\]
+\Text{这些正是 Massart\cite[pp.~24--26, (2.16), (2.21), Corollary 2.10]{Massart2007} 中取 $c=b/3$ 的版本。当 $v=0$ 时，各变量几乎处处为零，尾界直接成立。}{These are the versions in Massart\cite[pp.~24--26, (2.16), (2.21), Corollary 2.10]{Massart2007} with $c=b/3$. If $v=0$, each variable is zero almost surely and the tail bound is immediate.}
+
+\medskip\noindent\textbf{\Text{Berry--Esseen 不等式。}{The Berry--Esseen inequality.}}
+\Text{记标准正态分布函数及密度为}{Write the standard normal distribution function and density as}
+\[\Phi(x)=\int_{-\infty}^x\phi(t)\,dt,\qquad \phi(t)=\frac1{\sqrt{2\pi}}e^{-t^2/2}.\]
+\Text{若 $W_1,\ldots,W_n$ 是 $W$ 的独立同分布随机变量，$\E W=0$、$\E W^2=\sigma^2>0$、$\E|W|^3<\infty$，则经典 iid Berry--Esseen 不等式在将绝对常数放宽为 1 后给出\cite{Berry1941,Shevtsova2011}}{If $W_1,\ldots,W_n$ are independent random variables with the same law as $W$, with $\E W=0$, $\E W^2=\sigma^2>0$, and $\E|W|^3<\infty$, the classical iid Berry--Esseen inequality, with its absolute constant relaxed to one, gives\cite{Berry1941,Shevtsova2011}}
+\begin{equation}\label{eq:berry-esseen}
+ \sup_{x\in\R}\left|\P\left\{\frac{\sum_{i=1}^n W_i}{\sigma\sqrt n}\le x\right\}-\Phi(x)\right|
+ \le\frac{\E|W|^3}{\sigma^3\sqrt n}.
+\end{equation}
+\Text{分子为三阶绝对矩。下面在第一次估计区间质量时同时处理端点原子。}{The numerator is the third absolute moment. Endpoint atoms are handled below when interval masses are first estimated.}
+\begin{lemma}\label{lem:md}
+\Text{对 $b\ge1$ 定义}{For $b\ge1$, define}
+\begin{equation*}
+\begin{gathered}
+ D_b=72b^3,\qquad \beta_b=8\cdot2^{3/2}b^3=16\sqrt2\,b^3,\qquad
+ \varphi_3=\phi(3)=\frac{e^{-9/2}}{\sqrt{2\pi}},\\
+ N(b)=\left\lceil\max\left\{1,(32b^3)^3,
+ \left(\frac{4\sqrt6\beta_b}{\varphi_3}\right)^3\right\}\right\rceil,\\
+ \cmd=\frac{\varphi_3}{2\sqrt6e},\qquad
+ \Cmd=\frac{3/\sqrt{2\pi}+2}{1-e^{-1}}.
+\end{gathered}
+\end{equation*}
+\Text{设 $n\ge N(b)$，且 $Z_{n,1},\ldots,Z_{n,n}$ 独立同分布，满足}{Suppose $n\ge N(b)$ and $Z_{n,1},\ldots,Z_{n,n}$ are iid with}
+\[\E Z_{n,1}=0,\qquad\E Z_{n,1}^2=1,\qquad|Z_{n,1}|\le b\quad\text{a.s.}\]
+\Text{则对每个 $1\le z\le n^{1/6}$，}{Then, for every $1\le z\le n^{1/6}$,}
+\begin{equation*}
+ \frac{\cmd}z\exp\left(-\frac{z^2}2-\frac{D_bz^3}{\sqrt n}\right)
+ \le\P\left\{\frac1{\sqrt n}\sum_{i=1}^n Z_{n,i}\ge z\right\}
+ \le\frac{\Cmd}z\exp\left(-\frac{z^2}2+\frac{D_bz^3}{\sqrt n}\right).
+\end{equation*}
+\Text{估计对所有满足这些条件的行分布一致；前因子常数 $\cmd,\Cmd$ 为绝对常数。}{The estimates are uniform over all row distributions satisfying these conditions; the prefactor constants $\cmd,\Cmd$ are absolute.}
+\end{lemma}
+\begin{proof}
+\Text{固定一行，暂记 $Z_i=Z_{n,i}$、$Z=Z_{n,1}$，并置}{Fix a row, temporarily write $Z_i=Z_{n,i}$ and $Z=Z_{n,1}$, and set}
+\[M(q)=\E e^{qZ},\qquad\psi(q)=\log M(q),\qquad q\in\R.\]
+\noindent\textbf{\Text{对数矩母函数及三阶绝对中心矩。}{The log-mgf and the third absolute central moment.}}
+\Text{对任意 $Q>0$、$0\le j\le3$ 及 $|q|\le Q$，有 $|Z|^je^{qZ}\le b^je^{Qb}$。该可积控制函数允许在每个有界 $q$ 区间内逐次对期望求导，得 $M^{(j)}(q)=\E(Z^je^{qZ})$。由于 $M(q)>0$，定义}{For every $Q>0$, $0\le j\le3$, and $|q|\le Q$, one has $|Z|^je^{qZ}\le b^je^{Qb}$. This integrable dominating function permits successive differentiation under the expectation on bounded $q$ intervals, giving $M^{(j)}(q)=\E(Z^je^{qZ})$. Since $M(q)>0$, define}
+\[\frac{d\P_q}{d\P}=e^{qZ-\psi(q)}=\frac{e^{qZ}}{M(q)},\qquad
+ \E_q f(Z)=\frac{\E[f(Z)e^{qZ}]}{M(q)}.\]
+\Text{其密度 $e^{qZ-\psi(q)}$ 严格为正且期望为 1。直接求导给出}{Its density $e^{qZ-\psi(q)}$ is strictly positive and has expectation one. Direct differentiation gives}
+\begin{align*}
+ \psi'(q)&=\frac{M'(q)}{M(q)}=\E_qZ,\\
+ \psi''(q)&=\frac{M''(q)}{M(q)}-\left(\frac{M'(q)}{M(q)}\right)^2
+ =\E_q(Z-\E_qZ)^2,\\
+ \psi'''(q)&=\frac{M'''(q)}{M(q)}-\frac{3M'(q)M''(q)}{M(q)^2}
+ +2\left(\frac{M'(q)}{M(q)}\right)^3
+ =\E_q(Z-\E_qZ)^3.
+\end{align*}
+\Text{又 $|\E_qZ|\le b$，所以 $|Z-\E_qZ|\le2b$。因此对所有实数 $q$，}{Moreover, $|\E_qZ|\le b$, hence $|Z-\E_qZ|\le2b$. Thus, for all real $q$,}
+\begin{equation}\label{eq:third-moment}
+ \E_q|Z-\E_qZ|^3\le8b^3=:C_3,\qquad|\psi'''(q)|\le C_3.
+\end{equation}
+\Text{这同时控制导数和 Berry--Esseen 不等式需要的绝对中心矩。由 $\psi(0)=\psi'(0)=0$、$\psi''(0)=1$ 逐次积分，得到}{This controls both the derivative and the absolute central moment needed for Berry--Esseen. Successive integration from $\psi(0)=\psi'(0)=0$ and $\psi''(0)=1$ gives}
+\begin{equation}\label{eq:mgf-errors}
+ |\psi''(q)-1|\le C_3|q|,\qquad
+ |\psi'(q)-q|\le\frac{C_3}2q^2,\qquad
+ |\psi(q)-q^2/2|\le\frac{C_3}6|q|^3.
+\end{equation}
+\Text{特别地，若 $|q|\le q_b:=1/(16b^3)=1/(2C_3)$，则}{In particular, if $|q|\le q_b:=1/(16b^3)=1/(2C_3)$, then}
+\begin{equation}\label{eq:tilted-variance}
+ \frac12\le\psi''(q)\le\frac32.
+\end{equation}
+
+\medskip\noindent\textbf{\Text{倾斜参数的存在、唯一性和双侧界。}{Existence, uniqueness, and bounds for the tilt parameter.}}
+\Text{令 $y=z/\sqrt n>0$。由 $z\le n^{1/6}$ 及 $n\ge(32b^3)^3$，}{Put $y=z/\sqrt n>0$. Since $z\le n^{1/6}$ and $n\ge(32b^3)^3$,}
+\[y\le n^{-1/3},\qquad2y\le2n^{-1/3}\le\frac2{32b^3}=q_b.\]
+\Text{故 $[0,2y]$ 位于式\eqref{eq:tilted-variance}适用范围内。在此区间 $\psi'$ 连续严格递增，$\psi'(0)=0<y$，且 $\psi'(2y)=\int_0^{2y}\psi''(t)dt\ge y$。介值定理给出唯一 $q\in(0,2y]$ 满足}{Thus $[0,2y]$ lies in the range of~\eqref{eq:tilted-variance}. On this interval, $\psi'$ is continuous and strictly increasing, $\psi'(0)=0<y$, and $\psi'(2y)=\int_0^{2y}\psi''(t)dt\ge y$. The intermediate value theorem gives a unique $q\in(0,2y]$ such that}
+\begin{equation}\label{eq:tilt-equation}
+ \psi'(q)=y,\qquad\frac q2\le\int_0^q\psi''(t)\,dt=y\le\frac{3q}2,
+ \qquad\frac{2y}3\le q\le2y.
+\end{equation}
+
+
+\medskip\noindent\textbf{\Text{乘积倾斜及正态逼近。}{Product tilt and normal approximation.}}
+\Text{置}{Set}
+\begin{equation}\label{eq:product-tilt}
+ S_n=\sum_{i=1}^nZ_i,\quad m=ny=z\sqrt n,\quad
+ \frac{d\P_q}{d\P}=e^{qS_n-n\psi(q)}=\prod_{i=1}^ne^{qZ_i-\psi(q)},\quad v_q=\psi''(q).
+\end{equation}
+\Text{独立性说明该密度期望为 1。对 Borel 集 $A_1,\ldots,A_n$，}{Independence gives expectation one for this density. For Borel sets $A_1,\ldots,A_n$,}
+\[\P_q\{Z_1\in A_1,\ldots,Z_n\in A_n\}
+ =\E\prod_{i=1}^n\bigl(\ind_{\{Z_i\in A_i\}}e^{qZ_i-\psi(q)}\bigr)
+ =\prod_{i=1}^n\E\bigl(\ind_{\{Z_i\in A_i\}}e^{qZ_i-\psi(q)}\bigr).\]
+\Text{故在 $\P_q$ 下各变量仍独立同分布，其单变量分布正是上面定义的倾斜分布。由式\eqref{eq:third-moment}--\eqref{eq:tilt-equation}，}{Thus the variables remain iid under $\P_q$, with the one-variable tilted law defined above. Equations~\eqref{eq:third-moment}--\eqref{eq:tilt-equation} give}
+\[\E_qZ_i=y,\quad \Var_q(Z_i)=v_q\in[1/2,3/2],\quad
+ \E_q|Z_i-y|^3\le8b^3,\quad\E_q S_n=m,\quad\Var_q(S_n)=nv_q.\]
+\Text{对中心化变量 $Z_i-y$ 应用式\eqref{eq:berry-esseen}。记}{Apply~\eqref{eq:berry-esseen} to $Z_i-y$ and write}
+\[U=\frac{S_n-m}{\sqrt{nv_q}},\qquad\delta_n=\frac{\beta_b}{\sqrt n}.\]
+\Text{则}{Then}
+\begin{equation}\label{eq:tilted-be}
+ \sup_x|\P_q\{U\le x\}-\Phi(x)|
+ \le\frac{\E_q|Z_i-y|^3}{v_q^{3/2}\sqrt n}
+ \le\frac{8b^3}{(1/2)^{3/2}\sqrt n}=\delta_n.
+\end{equation}
+\Text{由 $\Phi$ 的连续性，同一误差界也控制 $\P_q\{U<x\}$。因此，对端点 $a<b$ 的任一开、闭或半开区间 $J$，两个端点各贡献至多 $\delta_n$ 的误差，故}{Continuity of $\Phi$ gives the same error bound for $\P_q\{U<x\}$. Thus, for any open, closed, or half-open interval $J$ with endpoints $a<b$, each endpoint contributes error at most $\delta_n$, and}
+\begin{equation}\label{eq:interval-error}
+ \Phi(b)-\Phi(a)-2\delta_n\le\P_q\{U\in J\}
+ \le\Phi(b)-\Phi(a)+2\delta_n
+ \le\frac{b-a}{\sqrt{2\pi}}+2\delta_n.
+\end{equation}
+\medskip\noindent\textbf{\Text{标准化区间的长度和端点。}{Normalized interval lengths and endpoints.}}
+\Text{对整数 $k\ge0$，定义半开区间}{For integers $k\ge0$, use the half-open intervals}
+\[I_k=\left[m+\frac kq,m+\frac{k+1}q\right),\qquad
+ \ell=\frac1{q\sqrt{nv_q}}.\]
+\Text{由 $q>0$、$v_q>0$，有 $S_n\in I_k$ 当且仅当 $U\in[k\ell,(k+1)\ell)$。由式\eqref{eq:tilt-equation}及 $v_q\in[1/2,3/2]$，}{Since $q>0$ and $v_q>0$, $S_n\in I_k$ if and only if $U\in[k\ell,(k+1)\ell)$. Equation~\eqref{eq:tilt-equation} and $v_q\in[1/2,3/2]$ give}
+\[\frac{2z}{3\sqrt2}\le q\sqrt{nv_q}\le\sqrt6z,\qquad
+ \frac1{\sqrt6z}\le\ell\le\frac{3\sqrt2}{2z}<\frac3z\le3.\]
+\Text{第一个标准化区间为 $[0,\ell)$，位于 $[0,3]$；一般区间的端点满足}{The first standardized interval is $[0,\ell)\subset[0,3]$. The endpoints of a general interval satisfy}
+\[\frac{k}{\sqrt6z}\le k\ell\le\frac{3\sqrt2 k}{2z},\qquad
+ \frac{k+1}{\sqrt6z}\le(k+1)\ell\le\frac{3\sqrt2(k+1)}{2z}.\]
+\Text{虽端点随 $k$ 增长，区间长度始终为 $\ell$。}{Although the endpoints grow with $k$, each interval has length $\ell$.}
+
+\medskip\noindent\textbf{\Text{第一个区间的质量下界。}{A lower bound for the first interval mass.}}
+\Text{由式\eqref{eq:tilted-be}--\eqref{eq:interval-error}，}{Equations~\eqref{eq:tilted-be}--\eqref{eq:interval-error} give}
+\[\P_q\{S_n\in I_0\}
+ \ge\Phi(\ell)-\Phi(0)-2\delta_n.\]
+\Text{因为 $\phi$ 在 $[0,\infty)$ 递减且 $\ell\le3$，}{Since $\phi$ decreases on $[0,\infty)$ and $\ell\le3$,}
+\[\Phi(\ell)-\Phi(0)=\int_0^\ell\phi(t)\,dt\ge\varphi_3\ell.\]
+\Text{由 $n\ge N(b)$ 的第三个条件及 $z\le n^{1/6}$，}{The third condition in $n\ge N(b)$ and $z\le n^{1/6}$ imply}
+\[n^{1/3}\ge\frac{4\sqrt6\beta_b}{\varphi_3},\qquad
+ \frac{2\beta_b}{\sqrt n}=\frac1z\frac{2\beta_bz}{\sqrt n}
+ \le\frac1z\frac{2\beta_b}{n^{1/3}}
+ \le\frac{\varphi_3}{2\sqrt6z}.\]
+\Text{结合 $\ell\ge1/(\sqrt6z)$，得到}{Together with $\ell\ge1/(\sqrt6z)$ this gives}
+\begin{equation}\label{eq:first-mass}
+ \P_q\{S_n\in I_0\}\ge\varphi_3\ell-\frac{2\beta_b}{\sqrt n}
+ \ge\frac{\varphi_3}{2\sqrt6z}.
+\end{equation}
+
+
+\medskip\noindent\textbf{\Text{任意区间的质量上界。}{A uniform upper bound for every interval mass.}}
+\Text{对端点为 $a,a+\ell$ 的任意开、闭或半开区间 $J$，式\eqref{eq:interval-error}给出}{For any open, closed, or half-open interval $J$ with endpoints $a,a+\ell$, equation~\eqref{eq:interval-error} gives}
+\[\P_q\{U\in J\}\le\Phi(a+\ell)-\Phi(a)+2\delta_n
+ \le\frac\ell{\sqrt{2\pi}}+\frac{2\beta_b}{\sqrt n}.\]
+\Text{又由 $n^{1/3}\ge32b^3$，}{Moreover, $n^{1/3}\ge32b^3$ gives}
+\[\frac{\beta_bz}{\sqrt n}\le\frac{\beta_b}{n^{1/3}}
+ \le\frac{16\sqrt2b^3}{32b^3}=\frac1{\sqrt2}<1.\]
+\Text{因此用 $\ell\le3/z$ 可得}{Using $\ell\le3/z$, we obtain}
+\begin{equation}\label{eq:any-mass}
+ \P_q\{U\in J\}\le\frac{3/\sqrt{2\pi}+2}z.
+\end{equation}
+\Text{特别地，此界对所有 $\P_q\{S_n\in I_k\}$ 一致成立。}{In particular, this bound holds uniformly for all $\P_q\{S_n\in I_k\}$.}
+
+\medskip\noindent\textbf{\Text{换测度、分区间积分与几何级数。}{Change of measure, interval integration, and the geometric series.}}
+\Text{由式\eqref{eq:product-tilt}，反向换测度公式为}{By~\eqref{eq:product-tilt}, the reverse change of measure is}
+\[d\P=e^{-qS_n+n\psi(q)}\,d\P_q.\]
+\Text{置 $L_n=qm-n\psi(q)$。在 $I_0=[m,m+q^{-1})$ 上，有 $qm\le qS_n<qm+1$，所以由式\eqref{eq:first-mass}，}{Put $L_n=qm-n\psi(q)$. On $I_0=[m,m+q^{-1})$, we have $qm\le qS_n<qm+1$. Equation~\eqref{eq:first-mass} therefore gives}
+\begin{align*}
+ \P\{S_n\ge m\}
+ &=\int_{\{S_n\ge m\}}e^{-qS_n+n\psi(q)}\,d\P_q\\
+ &\ge\int_{\{S_n\in I_0\}}e^{-qS_n+n\psi(q)}\,d\P_q\\
+ &\ge e^{-1-qm+n\psi(q)}\P_q\{S_n\in I_0\}
+ \ge\frac{\varphi_3}{2\sqrt6ez}e^{-L_n}=\frac{\cmd}z e^{-L_n}.
+\end{align*}
+\Text{另一方面，$[m,\infty)=\dot\bigcup_{k\ge0}I_k$。区间取半开形式，端点原子恰属于一个区间。由积分的可数可加性，}{On the other hand, $[m,\infty)=\dot\bigcup_{k\ge0}I_k$. The half-open convention assigns each endpoint atom to exactly one interval. Countable additivity of the integral gives}
+\[\P\{S_n\ge m\}=\sum_{k=0}^\infty
+ \int_{\{S_n\in I_k\}}e^{-qS_n+n\psi(q)}\,d\P_q.\]
+\Text{在 $I_k$ 上，$qS_n\ge qm+k$。又事件 $\{S_n\in I_k\}$ 等价于 $\{U\in[k\ell,(k+1)\ell)\}$，其概率由式\eqref{eq:any-mass}控制，故}{On $I_k$, $qS_n\ge qm+k$. Moreover, $\{S_n\in I_k\}=\{U\in[k\ell,(k+1)\ell)\}$, whose probability is bounded by~\eqref{eq:any-mass}. Hence}
+\begin{align*}
+ \P\{S_n\ge m\}
+ &\le\sum_{k=0}^\infty e^{-qm-k+n\psi(q)}\P_q\{S_n\in I_k\}\\
+ &\le e^{-L_n}\frac{3/\sqrt{2\pi}+2}z\sum_{k=0}^\infty e^{-k}
+ =\frac{\Cmd}z e^{-L_n}.
+\end{align*}
+\Text{合并得到}{Combining the bounds yields}
+\begin{equation}\label{eq:tail-prefactor}
+ \frac{\cmd}z e^{-L_n}\le\P\{S_n\ge m\}\le\frac{\Cmd}z e^{-L_n}.
+\end{equation}
+\medskip\noindent\textbf{\Text{Cram\'er 率函数的误差。}{The Cram\'er rate-function error.}}
+\Text{由 $\psi$ 凸及 $\psi'(q)=y$，支撑线不等式给出}{Convexity of $\psi$ and $\psi'(q)=y$ give the supporting-line identity}
+\[I(y)=\sup_{t\in\R}\{ty-\psi(t)\}=qy-\psi(q),\qquad L_n=nI(y).\]
+\Text{由式\eqref{eq:mgf-errors}及 $q\le2y$，}{Equation~\eqref{eq:mgf-errors} and $q\le2y$ yield}
+\[|q-y|=|q-\psi'(q)|\le\frac{C_3}2q^2\le2C_3y^2,\qquad
+ \frac n2|q^2-y^2|\le\frac n2(2C_3y^2)(3y)=3C_3ny^3.\]
+\Text{再将另一个余项分为两部分：}{Split the other remainder into two parts:}
+\[q\psi'(q)-\psi(q)-\frac{q^2}2
+ =q(\psi'(q)-q)-\left(\psi(q)-\frac{q^2}2\right),\]
+\[n\left|q\psi'(q)-\psi(q)-\frac{q^2}2\right|
+ \le n\frac{C_3q^3}2+n\frac{C_3q^3}6
+ =\frac{2C_3}3nq^3\le\frac{16C_3}3ny^3.\]
+\Text{由于 $m=ny=n\psi'(q)$、$z^2=ny^2$，两项相加得到}{Since $m=ny=n\psi'(q)$ and $z^2=ny^2$, adding gives}
+\begin{equation}\label{eq:rate-error}
+\begin{aligned}
+ \left|L_n-\frac{z^2}2\right|
+ &\le\left(3+\frac{16}3\right)C_3ny^3
+ =\frac{25}3C_3ny^3\\
+ &\le9C_3ny^3=\frac{72b^3z^3}{\sqrt n}
+ =\frac{D_bz^3}{\sqrt n}.
+\end{aligned}
+\end{equation}
+\Text{这里 $ny^3=z^3/\sqrt n$。因此，}{Here $ny^3=z^3/\sqrt n$. Consequently,}
+\[ -\frac{z^2}2-\frac{D_bz^3}{\sqrt n}
+ \le-L_n\le-\frac{z^2}2+\frac{D_bz^3}{\sqrt n}.\]
+\Text{将这一双侧界代入式\eqref{eq:tail-prefactor}，并用 $m=z\sqrt n$，即得引理所述的尾概率双侧估计。}{Substitute these bounds into~\eqref{eq:tail-prefactor} and use $m=z\sqrt n$ to obtain the stated two-sided tail estimate.}
+
+\Text{各步估计均由共同的界 $b$ 控制，故所得结论对行分布一致。$N(b)$ 中的 $(32b^3)^3$ 保证倾斜参数存在、倾斜方差有界，并用于任意区间质量上界；第三项使第一个区间至少保留一半的正态质量。换测度后的权重 $e^{-k}$ 使无限多个区间的误差可由几何级数求和。}{Each estimate is controlled by the common bound $b$, giving uniformity over row distributions. The term $(32b^3)^3$ in $N(b)$ guarantees the tilt parameter and variance bounds and the upper bound for arbitrary interval masses; the third term preserves at least half the first interval's normal mass. After changing measure, the weights $e^{-k}$ make errors over infinitely many intervals summable as a geometric series.}
+\end{proof}

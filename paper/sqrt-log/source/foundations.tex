@@ -1,0 +1,67 @@
+\section{\Text{预备知识}{Preliminaries}}
+\noindent\Text{\textbf{主要记号。}记 $\T=\R/\Z$，$m_n$ 为 $\T^n$ 上的归一化 Haar 测度。全文 $\log$ 为自然对数，$\ind_E$ 为集合 $E$ 的示性函数。记 $A\lesssim B$ 表示 $A\le CB$，其中 $C$ 与 $n,K,t,s$ 无关；$A\asymp B$ 表示两个方向均成立。除另有说明，概率与期望均相对于独立均匀坐标 $U_1,\ldots,U_n\in\T$ 的乘积测度。临时变量在首次使用处定义。}{\textbf{Main notation.} Write $\T=\R/\Z$, and let $m_n$ be normalized Haar measure on $\T^n$. Throughout, $\log$ is the natural logarithm and $\ind_E$ is the indicator of $E$. We write $A\lesssim B$ if $A\le CB$ with $C$ independent of $n,K,t,s$, and $A\asymp B$ if both inequalities hold. Unless otherwise stated, probabilities and expectations refer to the product measure of independent uniform coordinates $U_1,\ldots,U_n\in\T$. Temporary variables are defined at first use.}
+
+\Text{记 $\pi(x)=[x]$。归一化 Haar 测度 $m_n=m_1^{\otimes n}$ 具有平移不变性 \cite[§2.2]{Folland}。对可测集 $E\subset\T^n$ 和 $g\in L^1(\T^n)$，}{Write $\pi(x)=[x]$. Normalized Haar measure $m_n=m_1^{\otimes n}$ is translation invariant \cite[Sec.~2.2]{Folland}. For measurable $E\subset\T^n$ and $g\in L^1(\T^n)$,}
+\[
+ m_n(E)=\int_{[0,1)^n}\ind_E([x])\,dx,\qquad
+ \int_{\T^n}g\,dm_n=\int_{[0,1)^n}g([x])\,dx .
+\]
+\Text{取截面}{Define the section by}
+\[s:\T^n\longrightarrow[0,1)^n,\qquad s([x])=(x_1-\lfloor x_1\rfloor,\ldots,x_n-\lfloor x_n\rfloor).\]
+\Text{先令 $\widetilde g(s(\xi))=g(\xi)$，再令 $\widetilde g(s(\xi)+k)=\widetilde g(s(\xi))$，$k\in\Z^n$。所得周期提升局部可积。对边长 $r>0$，中心立方体平均为}{Set $\widetilde g(s(\xi))=g(\xi)$ and extend by $\widetilde g(s(\xi)+k)=\widetilde g(s(\xi))$ for $k\in\Z^n$. This periodic lift is locally integrable. For side length $r>0$, the centered cube average is}
+\[
+ A_rg([x])=A_r\widetilde g(x)=\frac1{r^n}\int_{x+[-r/2,r/2]^n}\widetilde g(y)\,dy .
+\]
+\Text{对环面上的可测集 $E$，其周期延拓为}{For each measurable set $E$ on the torus, its periodic extension is}
+\[
+ \pi^{-1}(E)=\bigcup_{k\in\Z^n}\bigl(s(E)+k\bigr).
+\]
+\begin{lemma}\label{lem:transfer}
+\Text{设 $g\ge0$，$\int_{\T^n}g\,dm_n=1$。对 $\lambda>0$，令 $E$ 为截断中心立方体极大算子的水平集}{Let $g\ge0$ with $\int_{\T^n}g\,dm_n=1$. For $\lambda>0$, let $E$ be the level set of the truncated centered cube maximal operator,}
+\[
+ E=\{[x]\in\T^n:\sup_{0<r<2} A_rg([x])>\lambda\}.
+\]
+\Text{则 $\Cn\ge\lambda m_n(E)$。}{Then $\Cn\ge\lambda m_n(E)$.}
+\end{lemma}
+\begin{proof}
+\Text{对固定 $x$，平均关于 $r>0$ 连续：立方体边界为零测集，可在稍大的立方体上用支配收敛。每个固定边长的平均可测，故上确界可取遍 $(0,2)$ 中的有理数，$E$ 可测。对整数 $R\ge2$，令 $g_R=\widetilde g\ind_{[-R,R]^n}$。由平移不变性和归一化，$\|g_R\|_1=(2R)^n$。若 $x\in[-R+1,R-1]^n$，则对每个 $0<r<2$，边长为 $r$ 的中心立方体均在 $[-R,R]^n$ 内。因此}{For fixed $x$, the average is continuous in $r>0$ by dominated convergence on a slightly larger cube, since cube boundaries have measure zero. Each fixed-side average is measurable, so taking the supremum over rational $r\in(0,2)$ proves measurability of $E$. For an integer $R\ge2$ set $g_R=\widetilde g\ind_{[-R,R]^n}$. Translation invariance and normalization give $\|g_R\|_1=(2R)^n$. For $x\in[-R+1,R-1]^n$ every centered cube of side $0<r<2$ lies inside $[-R,R]^n$. Hence}
+\[
+ \pi^{-1}(E)\cap[-R+1,R-1]^n\subset\{M_ng_R>\lambda\}.
+\]
+\Text{左侧测度由平移不变性等于 $(2R-2)^nm_n(E)$。代入式\eqref{eq:optimal}得 $\Cn\ge\lambda m_n(E)(1-R^{-1})^n$，固定 $n$ 令 $R\to\infty$ 即得。}{By translation invariance the set on the left has measure $(2R-2)^nm_n(E)$. Inserting this into~\eqref{eq:optimal} gives $\Cn\ge\lambda m_n(E)(1-R^{-1})^n$. Let $R\to\infty$ at fixed $n$.}
+\end{proof}
+\subsection{\Text{Rudin--Shapiro 序列与正周期密度}{The Rudin--Shapiro sequence and a positive periodic density}}\label{sec:rs}
+\Text{Shapiro 在其硕士论文中用一对递推多项式构造了这一序列 \cite[pp.~39--40]{Shapiro1951}。Golay 在光谱学中给出了相关的互补对构造 \cite[p.~469]{Golay1951}。Rudin 用多项式递推证明了下文所用的部分和估计 \cite[Theorem I]{Rudin1959}。这里沿用名称 Rudin--Shapiro 序列 \cite{Allouche1985}。}{Shapiro constructed the sequence using a pair of recursively defined polynomials \cite[pp.~39--40]{Shapiro1951}. Golay gave a related construction of complementary pairs in spectroscopy \cite[p.~469]{Golay1951}. Rudin used the polynomial recursion to prove the partial-sum estimate needed below \cite[Theorem I]{Rudin1959}. We use the name Rudin--Shapiro sequence as in \cite{Allouche1985}.}
+\Text{频率项数 $K$ 随维数而变，因此需要一列固定的系数 $\varepsilon_l\in\{-1,+1\}$，使每个部分和 $\sum_{l=0}^{N-1}\varepsilon_l z^l$ 在单位圆上都不超过常数倍的 $\sqrt N$。Rudin--Shapiro 序列由下面的递推式给出，对每个正整数 $N$ 都满足这一估计。因此可以按维数选取 $K$，再用 Abel 求和处理权重 $1+l/K$。密度的振荡幅度由此得到控制；估计不同边长的区间平均时也可以使用同一部分和估计，因为它对所有 $|z|=1$ 都成立。}{The number of frequencies $K$ depends on the dimension. We therefore need a single sequence of coefficients $\varepsilon_l\in\{-1,+1\}$ for which every partial sum $\sum_{l=0}^{N-1}\varepsilon_l z^l$ is bounded by a constant times $\sqrt N$ on the unit circle. The Rudin--Shapiro sequence defined by the recursion below satisfies this estimate for every positive integer $N$. We can thus choose $K$ according to the dimension and use Abel summation to handle the weight $1+l/K$. This controls the oscillation of the density. Uniformity in $|z|=1$ also allows us to apply the same estimate to interval averages of different lengths.}
+\Text{采用从零开始的编号，把 Rudin 式 (1.5) 中的两个多项式各除以 $z$，递推式即为 \cite[p.~856]{Rudin1959}}{To index the coefficients from zero, divide both polynomials in Rudin's recursion (1.5) by $z$ \cite[p.~856]{Rudin1959}. This gives}
+\[P_0(z)=Q_0(z)=1,\qquad
+ \begin{cases}P_{q+1}(z)=P_q(z)+z^{2^q}Q_q(z),\\Q_{q+1}(z)=P_q(z)-z^{2^q}Q_q(z).\end{cases}\]
+\Text{因 $P_{q+1}$ 的前 $2^q$ 个系数与 $P_q$ 相同，递推确定了 Rudin--Shapiro 序列 $\{\varepsilon_l\}_{l\ge0}$，其中 $\varepsilon_l\in\{-1,+1\}$，$P_q(z)=\sum_{l=0}^{2^q-1}\varepsilon_l z^l$。}{The first $2^q$ coefficients of $P_{q+1}$ agree with those of $P_q$. The recursion thus defines the Rudin--Shapiro sequence $\{\varepsilon_l\}_{l\ge0}$, with $\varepsilon_l\in\{-1,+1\}$ and $P_q(z)=\sum_{l=0}^{2^q-1}\varepsilon_l z^l$.}
+\begin{lemma}[Rudin {\cite[Theorem I]{Rudin1959}}]\label{lem:rudin}
+\Text{对上述序列、每个整数 $N\ge1$ 及每个 $|z|=1$，均有}{For the sequence above, every integer $N\ge1$, and every $z$ with $|z|=1$,}
+\[
+ \left|\sum_{l=0}^{N-1}\varepsilon_l z^l\right|\le5\sqrt N .
+\]
+\end{lemma}
+\begin{lemma}\label{lem:density}
+\Text{对任意整数 $K\ge1$，有}{For every integer $K\ge1$,}
+\begin{equation*}
+ \sup_{|z|=1}\left|\sum_{l=0}^{K-1}\varepsilon_l\left(1+\frac lK\right)z^l\right|
+ \le15\sqrt K.
+\end{equation*}
+\Text{式\eqref{eq:construction}的密度满足}{The density in~\eqref{eq:construction} satisfies}
+\begin{equation*}
+ \frac12\le\rho_K(x)\le\frac32,\qquad\int_\T\rho_K\,dm_1=\int_0^1\rho_K(x)\,dx=1.
+\end{equation*}
+
+\end{lemma}
+\begin{proof}
+\Text{置 $F_0=0$，$F_N(z)=\sum_{l=0}^{N-1}\varepsilon_lz^l$，$w_l=1+l/K$。由 $\varepsilon_lz^l=F_{l+1}-F_l$，Abel 求和给出}{Put $F_0=0$, $F_N(z)=\sum_{l=0}^{N-1}\varepsilon_lz^l$, and $w_l=1+l/K$. Since $\varepsilon_lz^l=F_{l+1}-F_l$, Abel summation gives}
+\[\sum_{l=0}^{K-1}w_l\varepsilon_lz^l
+ =w_{K-1}F_K-\sum_{l=1}^{K-1}(w_l-w_{l-1})F_l.\]
+\Text{当 $K=1$ 时末项为空和，公式仍成立。由 $w_{K-1}<2$、$w_l-w_{l-1}=K^{-1}$ 及引理\ref{lem:rudin}，}{For $K=1$ the final sum is empty and the identity remains valid. Since $w_{K-1}<2$ and $w_l-w_{l-1}=K^{-1}$, Lemma~\ref{lem:rudin} yields}
+\[\left|\sum_{l=0}^{K-1}w_l\varepsilon_lz^l\right|
+ \le5(2-K^{-1})\sqrt K+\frac5K\sum_{l=1}^{K-1}\sqrt l
+ \le15\sqrt K.\]
+\Text{令 $z=e^{2\pi ix}$，将加权和乘以模为 1 的 $z^K$ 并取实部，得到 $|\rho_K(x)-1|\le1/2$。所有频率 $K+l$ 均为正整数，相应余弦在 $[0,1]$ 上积分为零，故密度积分为 1。}{Set $z=e^{2\pi ix}$, multiply the weighted sum by the modulus-one factor $z^K$, and take real parts. Then $|\rho_K(x)-1|\le1/2$. All frequencies $K+l$ are positive integers, so their cosines integrate to zero on $[0,1]$, giving integral one.}
+\end{proof}

@@ -1,0 +1,35 @@
+{
+  "scope": "Finite sampled checks and exact rational arithmetic; these checks do not replace the proof.",
+  "checks": {
+    "rate_error_constant_exact": true,
+    "bonferroni_allocation_exact": true,
+    "fixed_amplitude_exact": true,
+    "variance_coefficient_exact": true,
+    "center_coefficient_exact": true,
+    "final_coefficient_exact": true,
+    "center_variance": true,
+    "sampled_prefix_bound": true,
+    "density_4": true,
+    "density_8": true,
+    "density_12": true,
+    "density_32": true,
+    "density_128": true,
+    "exact_average_sampled": true,
+    "variance_sampled": true,
+    "covariance_sampled": true,
+    "threshold_identity": true,
+    "log_remainder_sampled": true,
+    "final_constant_exact": true,
+    "atomic_reverse_tilt_identity": true,
+    "eventwise_interval_bounds": true
+  },
+  "results": {
+    "max_sampled_prefix_ratio": 2.370629249995805,
+    "prefix_constant": 5.0,
+    "max_average_identity_error": 2.220446049250313e-16,
+    "max_variance_identity_error": 2.1316282072803006e-14,
+    "max_covariance_identity_error": 5.662137425588298e-15,
+    "threshold_identity_max_error": 8.881784197001252e-16,
+    "max_atomic_tilt_identity_error": 6.439293542825908e-15
+  }
+}

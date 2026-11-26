@@ -1,0 +1,201 @@
+\subsection{\Text{精确平均、方差与尺度协方差}{Exact averages, variances, and scale covariance}}\label{sec:kernels}
+\Text{我们引入的线性权重 $1+l/K$ 使区间平均可精确计算。对 $r>0$，记}{The linear weight $1+l/K$ introduced in the density makes the interval average explicitly computable. For $r>0$, write}
+\[a_r(x)=\frac1r\int_{x-r/2}^{x+r/2}\rho_K(y)\,dy.\]
+\Text{逐项积分利用}{Termwise integration uses}
+\[\frac1r\int_{x-r/2}^{x+r/2}\cos(2\pi qy)\,dy
+ =\frac{\sin(\pi qr)}{\pi qr}\cos(2\pi qx),\qquad q\in\N.\]
+\Text{权重 $(K+l)/K$ 抵消分母中的 $K+l$，于是}{The weight $(K+l)/K$ cancels $K+l$ in the denominator, giving}
+\[a_r(x)-1=\frac1{30\pi K^{3/2}r}\sum_{l=0}^{K-1}\varepsilon_l
+ \sin\bigl(\pi(K+l)r\bigr)\cos\bigl(2\pi(K+l)x\bigr).\]
+\Text{以下取 $K\in4\N$，定义}{Henceforth take $K\in4\N$ and define}
+\begin{equation*}
+ r(t)=1+\frac{2t}K,\qquad t_0=\frac K4,\qquad r(t_0)=\frac32.
+\end{equation*}
+\Text{每当使用平均时均要求 $r(t)>0$。由正弦的加法公式，定义}{Whenever an average is used, require $r(t)>0$. The sine addition formula leads to}
+\begin{equation*}
+\begin{aligned}
+ S_t(x)&=\sum_{l=0}^{K-1}\varepsilon_l(-1)^{K+l}
+ \sin\left(2\pi t\left(1+\frac lK\right)\right)\cos\bigl(2\pi(K+l)x\bigr),\\
+ d_t(x)&=a_{r(t)}(x)-1=\frac1{30\pi K^{3/2}r(t)}S_t(x).
+\end{aligned}
+\end{equation*}
+\Text{令 $U$ 在 $\T$ 上均匀分布。Fourier 正交性给出以下均值与方差恒等式：}{Let $U$ be uniform on $\T$. Fourier orthogonality gives the following mean and variance identities:}
+\begin{equation}\label{eq:variances}
+\begin{aligned}
+ \E S_t(U)&=\E d_t(U)=0,\\
+ V_K(t)&=\int_0^1 S_t(x)^2\,dx
+ =\frac12\sum_{l=0}^{K-1}\sin^2\left(2\pi t\left(1+\frac lK\right)\right),\\
+ \sigma_t^2&=\int_0^1 d_t(x)^2\,dx
+ =\frac{V_K(t)}{900\pi^2K^3r(t)^2}.
+\end{aligned}
+\end{equation}
+\Text{具体地，$\int_0^1\cos(2\pi mx)\cos(2\pi nx)\,dx=\tfrac12\ind_{\{m=n\}}$ 对正整数 $m,n$ 成立，且$\varepsilon_l^2=1$。置}{Indeed, $\int_0^1\cos(2\pi mx)\cos(2\pi nx)\,dx=\tfrac12\ind_{\{m=n\}}$ for positive integers $m,n$, and $\varepsilon_l^2=1$. Put}
+\begin{equation*}
+ W_{K,u}=\left\{t\in\R:|t-t_0|\le\frac K{100u}\right\},\qquad u>0.
+\end{equation*}
+\Text{若 $K\ge4$、$u\ge3/50$ 且 $t\in W_{K,u}$，则}{If $K\ge4$, $u\ge3/50$, and $t\in W_{K,u}$, then}
+\begin{equation}\label{eq:window-bounds}
+ \frac76\le r(t)\le\frac{11}6,\qquad
+ \left|V_K(t)-\frac K4\right|\le\frac12,\qquad
+ \frac K8\le V_K(t)\le\frac{3K}8.
+\end{equation}
+\Text{第一式由 $|r(t)-3/2|\le1/(50u)\le1/3$ 得到。对方差，用 $\sin^2 v=(1-\cos2v)/2$ 及有限几何级数：}{The first bound follows from $|r(t)-3/2|\le1/(50u)\le1/3$. For the variance, use $\sin^2v=(1-\cos2v)/2$ and a finite geometric sum:}
+\[V_K(t)=\frac K4-\frac14\Re\sum_{l=0}^{K-1}e^{4\pi it(1+l/K)},\qquad
+ \left|\sum_{l=0}^{K-1}e^{4\pi it(1+l/K)}\right|
+ =\frac{|\sin(2\pi t)|}{|\sin(2\pi t/K)|}\le2.\]
+\Text{这里 $|\sin(2\pi t/K)|=|\cos(2\pi(t-t_0)/K)|\ge1/2$，分母不为零。在中心 $t=t_0$，写 $K=4q$，则正弦因子为 $\sin(2\pi q+\pi l/2)$。恰有 $K/2$ 个奇数 $l$ 的正弦平方为 1，其他项为零，故}{Here $|\sin(2\pi t/K)|=|\cos(2\pi(t-t_0)/K)|\ge1/2$, so the denominator is nonzero. At $t=t_0$, writing $K=4q$ gives the sine factor $\sin(2\pi q+\pi l/2)$. Exactly $K/2$ odd indices have squared sine one; all others give zero. Hence}
+\begin{equation}\label{eq:center}
+ V_K(t_0)=\frac K4,\qquad \sigma_{t_0}=\frac1{90\pi K}.
+\end{equation}
+\Text{后式是在式\eqref{eq:variances}中取 $r(t_0)=3/2$、$V_K(t_0)=K/4$ 并取正平方根所得。$K\in4\N$ 给出此方差公式；后文也取 $K$ 为 4 的倍数。}{The second identity follows by substituting $r(t_0)=3/2$ and $V_K(t_0)=K/4$ into~\eqref{eq:variances} and taking the positive square root. The choice $K\in4\N$ gives this variance identity; below we likewise take $K$ to be a multiple of four.}
+
+\Text{由于窗口中 $V_K(t)>0$，可定义标准化变量，并记录标准差的精确比值：}{Since $V_K(t)>0$ on the window, define the standardized variable and record the exact standard-deviation ratio:}
+\begin{equation}\label{eq:standardized}
+ Y_t=\frac{S_t}{\sqrt{V_K(t)}}=\frac{d_t}{\sigma_t},\qquad
+ \frac{\sigma_t}{\sigma_{t_0}}=\frac{r(t_0)}{r(t)}\sqrt{\frac{4V_K(t)}K}.
+\end{equation}
+\Text{这里 $|4V_K(t)/K-1|\le2/K$，$|r(t)/r(t_0)-1|\le1/(75u)$。}{Here $|4V_K(t)/K-1|\le2/K$ and $|r(t)/r(t_0)-1|\le1/(75u)$.}
+\begin{lemma}\label{lem:bounded}
+\Text{若 $K\in4\N$、$K\ge4$、$u\ge3/50$，则对所有 $t\in W_{K,u}$，}{If $K\in4\N$, $K\ge4$, and $u\ge3/50$, then, for every $t\in W_{K,u}$,}
+\begin{equation*}
+ \E Y_t(U)=0,\qquad\E Y_t(U)^2=1,\qquad
+ \|Y_t\|_\infty\le B:=5\sqrt8.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{均值和方差由定义得到。令 $P_K(z)=\sum_{l<K}\varepsilon_lz^l$。将正弦和余弦展开为指数，得}{The mean and variance follow from the definitions. Set $P_K(z)=\sum_{l<K}\varepsilon_lz^l$. Expanding the sine and cosine into exponentials gives}
+\[S_t(x)=\frac{(-1)^K}{4i}\sum_{\alpha,\beta\in\{-1,1\}}
+ \alpha e^{2\pi i(\alpha t+\beta Kx)}
+ P_K\!\left(-e^{2\pi i(\alpha t/K+\beta x)}\right).\]
+\Text{四个多项式的自变量均在单位圆上，每个外部系数的模为 $1/4$。由引理\ref{lem:rudin}，$|S_t(x)|\le5\sqrt K$；再除以 $\sqrt{V_K(t)}\ge\sqrt{K/8}$ 即得结论。}{All four polynomial arguments lie on the unit circle and each outside coefficient has modulus $1/4$. Lemma~\ref{lem:rudin} gives $|S_t(x)|\le5\sqrt K$. Divide by $\sqrt{V_K(t)}\ge\sqrt{K/8}$.}
+\end{proof}
+\Text{对窗口中的 $t,s$，定义尺度协方差与有限频带核}{For $t,s$ in the window, define the scale covariance and finite-band kernel}
+\begin{equation*}
+ \kappa_K(t,s)=\E[Y_t(U)Y_s(U)],\qquad
+ D_K(\tau)=\frac1K\sum_{l=0}^{K-1}e^{2\pi i\tau(1+l/K)}.
+\end{equation*}
+\Text{Cauchy--Schwarz 不等式给出 $|\kappa_K(t,s)|\le1$，且 $\kappa_K(t,t)=1$。Fourier 正交性及 $2\sin\alpha\sin\beta=\cos(\alpha-\beta)-\cos(\alpha+\beta)$ 给出精确公式}{Cauchy--Schwarz gives $|\kappa_K(t,s)|\le1$ and $\kappa_K(t,t)=1$. Fourier orthogonality and $2\sin\alpha\sin\beta=\cos(\alpha-\beta)-\cos(\alpha+\beta)$ yield}
+\begin{equation}\label{eq:exact-covariance}
+ \int_0^1S_t(x)S_s(x)\,dx=\frac K4\bigl[\Re D_K(t-s)-\Re D_K(t+s)\bigr].
+\end{equation}
+\Text{其中反射项 $D_K(t+s)$ 来自正弦乘积中的和频率。有限几何级数给出}{The reflection term $D_K(t+s)$ comes from the sum frequency in the sine product. A finite geometric sum gives}
+\begin{equation}\label{eq:dirichlet}
+ D_K(\tau)=e^{\pi i(3-1/K)\tau}\frac{\sin(\pi\tau)}{K\sin(\pi\tau/K)},\qquad
+ |D_K(\tau)|=\frac{|\sin(\pi\tau)|}{K|\sin(\pi\tau/K)|}
+ \quad(\tau\notin K\Z).
+\end{equation}
+\Text{当 $\tau\in K\Z$ 时，有限和直接给出 $D_K(\tau)=1$，这也确定了可去奇点处的连续取值；由有限和定义，对所有实数 $\tau$ 有 $|D_K(\tau)|\le1$。}{For $\tau\in K\Z$, the finite sum gives $D_K(\tau)=1$, also specifying the continuous values at the removable singularities. The finite-sum definition gives $|D_K(\tau)|\le1$ for all real $\tau$.}
+\begin{lemma}\label{lem:finite-kernel}
+\Text{若 $K\in4\N$、$K\ge4$、$u\ge3/50$ 且 $t,s\in W_{K,u}$，则}{If $K\in4\N$, $K\ge4$, $u\ge3/50$, and $t,s\in W_{K,u}$, then}
+\begin{equation*}
+ |\kappa_K(t,s)-\Re D_K(t-s)|\le\frac8K.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{因为 $t+s=K/2+(t-t_0)+(s-t_0)$，且 $|\pi(t+s-K/2)/K|\le\pi/(50u)\le\pi/3$，式\eqref{eq:dirichlet}的分母正弦模至少为 $1/2$，故 $|D_K(t+s)|\le2/K$。由式\eqref{eq:window-bounds}可写}{Since $t+s=K/2+(t-t_0)+(s-t_0)$ and $|\pi(t+s-K/2)/K|\le\pi/(50u)\le\pi/3$, the sine denominator in~\eqref{eq:dirichlet} has modulus at least $1/2$, so $|D_K(t+s)|\le2/K$. By~\eqref{eq:window-bounds}, write}
+\[V_K(t)=\frac K4(1+e_t),\quad V_K(s)=\frac K4(1+e_s),\quad
+ |e_t|,|e_s|\le\frac2K,\quad
+ l_{t,s}=\sqrt{(1+e_t)(1+e_s)}.\]
+\Text{正因子的比较给出 $1-2/K\le l_{t,s}\le1+2/K$，故 $l_{t,s}^{-1}\le2$，$|l_{t,s}^{-1}-1|\le4/K$。将式\eqref{eq:exact-covariance}除以 $\sqrt{V_K(t)V_K(s)}$，得到}{Comparing the positive factors gives $1-2/K\le l_{t,s}\le1+2/K$, hence $l_{t,s}^{-1}\le2$ and $|l_{t,s}^{-1}-1|\le4/K$. Divide~\eqref{eq:exact-covariance} by $\sqrt{V_K(t)V_K(s)}$ to obtain}
+\[\kappa_K(t,s)=\frac{\Re D_K(t-s)-\Re D_K(t+s)}{l_{t,s}}.\]
+\Text{分别估计归一化误差与反射项，即得 $4/K+(2/K)\cdot2=8/K$。}{Estimating the normalization error and reflection term separately gives $4/K+(2/K)\cdot2=8/K$.}
+\end{proof}
+\Text{定义连续核及其实部}{Define the continuous kernel and its real part by}
+\begin{equation*}
+ \mathcal R(\tau)=\int_1^2e^{2\pi i\tau y}\,dy,\qquad
+ R(\tau)=\Re\mathcal R(\tau)=\int_1^2\cos(2\pi\tau y)\,dy.
+\end{equation*}
+\Text{直接积分给出}{Direct integration gives}
+\[\mathcal R(\tau)=e^{3\pi i\tau}\frac{\sin(\pi\tau)}{\pi\tau},\qquad
+ R(\tau)=\frac{\sin(4\pi\tau)-\sin(2\pi\tau)}{2\pi\tau}
+ =\frac{\sin(\pi\tau)}{\pi\tau}\cos(3\pi\tau),\quad\tau\ne0.\]
+\Text{在零点两者均连续延拓为 1。Taylor 余项估计 $|\cos x-1+x^2/2|\le x^4/24$ 逐项积分后得到}{Both extend continuously to one at zero. Integrating $|\cos x-1+x^2/2|\le x^4/24$ gives}
+\[R(\tau)=1-\frac{14\pi^2}3\tau^2+E(\tau),\qquad
+ |E(\tau)|\le\frac{62\pi^4}{15}|\tau|^4.\]
+\Text{系数分别来自 $2\pi^2\int_1^2y^2dy=14\pi^2/3$ 与 $(2\pi)^4\int_1^2y^4dy/24=62\pi^4/15$。}{The coefficients are $2\pi^2\int_1^2y^2dy=14\pi^2/3$ and $(2\pi)^4\int_1^2y^4dy/24=62\pi^4/15$.}
+\begin{lemma}\label{lem:continuous-kernel}
+\Text{对任意 $H>0$ 及整数 $K\ge1$，}{For every $H>0$ and integer $K\ge1$,}
+\[\sup_{|\tau|\le H}|D_K(\tau)-\mathcal R(\tau)|\le\frac{2\pi H}K.\]
+\Text{若再有 $K\in4\N$、$K\ge4$、$u\ge3/50$，则}{If also $K\in4\N$, $K\ge4$, and $u\ge3/50$, then}
+\begin{equation*}
+ \sup_{\substack{t,s\in W_{K,u}\\|t-s|\le H}}
+ |\kappa_K(t,s)-R(t-s)|\le\frac{C_H}K,\qquad C_H=2\pi H+8.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{将 $[1,2]$ 分成 $K$ 个等长区间 $I_l=[a_l,b_l]$，其中 $a_l=1+l/K$、$b_l=1+(l+1)/K$、$0\le l<K$。对 $|\tau|\le H$，令 $f_\tau(y)=e^{2\pi i\tau y}$。其导数满足}{Partition $[1,2]$ into $K$ equal intervals $I_l=[a_l,b_l]$, where $a_l=1+l/K$, $b_l=1+(l+1)/K$, and $0\le l<K$. For $|\tau|\le H$, set $f_\tau(y)=e^{2\pi i\tau y}$. Its derivative satisfies}
+\[f_\tau'(y)=2\pi i\tau e^{2\pi i\tau y},\qquad |f_\tau'(y)|=2\pi|\tau|\le2\pi H.\]
+\Text{对 $y\in I_l$，由微积分基本定理，}{For $y\in I_l$, the fundamental theorem of calculus gives}
+\[|f_\tau(a_l)-f_\tau(y)|
+ =\left|\int_{a_l}^y f_\tau'(v)\,dv\right|
+ \le2\pi H|y-a_l|\le\frac{2\pi H}K.\]
+\Text{由于 $|I_l|=1/K$，左端点采样的积分误差为}{Since $|I_l|=1/K$, the left-endpoint sampling error satisfies}
+\begin{align*}
+ \left|\frac1Kf_\tau(a_l)-\int_{I_l}f_\tau(y)\,dy\right|
+ &=\left|\int_{I_l}(f_\tau(a_l)-f_\tau(y))\,dy\right|\\
+ &\le\frac1K\sup_{y\in I_l}|f_\tau(a_l)-f_\tau(y)|
+ \le\frac{2\pi H}{K^2}.
+\end{align*}
+\Text{对 $l$ 求和，并用 $D_K(\tau)=K^{-1}\sum_{l=0}^{K-1}f_\tau(a_l)$，得到}{Sum over $l$ and use $D_K(\tau)=K^{-1}\sum_{l=0}^{K-1}f_\tau(a_l)$ to obtain}
+\begin{align*}
+ |D_K(\tau)-\mathcal R(\tau)|
+ &=\left|\sum_{l=0}^{K-1}\left[\frac1Kf_\tau(a_l)-\int_{I_l}f_\tau(y)\,dy\right]\right|\\
+ &\le\sum_{l=0}^{K-1}\frac{2\pi H}{K^2}=\frac{2\pi H}K.
+\end{align*}
+\Text{此界对 $|\tau|\le H$ 一致，且 $|\Re(D_K(\tau)-\mathcal R(\tau))|\le|D_K(\tau)-\mathcal R(\tau)|$。因此，由引理\ref{lem:finite-kernel}及三角不等式，}{The bound is uniform for $|\tau|\le H$, and $|\Re(D_K(\tau)-\mathcal R(\tau))|\le|D_K(\tau)-\mathcal R(\tau)|$. Thus Lemma~\ref{lem:finite-kernel} and the triangle inequality give}
+\begin{align*}
+ &\sup_{\substack{t,s\in W_{K,u}\\|t-s|\le H}}|\kappa_K(t,s)-R(t-s)|\\
+ &\quad\le\sup_{\substack{t,s\in W_{K,u}\\|t-s|\le H}}
+ |\kappa_K(t,s)-\Re D_K(t-s)|
+ +\sup_{|\tau|\le H}|\Re D_K(\tau)-R(\tau)|\\
+ &\quad\le\frac8K+\frac{2\pi H}K=\frac{2\pi H+8}K.
+\end{align*}
+\end{proof}
+\Text{连续核的展开指明局部二次尺度；以下直接对有限和证明定量界，并吸收 $K^{-1}$ 误差。}{The continuous-kernel expansion identifies the local quadratic scale. We next prove quantitative bounds directly for the finite sum and absorb the $K^{-1}$ error.}
+\begin{lemma}\label{lem:quadratic}
+\Text{固定 $a>0$。设 $t,s\in W_{K,u}$，且}{Fix $a>0$. Suppose $t,s\in W_{K,u}$ and}
+\[\frac au\le|t-s|\le\tfrac18,\qquad u\ge3/50,\qquad
+ K\in4\N,\qquad K\ge\max\left\{4,\frac{2u^2}{a^2}\right\}.\]
+\Text{则}{Then}
+\begin{equation*}
+ 4|t-s|^2\le1-\kappa_K(t,s)\le(8\pi^2+4)|t-s|^2.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{记 $\tau=t-s$、$y_l=1+l/K$。由 $|\tau|\le1/8$ 及 $1\le y_l<2$，有 $|2\pi\tau y_l|\le\pi/2$。对 $|x|\le\pi/2$，由 $1-\cos x=2\sin^2(x/2)$ 及正弦的弦下界，}{Put $\tau=t-s$ and $y_l=1+l/K$. Since $|\tau|\le1/8$ and $1\le y_l<2$, we have $|2\pi\tau y_l|\le\pi/2$. For $|x|\le\pi/2$, the identity $1-\cos x=2\sin^2(x/2)$ and the chord bound for sine give}
+\[\frac{2x^2}{\pi^2}\le1-\cos x\le\frac{x^2}2.\]
+\Text{逐项应用并取平均得到}{Apply this termwise and average to obtain}
+\[8\tau^2\le1-\Re D_K(\tau)\le8\pi^2\tau^2.\]
+\Text{由假设 $8/K\le4a^2/u^2\le4\tau^2$，将引理\ref{lem:finite-kernel}的误差分别从下界减去、加到上界，即得结论。}{The hypotheses imply $8/K\le4a^2/u^2\le4\tau^2$. Subtract and add the error in Lemma~\ref{lem:finite-kernel} to the lower and upper bounds, respectively.}
+\end{proof}
+\Text{固定以下绝对常数：}{Fix the following absolute constants:}
+\begin{equation}\label{eq:global-constants}
+\begin{gathered}
+ C_0=8,\quad H_0=64,\quad \nu=1-\frac3\pi>0,\quad
+ \mu=1-\frac{8\sin(\pi/8)}{\pi}>0,\\
+ \varepsilon_0=\frac\nu2,\qquad c_0=\frac\mu2.
+\end{gathered}
+\end{equation}
+\Text{在固定区间 $[-64,64]$ 上，引理\ref{lem:continuous-kernel}的误差随 $K\to\infty$ 一致趋于零。取 $\Kglob\ge64$，使 $K\ge\Kglob$ 时该误差至多为 $\min(\mu,\nu)/2$。}{On the fixed interval $[-64,64]$, the error in Lemma~\ref{lem:continuous-kernel} tends uniformly to zero as $K\to\infty$. Choose $\Kglob\ge64$ so that this error is at most $\min(\mu,\nu)/2$ whenever $K\ge\Kglob$.}
+\begin{lemma}\label{lem:global}
+\Text{设 $t,s\in W_{K,u}$、$K\in4\N$、$u\ge4/25$、$K\ge\Kglob$。则整个窗口内}{Suppose $t,s\in W_{K,u}$, $K\in4\N$, $u\ge4/25$, and $K\ge\Kglob$. Throughout the window,}
+\begin{equation*}
+ 1+\kappa_K(t,s)\ge\varepsilon_0,\qquad
+ \kappa_K(t,s)\le1-c_0\quad\text{\Text{若}{if} }|t-s|\ge\tfrac18.
+\end{equation*}
+\Text{此外，当 $1\le|t-s|\le K/8$ 时，}{Moreover, if $1\le|t-s|\le K/8$, then}
+\begin{equation*}
+ |\kappa_K(t,s)|\le\frac1{2|t-s|}+\frac8K
+ \le C_0\left(\frac1{|t-s|}+\frac1K\right).
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{仍记 $\tau=t-s$。窗口条件给出 $|\tau|\le K/(50u)\le K/8$。当 $1\le|\tau|\le K/8$ 时，$0<|\pi\tau/K|\le\pi/8$，且 $|\sin(\pi\tau/K)|\ge2|\tau|/K$。式\eqref{eq:dirichlet}给出 $|D_K(\tau)|\le1/(2|\tau|)$，结合引理\ref{lem:finite-kernel}即得所述的衰减估计。特别地，在 $H_0\le|\tau|\le K/8$ 上，}{Again put $\tau=t-s$. The window condition gives $|\tau|\le K/(50u)\le K/8$. For $1\le|\tau|\le K/8$, we have $0<|\pi\tau/K|\le\pi/8$ and $|\sin(\pi\tau/K)|\ge2|\tau|/K$. Equation~\eqref{eq:dirichlet} gives $|D_K(\tau)|\le1/(2|\tau|)$. Together with Lemma~\ref{lem:finite-kernel}, this proves the stated decay estimate. In particular, on $H_0\le|\tau|\le K/8$,}
+\[|\kappa_K(t,s)|\le8(1/64+1/64)=1/4.\]
+\Text{函数 $\sin x/x$ 在 $(0,\pi)$ 上为正且严格递减。对 $\tfrac18\le|\tau|\le1$，有}{The function $\sin x/x$ is positive and strictly decreasing on $(0,\pi)$. For $\tfrac18\le|\tau|\le1$,}
+\[R(\tau)\le\frac{\sin(\pi|\tau|)}{\pi|\tau|}
+ \le\frac{8\sin(\pi/8)}{\pi}=1-\mu.\]
+\Text{若 $|\tau|\ge1$，则 $|R(\tau)|\le1/(\pi|\tau|)\le1/\pi$，而弦下界给出 $\sin(\pi/8)/(\pi/8)\ge2/\pi>1/\pi$。故 $R(\tau)\le1-\mu$ 对所有 $|\tau|\ge\tfrac18$ 成立。在 $\tfrac18\le|\tau|\le H_0$ 用引理\ref{lem:continuous-kernel}及 $K\ge2(2\pi H_0+8)/\mu$，得 $\kappa_K(t,s)\le1-\mu/2=1-c_0$；远区间由 $|\kappa_K|\le1/4$ 得到相同结论。}{For $|\tau|\ge1$, $|R(\tau)|\le1/(\pi|\tau|)\le1/\pi$, whereas the chord bound gives $\sin(\pi/8)/(\pi/8)\ge2/\pi>1/\pi$. Thus $R(\tau)\le1-\mu$ whenever $|\tau|\ge\tfrac18$. On $\tfrac18\le|\tau|\le H_0$, Lemma~\ref{lem:continuous-kernel} and $K\ge2(2\pi H_0+8)/\mu$ give $\kappa_K(t,s)\le1-\mu/2=1-c_0$. On the remaining range the same conclusion follows from $|\kappa_K|\le1/4$.}
+
+\Text{最后证明全窗口的正下界。若 $|\tau|\le1/6$，则 $R(\tau)\ge0$。若 $1/6\le|\tau|\le1$，由单调性 $0\le\sin(\pi|\tau|)/(\pi|\tau|)\le3/\pi$，故 $R(\tau)\ge-3/\pi$；若 $|\tau|\ge1$，也有 $R(\tau)\ge-1/\pi\ge-3/\pi$。所以全实线上 $R(\tau)\ge-1+\nu$。在 $|\tau|\le H_0$ 使用引理\ref{lem:continuous-kernel}及 $K\ge2(2\pi H_0+8)/\nu$，得 $\kappa_K(t,s)\ge-1+\nu/2$；其余范围有 $1+\kappa_K\ge1/2>\varepsilon_0$。这覆盖整个窗口，包括 $\kappa_K(t,t)=1$ 的对角线。}{Finally, prove the positive lower bound throughout the window. For $|\tau|\le1/6$, $R(\tau)\ge0$. For $1/6\le|\tau|\le1$, monotonicity gives $0\le\sin(\pi|\tau|)/(\pi|\tau|)\le3/\pi$, hence $R(\tau)\ge-3/\pi$. For $|\tau|\ge1$, $R(\tau)\ge-1/\pi\ge-3/\pi$ as well. Thus $R(\tau)\ge-1+\nu$ on the whole line. On $|\tau|\le H_0$, Lemma~\ref{lem:continuous-kernel} and $K\ge2(2\pi H_0+8)/\nu$ give $\kappa_K(t,s)\ge-1+\nu/2$; the remaining range has $1+\kappa_K\ge1/2>\varepsilon_0$. This covers the whole window, including the diagonal where $\kappa_K(t,t)=1$.}
+\end{proof}

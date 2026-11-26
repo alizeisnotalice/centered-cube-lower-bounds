@@ -1,0 +1,348 @@
+\section{\Text{主要结果的证明}{Proof of the main result}}
+\subsection{\Text{频率项数的选取与网格构造}{Choice of the number of frequencies and construction of the grid}}\label{sec:grid}
+\Text{沿用第\ref{sec:kernels}节的一维平均、方差、标准化变量及协方差估计。$B$、$C_0$、$c_0$、$\varepsilon_0$、$\Kglob$ 见引理\ref{lem:bounded}及\eqref{eq:global-constants}。令 $\cmd,\Cmd,D_b,N(b)$ 为引理\ref{lem:md}中的常数，并置}{Retain the one-dimensional averages, variances, standardized variables, and covariance estimates from Section~\ref{sec:kernels}. $B,C_0,c_0,\varepsilon_0,\Kglob$ are given in Lemma~\ref{lem:bounded} and~\eqref{eq:global-constants}. Let $\cmd,\Cmd,D_b,N(b)$ be as in Lemma~\ref{lem:md}, and set}
+\begin{equation*}
+ c_1=\frac{\cmd}{2e^2},\qquad C_1=C_2=e\Cmd,\qquad
+ a_0=\max\left\{1,\sqrt{\log\left(1+\frac{8C_2}{c_1}\right)}\right\}.
+\end{equation*}
+\Text{先固定 $a\ge a_0$，再令 $n$ 增长。对 $n\ge3$ 定义}{First fix $a\ge a_0$, then increase $n$. For $n\ge3$, define}
+\begin{equation*}
+ v_n=\sqrt{\log n},\quad A_n=\frac{\sqrt n}{90\pi v_n},\quad
+ K=4\left\lfloor\frac{A_n}4+\frac12\right\rfloor,\quad\delta_n=K-A_n.
+\end{equation*}
+\Text{舍入规则给出 $|\delta_n|\le2$；当 $A_n>2$ 时，$K\in4\N$、$K\ge4$ 且 $A_n-2\le K\le A_n+2$。由式\eqref{eq:center}，}{The rounding rule gives $|\delta_n|\le2$. When $A_n>2$, we have $K\in4\N$, $K\ge4$, and $A_n-2\le K\le A_n+2$. By~\eqref{eq:center},}
+\begin{equation}\label{eq:u}
+ u=\sqrt n\sigma_{t_0}=\frac{\sqrt n}{90\pi K}
+ =v_n\left(1+\frac{\delta_n}{A_n}\right)^{-1},\qquad
+ K=\frac{\sqrt n}{90\pi u}.
+\end{equation}
+\begin{lemma}\label{lem:rounding}
+\Text{记 $\Erd(n)=|u^2-\log n|$。当 $n\to\infty$ 时，}{Write $\Erd(n)=|u^2-\log n|$. As $n\to\infty$,}
+\begin{equation*}
+\begin{gathered}
+ \Erd(n)=O\left(\frac{(\log n)^{3/2}}{\sqrt n}\right)\longrightarrow0,
+ \qquad u^2=\log n+o(1),\\
+ u\sim\sqrt{\log n},\qquad K\sim\frac{\sqrt n}{90\pi\sqrt{\log n}},
+ \qquad \frac K{u^2}\longrightarrow\infty.
+\end{gathered}
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{由 $|\delta_n|\le2$ 和 $A_n\to\infty$，在式\eqref{eq:u}中用 $(1+x)^{-2}=1+O(x)$（$x\to0$），得到}{Since $|\delta_n|\le2$ and $A_n\to\infty$, applying $(1+x)^{-2}=1+O(x)$ as $x\to0$ in~\eqref{eq:u} gives}
+\[u^2=\log n\,[1+O(A_n^{-1})]
+ =\log n+O\bigl((\log n)^{3/2}/\sqrt n\bigr).\]
+\Text{由此得 $u\sim\sqrt{\log n}$，再由 $K=A_n+O(1)$ 得到关于 $K$ 的两式。}{Thus $u\sim\sqrt{\log n}$. The two assertions about $K$ follow from $K=A_n+O(1)$.}
+\end{proof}
+\Text{定义网格间距、端点指标及网格}{Define the spacing, endpoint index, and grid by}
+\begin{equation*}
+ \Delta=\frac au,\quad Q_n=\left\lfloor\frac K{100a}\right\rfloor,\quad
+ \Gamma=\{t_q=t_0+q\Delta:-Q_n\le q\le Q_n\},\quad M=2Q_n+1.
+\end{equation*}
+\Text{每个点满足 $|t_q-t_0|\le(K/(100a))(a/u)=K/(100u)$，故 $\Gamma\subset W_{K,u}$。若 $x=K/(100a)\ge2$，则 $2x-1<M\le2x+1$，从而}{Each point satisfies $|t_q-t_0|\le(K/(100a))(a/u)=K/(100u)$, so $\Gamma\subset W_{K,u}$. If $x=K/(100a)\ge2$, then $2x-1<M\le2x+1$, hence}
+\begin{equation}\label{eq:cardinality}
+ \frac K{100a}\le M\le\frac{3K}{100a},\qquad
+ M=\frac K{50a}+O(1)\asymp K.
+\end{equation}
+\subsection{\Text{阈值的二阶稳定性}{Second-order stability of the thresholds}}
+\Text{所有网格点使用同一组独立均匀坐标 $U_1,\ldots,U_n\in\T$，定义}{Use the same independent uniform coordinates $U_1,\ldots,U_n\in\T$ for all grid points, and define}
+\begin{equation*}
+ u_t=\sqrt n\sigma_t,\quad X_t=\frac1{\sqrt n}\sum_{i=1}^nY_t(U_i),\quad
+ h=\frac{u^2}2-2,\quad z_t=\frac{h+u_t^2/2+2}{u_t}
+ =\frac{u^2+u_t^2}{2u_t}.
+\end{equation*}
+\Text{算术--几何平均不等式给出 $z_t\ge u$。下面控制其在整个网格上的误差。}{The arithmetic--geometric mean inequality gives $z_t\ge u$. We control the error uniformly over the grid.}
+\begin{lemma}\label{lem:thresholds}
+\Text{设 $u\ge3/50$、$K\ge4$，置}{Suppose $u\ge3/50$ and $K\ge4$, and put}
+\[\alpha_n=\frac1{75u},\quad\beta_n=\frac2K,\quad
+ r_- =\frac{\sqrt{1-\beta_n}}{1+\alpha_n},\quad
+ r_+ =\frac{\sqrt{1+\beta_n}}{1-\alpha_n}.\]
+\Text{则 $0<r_-\le r_t:=u_t/u\le r_+$。令}{Then $0<r_-\le r_t:=u_t/u\le r_+$. Let}
+\begin{equation*}
+ \Er=\max\{1-r_-,r_+-1\}.
+\end{equation*}
+\Text{有 $|r_t-1|\le\Er$。若再有 $\Er\le1/2$，定义}{Then $|r_t-1|\le\Er$. If also $\Er\le1/2$, define}
+\begin{equation*}
+ d_n=\frac{\Er^2}{2(1-\Er)},\qquad\Ez(n)=u^2(2d_n+d_n^2).
+\end{equation*}
+\Text{对每个 $t\in\Gamma$，}{For every $t\in\Gamma$,}
+\[0\le z_t/u-1\le d_n,\qquad0\le z_t^2-u^2\le\Ez(n).\]
+\end{lemma}
+\begin{proof}
+\Text{由式\eqref{eq:standardized}，$r_t=(r(t_0)/r(t))\sqrt{4V_K(t)/K}$。网格条件给出 $|r(t)/r(t_0)-1|\le\alpha_n\le1/2$，故}{By~\eqref{eq:standardized}, $r_t=(r(t_0)/r(t))\sqrt{4V_K(t)/K}$. The grid condition gives $|r(t)/r(t_0)-1|\le\alpha_n\le1/2$, hence}
+\[\frac1{1+\alpha_n}\le\frac{r(t_0)}{r(t)}\le\frac1{1-\alpha_n},\qquad
+ \sqrt{1-\beta_n}\le\sqrt{\frac{4V_K(t)}K}\le\sqrt{1+\beta_n}.\]
+\Text{将两个正因子的上下端点相乘得 $r_-\le r_t\le r_+$，而 $r_-\le1\le r_+$。将 $u_t=ur_t$ 代入阈值，得到精确恒等式}{Multiply the endpoints of the positive factors to get $r_-\le r_t\le r_+$, with $r_-\le1\le r_+$. Substituting $u_t=ur_t$ into the threshold gives}
+\begin{equation*}
+ \frac{z_t}u=\frac12(r_t+r_t^{-1})
+ =1+\frac{(r_t-1)^2}{2r_t}.
+\end{equation*}
+\Text{若 $\Er\le1/2$，则 $r_t\ge1-\Er>0$，所以 $0\le z_t/u-1\le d_n$。再平方即得 $0\le z_t^2-u^2\le u^2[(1+d_n)^2-1]=\Ez(n)$。}{If $\Er\le1/2$, then $r_t\ge1-\Er>0$, giving $0\le z_t/u-1\le d_n$. Squaring yields $0\le z_t^2-u^2\le u^2[(1+d_n)^2-1]=\Ez(n)$.}
+\end{proof}
+\subsection{\Text{二次截断与单点概率}{Quadratic truncation and one-point probabilities}}
+\Text{定义}{Define}
+\begin{equation*}
+ G_t=\left\{\sigma_t^2\sum_{i=1}^nY_t(U_i)^2\le u_t^2+1\right\},\qquad
+ F_t=\{X_t\ge z_t\}\cap G_t,
+\end{equation*}
+\Text{并置 $b_2=B^2+1$、$u_+=u(1+\Er)$。事件 $G_t$ 正好控制 $\sum_i d_t(U_i)^2$。由 $\sigma_t^2=u_t^2/n$，}{and put $b_2=B^2+1$ and $u_+=u(1+\Er)$. The event $G_t$ controls precisely $\sum_i d_t(U_i)^2$. Since $\sigma_t^2=u_t^2/n$,}
+\[G_t^c=\left\{\sum_{i=1}^n(Y_t(U_i)^2-1)>\frac n{u_t^2}\right\}.\]
+\Text{对固定 $t$，$W_{t,i}=Y_t(U_i)^2-1$ 独立，且 $\E W_{t,i}=0$、$|W_{t,i}|\le b_2$、$\E W_{t,i}^2\le b_2^2$。Bernstein 不等式\eqref{eq:bernstein}给出}{For fixed $t$, the variables $W_{t,i}=Y_t(U_i)^2-1$ are independent, with $\E W_{t,i}=0$, $|W_{t,i}|\le b_2$, and $\E W_{t,i}^2\le b_2^2$. Bernstein's inequality~\eqref{eq:bernstein} gives}
+\[\P(G_t^c)\le\exp\left[-\frac{(n/u_t^2)^2}{2(nb_2^2+b_2n/(3u_t^2))}\right].\]
+\Text{由于 $x^2/[2(nb_2^2+b_2x/3)]$ 在 $x>0$ 严格递增，且 $u_t\le u_+$，得到一致界}{Since $x^2/[2(nb_2^2+b_2x/3)]$ is strictly increasing for $x>0$ and $u_t\le u_+$, we obtain}
+\begin{equation}\label{eq:bad-event}
+ \sup_{t\in\Gamma}\P(G_t^c)\le P_G(n)
+ :=\exp\left[-\frac n{2b_2^2u_+^4+(2b_2/3)u_+^2}\right].
+\end{equation}
+\begin{lemma}\label{lem:one-point}
+\Text{设}{Suppose}
+\begin{equation*}
+\begin{gathered}
+ n\ge N(B),\quad u\ge1,\quad\Er\le\frac12,\quad\Ez(n)\le1,\\
+ 2u\le n^{1/6},\qquad \frac{D_B(2u)^3}{\sqrt n}\le1,\qquad
+ P_G(n)\le\frac{c_1}{2u}e^{-u^2/2}.
+\end{gathered}
+\end{equation*}
+\Text{则对每个 $t\in\Gamma$，}{Then, for every $t\in\Gamma$,}
+\begin{equation*}
+ \frac{c_1}{2u}e^{-u^2/2}\le\P(F_t)\le\frac{C_1}u e^{-u^2/2}.
+\end{equation*}
+\Text{若再有 $K/(100a)\ge2$、$\Erd(n)\le1$，则}{If also $K/(100a)\ge2$ and $\Erd(n)\le1$, then}
+\begin{equation*}
+ S_1:=\sum_{t\in\Gamma}\P(F_t)\ge\frac{c_{\mathrm{sum}}}{u^2},\qquad
+ c_{\mathrm{sum}}=\frac{c_1}{18000\pi a e^{1/2}}>0.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{阈值稳定性给出 $1\le u\le z_t\le\sqrt{u^2+1}\le\sqrt2u<2u\le n^{1/6}$，且 $D_Bz_t^3/\sqrt n\le1$。对每个固定 $t$，$Y_t(U_i)$ 满足引理\ref{lem:bounded}，因此引理\ref{lem:md}给出}{Threshold stability gives $1\le u\le z_t\le\sqrt{u^2+1}\le\sqrt2u<2u\le n^{1/6}$ and $D_Bz_t^3/\sqrt n\le1$. For fixed $t$, the variables $Y_t(U_i)$ satisfy Lemma~\ref{lem:bounded}. Lemma~\ref{lem:md} therefore gives}
+\begin{align*}
+ \P(X_t\ge z_t)&\ge\frac{\cmd}{2u}\exp\left(-\frac{u^2+1}2-1\right)
+ \ge\frac{c_1}u e^{-u^2/2},\\
+ \P(X_t\ge z_t)&\le\frac{\Cmd}u\exp(-u^2/2+1)
+ =\frac{C_1}u e^{-u^2/2}.
+\end{align*}
+\Text{减去 $\P(G_t^c)\le P_G(n)$ 即得 $F_t$ 的下界，上界由包含关系得到。对网格求和，再用式\eqref{eq:cardinality}及\eqref{eq:u}，}{Subtract $\P(G_t^c)\le P_G(n)$ for the lower bound on $F_t$; the upper bound follows by inclusion. Sum over the grid and use~\eqref{eq:cardinality} and~\eqref{eq:u}:}
+\[S_1\ge M\frac{c_1}{2u}e^{-u^2/2}
+ \ge\frac{c_1}{18000\pi a}\frac{\sqrt n e^{-u^2/2}}{u^2}.\]
+\Text{舍入误差给出}{The rounding error gives}
+\begin{equation}\label{eq:height-comparison}
+ e^{-\Erd(n)/2}\le\sqrt n e^{-u^2/2}
+ =\exp\left(\frac{\log n-u^2}2\right)\le e^{\Erd(n)/2}.
+\end{equation}
+\Text{当 $\Erd(n)\le1$ 时即得引理\ref{lem:one-point}。同理，上基数界与单点上界给出 $S_1\le C_1e^{1/2}/(3000\pi a u^2)$。}{For $\Erd(n)\le1$, this proves Lemma~\ref{lem:one-point}. Similarly, the upper cardinality and one-point bounds give $S_1\le C_1e^{1/2}/(3000\pi a u^2)$.}
+\end{proof}
+\subsection{\Text{和方向双点界与四区域求和}{The sum-direction two-point bound and four-region summation}}
+\begin{lemma}\label{lem:two-point}
+\Text{设引理\ref{lem:global}的条件成立，$u\ge1$，置 $B'=B\sqrt{2/\varepsilon_0}$。若}{Assume the hypotheses of Lemma~\ref{lem:global}, let $u\ge1$, and set $B'=B\sqrt{2/\varepsilon_0}$. If}
+\begin{equation*}
+ n\ge N(B'),\qquad u\sqrt{2/\varepsilon_0}\le n^{1/6},\qquad
+ \frac{D_{B'}u^3(2/\varepsilon_0)^{3/2}}{\sqrt n}\le1,
+\end{equation*}
+\Text{则对不同的 $t,s\in\Gamma$，记 $\kappa=\kappa_K(t,s)$，有}{then, for distinct $t,s\in\Gamma$, writing $\kappa=\kappa_K(t,s)$,}
+\begin{equation*}
+ \P(F_t\cap F_s)\le\frac{C_2}u\exp\left(-\frac{u^2}{1+\kappa}\right).
+\end{equation*}
+\end{lemma}
+\begin{proof}
+\Text{由 $z_t,z_s\ge u$，有 $F_t\cap F_s\subset\{X_t\ge u,X_s\ge u\}$。对同一个均匀坐标 $U$ 定义}{Since $z_t,z_s\ge u$, $F_t\cap F_s\subset\{X_t\ge u,X_s\ge u\}$. For the same uniform coordinate $U$, define}
+\[W_{t,s}(U)=\frac{Y_t(U)+Y_s(U)}{\sqrt{2(1+\kappa)}}.\]
+\Text{引理\ref{lem:global}保证分母为正，且}{Lemma~\ref{lem:global} makes the denominator positive, and}
+\[\E W_{t,s}=0,\qquad\E W_{t,s}^2=\frac{1+1+2\kappa}{2(1+\kappa)}=1,
+ \qquad\|W_{t,s}\|_\infty\le\frac{2B}{\sqrt{2\varepsilon_0}}=B'.\]
+\Text{在双点事件上，}{On the two-point event,}
+\[\frac1{\sqrt n}\sum_{i=1}^nW_{t,s}(U_i)
+ =\frac{X_t+X_s}{\sqrt{2(1+\kappa)}}
+ \ge u\sqrt{\frac2{1+\kappa}}=:w.\]
+\Text{由 $\kappa\le1$ 及 $1+\kappa\ge\varepsilon_0$，$1\le u\le w\le u\sqrt{2/\varepsilon_0}\le n^{1/6}$，且 $D_{B'}w^3/\sqrt n\le1$。对独立同分布的 $W_{t,s}(U_i)$ 应用引理\ref{lem:md}的上界，得到}{Since $\kappa\le1$ and $1+\kappa\ge\varepsilon_0$, we have $1\le u\le w\le u\sqrt{2/\varepsilon_0}\le n^{1/6}$ and $D_{B'}w^3/\sqrt n\le1$. Apply the upper bound in Lemma~\ref{lem:md} to the iid variables $W_{t,s}(U_i)$:}
+\[\P(F_t\cap F_s)\le\frac{\Cmd}w\exp\left(-\frac{w^2}2+\frac{D_{B'}w^3}{\sqrt n}\right)
+ \le\frac{e\Cmd}u\exp\left(-\frac{u^2}{1+\kappa}\right).\]
+\end{proof}
+\Text{对正整数滞后指标 $m$，置 $\tau_m=t_{q+m}-t_q=ma/u$。实际范围为 $1\le m\le M-1$。固定 $m$ 时恰有 $M-m$ 个无序点对，故}{For a positive integer lag index $m$, put $\tau_m=t_{q+m}-t_q=ma/u$. The actual range is $1\le m\le M-1$. For fixed $m$, there are exactly $M-m$ unordered pairs, hence}
+\begin{equation}\label{eq:pair-count}
+ \sum_{\substack{t,s\in\Gamma\\t<s}}\P(F_t\cap F_s)
+ \le\sum_{m=1}^{M-1}(M-m)
+ \sup_{-Q_n\le q\le Q_n-m}\P(F_{t_q}\cap F_{t_{q+m}}).
+\end{equation}
+\Text{若 $u\ge4/25$，则 $a/u\le\tau_m\le K/(50u)\le K/8$。固定正指数间隙}{If $u\ge4/25$, then $a/u\le\tau_m\le K/(50u)\le K/8$. Fix the positive exponent gaps}
+\begin{equation*}
+ \delta=\frac1{2-c_0}-\frac12=\frac{c_0}{2(2-c_0)},\qquad
+ \gamma=\frac16.
+\end{equation*}
+\begin{proposition}\label{prop:sum}
+\Text{设引理\ref{lem:one-point}和\ref{lem:two-point}的条件成立，并有}{Assume the hypotheses of Lemmas~\ref{lem:one-point} and Lemma~\ref{lem:two-point}, together with}
+\[K\ge\max\{\Kglob,2u^2/a^2\},\qquad K/(100a)\ge2,
+ \quad u\ge1,\quad u^3\ge 32.\]
+\Text{若再满足}{If also}
+\begin{equation*}
+ \frac{2C_2}{c_1}(32u/a+1)e^{-\delta u^2}\le\frac1{12},\qquad
+ \frac{2C_2}{c_1}(u^4/a+1)e^{-\gamma u^2}\le\frac1{12},
+\end{equation*}
+\begin{equation*}
+ \vartheta_{\mathrm{IV}}=C_0(u^{-3}+K^{-1})\le\frac12,\qquad
+ \frac{C_2}{c_1}M\exp\left[-\left(\frac1{1+\vartheta_{\mathrm{IV}}}-\frac12\right)u^2\right]\le\frac1{12},
+\end{equation*}
+\Text{则}{then}
+\[\sum_{\substack{t,s\in\Gamma\\t<s}}\P(F_t\cap F_s)\le\frac12S_1.\]
+\end{proposition}
+\begin{proof}
+\Text{按 $\tau_m$ 将点对分为四个不交区域，分别记概率和为 $\Sigma_{\mathrm I},\ldots,\Sigma_{\mathrm{IV}}$。比较时始终使用}{Partition the pairs into four disjoint regions according to $\tau_m$, and write their probability sums as $\Sigma_{\mathrm I},\ldots,\Sigma_{\mathrm{IV}}$. Throughout, compare with}
+\[S_1\ge M\frac{c_1}{2u}e^{-u^2/2}.\]
+\noindent\textbf{\Text{区域 I：}{Region I:}} $0<\tau_m\le\tfrac18$.
+\Text{由引理\ref{lem:quadratic}，$\kappa_K(t_q,t_{q+m})\le1-4\tau_m^2$。因 $4\tau_m^2\le1/16$，分母均为正。恒等式}{Lemma~\ref{lem:quadratic} gives $\kappa_K(t_q,t_{q+m})\le1-4\tau_m^2$. Since $4\tau_m^2\le1/16$, all denominators are positive. The identity}
+\[\frac1{2-x}-\frac12-\frac x4=\frac{x^2}{4(2-x)}\ge0\quad(0\le x<2)\]
+\Text{在 $x=4\tau_m^2$ 时给出 $1/(1+\kappa_K)\ge1/2+\tau_m^2$。因此每个点对的概率至多为 $(C_2/u)e^{-u^2/2}e^{-a^2m^2}$。由式\eqref{eq:pair-count}，}{with $x=4\tau_m^2$ gives $1/(1+\kappa_K)\ge1/2+\tau_m^2$. Each pair probability is at most $(C_2/u)e^{-u^2/2}e^{-a^2m^2}$. By~\eqref{eq:pair-count},}
+\[\Sigma_{\mathrm I}\le M\frac{C_2}u e^{-u^2/2}\sum_{m=1}^\infty e^{-a^2m^2},\qquad
+ \frac{\Sigma_{\mathrm I}}{S_1}\le\frac{2C_2}{c_1}\sum_{m=1}^\infty e^{-a^2m}
+ =\frac{2C_2/c_1}{e^{a^2}-1}\le\frac14.\]
+\Text{最后一步由 $a\ge a_0$ 保证。}{The last step follows from $a\ge a_0$.}
+
+\medskip\noindent\textbf{\Text{区域 II：}{Region II:}} $\tfrac18<\tau_m\le 32$.
+\Text{离对角间隙给出 $\kappa_K\le1-c_0$，故 $1/(1+\kappa_K)\ge1/(2-c_0)=1/2+\delta$。本区滞后指标至多 $32u/a+1$ 个，每个至多 $M$ 个点对，从而}{The off-diagonal gap gives $\kappa_K\le1-c_0$, so $1/(1+\kappa_K)\ge1/(2-c_0)=1/2+\delta$. There are at most $32u/a+1$ lag indices, each with at most $M$ pairs. Thus}
+\[\Sigma_{\mathrm{II}}\le M(32u/a+1)\frac{C_2}u e^{-u^2/2}e^{-\delta u^2},\qquad
+ \frac{\Sigma_{\mathrm{II}}}{S_1}\le\frac{2C_2}{c_1}(32u/a+1)e^{-\delta u^2}\le\frac1{12}.\]
+
+\medskip\noindent\textbf{\Text{区域 III：}{Region III:}} $32<\tau_m\le u^3$.
+\Text{由 $32\ge1$、$K\ge 32$ 及引理\ref{lem:global}，$|\kappa_K|\le C_0(32^{-1}+K^{-1})\le1/2$，故 $1/(1+\kappa_K)\ge2/3=1/2+\gamma$。条件 $\tau_m\le u^3$ 等价于 $m\le u^4/a$，于是}{Since $32\ge1$, $K\ge 32$, and Lemma~\ref{lem:global} holds, $|\kappa_K|\le C_0(32^{-1}+K^{-1})\le1/2$, hence $1/(1+\kappa_K)\ge2/3=1/2+\gamma$. The condition $\tau_m\le u^3$ is equivalent to $m\le u^4/a$, giving}
+\[\Sigma_{\mathrm{III}}\le M(u^4/a+1)\frac{C_2}u e^{-u^2/2}e^{-\gamma u^2},\qquad
+ \frac{\Sigma_{\mathrm{III}}}{S_1}\le\frac{2C_2}{c_1}(u^4/a+1)e^{-\gamma u^2}\le\frac1{12}.\]
+
+\medskip\noindent\textbf{\Text{区域 IV：}{Region IV:}} $\tau_m>u^3$.
+\Text{这里 $u^3\ge 32\ge1$，引理\ref{lem:global}给出 $|\kappa_K|\le\vartheta_{\mathrm{IV}}$。点对总数至多 $\sum_{m=1}^{M-1}(M-m)=M(M-1)/2\le M^2/2$，所以}{Here $u^3\ge 32\ge1$, and Lemma~\ref{lem:global} gives $|\kappa_K|\le\vartheta_{\mathrm{IV}}$. The total number of pairs is at most $\sum_{m=1}^{M-1}(M-m)=M(M-1)/2\le M^2/2$. Thus}
+\[\Sigma_{\mathrm{IV}}\le\frac{M^2}2\frac{C_2}u
+ e^{-u^2/(1+\vartheta_{\mathrm{IV}})},\qquad
+ \frac{\Sigma_{\mathrm{IV}}}{S_1}\le\frac{C_2}{c_1}M
+ \exp\left[-\left(\frac1{1+\vartheta_{\mathrm{IV}}}-\frac12\right)u^2\right]\le\frac1{12}.\]
+\Text{合并四区得到 $(1/4+1/12+1/12+1/12)S_1=S_1/2$。}{Adding the four regions gives $(1/4+1/12+1/12+1/12)S_1=S_1/2$.}
+\end{proof}
+\Text{由二阶 Bonferroni 不等式，}{The second-order Bonferroni inequality now gives}
+\[\P\left(\bigcup_{t\in\Gamma}F_t\right)
+ \ge\sum_t\P(F_t)-\sum_{t<s}\P(F_t\cap F_s)
+ \ge\frac12S_1\ge\frac{c_{\mathrm{sum}}}{2u^2}.\]
+\Text{具体地，令 $N_F=\sum_t\ind_{F_t}$，对每个非负整数 $N_F$ 有 $\ind_{\{N_F\ge1\}}\ge N_F-N_F(N_F-1)/2$，积分即得上式。当 $\Erd(n)\le1$、$\log n\ge1$ 时，$u^2\le\log n+1\le2\log n$，故}{Indeed, for $N_F=\sum_t\ind_{F_t}$, the integer inequality $\ind_{\{N_F\ge1\}}\ge N_F-N_F(N_F-1)/2$ gives the result upon integration. If $\Erd(n)\le1$ and $\log n\ge1$, then $u^2\le\log n+1\le2\log n$, hence}
+\begin{equation}\label{eq:halo}
+ \P\left(\bigcup_{t\in\Gamma}F_t\right)\ge\frac{c_{\mathrm{halo}}}{\log n},\qquad
+ c_{\mathrm{halo}}=\frac{c_{\mathrm{sum}}}4
+ =\frac{c_1}{72000\pi a e^{1/2}}>0.
+\end{equation}
+\subsection{\Text{各估计的渐近适用性}{Asymptotic validity of the estimates}}
+\begin{proposition}\label{prop:conditions}
+\Text{固定 $a\ge a_0$。当 $n$ 充分大时，前述方差、协方差、阈值及单点和双点估计的条件同时成立，并且}{Fix $a\ge a_0$. For all sufficiently large $n$, the hypotheses of the preceding variance, covariance, threshold, one-point, and two-point estimates hold simultaneously, and}
+\[\frac{Bu_+}{\sqrt n}\le\frac12,\qquad
+ \frac{3B^3u_+^3}{\sqrt n}\le1,\qquad u>1/25.\]
+\end{proposition}
+\begin{proof}
+\Text{全部常数先于 $n$ 固定。由引理\ref{lem:rounding}，$A_n,K,u\to\infty$、$\Erd(n)\to0$，并且}{All constants have been fixed before $n$. By Lemma~\ref{lem:rounding}, $A_n,K,u\to\infty$, $\Erd(n)\to0$, and}
+\begin{equation}\label{eq:limits}
+ \frac{u^2}K\longrightarrow0,\qquad\frac uK\longrightarrow0,\qquad
+ \frac u{n^{1/6}}\longrightarrow0,\qquad\frac{u^3}{\sqrt n}\longrightarrow0.
+\end{equation}
+\Text{例如最后两式由 $u=O(\sqrt{\log n})$ 得到。这验证了舍入、方差、协方差与网格的条件；其中 $K\ge2u^2/a^2$ 用 $K/u^2\to\infty$，而 $K/(100a)\ge2$ 用固定 $a$ 下的 $K\to\infty$。}{For example, the last two follow from $u=O(\sqrt{\log n})$. This verifies the rounding, variance, covariance, and grid conditions; $K\ge2u^2/a^2$ uses $K/u^2\to\infty$, and $K/(100a)\ge2$ uses $K\to\infty$ for fixed $a$.}
+
+\noindent\textbf{\Text{阈值误差。}{Threshold errors.}}
+\Text{当 $n$ 足够大使 $\alpha_n,\beta_n\le1/2$ 时，由 $1-\sqrt{1-\beta}\le\beta$、$\sqrt{1+\beta}-1\le\beta/2$，}{For $n$ large enough that $\alpha_n,\beta_n\le1/2$, use $1-\sqrt{1-\beta}\le\beta$ and $\sqrt{1+\beta}-1\le\beta/2$ to get}
+\[1-r_- =\frac{\alpha_n+1-\sqrt{1-\beta_n}}{1+\alpha_n}\le\alpha_n+\beta_n,\qquad
+ r_+-1=\frac{\sqrt{1+\beta_n}-1+\alpha_n}{1-\alpha_n}\le2\alpha_n+\beta_n.\]
+\Text{于是}{Thus}
+\[\Er\le2\alpha_n+\beta_n=\frac2{75u}+\frac2K\longrightarrow0,
+ \qquad\limsup_{n\to\infty}u\Er\le\frac2{75}.\]
+\Text{若 $\Er\le1/2$，则 $d_n\le\Er^2$，从而}{If $\Er\le1/2$, then $d_n\le\Er^2$, hence}
+\[\Ez(n)\le2u^2\Er^2+u^2\Er^4
+ =2(u\Er)^2+(u\Er)^2\Er^2,\qquad
+ \limsup_{n\to\infty}\Ez(n)\le\frac8{5625}<1.\]
+\Text{因此阈值稳定性条件最终成立，且可反复使用 $u_+\le2u$。}{Thus the threshold stability conditions eventually hold, and we may repeatedly use $u_+\le2u$.}
+
+\medskip\noindent\textbf{\Text{中偏差条件。}{Moderate-deviation conditions.}}
+\Text{$B,B'$ 为固定有限常数，所以 $n\ge N(B),N(B')$ 最终成立。由式\eqref{eq:limits}，}{Since $B,B'$ are fixed finite constants, eventually $n\ge N(B),N(B')$. Equation~\eqref{eq:limits} gives}
+\[\frac{2u}{n^{1/6}},\quad\frac{u\sqrt{2/\varepsilon_0}}{n^{1/6}},\quad
+ \frac{D_B(2u)^3}{\sqrt n},\quad\frac{D_{B'}u^3(2/\varepsilon_0)^{3/2}}{\sqrt n}
+ \longrightarrow0.\]
+\Text{故单点与双点估计中的全部中偏差条件及 $u\ge1$ 最终成立。}{All moderate-deviation conditions for the one-point and two-point bounds, and $u\ge1$, therefore eventually hold.}
+
+\medskip\noindent\textbf{\Text{二次截断损失。}{Quadratic truncation loss.}}
+\Text{由式\eqref{eq:bad-event}、$u_+\le2u$ 及 $u\ge1$，置 $D_{\mathrm{bad}}=32b_2^2+8b_2/3$，则}{By~\eqref{eq:bad-event}, $u_+\le2u$, and $u\ge1$, put $D_{\mathrm{bad}}=32b_2^2+8b_2/3$ to obtain}
+\[P_G(n)\le\exp\left(-\frac n{D_{\mathrm{bad}}u^4}\right),\qquad
+ \log\left(\frac{2uP_G(n)}{c_1e^{-u^2/2}}\right)
+ \le\log\frac{2u}{c_1}+\frac{u^2}2-\frac n{D_{\mathrm{bad}}u^4}\longrightarrow-\infty.\]
+\Text{前两项为 $O(\log n)$，而 $n/u^4\asymp n/(\log n)^2$ 除以 $\log n$ 趋于无穷，因此坏事件吸收条件最终成立。}{The first two terms are $O(\log n)$, whereas $n/u^4\asymp n/(\log n)^2$ divided by $\log n$ tends to infinity. Thus bad-event absorption eventually holds.}
+
+\medskip\noindent\textbf{\Text{区域 II 和 III。}{Regions II and III.}}
+\Text{因 $\delta,\gamma>0$ 固定且 $u\to\infty$，置 $x=u^2$，则}{Since $\delta,\gamma>0$ are fixed and $u\to\infty$, put $x=u^2$. Then}
+\[(32u/a+1)e^{-\delta u^2}=(32\sqrt x/a+1)e^{-\delta x}\to0,\qquad
+ (u^4/a+1)e^{-\gamma u^2}=(x^2/a+1)e^{-\gamma x}\to0.\]
+\Text{两式对数分别为 $-\delta x+O(\log x)$ 和 $-\gamma x+O(\log x)$，故命题\ref{prop:sum}中区域 II 和 III 的吸收条件最终成立。}{Their logarithms are $-\delta x+O(\log x)$ and $-\gamma x+O(\log x)$, so the Region II and III absorption conditions in Proposition~\ref{prop:sum} eventually hold.}
+
+\medskip\noindent\textbf{\Text{区域 IV。}{Region IV.}}
+\Text{远区误差满足 $\vartheta_{\mathrm{IV}}\to0$，并且}{The far-region error satisfies $\vartheta_{\mathrm{IV}}\to0$ and}
+\[\vartheta_{\mathrm{IV}}u^2=C_0(1/u+u^2/K)\longrightarrow0.\]
+\Text{由基数上界、式\eqref{eq:u}及\eqref{eq:height-comparison}，}{The upper cardinality bound and equations~\eqref{eq:u} and~\eqref{eq:height-comparison} give}
+\[Me^{-u^2/2}\le\frac{3K}{100a} e^{-u^2/2}
+ =\frac{1}{3000\pi a}\frac{\sqrt n e^{-u^2/2}}u
+ \le\frac{e^{1/2}}{3000\pi au}\longrightarrow0.\]
+\Text{远区吸收式的左端精确分解为}{The far-region absorption expression factors exactly as}
+\[\frac{C_2}{c_1}M\exp\left[-\left(\frac1{1+\vartheta_{\mathrm{IV}}}-\frac12\right)u^2\right]
+ =\frac{C_2}{c_1}(Me^{-u^2/2})
+ \exp\left(\frac{\vartheta_{\mathrm{IV}}u^2}{1+\vartheta_{\mathrm{IV}}}\right)
+ =O(u^{-1})e^{o(1)}\to0.\]
+\Text{故命题\ref{prop:sum}最终成立，双点求和的吸收条件得证。}{Thus Proposition~\ref{prop:sum} eventually holds, completing the absorption conditions for the two-point sum.}
+
+\medskip\noindent\textbf{\Text{对数展开与边界。}{The logarithmic expansion and the boundary.}}
+\Text{由 $u_+\le2u$ 及式\eqref{eq:limits}，$Bu_+/\sqrt n\le2Bu/\sqrt n\to0$，$3B^3u_+^3/\sqrt n\le24B^3u^3/\sqrt n\to0$；又 $u\to\infty$，故 $u>1/25$ 最终成立，验证对数展开与有限截断的条件。以上渐近关系保证全部条件对充分大的整数 $n$ 同时成立。}{Since $u_+\le2u$, equation~\eqref{eq:limits} gives $Bu_+/\sqrt n\le2Bu/\sqrt n\to0$ and $3B^3u_+^3/\sqrt n\le24B^3u^3/\sqrt n\to0$. Also $u\to\infty$, so eventually $u>1/25$, verifying the logarithmic-expansion and finite-truncation conditions. These asymptotic relations ensure that all conditions hold simultaneously for every sufficiently large integer $n$.}
+\end{proof}
+\subsection{\Text{张量平均与有限截断}{Tensor averages and finite truncation}}
+\Text{先给出所用对数余项估计。}{First establish the logarithmic remainder estimate.}
+\begin{lemma}\label{lem:log}
+\Text{对每个 $|s|\le1/2$，}{For every $|s|\le1/2$,}
+\[\left|\log(1+s)-s+\frac{s^2}2\right|\le\frac83|s|^3\le3|s|^3,
+ \qquad\log(1+s)\ge s-\frac{s^2}2-3|s|^3.\]
+\end{lemma}
+\begin{proof}
+\Text{令 $f(s)=\log(1+s)$。在 $[-1/2,1/2]$ 上有 $f(0)=0$、$f'(0)=1$、$f''(0)=-1$，且 $f'''(s)=2/(1+s)^3$ 的绝对值至多为 16。Taylor 定理给出余项 $f'''(\xi)s^3/6$，其绝对值至多为 $16|s|^3/6$。}{For $f(s)=\log(1+s)$ on $[-1/2,1/2]$, $f(0)=0$, $f'(0)=1$, $f''(0)=-1$, and $f'''(s)=2/(1+s)^3$ has absolute value at most 16. Taylor's theorem gives remainder $f'''(\xi)s^3/6$, bounded by $16|s|^3/6$.}
+\end{proof}
+\begin{proof}[\Text{定理\ref{thm:main}的证明}{Proof of Theorem~\ref{thm:main}}]
+\Text{取 $a=a_0$。由命题\ref{prop:conditions}，当 $n$ 充分大时，前述各估计及对数展开的条件均成立。定义}{Take $a=a_0$. Proposition~\ref{prop:conditions} ensures that the preceding estimates and logarithmic-expansion conditions hold for all sufficiently large $n$. Define}
+\[H_n(x_1,\ldots,x_n)=\prod_{i=1}^n\rho_K(x_i)\quad\text{on }\T^n,\qquad
+ \widetilde H_n(x)=\prod_{i=1}^n\rho_K(x_i)\quad\text{on }\R^n.\]
+\Text{后者为前者的 $\Z^n$ 周期提升。由引理\ref{lem:density}及 Fubini 定理，$H_n\ge0$ 且 $\int_{\T^n}H_n\,dm_n=\prod_i\int_\T\rho_K\,dm_1=1$。对每个 $t\in\Gamma$，所有坐标使用相同边长 $r(t)$，再次由 Fubini 定理，}{The latter is the $\Z^n$-periodic lift of the former. By Lemma~\ref{lem:density} and Fubini's theorem, $H_n\ge0$ and $\int_{\T^n}H_n\,dm_n=\prod_i\int_\T\rho_K\,dm_1=1$. For every $t\in\Gamma$, all coordinates use the same side length $r(t)$. Fubini's theorem gives}
+\begin{equation}\label{eq:tensor-average}
+ \frac1{r(t)^n}\int_{x+[-r(t)/2,r(t)/2]^n}\widetilde H_n(y)\,dy
+ =\prod_{i=1}^na_{r(t)}(x_i)=\prod_{i=1}^n(1+d_t(x_i)).
+\end{equation}
+\Text{将随机点 $(U_1,\ldots,U_n)$ 视为 $\T^n$ 上的均匀点，$F_t$ 也视为环面子集。若 $x\in F_t$，事件定义给出}{Identify $(U_1,\ldots,U_n)$ with a uniform point of $\T^n$ and regard $F_t$ as a torus subset. If $x\in F_t$, its definition gives}
+\[\sum_{i=1}^nd_t(x_i)=u_tX_t(x)\ge u_tz_t
+ =\frac{u^2+u_t^2}2=h+\frac{u_t^2}2+2,\qquad
+ \sum_{i=1}^nd_t(x_i)^2\le u_t^2+1.\]
+\Text{由 $|Y_t|\le B$ 及命题\ref{prop:conditions}，}{Since $|Y_t|\le B$, Proposition~\ref{prop:conditions} gives}
+\[\max_i|d_t(x_i)|\le\frac{Bu_t}{\sqrt n}\le\frac{Bu_+}{\sqrt n}\le\frac12,
+ \qquad3\sum_{i=1}^n|d_t(x_i)|^3\le\frac{3B^3u_t^3}{\sqrt n}
+ \le\frac{3B^3u_+^3}{\sqrt n}\le1.\]
+\Text{又 $1+d_t=a_{r(t)}\ge1/2$，所有对数有定义。逐项应用引理\ref{lem:log}，得到}{Also $1+d_t=a_{r(t)}\ge1/2$, so the logarithms are defined. Apply Lemma~\ref{lem:log} termwise:}
+\begin{equation}\label{eq:log-tensor}
+\begin{aligned}
+ \sum_{i=1}^n\log(1+d_t(x_i))
+ &\ge\sum_i d_t(x_i)-\frac12\sum_i d_t(x_i)^2-3\sum_i|d_t(x_i)|^3\\
+ &\ge h+\frac{u_t^2}2+2-\frac{u_t^2+1}2-1
+ =h+\frac12>h.
+\end{aligned}
+\end{equation}
+\Text{取指数并代入式\eqref{eq:tensor-average}，可知在 $F_t$ 上相应立方体平均严格大于 $e^h$。置}{Exponentiating and substituting into~\eqref{eq:tensor-average} shows that the corresponding cube average strictly exceeds $e^h$ on $F_t$. Put}
+\[\lambda_n=e^h=e^{u^2/2-2},\qquad
+ E=\{x\in\T^n:\max_{t\in\Gamma}A_{r(t)}H_n(x)>\lambda_n\}.\]
+\Text{平均为连续周期函数，$\Gamma$ 有限，故 $E$ 可测。由式\eqref{eq:log-tensor}及\eqref{eq:halo}，}{The averages are continuous periodic functions and $\Gamma$ is finite, so $E$ is measurable. Equations~\eqref{eq:log-tensor} and~\eqref{eq:halo} yield}
+\[\bigcup_{t\in\Gamma}F_t\subset E,\qquad m_n(E)\ge\frac{c_{\mathrm{halo}}}{\log n}.\]
+\Text{所有边长均满足 $|r(t)-3/2|\le1/(50u)<1/2$，因而 $1<r(t)<2$。取整数 $R=n^2$，定义}{All side lengths satisfy $|r(t)-3/2|\le1/(50u)<1/2$, hence $1<r(t)<2$. Take the integer $R=n^2$ and define}
+\[f_n(x)=\ind_{[-R,R]^n}(x)\widetilde H_n(x),\qquad
+ \|f_n\|_1=(2R)^n=(2n^2)^n.\]
+\Text{范数公式由单位胞上的积分为 1 得到。若 $x\in[-R+1,R-1]^n$，每个边长 $r(t)<2$ 的中心立方体都包含于 $[-R,R]^n$；故其上 $f_n$ 与 $\widetilde H_n$ 的积分相同。令 $E^{\mathrm{per}}=\pi^{-1}(E)$，便有}{The norm formula follows because the integral on every unit cell is one. If $x\in[-R+1,R-1]^n$, every centered cube of side length $r(t)<2$ lies in $[-R,R]^n$, so its integrals of $f_n$ and $\widetilde H_n$ agree. Let $E^{\mathrm{per}}=\pi^{-1}(E)$. Then}
+\[E^{\mathrm{per}}\cap[-R+1,R-1]^n\subset\{M_nf_n>\lambda_n\},\qquad
+ |\{M_nf_n>\lambda_n\}|\ge\frac{c_{\mathrm{halo}}}{\log n}(2n^2-2)^n.\]
+\Text{这里的内部方体除边界外由 $(2R-2)^n$ 个单位方体组成，与引理\ref{lem:transfer}中的计算相同。由 $u^2\ge\log n-\Erd(n)\ge\log n-1$，有 $\lambda_n\ge e^{-5/2}\sqrt n$。因此}{Here the inner box, apart from its boundary, consists of $(2R-2)^n$ unit cells, as in Lemma~\ref{lem:transfer}. Since $u^2\ge\log n-\Erd(n)\ge\log n-1$, we have $\lambda_n\ge e^{-5/2}\sqrt n$. Consequently,}
+\begin{align*}
+ \Cn&\ge\sup_{\lambda>0}\frac{\lambda|\{M_nf_n>\lambda\}|}{\|f_n\|_1}
+ \ge\frac{\lambda_n|\{M_nf_n>\lambda_n\}|}{\|f_n\|_1}\\
+ &\ge c_{\mathrm{halo}}e^{-5/2}(1-n^{-2})^n\frac{\sqrt n}{\log n}
+ \ge\frac{c_{\mathrm{halo}}e^{-5/2}}2\frac{\sqrt n}{\log n}.
+\end{align*}
+\Text{最后一步用 $(1-n^{-2})^n\ge1-1/n\ge1/2$，对 $n\ge2$ 成立。故主定理中可取}{The last step uses $(1-n^{-2})^n\ge1-1/n\ge1/2$ for $n\ge2$. Thus the constant in the theorem may be chosen as}
+\[c=\frac{c_{\mathrm{halo}}e^{-5/2}}2
+ =\frac{c_1}{144000\pi a e^3}
+ =\frac{\cmd}{288000\pi a e^5}>0.\qedhere\]
+\end{proof}

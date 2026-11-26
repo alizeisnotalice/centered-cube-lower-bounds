@@ -1,0 +1,57 @@
+\begin{abstract}
+\Text{设 $\Cn$ 为 $\R^n$ 上中心、轴平行立方体 Hardy--Littlewood 极大算子关于 Lebesgue 测度的最优弱型 $(1,1)$ 常数。我们构造显式正周期密度的张量积及其有限截断，证明对充分大的 $n$，有 $\Cn\gtrsim\sqrt n/\log n$。构造利用 Rudin--Shapiro 序列控制密度的振荡幅度，以线性频率权重得到可计算的尺度协方差。结合一致中偏差估计与不同尺度间的相关性估计，我们得到所需的超水平集下界。}{Let $\Cn$ denote the optimal weak-type $(1,1)$ constant for the centered, axis-parallel cubic Hardy--Littlewood maximal operator on $\R^n$ with respect to Lebesgue measure. We construct tensor products of explicit positive periodic densities and their finite truncations to prove $\Cn\gtrsim\sqrt n/\log n$ for all sufficiently large $n$. The Rudin--Shapiro sequence controls the oscillation of the density, and a linear frequency weight yields an explicitly computable scale covariance. Uniform moderate deviations and estimates of dependence between scales then give the required superlevel-set lower bound.}
+\end{abstract}
+\noindent\Text{\textbf{关键词：}中心极大算子；弱型 $(1,1)$；高维立方体；Rudin--Shapiro 序列；中偏差。}{\textbf{Keywords:} centered maximal operator; weak type $(1,1)$; high-dimensional cubes; Rudin--Shapiro sequence; moderate deviations.}
+
+\smallskip\noindent\textbf{2020 Mathematics Subject Classification:} 42B25; 60F10.
+\section{\Text{引言}{Introduction}}
+\Text{Hardy 与 Littlewood 在 1930 年研究解析函数沿半径的最大值与边界积分之间的关系时，引入了控制不同尺度局部平均的极大函数方法\cite{HardyLittlewood1930}。在圆周上，区间平均的上确界可以控制 Poisson 积分沿半径的最大值，也可以控制 Fourier 级数的 Fej\'er 平均的最大值。这使对整个尺度族的控制归结为一个极大函数估计，并将局部平均与调和函数的边界行为及 Fourier 求和联系起来。}{In their 1930 study of radial maxima of analytic functions and boundary integrals, Hardy and Littlewood introduced a maximal-function method for controlling local averages over different scales\cite{HardyLittlewood1930}. On the circle, the supremum of interval averages controls both the radial maximal Poisson integral and the maximal Fej\'er means of Fourier series. Estimates for whole families of scales can thus be reduced to a single maximal-function estimate, linking local averages to boundary behavior of harmonic functions and Fourier summation.}
+
+\Text{极大函数也出现在实分析的基本收敛与正则性问题中。在 Lebesgue 微分理论中，弱型 $(1,1)$ 估计控制局部平均异常大的点集，结合连续函数逼近，将平均收敛推广到局部可积函数。在偏微分方程中，Caffarelli--Peral 方法通过局部比较控制梯度平方的极大函数超水平集的衰减，建立散度型椭圆方程解的 $W^{1,p}$ 估计\cite{CaffarelliPeral1998}。这些用途引出一个定量问题：控制异常点集所需的最小常数怎样依赖于维数？本文研究中心、轴平行立方体对应的端点常数。}{Maximal functions also enter basic convergence and regularity questions in real analysis. In Lebesgue differentiation theory, the weak-type $(1,1)$ estimate controls the set where local averages are unusually large; approximation by continuous functions then extends convergence of averages to locally integrable functions. In partial differential equations, the Caffarelli--Peral method uses local comparison to control decay of superlevel sets of the maximal function of the squared gradient and obtain $W^{1,p}$ estimates for divergence-form elliptic equations\cite{CaffarelliPeral1998}. These uses lead to a quantitative question: how does the least constant controlling exceptional sets depend on dimension? Here we study the endpoint constant for centered, axis-parallel cubes.}
+
+\Text{对 $f\in L^1(\R^n)$，关于 Lebesgue 测度定义}{For $f\in L^1(\R^n)$, define, with respect to Lebesgue measure,}
+\begin{equation*}
+ M_nf(x)=\sup_{r>0}\frac1{r^n}\int_{x+[-r/2,r/2]^n}|f(y)|\,dy,
+ \qquad x\in\R^n,
+\end{equation*}
+\Text{并记其最优弱型 $(1,1)$ 常数为}{and write its optimal weak-type $(1,1)$ constant as}
+\begin{equation}\label{eq:optimal}
+ \Cn=\sup_{\substack{0\ne f\in L^1(\R^n)\\\lambda>0}}
+ \frac{\lambda|\{x\in\R^n:M_nf(x)>\lambda\}|}{\|f\|_1}.
+\end{equation}
+\Text{这里 $|\cdot|$ 表示 Lebesgue 测度，所有坐标共用一个尺度 $l$。}{Here $|\cdot|$ is Lebesgue measure, and every coordinate uses the same scale $l$.}
+\subsection{\Text{背景与主要结果}{Background and main result}}
+\Text{一维问题由 Melas\cite{Melas2003} 精确解决：$\mathcal C_1=(11+\sqrt{61})/12$。高维情形中，下界的发展依次表明常数必然发散，并给出越来越强的增长速度。}{Melas\cite{Melas2003} resolved the one-dimensional problem exactly: $\mathcal C_1=(11+\sqrt{61})/12$. In higher dimensions, successive lower bounds first established divergence and then quantified increasingly rapid growth.}
+\begin{historical}
+\Text{Aldaz\cite{Aldaz2011} 证明 $\Cn\to\infty$；Aubrun\cite{Aubrun2009} 证明，对任意 $\varepsilon>0$，有 $\Cn\gtrsim_\varepsilon(\log n)^{1-\varepsilon}$；Iakovlev--Str\"omberg\cite{IakovlevStromberg2013} 进一步证明}{Aldaz\cite{Aldaz2011} proved that $\Cn\to\infty$; Aubrun\cite{Aubrun2009} proved $\Cn\gtrsim_\varepsilon(\log n)^{1-\varepsilon}$ for every $\varepsilon>0$; Iakovlev--Str\"omberg\cite{IakovlevStromberg2013} subsequently proved}
+\[\Cn\gtrsim n^{1/4}.\]
+\end{historical}
+\begin{historical}
+\Text{Stein--Str\"omberg\cite{SteinStromberg1983} 证明}{Stein--Str\"omberg\cite{SteinStromberg1983} proved}
+\[\Cn\lesssim n\log(n+1).\]
+\end{historical}
+\Text{Aldaz\cite[Theorem 5.2]{Aldaz2017} 进一步证明：对任意 $\varepsilon>0$，当 $n$ 充分大时，$\Cn\le(2+\varepsilon)n\log n$。本文利用显式正周期密度的张量积提高下界。}{Aldaz\cite[Theorem 5.2]{Aldaz2017} further proved that, for every $\varepsilon>0$, $\Cn\le(2+\varepsilon)n\log n$ for all sufficiently large $n$. We improve the lower bound using tensor products of explicit positive periodic densities.}
+
+\Text{记第\ref{sec:rs}节定义的 Rudin--Shapiro 序列为 $\{\varepsilon_l\}_{l\ge0}$，其中 $\varepsilon_l\in\{-1,+1\}$。}{Let $\{\varepsilon_l\}_{l\ge0}$ denote the Rudin--Shapiro sequence defined in Section~\ref{sec:rs}, with $\varepsilon_l\in\{-1,+1\}$.}
+
+\Text{对充分大的 $n$，定义}{For sufficiently large $n$, define}
+\begin{equation}\label{eq:construction}
+\begin{gathered}
+ A_n=\frac{\sqrt n}{90\pi\sqrt{\log n}},\qquad
+ K_n=4\left\lfloor\frac{A_n}4+\frac12\right\rfloor,\\
+ \rho_K(x)=1+\frac1{30\sqrt K}\sum_{l=0}^{K-1}\varepsilon_l
+ \left(1+\frac lK\right)\cos\bigl(2\pi(K+l)x\bigr),\\
+ f_n(x)=\ind_{[-n^2,n^2]^n}(x)\prod_{i=1}^n\rho_{K_n}(x_i).
+\end{gathered}
+\end{equation}
+\begin{theorem}\label{thm:main}
+\Text{存在绝对常数 $c>0$ 和 $n_0\in\N$，使对所有 $n\ge n_0$，}{There are absolute constants $c>0$ and $n_0\in\N$ such that, for every $n\ge n_0$,}
+\[\Cn\ge\sup_{\lambda>0}\frac{\lambda|\{M_nf_n>\lambda\}|}{\|f_n\|_1}
+ \ge c\frac{\sqrt n}{\log n}.\]
+\end{theorem}
+\Text{由于 $n^{1/4}/\log n\to\infty$，该估计强于 $n^{1/4}$ 下界。}{Since $n^{1/4}/\log n\to\infty$, this estimate is stronger than the $n^{1/4}$ lower bound.}
+\subsection{\Text{证明思路}{Outline of the proof}}
+\Text{构造一维密度时，我们取 Rudin--Shapiro 序列的前 $K$ 项作为傅里叶系数的符号。为消去区间平均产生的频率分母 $K+l$，我们给第 $l$ 项乘以 $1+l/K$。这样，不同尺度的平均之间的协方差可以用 Dirichlet 型核表示。Abel 求和把加权和写成部分和的线性组合，因此仍可用 Rudin 的估计来保证密度为正。}{In the one-dimensional density, the first $K$ terms of the Rudin--Shapiro sequence determine the signs of the Fourier coefficients. We multiply the $l$th term by $1+l/K$ to cancel the frequency denominator $K+l$ introduced by interval averaging. This gives a Dirichlet-type kernel for the covariance between averages at different scales. Abel summation expresses the weighted sum as a linear combination of partial sums, so Rudin’s estimate still guarantees positivity of the density.}
+
+
+\Text{第 2 节分四部分给出周期传递、密度构造、尺度协方差和一致中偏差工具。第 3 节完成定理\ref{thm:main}的证明。}{Section 2 develops periodic transference, the density construction, scale covariance, and uniform moderate deviations in four parts. Section 3 proves Theorem~\ref{thm:main}.}

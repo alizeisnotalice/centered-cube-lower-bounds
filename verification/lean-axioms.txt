@@ -1,0 +1,4 @@
+'CenteredCubeLowerBounds.frequency_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeLowerBounds.pi_bound_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeLowerBounds.square_root_constant_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeLowerBounds.square_root_constant_squared' does not depend on any axioms
