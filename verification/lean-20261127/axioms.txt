@@ -1,0 +1,61 @@
+=== LowerBounds.lean ===
+'CenteredCubeLowerBounds.frequency_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeLowerBounds.pi_bound_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeLowerBounds.square_root_constant_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeLowerBounds.square_root_constant_squared' does not depend on any axioms
+=== Cubes.lean ===
+'CenteredCube.volume_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.halo_of_truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.lower_bound_of_average_on_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncation_retention' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrtLog_of_truncated_halo' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== LogTensor.lean ===
+LogTensor.lean:18:30: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+LogTensor.lean:18:34: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+LogTensor.lean:18:34: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CenteredCube.log_one_add_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.exp_lt_product_of_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.bonferroni_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RudinShapiro.lean ===
+'CenteredCube.RudinShapiro.prefixes_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinShapiro.energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinShapiro.prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinShapiro.prefix_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Model.lean ===
+'CenteredCube.paperWeakConstant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.weakConstant_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.le_weakConstant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.exists_weakRatio_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.maximalTrunc_le_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.weakRatio_trunc_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.ofReal_le_weakConstant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Abel.lean ===
+Abel.lean:71:42: warning: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CenteredCube.RudinDensity.rsPrefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.weightedSum_abel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.weighted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rho_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLimit.lean ===
+'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.liminf_sqrt_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrt_div_35_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrt_div_35_of_liminf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrt_div_35_eventually_toReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLogWiring.lean ===
+'CenteredCube.sqrtLogLowerBound_of_haloData' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== All.lean ===
+--- sorryAx occurrences:
+0
