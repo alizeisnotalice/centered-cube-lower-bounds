@@ -20,3 +20,11 @@ Two manuscripts on the weak $(1,1)$ constant of the centered cubic Hardy–Littl
 [复现说明与结果](verification/README.md)给出编译命令、有限数值检查和 Lean 公理报告。Lean 验证有理数上的取整误差与显式常数比较。两份渐近下界的完整证明见各自论文。
 
 首份稿件源于 2026 年 11 月 12 日修订稿。第二份稿件取自[第 45 轮的接受版快照](https://github.com/alizeisnotalice/Math-Research/tree/5b381aaa8b3b2a14778f8d644e91284e1f286ce9/centered-cube-lower-log/rounds/045)。[v1.0.0 发布页](https://github.com/alizeisnotalice/centered-cube-lower-bounds/releases/tag/v1.0.0)提供可引用的固定版本。
+
+## Lean 阶段归档（2026 年 11 月 27 日）
+
+对应 $\sqrt n/\log n$ 下界。[源码、核验日志和复现说明](lean/sqrt-log-20261127/) · [原始 ZIP](lean/sqrt-log-20261127/maximal-proof-snapshot.zip)
+
+已核验的部分包括 Rudin–Shapiro 部分和界、对数余项与张量积阈值、Bonferroni 计数不等式、Lebesgue 方体截断，以及给定测试函数质量和超水平集估计后的下界推导。三份 Lean 文件通过检查，13 条公理诊断均无 `sorryAx`。
+
+**完整主定理尚未形式化。** 一致中偏差、尺度相关性和周期超水平集测度仍待接入。本快照位于主分支，原有 `v1.0.0` 保持原版本。

@@ -1,0 +1,6 @@
+'CenteredCube.volume_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.halo_of_truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.lower_bound_of_average_on_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncation_retention' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrtLog_of_truncated_halo' depends on axioms: [propext, Classical.choice, Quot.sound]

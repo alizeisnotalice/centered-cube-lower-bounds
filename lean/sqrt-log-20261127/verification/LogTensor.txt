@@ -1,0 +1,12 @@
+LogTensor.lean:18:30: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+LogTensor.lean:18:34: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+LogTensor.lean:18:34: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CenteredCube.log_one_add_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.exp_lt_product_of_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.bonferroni_count' depends on axioms: [propext, Classical.choice, Quot.sound]
