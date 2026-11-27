@@ -1,51 +1,39 @@
-# 中心立方体极大算子的高维弱型下界
+# High-Dimensional Lower Bounds for the Centered Cubic Maximal Operator
 
-设 $C_n$ 为 $\mathbb R^n$ 上关于 Lebesgue 测度的中心、轴平行立方体 Hardy–Littlewood 极大算子的最优弱型 $(1,1)$ 常数。
+[Square-root paper (English)](paper/sqrt/manuscript-en.pdf) · [Chinese](paper/sqrt/manuscript-zh.pdf) · [Rudin–Shapiro paper (English)](paper/sqrt-log/manuscript-en.pdf) · [Reproduction guide](verification/README.md) · [Citation](#citation)
 
-| 下界 | 主结论 | 构造 |
-|---|---|---|
-| $\sqrt n$ | $\liminf_{n\to\infty} C_n/\sqrt n\ge 87/(220\sqrt{58\pi})$。充分大维数下，$C_n\ge\sqrt n/35$。 | 有限域标签排列的周期窄峰与正谱补偿，结合局部 Brownian 越阈估计。 |
-| $\sqrt n/\log n$ | 存在绝对常数 $c>0$，使充分大维数下 $C_n\ge c\sqrt n/\log n$。 | Rudin–Shapiro 序列与正周期密度的张量积。 |
+Zhihao Zheng<sup>1</sup>, Haotian Tang<sup>2</sup>, and Yibo Peng<sup>2</sup>
 
-## A Square-Root Lower Bound for the Weak $(1,1)$ Constant of the Centered Cubic Maximal Operator
+<sup>1</sup> School of Physics and Astronomy, Beijing Normal University<br>
+<sup>2</sup> School of Mathematical Sciences, Beijing Normal University
 
-Zhihao Zheng, Haotian Tang, and Yibo Peng
+Let $C_n$ be the optimal weak-type $(1,1)$ constant of the centered Hardy–Littlewood maximal operator over axis-parallel cubes in $\mathbb R^n$ with Lebesgue measure. The two papers in this repository obtain lower bounds on $C_n$ using different constructions.
 
-**Abstract.** We study the centered Hardy–Littlewood maximal operator over axis-parallel cubes in $\mathbb R^n$ with Lebesgue measure. For its optimal weak-type $(1,1)$ constant $C_n$, Aldaz proved divergence, Aubrun obtained lower bounds of order $(\log n)^{1-\varepsilon}$ for every $0<\varepsilon<1$, and Iakovlev and Strömberg proved an $n^{1/4}$ lower bound. We improve these bounds by proving $\liminf_{n\to\infty} C_n/\sqrt n\ge 87/(220\sqrt{58\pi})$. The proof constructs bounded, compactly supported, nonnegative test functions using periodic narrow peaks indexed by finite-field labels and a positive spectral correction that flattens the normalized variance over a range of scales. Exponential tilting and a Brownian crossing estimate control the local exceedance probabilities. [Aldaz (2011)](https://doi.org/10.4007/annals.2011.173.2.10) · [Aubrun (2009)](https://arxiv.org/abs/0902.4305) · [Iakovlev–Strömberg (2013)](https://doi.org/10.4310/MRL.2013.v20.n5.a7)
+## Square-root lower bound
 
-**Theorem.** Let $C_n$ be the least constant such that $\lambda\lvert\{x:M_nf(x)>\lambda\}\rvert\le C_n\lVert f\rVert_1$ for all $f\in L^1(\mathbb R^n)$ and $\lambda>0$, where $M_n$ takes the supremum of the Lebesgue averages of $\lvert f\rvert$ over axis-parallel cubes centered at $x$. Then
+**A Square-Root Lower Bound for the Weak $(1,1)$ Constant of the Centered Cubic Maximal Operator**
+
+**Abstract.** We study the centered Hardy–Littlewood maximal operator over axis-parallel cubes in $\mathbb R^n$ with Lebesgue measure. Aldaz proved that its optimal weak-type constant $C_n$ diverges with dimension. Aubrun gave lower bounds of order $(\log n)^{1-\varepsilon}$ for every $0<\varepsilon<1$, and Iakovlev and Strömberg proved a lower bound of order $n^{1/4}$. We obtain a square-root lower bound by constructing bounded, nonnegative, compactly supported test functions from periodically arranged finite-field peaks. A spectral correction flattens the normalized variance over a range of scales, and a Brownian crossing estimate controls local exceedances. [Aldaz](https://doi.org/10.4007/annals.2011.173.2.10) · [Aubrun](https://arxiv.org/abs/0902.4305) · [Iakovlev–Strömberg](https://doi.org/10.4310/MRL.2013.v20.n5.a7)
+
+**Theorem.** For the optimal weak-type $(1,1)$ constant $C_n$ of this operator,
+
 $$
-\liminf_{n\to\infty}\frac{C_n}{\sqrt n}\ge \frac{87}{220\sqrt{58\pi}}>\frac1{35}.
+\liminf_{n\to\infty}\frac{C_n}{\sqrt n}
+\ge \frac{87}{220\sqrt{58\pi}}>\frac1{35}.
 $$
-The limit inferior is taken over all positive integer dimensions. In particular, there exists an integer $n_0$ such that $C_n\ge\sqrt n/35$ for every $n\ge n_0$. The manuscript leaves $n_0$ unspecified.
 
-## 从这里读／如何引用
+The limit inferior ranges over all positive integer dimensions. In particular, $C_n\ge \sqrt n/35$ for every sufficiently large $n$.
 
-引用时可使用对应稿件的 BibTeX，PDF 和条目均指向固定版本。[v1.0.0 发布页](https://github.com/alizeisnotalice/centered-cube-lower-bounds/releases/tag/v1.0.0)
+[Full paper (English)](paper/sqrt/manuscript-en.pdf) · [Chinese](paper/sqrt/manuscript-zh.pdf) · [English LaTeX](paper/sqrt/source/manuscript-en.tex) · [Chinese LaTeX](paper/sqrt/source/paper.tex)
 
-| 稿件 | v1.0.0 PDF | v1.0.0 BibTeX |
-|---|---|---|
-| $\sqrt n$ | [中文全文](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt/manuscript-zh.pdf) | [平方根下界](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt/citation.bib) |
-| $\sqrt n/\log n$ | [中文全文](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt-log/manuscript-zh.pdf) · [English full text](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt-log/manuscript-en.pdf) | [Rudin–Shapiro 下界](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt-log/citation.bib) |
+## Rudin–Shapiro lower bound
 
-## 作者
+A tensor product of positive periodic densities built from Rudin–Shapiro sequences gives $C_n\ge c\sqrt n/\log n$ for every sufficiently large integer $n$, with an absolute constant $c>0$. [Full paper (Chinese)](paper/sqrt-log/manuscript-zh.pdf) · [English full text](paper/sqrt-log/manuscript-en.pdf) · [LaTeX source](paper/sqrt-log/source/)
 
-1. 郑之浩，北京师范大学物理与天文学院 2026 级本科生
-2. 唐浩天，北京师范大学数学科学学院 2024 级本科生
-3. 彭奕博，北京师范大学数学科学学院 2025 级本科生
+## Reproduction
 
-## 复现与版本沿革
+The reproduction guide covers manuscript builds and finite numerical checks. The Lean archive verifies selected lemmas for the Rudin–Shapiro construction, including partial-sum bounds, logarithmic remainders, and truncation. The analytical proofs appear in the two papers. [Reproduction guide](verification/README.md) · [Lean source and verification scope](lean/sqrt-log-20261127/)
 
-[复现说明与结果](verification/README.md)给出编译命令、有限数值检查和 Lean 公理报告。Lean 验证有理数上的取整误差与显式常数比较。两份渐近下界的完整证明见各自论文。
+## Citation
 
-平方根下界稿件源于 2026 年 11 月 12 日修订稿。两份稿件均提供 LaTeX 源码。[平方根下界源码](paper/sqrt/source/) · [Rudin–Shapiro 下界源码](paper/sqrt-log/source/)
-
-Rudin–Shapiro 下界稿件取自[第 45 轮的接受版快照](https://github.com/alizeisnotalice/Math-Research/tree/5b381aaa8b3b2a14778f8d644e91284e1f286ce9/centered-cube-lower-log/rounds/045)。
-
-## Lean 阶段归档（2026 年 11 月 27 日）
-
-对应 $\sqrt n/\log n$ 下界。[源码、核验日志和复现说明](lean/sqrt-log-20261127/) · [原始 ZIP](lean/sqrt-log-20261127/maximal-proof-snapshot.zip)
-
-已核验的部分包括 Rudin–Shapiro 部分和界、对数余项与张量积阈值、Bonferroni 计数不等式、Lebesgue 方体截断，以及给定测试函数质量和超水平集估计后的下界推导。三份 Lean 文件通过检查，13 条公理诊断均无 `sorryAx`。
-
-**完整主定理尚未形式化。** 一致中偏差、尺度相关性和周期超水平集测度仍待接入。本快照位于主分支，原有 `v1.0.0` 保持原版本。
+[v1.0.0](https://github.com/alizeisnotalice/centered-cube-lower-bounds/releases/tag/v1.0.0) archives both manuscripts. Use the BibTeX entry for the paper you cite. [Square-root paper](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt/citation.bib) · [Rudin–Shapiro paper](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt-log/citation.bib)

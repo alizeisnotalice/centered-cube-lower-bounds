@@ -1,0 +1,2234 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,array,longtable,xcolor,microtype,enumitem}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\setlist{nosep}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\newtheorem{historical}{Theorem}
+\renewcommand{\thehistorical}{\Alph{historical}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{definition}[lemma]{Definition}
+\title{A Square-Root Lower Bound for the Weak $(1,1)$ Constant of the Centered Cubic Maximal Operator}
+\input{authors-en}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2em}
+\begin{abstract}
+Let $C_n$ be the optimal weak $(1,1)$ constant of the centered Hardy--Littlewood maximal operator over axis-parallel cubes in $\mathbb R^n$.
+We construct nonnegative, bounded, compactly supported test functions and prove
+$\liminf_{n\to\infty}C_n/\sqrt n\ge87/(220\sqrt{58\pi})>1/35$.
+The construction uses periodic narrow peaks arranged by finite-field labels and a positive spectral correction, making the normalized variance asymptotically flat over an interval of scales.
+We calculate local exceedance probabilities by tilting at each node, comparing finite-dimensional Gaussian laws, and using the maximum formula for Brownian motion with drift. We then estimate intersections between scale intervals separately. The conclusion holds along all integer dimensions, not just a subsequence.
+\end{abstract}
+\noindent\textbf{Keywords:} centered maximal operator; weak $(1,1)$ inequality; high-dimensional cubes; probability tilting; Brownian motion
+\par\medskip
+\section{Introduction}
+For $f\in L^1(\mathbb R^n)$, define the centered Hardy--Littlewood maximal operator over axis-parallel cubes by
+\[
+ M_nf(x)=\sup_{L>0}\frac1{L^n}\int_{x+[-L/2,L/2]^n}|f(y)|\,dy.
+\]
+We use Lebesgue measure throughout. Write $C_n$ for its optimal weak $(1,1)$ constant:
+\begin{equation}\label{eq:definitionCn}
+ C_n=\sup_{\substack{0\ne f\in L^1(\mathbb R^n)\\ \lambda>0}}
+ \frac{\lambda\,|\{x:M_nf(x)>\lambda\}|}{\|f\|_1}.
+\end{equation}
+Understanding the growth of $C_n$ with the dimension is an endpoint problem in high-dimensional maximal function theory. The following three classical results provide context.
+
+\begin{historical}[Stein--Strömberg \cite{SS1983}]
+There is an absolute constant $C$ such that $C_n\le Cn\log(e+n)$.
+More generally, this upper bound holds uniformly for the centered maximal operator defined using centered dilates of an arbitrary bounded symmetric convex body.
+\end{historical}
+
+\begin{historical}[Aldaz and Aubrun \cite{Aldaz2011,Aubrun2009}]
+In the cubic case there is no dimension-independent weak $(1,1)$ constant. Moreover, for every $0<\varepsilon<1$ there is $c_\varepsilon>0$ such that
+$C_n\ge c_\varepsilon(\log n)^{1-\varepsilon}$ for all sufficiently large $n$.
+\end{historical}
+
+\begin{historical}[Iakovlev--Strömberg \cite{IS2013}]
+There is an absolute constant $c>0$ such that $C_n\ge c n^{1/4}$ for all sufficiently large $n$.
+\end{historical}
+
+In contrast to this dimensional growth at the weak endpoint, the cubic maximal operator has a dimension-free $L^p$ bound for each fixed $1<p<\infty$ \cite{Bourgain2012}.
+We improve the power of the dimension in the lower bound as follows.
+
+\begin{theorem}\label{thm:main}
+The weak $(1,1)$ constant of the centered maximal operator over axis-parallel cubes satisfies
+\begin{equation}\label{eq:mainconstant}
+ \liminf_{n\to\infty}\frac{C_n}{\sqrt n}
+ \ge C_*:=\frac{87}{220\sqrt{58\pi}}.
+\end{equation}
+The limit inferior is taken over all positive integer dimensions.
+\end{theorem}
+
+\begin{theorem}\label{thm:rational}
+There is an integer $n_0$ such that every $n\ge n_0$ satisfies
+\[
+ C_n\ge\frac{\sqrt n}{35}.
+\]
+\end{theorem}
+
+We do not estimate the threshold $n_0$ in Theorem~\ref{thm:rational} explicitly.
+The proof uses bounded, nonnegative, compactly supported $L^1$ test functions and thus does not require substituting atomic measures directly in \eqref{eq:definitionCn}. It provides a lower bound, not a matching upper bound for $C_n$.
+
+The construction is a tensor product of one-dimensional periodic densities. Each density consists of narrow peaks determined by finite-field labels, a positive constant background, and a finite Fourier correction.
+The correction makes the normalized variance asymptotically flat over an interval of scales, while the label counts control correlations both at nearby scales and at distant scales.
+Within each short scale interval, we decompose the exceedance event according to the first node attaining the maximum, and compare finite-dimensional Gaussian laws under each node's own probability tilt. The maximum of Brownian motion with negative drift then gives the local exceedance intensity. We sum the local contributions after estimating the intersections between distinct short intervals by cases.
+
+Section~\ref{sec:prelim} gives the spectral identities, label counts, and probability comparison lemmas. Section~\ref{sec:mainproof} completes the scale summation, the $L^1$ truncation, and the proof of the main theorem. Section~\ref{sec:discussion} explains the constant and the scope of the result. Reproducible numerical checks are provided in a separate report and are not assumptions of the proof.
+
+\section{Preliminaries}\label{sec:prelim}
+Write $\phi(x)=(2\pi)^{-1/2}e^{-x^2/2}$ and $\Phi(x)=\int_{-\infty}^x\phi(t)\,dt$.
+We use $E$ and $P$ for expectation and probability on the space under consideration, and display a subscript when changing measure.
+Unless specified otherwise, the asymptotic notation $O(\cdot)$ and $o(\cdot)$ refers to $n\to\infty$.
+Any finite auxiliary parameters are fixed first. Finite-field indices and periodic shifts are taken modulo the appropriate period.
+
+\subsection{Positive spectral correction and flat variance}
+Let $\mathbb T=\mathbb R/\mathbb Z$ with Haar probability measure $P$.
+All subsequent one-dimensional integrals are over $\mathbb T$. Set
+\[
+ s=\frac19,\quad a=\frac{10}{27},\quad\alpha=\frac{729}{29},
+ \quad\gamma=\frac{27}{29},\quad I=[10/9,11/9],
+\]
+\[
+ b_m=4\alpha\left[\left(\frac{\sin(\pi ma)}{\pi m}\right)^4
+ +3\left(\frac{\sin(\pi ms)}{\pi m}\right)^4\right]\quad(m\ge1).
+\]
+\begin{lemma}[Positive spectral identity]\label{lem:paperplateau}
+The coefficients above are nonnegative and satisfy $b_m=O(m^{-4})$. On $I$,
+\[
+ F_\infty(L):=1+\sum_{m\ge1}b_m\sin^2(\pi mL)=\gamma L^2,
+ \qquad \frac{100}{87}\le\gamma L^2\le\frac{121}{87}.
+\]
+If $F_M$ denotes the finite sum through $m=M$, then
+\[
+ 0\le F_\infty-F_M\le T_M:=\frac{48}{29M^3},\qquad
+ \sqrt{2b_m/3}<\frac{20}{9m^2}.
+\]
+\end{lemma}
+\begin{proof}
+\textbf{Step 1: Compute the cubic convolution kernel on the real line.}
+Let $T_b(x)=(b-|x|)_+$ and $C_b(x)=\int_{\mathbb R}T_b(y)T_b(x-y)dy$.
+Both factors are even, so it suffices to take $x\ge0$. For $0\le x\le b$, their supports intersect in
+$[x-b,b]$. Splitting at $0,x$ gives
+\begin{align*}
+ C_b(x)&=\int_{x-b}^0(b+y)(b-x+y)dy
+ +\int_0^x(b-y)(b-x+y)dy\\
+ &\qquad+\int_x^b(b-y)(b+x-y)dy.
+\end{align*}
+The first and third terms are, respectively,
+\[
+ \int_x^b u(u-x)du=\frac{b^3}{3}-\frac{xb^2}{2}+\frac{x^3}{6},
+ \qquad\int_0^{b-x}u(u+x)du
+ =\frac{b^3}{3}-\frac{xb^2}{2}+\frac{x^3}{6}.
+\]
+The middle term is
+\[
+ \int_0^x[b(b-x)+xy-y^2]dy=b(b-x)x+\frac{x^3}{6}.
+\]
+Their sum is $2b^3/3-bx^2+x^3/2$.
+For $b\le x\le2b$, the intersection is $[x-b,b]$, and neither absolute value requires a further split.
+Set $c=2b-x$ and $u=y-(x-b)$ to obtain
+\[
+ C_b(x)=\int_{x-b}^b(b-y)(b-x+y)dy
+ =\int_0^c(c-u)u\,du=\frac{c^3}{6}.
+\]
+For $x\ge2b$, the supports have disjoint interiors, so the convolution vanishes. Thus
+\[
+ C_b(x)=\begin{cases}
+ 2b^3/3-bx^2+x^3/2,&0\le x\le b,\\
+ (2b-x)^3/6,&b\le x\le2b,\\0,&x\ge2b.
+ \end{cases}
+\]
+
+\textbf{Step 2: Periodize the kernels and cancel the cubic terms.}
+The circular self-convolution of the $1$-periodization of $T_b$ is
+$\sum_{j\in\mathbb Z}C_b(x+j)$. Here $a=10/27<1/2$, $s=1/9$, and
+$2a+2s=26/27<1$. For $x\in[s,2s]$, every nonzero integer shift satisfies
+$|x+j|\ge1-2s=7/9>2a\ge2s$, so no wraparound terms occur. The same holds at $x=0$.
+On this interval $x<a$ but $x\ge s$, so we use the first branch for $C_a$ and the second branch for $C_s$:
+\begin{align*}
+ C_a(x)+3C_s(x)
+ &=\frac{2a^3}{3}-ax^2+\frac{x^3}{2}
+   +\frac{(2s-x)^3}{2}\\
+ &=\frac{2a^3}{3}+4s^3-6s^2x+(3s-a)x^2.
+\end{align*}
+Since $a=3s+3s^2$, the last coefficient is $-3s^2$, and the cubic terms cancel.
+Write $C=C_a+3C_s$. Then
+\[
+ C(0)-C(x)=-2s^3+6s^2x+3s^2x^2.
+\]
+Substituting $s=1/9$ and $\alpha=729/29$, the constant, linear, and quadratic coefficients, respectively, are
+\[
+ 1-2\alpha s^3=27/29=\gamma,\qquad
+ 6\alpha s^2=54/29=2\gamma,\qquad
+ 3\alpha s^2=27/29=\gamma.
+\]
+It follows that $1+\alpha[C(0)-C(x)]=\gamma(1+x)^2$.
+
+\textbf{Step 3: Deduce the nonnegative spectrum from the convolution identity.}
+For any nonzero integer $m$, direct integration and one integration by parts give
+\begin{align*}
+ \widehat T_b(m)&=2\int_0^b(b-x)\cos(2\pi mx)dx\\
+ &=\frac{2[1-\cos(2\pi mb)]}{(2\pi m)^2}
+ =\left(\frac{\sin(\pi mb)}{\pi m}\right)^2.
+\end{align*}
+The circular convolution theorem gives
+$\widehat C(m)=\widehat T_a(m)^2+3\widehat T_s(m)^2$.
+Both terms are nonnegative. Since $\widehat C(m)=O(m^{-4})$, the Fourier series converges absolutely and uniformly,
+so we may take the difference term by term:
+\[
+ C(0)-C(x)=2\sum_{m\ge1}\widehat C(m)[1-\cos(2\pi mx)]
+ =4\sum_{m\ge1}\widehat C(m)\sin^2(\pi mx).
+\]
+Using $b_m=4\alpha\widehat C(m)$, $x=L-1$, and
+$\sin^2(\pi m(L-1))=\sin^2(\pi mL)$ gives $F_\infty(L)=\gamma L^2$.
+The values at the endpoints are
+$(27/29)(10/9)^2=100/87$, $(27/29)(11/9)^2=121/87$.
+
+\textbf{Step 4: Bound the truncation error and the coefficient amplitudes.}
+Since $|\sin|\le1$,
+\[
+ b_m\le\frac{16\alpha}{\pi^4m^4},\qquad
+ \sum_{m>M}m^{-4}\le\int_M^\infty x^{-4}dx=\frac1{3M^3}.
+\]
+Thus the tail is at most $16\alpha/(3\pi^4M^3)<48/(29M^3)$, where we used $\pi>3$.
+The same estimate gives
+\[
+ \sqrt{2b_m/3}\le\frac{\sqrt{32\alpha/3}}{\pi^2m^2}
+ <\frac{20}{9m^2},
+\]
+because $32\alpha/3=7776/29<400$ and $\pi^2>9$.
+Nonnegativity gives $F_M\le F_\infty$, completing the proof.
+\end{proof}
+
+\subsection{Deterministic labels and counts of nonzero states}
+\begin{lemma}[Existence of finite-field labels]\label{lem:papersidon}
+Let $B=2^b$, $b\ge2$, and $q=2^d$, and fix a primitive element $g$ of $\mathbb F_q$.
+Set $N_B = B - 1$, $T_B = N_B(N_B+1)/2$, $R_B = N_B(N_B-1)$, and
+\[
+ H(B)=N_B+T_B(T_B-1)+2R_B^2+4R_B<3B^4.
+\]
+If $q > H(B)$, there exist $\mathbb F_2$-independent $\beta_0, \ldots, \beta_{b-1}$ such that
+whose linear span $W$ has nonzero elements forming a multiplicative Sidon set. In other words, an equality between two products of nonzero elements
+can occur only when the two unordered multisets of factors agree. Let $K=q-1$. Then
+\[
+ \mathcal D=\{\log_g(a/c):a,c\in W\setminus\{0\},\ a\ne c\}
+\]
+has $R_B$ elements, $\mathcal D\cup\{0\}$ has no adjacent elements in $\mathbb Z/K\mathbb Z$,
+and $\pm 1, \pm 2 \notin \mathcal D$.
+\end{lemma}
+\begin{proof}
+\textbf{Step 1: A finite-field root-count bound.}
+If $P$ is a non-zero polynomial of total degree $r$, and its variables are chosen independently uniformly from $\mathbb F_q$,
+then $\Pr(P=0)\le r/q$. In one variable this follows because the number of roots is at most the degree.
+By induction on the number of variables, regard $P$ as a polynomial in its last variable $X_b$ of degree $j$, with leading coefficient
+$P_j$ non-zero and total degree at most $r - j$. On the fiber where $P_j = 0$, all probability is bounded by
+$(r-j)/q$; on the remaining fibers, the last variable has at most $j$ roots, contributing another $j/q$.
+Adding the two bounds gives the stated estimate; the argument also applies in characteristic 2.
+
+\textbf{Step 2: Linear independence and multiplicative Sidon condition.}
+Choose $X_0,\ldots,X_{b-1}\in\mathbb F_q$ independently; for each nonzero
+$a\in\mathbb F_2^b$, define $L_a(X)=\sum_i a_iX_i$.
+There are $N_B=B-1$ nonzero linear forms, so the probability that some $L_a=0$ is at most $N_B/q$.
+The nonoccurrence of these zero events exactly ensures that the chosen $X_i$'s are linearly independent over $\mathbb F_2$.
+
+On the $N_B$ nonzero binary vectors, there are
+$T_B=N_B(N_B+1)/2$ unordered two-element multisets. For distinct multisets $\{a,c\}\ne\{e,f\}$,
+the polynomial $L_aL_c-L_eL_f$ is not identically zero. Indeed, the polynomial ring
+$\mathbb F_q[X_0,\ldots,X_{b-1}]$ is a unique factorization domain, and every nonzero linear form
+is irreducible. If two products are identical, then some linear factor on one side must be proportional to a factor on the other.
+When two nonzero binary linear forms are proportional, choosing a position where some coefficient equals 1 shows that the proportionality constant must equal 1,
+so the corresponding binary vectors coincide; after canceling the common factor, the remaining vector also coincides.
+This contradicts the distinctness of the multisets. A repeated factor $L_a^2$ remains a nonzero polynomial in characteristic 2,
+and is likewise covered by the argument.
+There are $\binom{T_B}{2}$ pairs of distinct multisets, each quadratic form contributing at most $2/q$, so the total error is
+$T_B(T_B-1)/q$.
+
+On the complement of these two types of bad events, set $\beta_i=X_i$; then $W$ has $B$ elements,
+$W\setminus\{0\}$ satisfies the multiplicative Sidon condition.
+If two nontrivial ordered ratios satisfy $a/c=e/f$, then $af=ce$.
+The Sidon property gives $\{a,f\}=\{c,e\}$. The possibility $a=c,f=e$ contradicts $a\ne c$,
+Thus $a=e,c=f$. All $R_B=N_B(N_B-1)$ nontrivial ordered ratios are therefore distinct.
+
+\textbf{Step 3: Exclude adjacent ratios and short shifts.}
+For any two nontrivial ordered ratios $L_a/L_c$ and $L_f/L_e$, the adjacency relation corresponds to
+$L_a L_e = g L_c L_f$. The polynomial $L_a L_e - g L_c L_f$ is not identically zero:
+The second product has a nonzero coefficient equal to 1 for some monomial; in the difference, the coefficient at that position is
+$-g$ or $1-g$, both of which are nonzero since the primitive element satisfies $g \neq 0, 1$.
+There are $R_B^2$ quadratic forms in total, with an error bounded by at most $2 R_B^2 / q$.
+Hence on the complement set, $\mathcal D \cap (\mathcal D + 1) = \varnothing$.
+
+For each nontrivial ordered pair $a,c$ and $j\in\{1,-1,2,-2\}$, also exclude
+$L_a = g^j L_c$. Since $g^j \neq 1$, this linear form is nonzero; there are $4 R_B$ such forms,
+with an error bounded by at most $4 R_B / q$. Thus, $\pm 1, \pm 2 \notin \mathcal D$.
+The ratio 1 was already excluded by the condition $a \neq c$; combining this with $\pm 1 \notin \mathcal D$,
+we obtain that $\mathcal D \cup \{0\}$ contains no adjacent elements.
+
+\textbf{Step 4: Combine the existence conditions.}
+The joint bad probability is at most $H(B)/q < 1$, so there exists at least one choice of parameters that simultaneously satisfies all conditions.
+Moreover, since $T_B < B^2/2$, $R_B < B^2$, and $N_B < B$ with $B \geq 4$, it follows that
+\[
+ H(B)<\frac94B^4+4B^2+B
+ \le\left(\frac94+\frac14+\frac1{64}\right)B^4
+ =\frac{161}{64}B^4<3B^4.
+\]
+For each $q = 2^d$, a finite field exists: in the splitting field of $X^q - X$, its root set is closed under addition, multiplication,
+and nonzero inversion; the derivative equals $-1$, guaranteeing exactly $q$ distinct roots.
+Finally, we establish the existence of a primitive element. The finite multiplicative group is abelian; by taking the maximum power for each prime
+dividing the orders of the elements, and multiplying elements realizing these prime powers, gives an element of order equal to the group exponent $e$.
+Every element of the group is a root of $X^e-1$, so $q-1 \le e$; on the other hand, the order of an element divides
+the group order, so $e\le q-1$. Thus $e=q-1$, and the obtained element is primitive.
+\end{proof}
+
+Take $x_j=g^j$ for $0\le j<K$, and put
+\[
+ y_i(j)=\operatorname{Tr}(\beta_ix_j),\quad
+ y_j=\sum_{i=0}^{b-1}2^iy_i(j),\quad
+ U_j=(y_j+1/2)/B,\quad a_j=(j+U_j)/K.
+\]
+To count joint labels, first write the corresponding linear matrix.
+The trace map is
+\[
+ \operatorname{Tr}(x)=x+x^2+\cdots+x^{2^{d-1}}\in\mathbb F_2.
+\]
+This polynomial is nonzero and has degree $q/2<q$, so it cannot vanish on the whole field.
+The trace takes only the values 0 and 1, so some element has trace 1. For any $c\ne0$, multiplication $x\mapsto cx$
+ranges over the whole field, so $x\mapsto\operatorname{Tr}(cx)$ is also a nonzero linear functional.
+Thus the trace pairing identifies field elements $c$ bijectively with linear functionals $\operatorname{Tr}(c\,\cdot)$.
+
+For a shift $k$, regard $\mathbb F_q$ as a $d$-dimensional vector space over $\mathbb F_2$.
+The $2b$ rows of the joint label map correspond to
+\[
+ \beta_0,\ldots,\beta_{b-1},g^k\beta_0,\ldots,g^k\beta_{b-1}.
+\]
+Nondegeneracy of the trace pairing gives the rank of this matrix as
+$\dim(W+g^kW)=2b-\dim(W\cap g^kW)$.
+If $k\notin\mathcal D\cup\{0\}$, the intersection contains only 0 and the matrix has rank $2b$.
+Each output $(y,z)$ has a fiber of $2^{d-2b}=q/B^2$ states.
+If $k=0$, the rank is $b$, outputs satisfy $y=z$, and each diagonal fiber has $q/B$ states.
+If $k\in\mathcal D$, the Sidon property ensures the intersection has exactly one nonzero element:
+two distinct nonzero intersection points would give two representations of the same ratio $g^k$, contradicting distinctness of the ordered ratios.
+Thus the intersection has dimension 1 and the joint matrix has rank $2b-1$.
+
+Use binary vectors $a,c$ to represent this match:
+$\beta(a):=\sum_i a_i\beta_i=g^k\sum_i c_i\beta_i=:g^k\beta(c)$.
+The match is unique, with $a,c\ne0$ and $a\ne c$. In fact $a=c$ would give
+$(1-g^k)\beta(a)=0$, forcing $k=0$.
+Define the label character $\chi_a(y)=(-1)^{\sum_i a_iy_i}$.
+Under the uniform law on the full field, the joint output law of a defective shift is
+$B^{-2}[1+\chi_a(y)\chi_c(z)]$.
+Indeed, the image is the hyperplane determined by the single linear relation $a\cdot y+c\cdot z=0$,
+and each point of the image has a fiber of size $q/2^{2b-1}$.
+
+The actual sequence $x_j=g^j$ visits all nonzero states and omits 0.
+Thus we subtract one from the all-zero label fiber of the full-field output and leave all other fibers unchanged:
+\begin{equation}\label{eq:paperlabelcount}
+ N_k(y,z)=q/B^2-\mathbf1_{\{y=z=0\}}
+ \quad(k\notin\mathcal D\cup\{0\}).
+\end{equation}
+The count at zero shift is
+$qB^{-1}\mathbf1_{\{y=z\}}-\mathbf1_{\{y=z=0\}}$;
+the count at a defective shift is
+$qB^{-2}[1+\chi_a(y)\chi_c(z)]-\mathbf1_{\{y=z=0\}}$.
+These formulas come from deterministic matrix ranks and fiber counts, without a random independent-label assumption.
+
+Define the gridwise primitive
+\[
+ \mathcal P((j+r)/K)=\mathbf1_{\{r\ge U_j\}}-r\quad(0\le r<1).
+\]
+It vanishes at grid endpoints and has periodic distributional derivative $\mathcal P'=\sum_j\delta_{a_j}-K$.
+Put $H_L(x)=\mathcal P(x+L/2)-\mathcal P(x-L/2)$. Then $\int H_L=0$ and $|H_L|\le2$.
+Let $\beta_\delta=\delta^{-1}\mathbf1_{[-\delta/2,\delta/2]}$ be extended periodically,
+set $H_{L,\delta}=H_L*\beta_\delta$, and put
+\[
+ B_L(x)=\sum_{m\le M}\sqrt{2b_m/3}\sin(\pi mL)\cos(2\pi mx),
+ \quad G_\delta(L,J)=\int(H_{L,\delta}+B_L)(H_{J,\delta}+B_J).
+\]
+
+\begin{lemma}[Cross terms and smoothing errors]\label{lem:papercross}
+Let $a_B=1-1/B$ and take $1\le M<K$. For the deterministic-label source above, all $L,J$ satisfy
+\[
+ \left|\int(H_{L,\delta}B_J+B_LH_{J,\delta})\right|\le C_x,
+\]
+\[
+ C_x=\frac{40}{9}\left[
+ \frac{a_B\sqrt{K+1}}K\sum_{m\le M}m^{-2}
+ +\frac{\pi a_B^2}{2K}\sum_{m\le M}m^{-1}\right].
+\]
+If $\delta\le1/K$, then the second-moment error due to smoothing the full atomic terms is at most $2K\delta/3$.
+\end{lemma}
+\begin{proof}
+\textbf{Step 1: Gauss sum magnitude.}
+Write $\eta_m(g^j)=e^{2\pi imj/K}$ and $\chi_c(x)=(-1)^{\operatorname{Tr}(cx)}$.
+Since $1 \le m < K$, $\eta_m$ is a non-trivial multiplicative character.
+Multiplying by an element with $\eta_m(t_0) \neq 1$ and rearranging the sum yields
+$\sum_{t\ne0}\eta_m(t)=0$.
+For $c \neq 0$, the trace pairing is non-degenerate, so $\chi_c$ is a non-trivial additive character;
+Shifting by an element with $\chi_c(x_0) = -1$ and rearranging the global sum gives
+$\sum_x \chi_c(x) = 0$, hence $\sum_{x \neq 0} \chi_c(x) = -1$.
+
+Define $G_{c,m} = \sum_{x \neq 0} \chi_c(x) \eta_m(x)$.
+Expanding the square of its modulus and using multiplicativity of characters, with the substitution $x = ty$, we obtain
+\begin{align*}
+ |G_{c,m}|^2
+ &=\sum_{x,y\ne0}\chi_c(x-y)\eta_m(x/y)\\
+ &=\sum_{t\ne0}\eta_m(t)\sum_{y\ne0}\chi_c((t-1)y)\\
+ &=K-\sum_{t\ne0,1}\eta_m(t)=K+1=q.
+\end{align*}
+The inner sum for $t=1$ equals $K$, while all other inner sums equal $-1$.
+This argument only requires $m \not\equiv 0 \pmod K$; coprimality of $m$ and $K$ is not needed.
+
+\textbf{Step 2: Atomic Fourier coefficients with within-cell phases.}
+Using $y_i = (1 - \chi_{\beta_i}(x_j))/2$ and $\sum_i 2^i = B-1$,
+\begin{align*}
+ V_j:=U_j-1/2
+ &=\frac1B\left[\sum_i2^i\frac{1-\chi_{\beta_i}(x_j)}2
+ +\frac12-\frac B2\right]\\
+ &=-\sum_i\frac{2^i}{2B}\chi_{\beta_i}(x_j).
+\end{align*}
+The absolute coefficient sum equals $(B-1)/(2B) = a_B/2$, so $|V_j| \leq a_B/2$;
+The Gauss sums from Step 1 then give
+\[
+ \left|\sum_jV_je^{2\pi imj/K}\right|
+ \le\frac{a_B\sqrt q}{2}.
+\]
+Setting $t = 2\pi m/K$, the actual atomic Fourier sum is
+\[
+ Z_m=\sum_je^{2\pi im(j+U_j)/K}
+ =e^{it/2}\sum_je^{2\pi imj/K}e^{itV_j}.
+\]
+Retaining the phase of $V_j$ exactly, using an integral remainder term,
+$e^{iz}=1+iz+R(z)$, $|R(z)|\le z^2/2$.
+The constant term vanishes due to $\sum_j e^{2\pi i mj/K} = 0$, hence
+\[
+ |Z_m|\le t\frac{a_B\sqrt q}{2}+K\frac{t^2a_B^2}{8}.
+\]
+Dividing by $\pi m$ and substituting $t$ yields
+\[
+ |\zeta_m|:=\frac{|\Re Z_m|}{\pi m}
+ \le\frac{a_B\sqrt q}{K}+\frac{\pi m a_B^2}{2K}.
+\]
+This retains the within-cell phases and uses neither the zero frequency nor the aliased frequency $m=K$.
+
+\textbf{Step 3: Fourier coefficients of the primitive and the two cross terms.}
+In the distributional sense, $\mathcal P' = \sum_j \delta_{a_j} - K$.
+By periodic integration by parts, nonzero frequencies $m$ satisfy
+\[
+ \Re Z_m=\int\cos(2\pi mx)\,d\mathcal P'(x)
+ =2\pi m\int\mathcal P(x)\sin(2\pi mx)dx.
+\]
+Hence $\int\mathcal P\sin(2\pi mx)=\Re Z_m/(2\pi m)$.
+For the translation difference $H_L$, changing variables and expanding the cosine yields
+\begin{align*}
+ \int H_L(x)\cos(2\pi mx)dx
+ &=\int\mathcal P(y)[\cos(2\pi my-\pi mL)
+ -\cos(2\pi my+\pi mL)]dy\\
+ &=2\sin(\pi mL)\int\mathcal P(y)\sin(2\pi my)dy
+ =\zeta_m\sin(\pi mL).
+\end{align*}
+Writing $c_m=\sqrt{2b_m/3}$, the two cross terms are exactly
+\[
+ \int(H_LB_J+B_LH_J)
+ =2\sum_{m\le M}c_m\zeta_m\sin(\pi mL)\sin(\pi mJ).
+\]
+The box-smoothing operator has multiplier on cosine frequency $m$ equal to
+\[
+ \int_{-\delta/2}^{\delta/2}\frac{\cos(2\pi my)}\delta dy
+ =\frac{\sin(\pi m\delta)}{\pi m\delta},
+\]
+Its absolute value is at most 1, and smoothing inserts just this multiplier into the same cross terms.
+Applying termwise the bound $2c_m<40/(9m^2)$, $|\sin|\le1$, and the second-step bound on $|\zeta_m|$,
+one obtains $C_x$; the entire estimate is uniform in all $L,J$.
+
+\textbf{Step 4: Quadratic increment of a moving window.}
+First take $0\le z\le\delta\le1/K$. The derivative of the primitive gives
+\[
+ H_L(x+z)-H_L(x)=N_+(x)-N_-(x),
+\]
+where $N_+$ and $N_-$ count atoms in the length-$z$ windows swept out by the two moving endpoints.
+The constant slope contribution within each window is always $-Kz$, which cancels upon subtraction.
+Each cell contains exactly one atom; a window of length at most $1/K$ intersects the interior of at most two cells,
+so $N_\pm\in\{0,1,2\}$. No additional minimum spacing between atoms is required.
+Thus
+\[
+ (N_+-N_-)^2\le N_+^2+N_-^2\le2(N_++N_-).
+\]
+For each fixed atom, the set of window centers containing it has length $z$, hence
+$\int N_+=\int N_-=Kz$, and therefore
+$\|H_L(\cdot+z)-H_L\|_2^2\le4Kz$.
+The negative $z$ follows by translation invariance to give the same bound $4K|z|$.
+
+\textbf{Step 5: From diagonal energy to arbitrary matrix elements.}
+Let $S$ be box-smoothing of width $\delta$. It is self-adjoint and an $L^2$ contraction, hence
+$A=I-S^2$ is positive semidefinite. The translation kernel of $S^2$ is
+$\nu_\delta(z)=(\delta-|z|)_+/\delta^2$, and
+\[
+ \int|z|\nu_\delta(z)dz
+ =\frac2{\delta^2}\int_0^\delta z(\delta-z)dz=\frac\delta3.
+\]
+Using translation invariance and expanding the square with an even kernel yields
+\begin{align*}
+ \langle H_L,AH_L\rangle
+ &=\frac12\int\|H_L(\cdot+z)-H_L\|_2^2\nu_\delta(z)dz\\
+ &\le\frac12\int4K|z|\nu_\delta(z)dz=\frac23K\delta.
+\end{align*}
+The Cauchy-Schwarz inequality for positive semidefinite forms gives
+\[
+ |\langle H_L,AH_J\rangle|
+ \le\langle H_L,AH_L\rangle^{1/2}
+ \langle H_J,AH_J\rangle^{1/2}\le\frac23K\delta.
+\]
+Moreover, $\langle H_L,AH_J\rangle=\langle H_L,H_J\rangle-
+\langle SH_L,SH_J\rangle$, which gives the smoothing error for the joint second moments of the full atomic terms.
+\end{proof}
+
+\subsection{Covariance kernel estimates}
+\begin{lemma}[Kernel on the safe continuum of scales]\label{lem:paperkernel}
+Let
+\[
+ \mathcal S=\{L\in I:\operatorname{dist}(K(L-1)\bmod K,\mathcal D)>2\},
+\]
+\[
+ \quad\eta_D=\frac1{3B^2}+\frac2K,\quad\eta_N=\frac2{3B^2}+\frac2K,
+ \quad e=C_x+\frac{2K\delta}{3}.
+\]
+On $\mathcal S$,
+\[
+ V_{\min}:=100/261-T_M/3-\eta_D-e\le G_\delta(L,L),
+ \quad\left|\frac{G_\delta(L,L)}{\gamma L^2/3}-1\right|
+ \le r_*:=\frac{T_M+3(\eta_D+e)}{100/87}.
+\]
+If $V_{\min}\ge1/4$, set $\tau=K|L-J|/2$ and
+$\kappa=G_\delta(L,J)/\sqrt{G_\delta(L,L)G_\delta(J,J)}$. Then
+\[
+ 1-\kappa\ge\frac{174}{121}\tau-8(\eta_N+e)\quad(0<\tau\le1/8),
+\]
+\[
+ 1-\kappa\ge\frac{14703}{61952}-8(\eta_N+e)\quad(1/8\le\tau\le1).
+\]
+As $B,K,M\to\infty$ and $e\to0$, all safe scales eventually satisfy
+$\kappa\ge-1/2$, while for $1/8\le\tau\le K/18$ we have $1-\kappa\ge1/5$.
+\end{lemma}
+\begin{proof}
+\textbf{Step 1: Quantify the error at midpoints and its primitive function.}
+For a label character $\chi_a$, define
+\[
+ q_y(r)=\mathbf1_{\{r\ge(y+1/2)/B\}}-r,
+ \quad f_a(r)=B^{-1}\sum_{y=0}^{B-1}\chi_a(y)q_y(r).
+\]
+The trivial character gives $f_0=e_B$, where
+$e_B(r)=B^{-1}\#\{y:(y+1/2)/B\le r\}-r$.
+Within the $j$-th quantization cell, write $r=(j+t)/B$, with $0\le t\le1$. Then
+\[
+ e_B((j+t)/B)=\begin{cases}-t/B,&0\le t<1/2,\\(1-t)/B,&1/2\le t\le1.
+ \end{cases}
+\]
+In particular, $|e_B|\le1/(2B)$; each cell integrates to zero, and moreover
+\[
+ \int_0^1e_B(r)^2dr
+ =B\cdot B^{-3}\left[\int_0^{1/2}t^2dt+
+ \int_{1/2}^1(1-t)^2dt\right]=\frac1{12B^2}.
+\]
+Set $E_B(x)=\int_0^xe_B(r)dr$. The fact that each cell integrates to zero implies $E_B(j/B)=0$, so
+The exact formula within the grid is given by
+\[
+ E_B((j+t)/B)=\begin{cases}-t^2/(2B^2),&0\le t\le1/2,\\
+ -(1-t)^2/(2B^2),&1/2\le t\le1.
+ \end{cases}
+\]
+Therefore, $-1/(8B^2)\le E_B\le0$, and
+\[
+ \int_0^1E_B(r)dr=-\frac1{24B^2}.
+\]
+These bounds hold over the entire continuous interval, not merely at discrete node samples.
+
+\textbf{Step 2: Energy of all nonzero Walsh characters.}
+When $a\ne0$, $\sum_y\chi_a(y)=0$, so the $-r$ term in $f_a$ vanishes;
+$f_a(r)$ is precisely the signed prefix sum divided by $B$.
+Let $\ell$ be the position of the lowest set bit of $a$, and set $q_a=2^\ell$.
+Partition the ordered labels into blocks of $2q_a$. All bits below that position have zero coefficients in the character,
+so the first $q_a$ characters share one sign and the next $q_a$ have the opposite sign;
+Higher bits only determine the overall sign of the entire block. Thus within a block, the absolute value of prefixes rises sequentially to
+$q_a$, then falls back to 0, with no residual accumulation between blocks.
+Midpoint thresholds are spaced by $1/B$; each block has two half-steps at its ends where the prefix values are both zero.
+Each value $j=1,\ldots,q_a-1$ appears in two segments of length $1/B$, and the maximum value $q_a$
+appears on one segment of length $1/B$. The integral of the square over each block is therefore
+\[
+ \frac1{B^3}\left[2\sum_{j=1}^{q_a-1}j^2+q_a^2\right]
+ =\frac1{B^3}\left[\frac{(q_a-1)q_a(2q_a-1)}3+q_a^2\right]
+ =\frac{2q_a^3+q_a}{3B^3}.
+\]
+Since there are $B/(2q_a)$ blocks across the full interval, we obtain
+\begin{equation}\label{eq:paperwalshenergy}
+ \|f_a\|_2^2=\frac{q_a^2}{3B^2}+\frac1{6B^2}.
+\end{equation}
+$q_a=B/2$ can arise only from the unique character $a=2^{b-1}$, whose energy equals
+$1/12+1/(6B^2)$. All other characters satisfy $q_a\le B/4$, so their energies are at most
+$1/48+1/(6B^2)$.
+Hence for any two distinct nonzero characters $a,c$, every inner product of truncated shifts satisfies
+\[
+ |\int_J f_a(r)f_c(r+\theta)dr|
+ \le\|f_a\|_2\|f_c\|_2
+ \le Q_B:=\sqrt{(1/12+1/(6B^2))(1/48+1/(6B^2))}.
+\]
+If a variable shift includes one periodic wrap-around, it is likewise controlled by the corresponding subinterval's $L^2$ norm.
+At least one character is not the unique character with the highest energy, so this gives $Q_B=1/24+O(B^{-2})$,
+instead of the coarser bound obtained by giving both characters the highest energy.
+
+\textbf{Step 3: Walsh inversion for the actual autocorrelation and the zero-state correction.}
+Let $C(z)=\int\mathcal P(x)\mathcal P(x+z/K)dx$, write $z=k+\theta$,
+$0\le\theta\le1$. When $x=(j+r)/K$, $r<1-\theta$, the shift lands in cell
+$j+k$; when $r\ge1-\theta$, it lands in cell $j+k+1$.
+Define
+\[
+ I^1_{yw}(\theta)=\int_0^{1-\theta}q_y(r)q_w(r+\theta)dr,
+ \quad I^2_{yw}(\theta)=\int_{1-\theta}^1q_y(r)q_w(r+\theta-1)dr.
+\]
+After substitution $dx=dr/K$, the exact counting formula is
+\[
+ C(z)=K^{-1}\sum_{y,w}[N_k(y,w)I^1_{yw}+N_{k+1}(y,w)I^2_{yw}].
+\]
+Let $W^\nu_{ac}=B^{-2}\sum_{y,w}\chi_a(y)\chi_c(w)I^\nu_{yw}$.
+Under the uniform law over the full field, the character averages satisfy
+\[
+ E[\chi_a(y(x))\chi_c(y(g^kx))]
+ =\begin{cases}1,&\beta(a)=g^k\beta(c),\\0,&\text{otherwise}.
+ \end{cases}
+\]
+This is the additive character $(-1)^{\operatorname{Tr}((\beta(a)+g^k\beta(c))x)}$
+averaged over the full field. Walsh inversion therefore retains only the trivial character and the matched pairs.
+Let $\mathcal M_k=\{(a,c):a,c\ne0,\ \beta(a)=g^k\beta(c)\}$, then
+\begin{align*}
+ C(z)&=\frac qK C_\infty(z)-\frac{i(\theta)}K,\\
+ C_\infty(z)&=W^1_{00}+W^2_{00}
+ +\sum_{\mathcal M_k}W^1_{ac}+\sum_{\mathcal M_{k+1}}W^2_{ac},\\
+ i(\theta)&=I^1_{00}+I^2_{00}.
+\end{align*}
+Here the subscript $00$ in $I$ denotes actual all-zero labels, while in $W$ it denotes zero character; their meanings differ.
+Their origins are respectively subtracting state 0 from the actual count and the constant term of the global uniform label law.
+Since $q=K+1$, this can also be written as
+\[
+ C(z)=C_\infty(z)+[C_\infty(z)-i(\theta)]/K.
+\]
+
+To control the final correction, note that each global joint label law is nonnegative and marginally uniform on both sides.
+Combine the two pieces and apply Cauchy--Schwarz in the joint state and spatial variables to obtain
+\[
+ |C_\infty(z)|\le B^{-1}\sum_y\int_0^1q_y(r)^2dr.
+\]
+Precisely $B^{-1}\sum_yq_y(r)^2=r(1-r)+(1-2r)e_B(r)$.
+In integration by parts, $E_B(0)=E_B(1)=0$, hence
+\[
+ B^{-1}\sum_y\int q_y^2
+ =\frac16+\int_0^1(1-2r)E_B'(r)dr
+ =\frac16+2\int_0^1E_B(r)dr
+ =\frac16-\frac1{12B^2}\le\frac16.
+\]
+Also $i(\theta)$ is the periodic autocorrelation of $q_0$, with absolute value at most
+\[
+ \|q_0\|_2^2=\int_0^{u_0}r^2dr+\int_{u_0}^1(1-r)^2dr
+ =u_0^2-u_0+1/3\le1/3,\qquad u_0=1/(2B).
+\]
+so $|C(z)-C_\infty(z)|\le1/(2K)$.
+
+If both $k,k+1$ are nonzero shifts, the nonadjacency condition allows at most one nonzero match in the two pieces,
+and its characters are distinct. On the other hand,
+\[
+ W^1_{00}+W^2_{00}=\int_0^1e_B(r)e_B(r+\theta\bmod1)dr,
+\]
+its absolute value is at most $1/(12B^2)$. The distinct-character bound from Step 2 therefore gives
+\begin{equation}\label{eq:paperfarC}
+ |C(z)|\le Q_B+\frac1{12B^2}+\frac1{2K}=:\mathcal C_{BK}.
+\end{equation}
+If both pieces are nondefective, there is no distinct-character term and we can use the smaller bound
+$|C(z)|\le1/(12B^2)+1/(2K)$.
+
+\textbf{Step 4: Exact quantization error near zero shift.}
+Take $0\le\tau\le1$. The first piece has shift zero and the second shift one; $1\notin\mathcal D$
+ensures that the second piece has the full-rank uniform joint label law. The same-label average in the first piece is
+\begin{align*}
+ B^{-1}\sum_yq_y(r)q_y(r+\tau)
+ &=F_B(r)-rF_B(r+\tau)-(r+\tau)F_B(r)+r(r+\tau)\\
+ &=r(1-r-\tau)+(1-r-\tau)e_B(r)-r e_B(r+\tau),
+\end{align*}
+where $F_B(r)=r+e_B(r)$, because for $r\le r+\tau$ the product of the two indicators
+equals the indicator with the smaller endpoint. With $a_0=1-\tau$, integrate the two error terms by parts separately:
+\[
+ \int_0^{a_0}(a_0-r)e_B(r)dr=\int_0^{a_0}E_B(r)dr,
+\]
+\[
+ -\int_0^{a_0}r e_B(r+\tau)dr
+ =-a_0E_B(1)+\int_0^{a_0}E_B(r+\tau)dr
+ =\int_0^{a_0}E_B(r+\tau)dr.
+\]
+Thus the complete quantization error in the first piece is exactly
+$\int_0^{a_0}[E_B(r)+E_B(r+\tau)]dr$, whose absolute value is at most $a_0/(4B^2)$.
+The second piece is the integral of $e_B(r)e_B(r+\tau-1)$ over an interval of length $\tau$, with absolute value at most
+$\tau/(4B^2)$. The integral in the first piece for continuous uniform labels equals
+\[
+ \int_0^{a_0}r(a_0-r)dr=\frac{a_0^3}{6}.
+\]
+Adding the actual nonzero-state correction from Step 3 gives
+\[
+ |C(\tau)-(1-\tau)^3/6|\le\frac1{4B^2}+\frac1{2K}.
+\]
+
+\textbf{Step 5: The reflected term, the diagonal, and the full atomic covariance kernel.}
+The autocorrelation $C$ is even and $K$-periodic. Expand the four terms of $H_LH_J$.
+The two same-direction translations give the same difference shift, and the two opposite-direction translations give the same sum shift. Thus
+\[
+ HH_{LJ}:=\int H_LH_J
+ =2C(K(L-J)/2)-2C(K(L+J)/2).
+\]
+Assume without loss of generality that $L\le J$ and set the reflected parameter
+$z_r=K((L+J)/2-1)\in[K/9,2K/9]$. Its distance from $K(L-1)$ is
+$K(J-L)/2=\tau$. Safety gives $\operatorname{dist}(K(L-1),\mathcal D)>2$,
+so for $\tau\le1$, the distance from $z_r$ to the defects is greater than 1. Neither the cell at its floor nor the following cell
+is defective. The interval for $z_r$ also ensures both are nonzero shifts.
+The full-rank small bound from Step 3 therefore controls the reflected term and gives
+\[
+ |HH_{LJ}-(1-\tau)^3/3|
+ \le2\left(\frac1{4B^2}+\frac1{2K}\right)
+ +2\left(\frac1{12B^2}+\frac1{2K}\right)=\eta_N.
+\]
+On the diagonal, $C_\infty(0)=1/6-1/(12B^2)$ is the exact value from Step 3.
+The same full-rank bound still applies to the reflected term, so
+\[
+ |HH_{LL}-1/3|
+ \le\frac1{6B^2}+\frac1{6B^2}+\frac2K=\eta_D.
+\]
+These bounds already include both the reflected term and the actual zero-state correction.
+
+\textbf{Step 6: Low frequencies, complete moments, and variance ratios.}
+Cosine orthogonality $\int\cos(2\pi mx)\cos(2\pi\ell x)dx=
+\mathbf1_{m=\ell}/2$ gives
+\[
+ BB_{LJ}=\frac13\sum_{m\le M}b_m\sin(\pi mL)\sin(\pi mJ),
+ \qquad BB_{LL}=\frac{F_M(L)-1}{3}.
+\]
+By $F_M(L)\le121/87$ and Cauchy--Schwarz, $|BB_{LJ}|\le34/261$, giving the upper bound.
+For a better lower bound, write $L=1+x$, $x\in[1/9,2/9]$. Then
+$\sin(\pi mL)=(-1)^m\sin(\pi mx)$.
+For $m=1,2,3,4$ the angle intervals are, respectively,
+$[\pi/9,2\pi/9]$, $[2\pi/9,4\pi/9]$, $[\pi/3,2\pi/3]$,
+$[4\pi/9,8\pi/9]$, all with positive sine. For each of the first four frequencies the two-scale product is therefore nonnegative.
+Bounding the remaining frequencies by the tail gives
+\[
+ BB_{LJ}\ge-\frac13\sum_{m>4}b_m\ge-\frac{T_4}{3}=-\frac1{116}.
+\]
+If $M<4$, every retained term is already nonnegative, so the same lower bound holds.
+
+The cross-term and smoothing errors of the full Gram matrix are bounded by $e=C_x+2K\delta/3$.
+Thus $|G_\delta(L,L)-F_M(L)/3|\le\eta_D+e$.
+Using $F_M(L)\ge\gamma L^2-T_M$ gives
+\[
+ G_\delta(L,L)\ge100/261-T_M/3-\eta_D-e=V_{\min},
+\]
+\[
+ \left|\frac{G_\delta(L,L)}{\gamma L^2/3}-1\right|
+ \le\frac{T_M+3(\eta_D+e)}{\gamma L^2}
+ \le\frac{T_M+3(\eta_D+e)}{100/87}=r_*.
+\]
+
+\textbf{Step 7: The factor-eight error for normalized correlations.}
+When $\tau\leq1$, the reference matrix is
+\[
+ G_0(L,J)=\frac13\left[R(K(L-J)/2)
+ +\sum_{m\le M}b_m\sin(\pi mL)\sin(\pi mJ)\right],
+ \quad R(t)=(1-|t|)_+^3.
+\]
+$R$ is a positive semidefinite kernel because
+\[
+ R(t)=\int_0^1 6(1-a)(a-|t|)_+da,
+\]
+and $(a-|t|)_+=\langle\mathbf1_{[0,a]},\mathbf1_{[t,t+a]}\rangle$.
+For $|t|\le1$, the integral identity follows by setting $u=1-|t|$ and computing
+$6\int_0^u(u-z)z\,dz=u^3$; both sides are zero for $|t|>1$.
+Adding a finite positive spectrum preserves positive semidefiniteness, and $G_0(L,L)=F_M(L)/3\geq1/3$."
+The actual moment is also a Gram matrix, so its convex interpolation with the reference matrix remains positive semidefinite,
+and has diagonal at least $1/4$.
+
+For the normalization $f(c,a,b)=c/\sqrt{ab}$ of a two-by-two matrix, positive semidefiniteness gives
+$|c|\leq\sqrt{ab}$, hence along the interpolation segment
+\[
+ |\partial_cf|=1/\sqrt{ab}\le4,\qquad
+ |\partial_af|=|c|/(2a\sqrt{ab})\le1/(2a)\le2,
+ \qquad|\partial_bf|\le2.
+\]
+the off-diagonal error is at most $\eta_N+e$; the two diagonal errors are each at most
+$\eta_D+e\leq\eta_N+e$. Integrating the gradient along the interpolation yields
+$|\kappa-\kappa_0|\le(4+2+2)(\eta_N+e)=8(\eta_N+e)$.
+
+\textbf{Step 8: The correlation gap for short and medium distances.}
+Let $a_L=F_M(L)^{-1/2}$,
+$v_L=(\sqrt{b_m}\sin(\pi mL)/\sqrt{F_M(L)})_{m\le M}$.
+then $a_L^2+\|v_L\|^2=1$, and
+$\kappa_0=a_La_JR(\tau)+v_L\cdot v_J$.
+the Cauchy inequality between the unit vectors $(a_L,v_L)$ and $(a_J,v_J)$ gives
+\[
+ 1-\kappa_0=[1-a_La_J-v_L\cdot v_J]+a_La_J(1-R)
+ \ge a_La_J(1-R).
+\]
+Moreover, since $F_M(L)\leq\gamma L^2$, we have
+$a_La_J\ge1/(\gamma LJ)\ge87/121$.
+$0\leq\tau\leq1/8$ implies
+$1-R=\tau(3-3\tau+\tau^2)\ge2\tau$;
+$1/8\leq\tau\leq1$ yields $1-R\geq1-(7/8)^3=169/512$.
+Multiplying by $87/121$ and subtracting the error from Step 7 gives the two gaps in the lemma.
+Moreover, $\|v_L\|^2=1-1/F_M(L)\le34/121$ and $R\ge0$, so
+$\kappa_0\ge-\|v_L\|\|v_J\|\ge-34/121$. The actual correlation at near and intermediate separations
+is therefore eventually at least $-1/2$.
+
+\textbf{Step 9: Bounds at far separations and a uniform margin.}
+For $1\le\tau\le K/18$, the cell at the floor of the difference shift and the following cell are both nonzero shifts.
+The reflected shift still lies in $[K/9,2K/9]$ and has the same property.
+Neither pair of cells needs to have full rank: the general distinct-character estimate from Step 3 already covers every defect. Thus
+\[
+ |HH_{LJ}|\le4\mathcal C_{BK}=1/6+o(1).
+\]
+Adding the low-frequency bound and the full $e$ error, and using the actual variance lower bound $V_{\min}$, gives
+\[
+ \kappa\le\frac{4\mathcal C_{BK}+34/261+e}{V_{\min}},
+ \qquad\kappa\ge-\frac{4\mathcal C_{BK}+1/116+e}{V_{\min}}.
+\]
+As $B,K,M\to\infty$ and $e\to0$, the errors are all uniform over the scales, and the respective limits of the right-hand sides are
+\[
+ \frac{1/6+34/261}{100/261}=31/40,
+ \qquad-\frac{1/6+1/116}{100/261}=-183/400.
+\]
+The upper limit is below $4/5$ by $1/40$, and the lower limit is above $-1/2$ by $17/400$.
+The intermediate gap exceeds $1/5$ in the limit by
+$14703/61952-1/5=11563/309760>0$.
+Hence one threshold suffices to ensure $\kappa\ge-1/2$ throughout the safe set
+and a gap of at least $1/5$ at every intermediate or far separation. This covers all matrix entries, corrections, and normalization errors.
+\end{proof}
+
+\subsection{Actual densities in every integer dimension}
+\textbf{Step 1: choosing the period for every sufficiently large integer dimension.}
+Fix $0<p<1$ and a finite $w\ge4$, both independent of $n$.
+Set $c_p=3p/\sqrt{29}$. For every sufficiently large integer $n$,
+choose the largest $K=2^d-1$ for which $c_p^2n/K^2\ge16\log n$, and put
+\[
+ v=\frac{c_p^2n}{K^2}=\frac{9p^2n}{29K^2},
+ \qquad u=\sqrt v,\qquad h=v/2-2.
+\]
+A fixed admissible period satisfies the inequality when $n$ is large,
+and the condition $K^2\le c_p^2n/(16\log n)$ leaves only finitely many
+candidates. The next candidate, $2^{d+1}-1=2K+1$, does not satisfy it.
+Consequently
+\[
+ \frac{c_p^2n}{(2K+1)^2}<16\log n\le\frac{c_p^2n}{K^2},
+ \quad 16\log n\le v<(2+1/K)^2 16\log n.
+\]
+Using $K\ge1$ first gives $v<144\log n$, so
+\[
+ K=c_p\sqrt n/\sqrt v\ge\frac{c_p\sqrt n}{12\sqrt{\log n}}\to\infty.
+\]
+Substituting this back sharpens the upper bound to
+$v<(4+o(1))16\log n$. In particular $v=\Theta_p(\log n)$, and for every
+fixed $r>0$,
+\[
+ \frac K{v^r}=\frac{c_p\sqrt n}{v^{r+1/2}}
+ \ge\frac{c_p\sqrt n}{(144\log n)^{r+1/2}}\to\infty.
+\]
+These estimates hold in every sufficiently large integer dimension, not
+merely along a subsequence at which the period changes.
+
+\textbf{Step 2: finite spectrum, label resolution, and peaks of positive width.}
+Let $B$ be the least power of two not less than $v$, and set
+$M=\lceil\sqrt v\rceil$ and $\delta=1/(wKv)$. Then
+\[
+ v\le B<2v,\qquad M=O(\sqrt v),\qquad
+ K+1>3B^4>H(B),\qquad1\le M<K
+\]
+all hold eventually; the last two conditions follow from $K/v^4\to\infty$.
+Thus the labels in Lemma~\ref{lem:papersidon} exist in each sufficiently
+large dimension. Once the field representation, the ordering of its
+elements, and its primitive element are fixed, choose the lexicographically
+first admissible ordered basis. This makes the choice deterministic and
+does not require a finite sequence of random trials to succeed.
+
+The $j$th atom is at distance at least $1/(2BK)$ from each endpoint of
+its cell. Since $B<2v$ and $w\ge4$,
+\[
+ \delta=\frac1{wKv}<\frac1{2BK},\qquad
+ \frac\delta2<\frac1{4BK}<\frac1{2BK}.
+\]
+Each box peak therefore lies strictly within its cell, and peaks in
+different cells do not overlap. Box smoothing preserves the mass of
+each atom. Define
+\[
+ \mu_{K,\delta}=K^{-1}\sum_{j=0}^{K-1}\beta_\delta(\cdot-a_j),
+ \qquad \int\mu_{K,\delta}=1,
+ \qquad0\le\mu_{K,\delta}\le\frac1{K\delta}=wv.
+\]
+The box width is strictly positive for every finite $n$; no preliminary
+atomic limit is needed.
+
+\textbf{Step 3: background, low frequencies, and bounds for the density.}
+Set $c_m=\sqrt{2b_m/3}$ and
+\[
+ D_M(x)=\sum_{m\le M}\pi m c_m\cos(2\pi mx),
+ \qquad\rho(x)=1-p+p\mu_{K,\delta}(x)+\frac pK D_M(x).
+\]
+The frequencies of $D_M$ are all nonzero, so $\int D_M=0$, and hence
+$\int\rho=1$. The coefficient bound
+$c_m\le\sqrt{32\alpha/3}/(\pi^2m^2)$ gives
+\[
+ \pi m c_m\le\frac{\sqrt{32\alpha/3}}{\pi m}<\frac{20}{3m},
+ \qquad\|D_M\|_\infty\le\frac{20}3H_M,
+ \quad H_M:=\sum_{m\le M}m^{-1}\le1+\log M.
+\]
+Since $H_M=O(\log v)$ and $H_M/K\to0$, for fixed $p<1$ we eventually
+have $20pH_M/(3K)\le(1-p)/2$. Nonnegativity of the peaks then gives
+\[
+ \rho\ge1-p-\frac{20pH_M}{3K}\ge\frac{1-p}{2}>0,
+\]
+\[
+ \rho\le1-p+pwv+\frac{20pH_M}{3K}=O_{p,w}(\log n).
+\]
+The fixed positive background $1-p$ is what ensures strict positivity.
+The height bound is for the one-dimensional factor, not its $n$-fold
+product.
+
+\textbf{Step 4: exact formula for the centered average.}
+Let $\mathcal P_\delta=\mathcal P*\beta_\delta$. The distributional
+derivative of the primitive and convolution give
+\[
+ \mathcal P_\delta'=\sum_j\beta_\delta(\cdot-a_j)-K
+ =K(\mu_{K,\delta}-1).
+\]
+Thus, for any $x,L$, integration over the periodic interval gives
+\[
+ \int_{x-L/2}^{x+L/2}(\mu_{K,\delta}(y)-1)dy
+ =\frac{\mathcal P_\delta(x+L/2)-\mathcal P_\delta(x-L/2)}K
+ =\frac{H_{L,\delta}(x)}K.
+\]
+Direct integration of the cosine gives
+\[
+ \frac1L\int_{x-L/2}^{x+L/2}\cos(2\pi my)dy
+ =\frac{\sin(\pi mL)}{\pi mL}\cos(2\pi mx).
+\]
+The coefficient $\pi m$ in the density therefore cancels the
+corresponding factor in the denominator, giving
+\begin{equation}\label{eq:papersourceaverage}
+ Y_L(x)=\frac1L\int_{x-L/2}^{x+L/2}\rho(y)dy=1+d_L(x),
+ \qquad d_L=\frac p{KL}(H_{L,\delta}+B_L).
+\end{equation}
+The integral of the difference of translates is zero, as are all the
+low-frequency cosine integrals. Hence $E_Pd_L=0$ and $E_PY_L=1$.
+The same deterministic source $\rho$ is used at every scale.
+
+\textbf{Step 5: uniform kernel bounds and conditions for exponential tilting.}
+For these parameters the Gauss cross-term bound is
+\[
+ C_x=O(K^{-1/2})+O((\log M)/K)=o(1/v),
+ \qquad e=C_x+\frac2{3wv}.
+\]
+After multiplication by $v$, the two terms are
+$O(v/\sqrt K)\to0$ and $O(v\log M/K)\to0$. Both follow from the already
+established $K/v^r\to\infty$.
+Also $T_M=O(v^{-3/2})$, and
+\[
+ v\eta_D=O(v/B^2+v/K)\to0,
+ \qquad v\eta_N=O(v/B^2+v/K)\to0.
+\]
+Thus the variance lower bound in the kernel lemma eventually exceeds
+$1/4$, and
+\[
+ \limsup_n vr_*
+ \le\frac{3\cdot2/(3w)}{100/87}=\frac{87}{50w}.
+\]
+Let $q_L=nE_Pd_L^2$. By the exact average formula,
+\[
+ q_L=\frac{np^2}{K^2L^2}G_\delta(L,L),\qquad
+ v=\frac{np^2\gamma}{3K^2},\qquad
+ \frac{q_L}{v}=\frac{3G_\delta(L,L)}{\gamma L^2}.
+\]
+It follows that $|q_L-v|\le vr_*=O_w(1)$ uniformly over the safe scales.
+
+Convolution with the box kernel is smoothing by a probability measure,
+so $|H_{L,\delta}|\le2$. Using $c_m<20/(9m^2)$ and
+$\sum_{m\ge1}m^{-2}=\pi^2/6<5/3$ gives
+\[
+ |B_L|\le\frac{20}9\sum_{m\le M}m^{-2}<\frac{100}{27},
+ \qquad|H_{L,\delta}+B_L|<\frac{154}{27}.
+\]
+Since $L\ge10/9$, the actual amplitude has the uniform bound
+\[
+ |d_L|\le\frac pK\frac9{10}\frac{154}{27}
+ =a_n:=\frac{77p}{15K}.
+\]
+If $\sigma_L^2=E_Pd_L^2$, then
+$\sigma_L=p\sqrt{G_\delta(L,L)}/(KL)$, and hence
+\[
+ \frac{|d_L|}{\sigma_L}\le
+ \frac{154/27}{\sqrt{G_\delta(L,L)}}\le\frac{308}{27}<14.
+\]
+Finally, $K=c_p\sqrt n/\sqrt v$ gives
+\[
+ a_nv=O_p(v^{3/2}/\sqrt n)\to0,
+ \qquad v^2/n=O_p((\log n)^2/n)\to0.
+\]
+The thresholds depend only on the fixed $p,w$ and apply to every safe
+scale in the dimension under consideration.
+
+% Cite the two standard external probability theorems in the introduction/bibliography.
+\subsection{Tilted integrals and affinity}
+We use the iid Berry--Esseen theorem \cite{Shevtsova2011}: for iid real variables of mean $\mu$,
+variance $t^2>0$, and third absolute centered moment $m_3$, the distribution function of the standardized sum differs from
+the standard normal distribution function by at most $C_{\rm BE}m_3/(t^3\sqrt n)$,
+where one can take $C_{\rm BE}=0.4748$.
+We also use the convex-set Gaussian comparison theorem for independent vectors \cite{Raic2019}: for independent centered
+$k$-dimensional vectors $V_a$ with identity total covariance, the comparison error over convex Borel sets is at most
+$(42k^{1/4}+16)\sum_aE\|V_a\|^3$.
+A lemma below proves the extension to singular covariance that we need.
+
+\begin{lemma}[Weighted tail identity]\label{lem:paperweighted}
+Suppose $Y>0$ and $E_PY=1$. Set $dQ=YdP$ and $S=\sum_{a=1}^n\log Y(X_a)$.
+If the distribution function of $S$ under $Q^{\otimes n}$ differs from that of $N(M,s^2)$ by at most
+$\epsilon$, then for every real $h$,
+\[
+ e^hP^{\otimes n}(S>h)
+ =\int_0^\infty e^{-r}Q^{\otimes n}(h<S\le h+r)dr,
+\]
+\[
+ \left|e^hP^{\otimes n}(S>h)
+ -\int_0^\infty e^{-x}\frac{\phi((h+x-M)/s)}s dx\right|\le2\epsilon.
+\]
+\end{lemma}
+\begin{proof}
+The change of measure writes the left-hand side as $E_Q[e^{-(S-h)}\mathbf1_{\{S>h\}}]$.
+For each $S>h$, $e^{-(S-h)}=\int_{S-h}^\infty e^{-r}dr$.
+Tonelli's theorem first gives the identity. The interval probability is the difference of two right-continuous distribution functions;
+each endpoint contributes one error and $\int_0^\infty e^{-r}dr=1$. Tonelli applied to the normal interval probability
+then gives the density integral in the second formula. The strict inequality excludes an atom at $S=h$.
+
+\medskip\noindent\textbf{Endpoints and the normal integral.}
+Write $F_Q$ for the right-continuous distribution function of $S$ under $Q^{\otimes n}$,
+and $F_G(t)=\Phi((t-M)/s)$. Then
+\[
+ Q(h<S\le h+r)=F_Q(h+r)-F_Q(h),
+\]
+Consequently,
+\[
+ \left|[F_Q(h+r)-F_Q(h)]-[F_G(h+r)-F_G(h)]\right|
+ \le |F_Q(h+r)-F_G(h+r)|+|F_Q(h)-F_G(h)|\le2\epsilon.
+\]
+Integration against $e^{-r}$ introduces no additional factor of length. For the normal part, the integration region is
+$0\le x\le r<\infty$, so
+\begin{align*}
+ \int_0^\infty e^{-r}[F_G(h+r)-F_G(h)]\,dr
+ &=\int_0^\infty\int_0^r e^{-r}\frac1s
+       \phi\!\left(\frac{h+x-M}{s}\right)dx\,dr\\
+ &=\int_0^\infty\left(\int_x^\infty e^{-r}dr\right)
+       \frac1s\phi\!\left(\frac{h+x-M}{s}\right)dx.
+\end{align*}
+This is the claimed expression. Since all the integrands whose order is exchanged are nonnegative, we need not assume that $S$ has a density
+or separately establish absolute integrability.
+
+\end{proof}
+
+\begin{lemma}[Two-point upper bound retaining affinity]\label{lem:paperpair}
+Suppose $Y,Z>0$ and $E_PY=E_PZ=1$, and set
+\[
+ H=E_P\sqrt{YZ},\quad dQ=H^{-1}\sqrt{YZ}dP,
+ \quad V=(\log Y+\log Z)/2,
+\]
+$t^2=\operatorname{Var}_QV>0$, $m_4=E_Q(V-E_QV)^4<\infty$,
+$s=\sqrt n\,t$, $M=nE_QV$, $\epsilon=C_{\rm BE}\sqrt{m_4}/(t^2\sqrt n)$.
+For events $E_Y=\{\sum\log Y>h\}$ and $E_Z=\{\sum\log Z>h\}$ on the same coordinates,
+\[
+ e^hP^{\otimes n}(E_Y\cap E_Z)
+ \le H^n\left[\int_0^\infty e^{-r}\frac{\phi((h+r-M)/s)}s dr+2\epsilon\right]
+ \le H^n[\phi(0)/s+2\epsilon].
+\]
+\end{lemma}
+\begin{proof}
+Their intersection lies in $\{\sum V>h\}$, and the change of measure gives
+$e^hP(\sum V>h)=H^nE_Q[e^{-(\sum V-h)}\mathbf1_{\{\sum V>h\}}]$.
+As in Lemma~\ref{lem:paperweighted}, write the latter expectation as an integral of weighted interval probabilities.
+Cauchy--Schwarz bounds the third absolute centered moment by $t\sqrt{m_4}$, so the Berry--Esseen error is at most
+$\epsilon$. The two distribution-function evaluations contribute $2\epsilon$ in total, and the normal density is at most $\phi(0)/s$.
+All comparison errors retain the factor $H^n$ from the actual affinity.
+
+\medskip\noindent\textbf{Normalization and retention of the error factor.}
+Cauchy--Schwarz gives $0<H\le\sqrt{E_PY\,E_PZ}=1$, so $Q$ is a probability measure.
+Its density on the product space is exactly
+\[
+ \frac{dQ^{\otimes n}}{dP^{\otimes n}}=H^{-n}e^{\sum_aV(X_a)}.
+\]
+Write $R=\sum_aV(X_a)$. Then
+\begin{align*}
+ e^hP(E_Y\cap E_Z)
+ &\le e^hP(R>h)\\
+ &=H^nE_{Q^{\otimes n}}[e^{-(R-h)}\mathbf1_{R>h}].
+\end{align*}
+Since
+\[
+ E_Q|V-E_QV|^3
+ =E_Q\bigl(|V-E_QV|\,|V-E_QV|^2\bigr)
+ \le\sqrt{E_Q|V-E_QV|^2}\sqrt{E_Q|V-E_QV|^4}
+ =t\sqrt{m_4},
+\]
+the Berry--Esseen error is the stated $\epsilon$. We first compare interval probabilities under $Q$ and then
+restore the factor $H^n$. Replacing it by 1 earlier would lose the decay needed to sum over many pairs of scales.
+
+\end{proof}
+
+For the actual source, always take $X_1,\ldots,X_n$ to be independent Haar coordinates and define
+\[
+ S_L=\sum_{a=1}^n\log Y_L(X_a),\qquad E_L=\{S_L>h\}.
+\]
+Events at different scales share the same coordinates.
+
+\begin{proposition}[Uniform probability estimates for pairs of scales]\label{prop:paperallpairs}
+Use the same source as in \eqref{eq:papersourceaverage}. After fixing $p,w$, all safe
+pairs of scales satisfy
+\[
+ ue^hP(E_L\cap E_J)\le C H_{LJ}^n,
+ \quad H_{LJ}^n\le
+ \exp\!\left[-\frac{(v-C)(1-\kappa(L,J))}{4(1+a_n)}\right].
+\]
+The constant is uniform over the scales and $n$. Set $c=174/121$. For each fixed $r>0$,
+\[
+ \limsup_{n\to\infty}\sup_{|L-J|=2r/(Kv)}ue^hP(E_L\cap E_J)
+ \le\phi(0)e^{4/(3w)}e^{-cr/4}.
+\]
+For all near separations $\tau=r/v\le1/8$, a summable upper bound is $Ce^{-cr/8}$.
+For intermediate and far separations $1/8\le\tau\le K/18$, a uniform bound for all sufficiently large dimensions is $Ce^{-v/25}$.
+\end{proposition}
+\begin{proof}
+Write $Y=1+d$, $Z=1+e$, and $T=(d+e)/2$. By $\kappa\ge-1/2$ and
+$q_Y,q_Z=v+O(1)$,
+\[
+ s_0^2=E_PT^2=\frac{q_Y+q_Z+2\sqrt{q_Yq_Z}\kappa}{4n}
+ \ge\frac{E_Pd^2+E_Pe^2}{8}.
+\]
+A uniform Taylor bound gives $\|V-T\|_{L^2(P)}\le Ca_ns_0$.
+Since $dQ/dP=1+O(a_n)$ and $E_PT=0$,
+$\operatorname{Var}_QT=s_0^2(1+O(a_n))$.
+The centered $L^2$ triangle inequality therefore gives
+\[
+ n\operatorname{Var}_QV
+ =\frac{q_Y+q_Z+2\sqrt{q_Yq_Z}\kappa}{4}(1+O(a_n)),
+ \qquad s\asymp u.
+\]
+Also $|V-E_QV|\le2a_n/(1-a_n)$, hence
+$m_4\le[2a_n/(1-a_n)]^2t^2$, $u\epsilon=O(a_n)\to0$.
+The two-point lemma gives the uniform prefactor. On the other hand,
+\[
+ 1-H=\tfrac12E_P(\sqrt Y-\sqrt Z)^2
+ \ge\frac{E_P(d-e)^2}{8(1+a_n)},
+\]
+and $nE(d-e)^2=(\sqrt{q_Y}-\sqrt{q_Z})^2+
+2\sqrt{q_Yq_Z}(1-\kappa)$. Using $H^n\le e^{-n(1-H)}$ gives the stated exponential bound.
+
+For fixed $r$, the next local increment lemma gives $nE(d_L-d_J)^2=O_{r,w}(1)$,
+so $\kappa\to1$ uniformly. Then $u/s\to1$, and the prefactor is $\phi(0)+o(1)$.
+The near-distance estimate in the kernel lemma gives
+\[
+ v(1-\kappa)\ge cr-8v(\eta_N+e)=cr-\frac{16}{3w}-o(1).
+\]
+This proves the precise asymptotic for fixed $r$.
+For all growing near separations, the preceding lower bound remains uniform. The uniform prefactor and
+$(v-C)/(v(1+a_n))\ge1/2$ yield $Ce^{-cr/8}$.
+For intermediate and far separations the gap is at least $1/5$, while that ratio is eventually at least $4/5$, yielding $Ce^{-v/25}$.
+The fixed-separation asymptotic and the bound for growing separations play different roles; the latter controls the infinite sum.
+
+\medskip\noindent\textbf{Details of the uniform Taylor estimates.}
+All constants below are independent of the pair of scales. For sufficiently large $n$, $a_n\le1/2$.
+The integral remainder formula gives, for $|z|\le a_n$,
+\[
+ |\log(1+z)-z|\le\frac{z^2}{2(1-a_n)},\qquad
+ \left|\log(1+z)-z+\frac{z^2}{2}\right|
+ \le\frac{|z|^3}{3(1-a_n)^3}.
+\]
+Hence $|V-T|\le C(d^2+e^2)\le Ca_n(|d|+|e|)$.
+Squaring and integrating, with $s_0^2\ge(E_Pd^2+E_Pe^2)/8$, gives
+$\|V-T\|_2\le Ca_ns_0$.
+Also $1-a_n\le\sqrt{YZ}\le1+a_n$ and $1-a_n\le H\le1$, so
+$\|dQ/dP-1\|_\infty\le Ca_n$.
+It follows that
+\[
+ E_QT^2=s_0^2+O(a_ns_0^2),\qquad
+ |E_QT|=|E_P[(dQ/dP-1)T]|\le Ca_ns_0,
+\]
+and therefore $\operatorname{Var}_QT=s_0^2(1+O(a_n))$.
+For any square-integrable $A,B$, centering is an orthogonal projection, so
+\[
+ |\sqrt{\operatorname{Var}_QA}-\sqrt{\operatorname{Var}_QB}|
+ \le\|(A-E_QA)-(B-E_QB)\|_{L^2(Q)}
+ \le\|A-B\|_{L^2(Q)}.
+\]
+Applying this to $A=V,B=T$ gives the variance comparison above.
+The range of $V$ is also contained in
+$[\log(1-a_n),\log(1+a_n)]$. Its width is at most $2a_n/(1-a_n)$,
+which still bounds its magnitude after centering. Thus
+\[
+ u\epsilon\le\frac{2C_{\rm BE}a_n}{1-a_n}\frac{u}{\sqrt n\,t}
+ =O(a_n).
+\]
+Finally, the affinity identity follows directly from $EY=EZ=1$:
+\[
+ E(\sqrt Y-\sqrt Z)^2=2-2H,
+ \qquad(\sqrt Y-\sqrt Z)^2
+ =\frac{(d-e)^2}{(\sqrt Y+\sqrt Z)^2}
+ \ge\frac{(d-e)^2}{4(1+a_n)}.
+\]
+These calculations give uniform control of both the prefactor and the exponential bound over all scale pairs in the same safe set.
+
+\end{proof}
+
+\subsection{Local increments of the original density and the box-smoothing kernel}
+\begin{lemma}[Counting differences of atom locations]\label{lem:paperphysicalcount}
+Let $N(\ell)$ count ordered pairs of atoms whose circular difference is exactly $\ell/(BK)$. Write
+$\ell=Bk+b_0$, $0\le b_0<B$. If both $k,k+1$ are nondefective nonzero shifts, then
+\[
+ N(\ell)=q/B-\mathbf1_{\{b_0=0\}}.
+\]
+Moreover, $N(0)=K$, and $N(\ell)=q|\ell|/B^2$ if $0<|\ell|<B$.
+\end{lemma}
+\begin{proof}
+A physical difference comes either from shift $k$ and one of the $B-b_0$ label pairs with difference $b_0$, or from shift $k+1$
+and one of the $b_0$ label pairs with difference $b_0-B$. Summing by \eqref{eq:paperlabelcount} gives
+$q/B$. Only the first case with $b_0=0$ includes the zero label pair, so it requires subtraction of 1.
+When $0<\ell<B$, the zero shift cannot produce a nonzero label difference. Only the adjacent nondefective cells contribute,
+with $\ell$ label pairs giving $q\ell/B^2$. Exchange the two atoms for negative differences; zero difference comes from the $K$ same-atom pairs.
+
+\medskip\noindent\textbf{Carries and zero differences.}
+Represent atom locations by integers $z_j=Bj+y_j$; their common midpoint translation does not affect differences.
+If $z_{j'}-z_j\equiv\ell\pmod{BK}$, then
+\[
+ B(j'-j)+(y_{j'}-y_j)=Bk+b_0\pmod{BK}.
+\]
+Since $-(B-1)\le y_{j'}-y_j\le B-1$, there are only two possibilities:
+shift $j'-j=k$ and label difference $b_0$, or shift $j'-j=k+1$ and label difference $b_0-B$.
+The former gives $B-b_0$ label pairs and the latter $b_0$; the two cases are exhaustive and disjoint.
+When both shifts are nondefective and nonzero, each label pair occurs $q/B^2$ times, except
+$(0,0)$, which occurs once fewer. Thus
+\[
+ (B-b_0)\frac q{B^2}+b_0\frac q{B^2}-\mathbf1_{b_0=0}
+ =\frac qB-\mathbf1_{b_0=0}.
+\]
+When $0<\ell<B$, the first case requires two distinct atoms in the same cell, but each cell contains exactly one atom.
+It contributes zero; the $\ell$ label pairs in the second case are all different from the all-zero pair, giving $q\ell/B^2$.
+When $\ell=0$, each atom coincides only with itself, so the nonzero-shift formula does not apply.
+
+\end{proof}
+
+\begin{lemma}[Actual increments in a fixed local window]\label{lem:paperlocal}
+Fix finite $T$, $p\in(0,1)$, and $w\ge4$. From a safe base point $L_0$, set
+$L(t)=L_0+2t/(Kv)$ for $|t|\le T$, and require the scales used to be safe.
+Let $\varepsilon=1/w$ and let $\chi_\varepsilon$ be the uniform density on $[-\varepsilon/2,\varepsilon/2]$.
+Set $b_{[s,t]}=\mathbf1_{[s,t]}*\chi_\varepsilon$.
+For fixed finitely many nodes $t_j$,
+\[
+ D_{j\ell}:=nE_P(d_{L(t_j)}-d_{L(t_\ell)})^2
+ =\lambda(L_0)\|b_{[0,t_j]}-b_{[0,t_\ell]}\|_2^2+o(1),
+ \quad\lambda(L_0)=\frac{58}{9L_0^2}.
+\]
+All remainders are uniform over the admissible safe base points. The total covariance between the base $d_{L_0}$ and any local increment
+is $O_T(1)$.
+\end{lemma}
+\begin{proof}
+First freeze the denominator and set
+\[
+ U_{[s,t]}=\frac p{KL_0}(H_{L(t),\delta}-H_{L(s),\delta}).
+\]
+It consists of smoothed interval pulses in two directions. Each pulse has amplitude coefficient $p/(KL_0)$
+and physical length unit $1/(Kv)$, and the exact mean $2p(t-s)/(K vL_0)$ is subtracted.
+In each of the two families there are $K$ same-direction, same-atom pulse pairs. The change of variables gives the coefficient
+\[
+ \frac{2np^2}{K^2vL_0^2}=\frac{58}{9L_0^2}.
+\]
+For same-direction overlaps of distinct atoms, only differences in a window of width $O_T(1/(Kv))$ near zero can occur. Thus there are only
+$O_T(B/v+1)=O_T(1)$ integers $\ell$, eventually with $|\ell|<B$.
+The preceding lemma bounds their total relative weight by $O_T(B^{-2})$.
+Opposite-direction overlap differences belong to a window of the same width near $L_0$. The two corresponding cell shifts have distance from
+$K(L_0-1)$ at most $1+O_T(1/v)<2$, so safety makes both nondefective.
+The interval $I$ also excludes the zero shift. Each difference grid point has relative weight at most $q/(KB)$, so all reflected contributions
+have total weight $O_T(B^{-1})$. This includes cell carries and all nearby reflected terms.
+Every pulse inner product is at most $\sqrt{|[s,t]||[s',t']|}\le2T$, so both distinct-atom errors tend to zero.
+The product of means multiplied by $n$ is $O_T(1/v)$.
+Therefore
+\[
+ nE_PU_IU_J=\lambda(L_0)\langle b_I,b_J\rangle+o(1).
+\]
+
+The low-frequency coefficients $c_m=\sqrt{2b_m/3}$ satisfy $\sum m^2c_m^2<\infty$.
+The difference in lengths is $O_T(1/(Kv))$. The inequality $|\sin x-\sin y|\le|x-y|$ directly bounds the low-frequency increment's
+squared error multiplied by $n$ by $O_T(1/(K^2v))$. Replacing the denominator $L(t)$ by $L_0$ gives the same error order.
+Minkowski and Cauchy--Schwarz control the cross terms with the atomic pulses without requiring orthogonality.
+Polarization gives the stated formula for $D_{j\ell}$.
+The atomic increment has $L^1$ norm at most $C_Tp/(Kv)$, and the base amplitude is $O(p/K)$.
+Their product times $n$ is $O_T(1)$; the low-frequency and denominator terms satisfy the same bound.
+
+Also, $|\log(1+d_t)-\log(1+d_s)-(d_t-d_s)|\le Ca_n|d_t-d_s|$.
+Both single and geometric-mean tilts have density $1+O(a_n)$, so replacing the increments by logarithmic ones
+changes the tilted covariance by only $o(1)$. The squared-mean term times $n$ is at most $O(v^2/n)$.
+Since $a_nv\to0$, all these estimates hold uniformly in the fixed window.
+
+\medskip\noindent\textbf{Pulse scaling and error orders.}
+Let $I_0=[s,t]$ and $\ell_0=t-s\ge0$, and write
+$\psi_{I_0}(x)=b_{I_0}(Kvx)$. Then
+\[
+ \int\psi_{I_0}\psi_{J_0}=\frac1{Kv}\langle b_{I_0},b_{J_0}\rangle,
+ \qquad \int\psi_{I_0}=\frac{\ell_0}{Kv}.
+\]
+Moving each boundary contributes a family of translates of $\psi_{I_0}$, one family per boundary.
+Thus the same-atom contribution multiplied by $n$ is
+\[
+ n\left(\frac p{KL_0}\right)^2\frac{2K}{Kv}
+ \langle b_{I_0},b_{J_0}\rangle
+ =\frac{2np^2}{K^2vL_0^2}\langle b_{I_0},b_{J_0}\rangle.
+\]
+A nonzero difference grid point has the same integral scaling as a same-atom difference grid point,
+but with relative weight $N(\ell)/K$.
+Since $v\le B<2v$, the possible $|\ell|$ in a fixed window are uniformly bounded.
+Same-direction nonzero differences satisfy
+$N(\ell)/K=(q/K)|\ell|/B^2=O_T(B^{-2})$;
+reflected differences satisfy $N(\ell)/K\le q/(KB)=O(B^{-1})$.
+These counts give the two error terms directly.
+
+For the low-frequency and denominator errors, Parseval's identity gives
+\[
+ \|B_L-B_J\|_2^2
+ \le\frac{\pi^2|L-J|^2}{2}\sum_{m\le M}m^2c_m^2
+ \le C|L-J|^2.
+\]
+Multiply by $np^2/K^2=29v/9$ and substitute $|L-J|=O_T((Kv)^{-1})$ to obtain
+$O_T((K^2v)^{-1})$. The denominator change satisfies
+$|L^{-1}-L_0^{-1}|\le C|L-L_0|$. The same estimate follows from $\|H_L+B_L\|_2=O(1)$.
+Writing the main pulse as $U$ and the remainder as $R$, we have
+\[
+ |nE(U+R)^2-nEU^2|
+ \le2\sqrt{nEU^2}\sqrt{nER^2}+nER^2=o(1).
+\]
+Thus the cross term can also be controlled uniformly.
+
+Finally, the $L^1$ change in a translated interval indicator gives
+$\|H_{L(t),\delta}-H_{L(s),\delta}\|_1\le C_T/v$.
+Multiplying by the base amplitude and the source coefficient gives
+\[
+ n\left|E\left[d_{L_0}\frac p{KL_0}
+       (H_{L(t),\delta}-H_{L(s),\delta})\right]\right|
+ \le C_T\frac{np^2}{K^2v}=O_T(1).
+\]
+Cauchy--Schwarz bounds the low-frequency and denominator remainders by $O_T(K^{-1})$.
+This proves the boundedness of the base--increment covariance needed for Gaussian conditioning.
+
+\end{proof}
+
+\subsection{Finite-face comparison and the leading term for the actual maximum}
+\begin{lemma}[Finite-face comparison allowing singular covariances]\label{lem:paperpolyface}
+Let $V_1,\ldots,V_n$ be independent and identically distributed in $\mathbb R^k$, with mean $\mu$,
+$\|V_1-\mu\|\le B_n$, $C=n\operatorname{Cov}(V_1)$.
+Let $G\sim N(n\mu,C)$, allowing singular $C$. Suppose $D$ is an intersection of $J$ open or closed half-spaces
+with unit normals $a_\ell$, each satisfying $b_\ell=a_\ell^TCa_\ell>0$.
+For every $\sigma,\eta>0$,
+\[
+ |P(\sum_aV_a\in D)-P(G\in D)|
+ \le4C_k\left(\frac{kB_n}{\sigma}+\frac{\gamma_k}{\sqrt n}\right)
+ +4Je^{-\eta^2/(2\sigma^2)}
+ +2\eta\sum_{\ell=1}^J(2\pi b_\ell)^{-1/2},
+\]
+$C_k=42k^{1/4}+16$, $\gamma_k=E\|Z_k\|^3$, $Z_k\sim N(0,I_k)$.
+The bound is independent of the thresholds defining the faces.
+\end{lemma}
+\begin{proof}
+Add an independent $\sigma Z_k/\sqrt n$ to each centered vector; the total added noise has law $\sigma Z_k$.
+Whiten with $A_\sigma=(C+\sigma^2I)^{-1/2}$ to obtain
+\[
+ nE\|A_\sigma(V_1-\mu)\|^3
+ \le\frac{B_n}{\sigma}nE\|A_\sigma(V_1-\mu)\|^2
+ \le\frac{kB_n}{\sigma}.
+\]
+The sum of third moments from the noise terms is at most $\gamma_k/\sqrt n$. Applying $(a+b)^3\le4(a^3+b^3)$
+and the convex-set comparison above gives the first term.
+The probability that the noise projection onto any unit face normal has absolute value exceeding $\eta$ is at most
+$2Je^{-\eta^2/(2\sigma^2)}$. We use this bound twice: when comparing the actual vector with its noisy version, and when comparing
+the noisy Gaussian with the original Gaussian. The total threshold shift is $2\eta$, and the density of the original Gaussian's face projection
+is bounded by $(2\pi b_\ell)^{-1/2}$, giving the last term.
+Enlarging and shrinking the half-spaces preserves whether each face is open or closed; neither atoms nor ties require a null-boundary assumption.
+
+\medskip\noindent\textbf{The half-space comparison in detail.}
+Write $D$ as an intersection of constraints $a_\ell\cdot x\le c_\ell$, handling strict faces in the same way.
+Let $D_t$ be the set obtained by shifting all thresholds to $c_\ell+t$.
+Let $S=\sum V_a$ and take $Z\sim N(0,I_k)$ independently. Put
+$\beta=2J\exp[-\eta^2/(2\sigma^2)]$. On the event that all noise projections are bounded by $\eta$,
+\[
+ S\in D\Longrightarrow S+\sigma Z\in D_\eta,
+ \qquad S+\sigma Z\in D_{-\eta}\Longrightarrow S\in D.
+\]
+Write $\Delta$ for the convex-set comparison error after adding noise. Applying the comparisons in order and then removing the Gaussian noise gives
+\[
+ P(G\in D_{-2\eta})-\Delta-2\beta
+ \le P(S\in D)
+ \le P(G\in D_{2\eta})+\Delta+2\beta.
+\]
+The set $D_{2\eta}\setminus D$ lies in the union of outer face strips of width $2\eta$.
+The same argument applies to $D\setminus D_{-2\eta}$. The error on either side is at most
+$2\eta\sum_\ell(2\pi b_\ell)^{-1/2}$, and we take the larger of the two errors
+rather than adding the strip bounds.
+
+To check $\Delta$, set $U_a=A_\sigma(V_a-\mu)$ and
+$Z_a'=A_\sigma\sigma Z_a/\sqrt n$. Then
+\[
+ \sum_a\operatorname{Cov}(U_a+Z_a')=I_k,\quad
+ \|A_\sigma\|\le\sigma^{-1},\quad
+ \operatorname{tr}(A_\sigma C A_\sigma)\le k.
+\]
+Hence $\sum_aE\|U_a\|^3\le kB_n/\sigma$,
+whereas $\|A_\sigma\sigma\|\le1$ gives
+$\sum_aE\|Z_a'\|^3\le\gamma_k/\sqrt n$.
+The convex-set theorem applies to the whitened sets because invertible linear maps preserve convexity. This gives the stated $\Delta$.
+Singularity of the original covariance does not affect invertibility of $C+\sigma^2I$.
+
+\end{proof}
+
+\begin{theorem}[Maximum exceedance identity for a fixed finite scale packet]\label{thm:paperwinner}
+Fix $0<p<1$ and finitely many nodes $0=t_0<t_1<\cdots<t_{k-1}\le T$, with $k\ge2$,
+minimum consecutive spacing $A>0$, and finite $w\ge\max(4,1/A)$.
+Use the source constructed above in every integer dimension. Suppose all $L_j=L_0+2t_j/(Kv)$ lie in $I$ and are safe, and set
+$S_j=\sum_{a=1}^n\log Y_{L_j}(X_a)$, $U=\{\max_jS_j>h\}$.
+Let $b_t=\mathbf1_{[0,t]}*\chi_\varepsilon$, $\varepsilon=1/w$, and $b_0=0$.
+For a real isonormal Gaussian map $W$ on $L^2(\mathbb R)$, define
+\[
+ X_{\varepsilon,\lambda}(t)=\sqrt\lambda W(b_t)-\tfrac\lambda2\|b_t\|_2^2,
+ \qquad\lambda(L_0)=\frac{58}{9L_0^2}.
+\]
+Fix all these parameters, then let $n\to\infty$ through the integers. We have
+\begin{equation}\label{eq:paperwinner}
+ ue^hP^{\otimes n}(U)=\phi(0)E\exp(\max_jX_{\varepsilon,\lambda(L_0)}(t_j))+o(1),
+\end{equation}
+The remainder is uniform over all admissible safe base points.
+\par Keeping the finite nodes fixed and then letting $w\to\infty$, the expectation on the right converges
+uniformly over $\lambda\in[522/121,522/100]$ to
+\[ E\exp(\max_j[\sqrt\lambda B(t_j)-\lambda t_j/2]).\]
+\end{theorem}
+\begin{proof}
+Break ties in favor of the smallest index: $j$ wins exactly when
+$S_\ell<S_j$ for $\ell<j$ and $S_\ell\le S_j$ for $\ell>j$.
+For every actual vector these regions give a disjoint partition.
+Use the individual single-scale tilt $dQ_j=Y_{L_j}dP$ in the term where $j$ wins.
+The change of measure and Tonelli's theorem for nonnegative integrands give
+\begin{equation}\label{eq:paperwinneridentity}
+ e^hP(U)=\sum_j\int_0^\infty e^{-r}
+ Q_j^{\otimes n}\{h<S_j\le h+r,\ j\text{ wins}\}dr.
+\end{equation}
+The event in the integrand is an intersection of $k+1$ open or closed half-spaces.
+
+Write $d_j=Y_{L_j}-1$, $g_j=\log Y_{L_j}$,
+$q_j=nEd_j^2$, $C^P_{j\ell}=nEd_jd_\ell$,
+$D_{j\ell}=nE(d_j-d_\ell)^2$.
+The local increment lemma gives $D_{j\ell}=\lambda\|b_{t_j}-b_{t_\ell}\|_2^2+o(1)$.
+Expanding to second order directly under the actual $Q_j$ gives the following identities, with all errors $O(a_nv+v^2/n)=o(1)$:
+\begin{align*}
+ nE_{Q_j}g_\ell&=C^P_{j\ell}-q_\ell/2+o(1),&nE_{Q_j}g_j&=q_j/2+o(1),\\
+ nE_{Q_j}(g_\ell-g_j)&=-D_{j\ell}/2+o(1),\\
+ n\operatorname{Cov}_{Q_j}(g_\ell-g_j,g_m-g_j)
+ &=(D_{j\ell}+D_{jm}-D_{\ell m})/2+o(1),\\
+ n\operatorname{Cov}_{Q_j}(g_j,g_\ell-g_j)
+ &=(q_\ell-q_j-D_{j\ell})/2+o(1)=O(1).
+\end{align*}
+For example, the mean comes from $E[(1+d_j)(d_\ell-d_\ell^2/2)]$.
+The third-order remainder multiplied by $n$ is at most $Ca_nv$; the product-of-means error in the covariance is at most $Cv^2/n$.
+The $q_\ell-q_j$ terms cancel in the difference of means; we need not suppose all actual variances equal $v$.
+The base coordinate has total variance $q_j+o(1)=v+O(1)$.
+
+For $s=|t_j-t_\ell|\ge A\ge\varepsilon$, integration of the piecewise linear box convolution gives
+\[
+ \|b_{t_j}-b_{t_\ell}\|_2^2=s-\varepsilon/3\ge2A/3.
+\]
+The box integral can be checked in three pieces. After translation, take $[0,s]$ with $s\ge\varepsilon$.
+Its convolution with the uniform box of width $\varepsilon$ varies linearly on the two edge intervals of length $\varepsilon$
+and is 1 on the middle interval of length $s-\varepsilon$. Thus
+\[
+ \|\mathbf1_{[0,s]}*\chi_\varepsilon\|_2^2
+ =2\int_0^\varepsilon(x/\varepsilon)^2dx+(s-\varepsilon)
+ =s-\varepsilon/3.
+\]
+Also, $b_{t_j}-b_{t_\ell}$ is precisely the convolution of the indicator of $[t_\ell,t_j]$ (or its negative if the order is reversed) with the box;
+the squared norm therefore depends only on the distance between nodes.
+
+Thus the variance for the comparison face $(e_\ell-e_j)/\sqrt2$ is eventually at least
+$\lambda_{\min}A/6$, and that for each of the two base faces is eventually at least $v/2$.
+The norm of each centered single-coordinate log vector is at most $2\sqrt k\,a_n/(1-a_n)$.
+Taking $\sigma=n^{-1/8}$ and $\eta=\sigma\sqrt{8\log n}$, the finite-face comparison error multiplied by $u$ is
+\[
+ O_{k,A,T,w,p}(vn^{-3/8}+u/\sqrt n+un^{-4}
+ +un^{-1/8}\sqrt{\log n})=o(1).
+\]
+The error is independent of thresholds, so we may integrate in $r$; summing the finitely many $k$ terms still gives $o(1/u)$.
+This step requires only that the projections onto the face normals be nondegenerate; the full Gram matrix of differences may be singular.
+
+Define the Gaussian vector $G^{(j)}$ by the moments under the $j$th tilted measure and condition only on its base coordinate
+$G_j^{(j)}=h+x$. The base variance is $\sim v$, $h-q_j/2=O(1)$, and the covariances between the base coordinate and the difference vector
+are $O(1)$. For fixed $x\ge0$, the corrections to the conditional mean and covariance therefore vanish.
+We divide only by the one-dimensional base variance and never invert the full Gram matrix of differences.
+The limiting difference vector is exactly the difference vector of the finite Gaussian process $X_{\varepsilon,\lambda}$
+under the tilt by $e^{X_{\varepsilon,\lambda}(t_j)}$. Its mean is
+$-\lambda\|b_{t_\ell}-b_{t_j}\|_2^2/2$ and its covariance is the leading polarization term above.
+This follows directly from exponential tilting of a Gaussian vector.
+Each difference of distinct nodes has positive variance, so the boundary of the limiting winning region is contained in finitely many zero-probability hyperplanes.
+Weak convergence therefore gives convergence of its probability even for a singular difference vector.
+
+Let $f_{j,n}$ be the base Gaussian density and $\pi_{j,n}(x)$ the conditional winning probability.
+Applying Tonelli's theorem again to the thin layers gives the weighted integral
+\[
+ \Gamma_{j,n}=\int_0^\infty e^{-x}f_{j,n}(h+x)\pi_{j,n}(x)dx.
+\]
+The quantity $uf_{j,n}(h+x)$ is uniformly bounded and tends to $\phi(0)$ at fixed $x$; $e^{-x}$ is an integrable dominating bound.
+Thus $u\Gamma_{j,n}\to\phi(0)P_j(j\text{ wins})$.
+The actual moment remainders are uniform over base points, and the range of $\lambda$ is compact.
+If uniform convergence failed, a subsequence of failing base points would have a further subsequence with convergent $\lambda$. The same moment convergence,
+nondegeneracy of the faces, and continuity in the parameter would then give the stated limit, a contradiction. This proves uniformity over safe base points.
+Finally, the exact finite Gaussian tilt and the partition give
+\[
+ \sum_jP_j(j\text{ wins})
+ =\sum_jE[e^{X_j}\mathbf1_{\{j\text{ wins}\}}]=E e^{\max_jX_j},
+\]
+which proves \eqref{eq:paperwinner}.
+
+With the nodes fixed, $b_t\to\mathbf1_{[0,t]}$ in $L^2$, so the finite vector converges to
+the stated Brownian vector, and
+\[
+ E e^{2\max_jX_j}\le\sum_jE e^{2X_j}
+ =\sum_je^{\lambda\|b_{t_j}\|_2^2}\le k e^{\lambda_{\max}T}.
+\]
+This controls uniform integrability of the exponentiated maximum. The same compactness argument gives uniform convergence of the expectations.
+
+\medskip\noindent\textbf{Moments under conditioning and exponential tilting.}
+To identify the Gaussian limit explicitly, write
+$K_{j\ell}=\lambda\langle b_{t_j},b_{t_\ell}\rangle$.
+The original Gaussian vector $X$ has mean coordinates $-K_{jj}/2$ and covariance $K$.
+Since $Ee^{X_j}=1$, the measure $e^{X_j}dP$ is a probability measure. Under it, the mean coordinates become
+$-K_{\ell\ell}/2+K_{j\ell}$ and the covariance remains $K$. Thus
+\begin{align*}
+ E_j(X_\ell-X_j)
+ &=-\tfrac12(K_{\ell\ell}+K_{jj}-2K_{j\ell})=-D_{j\ell}^{\infty}/2,\\
+ \operatorname{Cov}_j(X_\ell-X_j,X_m-X_j)
+ &=K_{\ell m}-K_{\ell j}-K_{jm}+K_{jj}\\
+ &=\tfrac12(D_{j\ell}^{\infty}+D_{jm}^{\infty}-D_{\ell m}^{\infty}).
+\end{align*}
+where $D_{j\ell}^{\infty}=\lambda\|b_{t_j}-b_{t_\ell}\|_2^2$.
+These are precisely the limits obtained by expanding the actual tilted moments.
+
+For the actual normal vector, write $m_j,s_j^2$ for the base mean and variance, $m_\Delta$ for the difference-vector mean,
+and $c_j$ for the covariance column between the base coordinate and the difference vector. Conditional on base value $h+x$, the moments are
+\[
+ m_\Delta+\frac{c_j}{s_j^2}(h+x-m_j),\qquad
+ C_\Delta-\frac{c_jc_j^T}{s_j^2}.
+\]
+Here $c_j=O(1)$, $s_j^2=v+O(1)$, and $h-m_j=O(1)$.
+Thus for fixed $x$ both corrections are $O_x(v^{-1})$.
+At the same time,
+\[
+ uf_{j,n}(h+x)=\frac{u}{s_j}\phi\!\left(\frac{h+x-m_j}{s_j}\right)
+ \longrightarrow\phi(0),\qquad
+ uf_{j,n}(h+x)\le C.
+\]
+On $x\in[0,R]$ we may use the same bound, while the integral over $x>R$ is uniformly at most $Ce^{-R}$.
+Take the $n$ limit first and then let $R\to\infty$ to justify exchanging the thin-layer integral and the limit.
+
+For fixed nodes, as $w\to\infty$ the box averages form an approximate identity on $L^2$,
+so $\|b_t-\mathbf1_{[0,t]}\|_2\to0$.
+Under the same isonormal Gaussian map,
+$E|W(b_t)-W(\mathbf1_{[0,t]})|^2=\|b_t-\mathbf1_{[0,t]}\|_2^2$.
+The finite node vector thus converges jointly in probability. A bound on the second exponential moment gives uniform integrability of the exponentiated maximum,
+which yields convergence in expectation. This argument does not apply directly if the number of nodes grows without control.
+
+\end{proof}
+
+\subsection{Exponentiated Brownian maximum and uniform mesh error}
+\begin{lemma}[Exponential mean of a maximum with drift]\label{lem:paperbrownian}
+For a standard Brownian motion $B$, set $X(t)=\sqrt2B(t)-t$ and
+$M_T=\sup_{0\le t\le T}X(t)$. For $T>0$,
+\[
+ P(M_T>x)=\Phi\!\left(-\frac{x+T}{\sqrt{2T}}\right)
+ +e^{-x}\Phi\!\left(\frac{T-x}{\sqrt{2T}}\right)\qquad(x\ge0),
+\]
+\[
+ F(T):=Ee^{M_T}=(T+2)\Phi(\sqrt{T/2})
+ +\sqrt{2T}\phi(\sqrt{T/2}),\qquad F(T)/T\longrightarrow1.
+\]
+\end{lemma}
+\begin{proof}
+First consider the coordinate process $Z(t)=\sqrt2B(t)$ under the zero-drift measure $P_0$.
+Its terminal density is
+\[
+ p_T(z)=\frac1{\sqrt{4\pi T}}\exp\!\left(-\frac{z^2}{4T}\right).
+\]
+Because $Z(T)$ is centered normal with variance $2T$,
+\[
+ E_0\exp[-Z(T)/2-T/4]
+ =\exp[(1/2)^2(2T)/2-T/4]=1.
+\]
+we can define a probability measure on $\mathcal F_T$ by
+\[
+ \frac{dP_{-}}{dP_0}=\exp[-Z(T)/2-T/4].
+\]
+For a finite partition, factor this exponential density over the independent increments.
+\par The centered normal density of each increment,
+after multiplication by $\exp[-\Delta Z/2-\Delta t/4]$ and completion of the square, becomes a normal density with mean
+$-\Delta t$ and variance $2\Delta t$. Hence under $P_-$, the coordinate process
+$Z$ has the same law as $X(t)=\sqrt2B(t)-t$ under the original measure. The change-of-measure density is evaluated at
+\emph{the endpoint of the zero-drift coordinate process}, without substituting the drifted endpoint into that density.
+
+By the zero-drift reflection principle, for $x>0$ and terminal values $z<x$, the joint endpoint density on
+$\{\sup_{t\le T}Z(t)>x\}$ is $p_T(2x-z)$.
+For terminal values $z\ge x$, the endpoint itself reaches that level. Thus
+\begin{align*}
+ P(M_T>x)
+ &=\int_x^\infty e^{-z/2-T/4}p_T(z)\,dz
+ +\int_{-\infty}^x e^{-z/2-T/4}p_T(2x-z)\,dz.
+\end{align*}
+The exponent in the first term satisfies
+\[
+ -\frac{z^2}{4T}-\frac z2-\frac T4
+ =-\frac{(z+T)^2}{4T},
+\]
+so the first term equals $\Phi(-(x+T)/\sqrt{2T})$.
+In the second term,
+\[
+ -\frac{(2x-z)^2}{4T}-\frac z2-\frac T4
+ =-x-\frac{(z-2x+T)^2}{4T}.
+\]
+and integration up to $z=x$ gives $e^{-x}\Phi((T-x)/\sqrt{2T})$.
+This gives the reflection formula for $x>0$. Its right-hand side tends to 1 as $x\downarrow0$.
+The monotone limit of the events gives $P(M_T>0)=1$, so the formula holds at $x=0$ as well.
+
+Since the path starts at 0 at $t=0$, we have $M_T\ge0$. Pointwise,
+\[
+ e^{M_T}=1+\int_0^\infty e^x\mathbf1_{\{M_T>x\}}\,dx,
+\]
+Tonelli's theorem for nonnegative integrands gives
+\[
+ F(T)=1+I_1(T)+I_2(T),
+\]
+where we write $z_T=\sqrt{2T}$ and $a_T=T/z_T=\sqrt{T/2}$,
+\[
+ I_1(T)=\int_0^\infty e^x\Phi(-(x+T)/z_T)\,dx,
+ \qquad I_2(T)=\int_0^\infty\Phi((T-x)/z_T)\,dx.
+\]
+First evaluate the first term. Gaussian tail decay gives
+$e^x\Phi(-(x+T)/z_T)\to0$, so integration by parts produces no boundary term at infinity and
+\begin{align*}
+ I_1(T)
+ &=-\Phi(-a_T)+\frac1{z_T}\int_0^\infty
+ e^x\phi((x+T)/z_T)\,dx\\
+ &=-\Phi(-a_T)+\frac1{z_T}\int_0^\infty
+ \phi((x-T)/z_T)\,dx\\
+ &=-\Phi(-a_T)+\Phi(a_T)=2\Phi(a_T)-1.
+\end{align*}
+The completion of the square uses
+$x-(x+T)^2/(4T)=-(x-T)^2/(4T)$.
+In the second term set $y=(T-x)/z_T$. Since
+$(y\Phi(y)+\phi(y))'=\Phi(y)$ and the primitive tends to 0 as $y\to-\infty$,
+\begin{align*}
+ I_2(T)&=z_T\int_{-\infty}^{a_T}\Phi(y)\,dy\\
+ &=z_T\{a_T\Phi(a_T)+\phi(a_T)\}
+ =T\Phi(a_T)+\sqrt{2T}\phi(a_T).
+\end{align*}
+Adding the terms gives the stated $F(T)$. Finally, $a_T\to\infty$,
+$\Phi(a_T)\to1$, and $\sqrt{2/T}\,\phi(a_T)\to0$, so $F(T)/T\to1$.
+\end{proof}
+
+\begin{lemma}[Exponentially weighted mesh approximation]\label{lem:papermesh}\leavevmode\par
+Let $\kappa\in[\kappa_-,\kappa_+]=[261/121,261/100]$. Put
+$X_\kappa(t)=\sqrt{2\kappa}B(t)-\kappa t$.
+
+For integer $T\ge2$, take
+$N=T^3$ and $A=T^{-2}$ and define
+\[
+ H_\kappa(T,A)=E\exp\!\left(\max_{0\le j\le N}X_\kappa(jA)\right).
+\]
+Then
+\[
+ \sup_{\kappa\in[\kappa_-,\kappa_+]}
+ \left|\frac{H_\kappa(T,T^{-2})}{T}-\kappa\right|\longrightarrow0.
+\]
+\end{lemma}
+\begin{proof}
+Brownian scaling identifies the laws of $\sqrt{\kappa}B(t)$ and $B(\kappa t)$, so the continuous maximum
+$M_c=\sup_{t\le T}X_\kappa(t)$ has exponential mean
+\[
+ F_\kappa(T)=Ee^{M_c}=F(\kappa T).
+\]
+Let $M_g=\max_{0\le j\le N}X_\kappa(jA)$ be the mesh maximum.
+At every node $t_j=jA$, $Ee^{X_\kappa(t_j)}=1$, so
+\[
+ dQ_j=e^{X_\kappa(t_j)}dP,
+ \qquad Q=\frac1{N+1}\sum_{j=0}^NQ_j,
+ \qquad D_Q=\frac{dQ}{dP}
+ =\frac1{N+1}\sum_{j=0}^Ne^{X_\kappa(t_j)}
+\]
+are probability measures or densities. The mixture controls the contribution of bad paths to the exponential maximum;
+the probability of those paths under the original measure alone does not control their exponential weight.
+
+To identify the path distribution in the mixture, decompose the independent Brownian increments under $Q_j$.
+Increments before node $t_j$ receive the exponential tilt
+\(\exp[\sqrt{2\kappa}\,\Delta B-\kappa\Delta t]\),
+so the new mean of $\Delta B$ is $\sqrt{2\kappa}\Delta t$ and its variance remains
+$\Delta t$. Increments after the node are not tilted. Thus the drift of $X_\kappa$ before and after the node
+is $+\kappa$ and $-\kappa$, respectively, and the random component is always Brownian motion with variance rate
+$2\kappa$. As the anchor lies on the mesh, the drift over each mesh interval is constant
+and has magnitude at most $\kappa_+$.
+
+Define the maximum absolute excursion from the left endpoint over all mesh intervals by
+\[
+ \Omega=\max_{0\le i<N}\sup_{0\le s\le A}
+ |X_\kappa(iA+s)-X_\kappa(iA)|.
+\]
+Set $a=\kappa_+A$. Under any mixture component $Q_j$, if an interval's absolute excursion
+exceeds $x>a$, the absolute maximum of its drift-free Brownian part exceeds $x-a$.
+The reflection principle on both sides, a Gaussian tail bound, and the union bound over the $N$ intervals yield
+\[
+ Q_j(\Omega>x)\le4N\exp\!\left(-\frac{(x-a)^2}{4a}\right).
+\]
+The same bound holds for all $j$, hence also for their uniform mixture:
+\begin{equation}\label{eq:paperomegatail}
+ Q(\Omega>x)\le4N\exp\!\left(-\frac{(x-a)^2}{4a}\right)
+ \qquad(x>a).
+\end{equation}
+
+Take $\delta_T=8\sqrt{a\log T}$. For $T\ge2$,
+$\log T\ge\log2>2/3>\kappa_+/4\ge\kappa_+/T^2=a$, so
+$\delta_T\ge8a$. For $x\ge\delta_T$,
+we have $x\ge(2+\sqrt2)a$ and thus $(x-a)^2\ge x^2/2$. Therefore
+\eqref{eq:paperomegatail} implies
+\[
+ Q(\Omega>x)\le4Ne^{-x^2/(8a)}.
+\]
+The exponential tail integral identity for a nonnegative random variable gives
+\begin{align*}
+ E_Q[e^\Omega\mathbf1_{\{\Omega>\delta_T\}}]
+ &=e^{\delta_T}Q(\Omega>\delta_T)
+ +\int_{\delta_T}^\infty e^xQ(\Omega>x)\,dx\\
+ &\le4N e^{\delta_T-\delta_T^2/(8a)}
+ +4N\int_{\delta_T}^\infty e^{x-x^2/(8a)}\,dx.
+\end{align*}
+The function $g(x)=x-x^2/(8a)$ has derivative $1-x/(4a)$. Since
+$\delta_T\ge8a$, for $x\ge\delta_T$ we have
+\[
+ g'(x)\le1-\delta_T/(4a)\le-\delta_T/(8a).
+\]
+It follows that
+\[
+ \int_{\delta_T}^\infty e^{g(x)}\,dx
+ \le e^{g(\delta_T)}\int_{\delta_T}^\infty
+ e^{-\delta_T(x-\delta_T)/(8a)}\,dx
+ =\frac{8a}{\delta_T}e^{g(\delta_T)}.
+\]
+Using $\delta_T^2/(8a)=8\log T$ gives the explicit estimate
+\begin{equation}\label{eq:paperweightedomega}
+ E_Q[e^\Omega\mathbf1_{\{\Omega>\delta_T\}}]
+ \le4Ne^{\delta_T}T^{-8}\left(1+\frac{8a}{\delta_T}\right).
+\end{equation}
+
+Pathwise, $M_g\le M_c\le M_g+\Omega$, and
+$D_Q\ge e^{M_g}/(N+1)$. On the good set $\{\Omega\le\delta_T\}$,
+we have $e^{M_g}\ge e^{-\delta_T}e^{M_c}$, so
+\[
+ (e^{M_c}-e^{M_g})\mathbf1_{\{\Omega\le\delta_T\}}
+ \le(1-e^{-\delta_T})e^{M_c}.
+\]
+On the bad set discard the nonnegative $e^{M_g}$ term and change measure to $Q$:
+\begin{align*}
+ E[(e^{M_c}-e^{M_g})\mathbf1_{\{\Omega>\delta_T\}}]
+ &\le E_Q\left[\frac{e^{M_c}}{D_Q}
+ \mathbf1_{\{\Omega>\delta_T\}}\right]\\
+ &\le(N+1)E_Q[e^\Omega\mathbf1_{\{\Omega>\delta_T\}}].
+\end{align*}
+Combining this with \eqref{eq:paperweightedomega} gives
+\begin{equation}\label{eq:papergriderror}
+ 0\le F_\kappa(T)-H_\kappa(T,A)
+ \le(1-e^{-\delta_T})F_\kappa(T)
+ +4N(N+1)e^{\delta_T}T^{-8}
+ \left(1+\frac{8\kappa_+A}{\delta_T}\right).
+\end{equation}
+
+Now $\delta_T=O(\sqrt{\log T}/T)$ and $e^{\delta_T}$ is bounded. Also
+$8\kappa_+A/\delta_T=O(1/(T\sqrt{\log T}))$, while
+$N(N+1)T^{-8}=T^{-2}+T^{-5}$. Thus the second term is $O(T^{-2})$
+and tends to zero after division by $T$. The first term divided by $T$ is at most
+$\delta_T F(\kappa T)/T$, which also tends to zero uniformly.
+The exact formula of the preceding lemma gives
+\[
+ \frac{F(\kappa T)}T
+ =\left(\kappa+\frac2T\right)\Phi(\sqrt{\kappa T/2})
+ +\sqrt{\frac{2\kappa}{T}}\phi(\sqrt{\kappa T/2})
+ \longrightarrow\kappa
+\]
+uniformly for $\kappa\in[\kappa_-,\kappa_+]$: the Gaussian-tail argument is at least
+$\sqrt{\kappa_-T/2}\to\infty$, and the remaining factors are uniformly bounded on the compact interval.
+Together with \eqref{eq:papergriderror}, this proves the stated mesh limit.
+\end{proof}
+
+\section{Proof of the main theorem}\label{sec:mainproof}
+\subsection{Arranging safe scale segments and estimating intersections}
+Fix \(0<p<1\), a finite \(T=NA>0\), \(D>0\), and
+\(w\ge\max(4,1/A)\), where \(N\) is a positive integer. Fix all these
+parameters before letting the integer dimension tend to infinity with the same
+density constructed above. Set \(P_0=T+D\). The initial scales and the nodes in
+each segment are
+\[
+ L_i=10/9+\frac{2iP_0}{Kv},\qquad
+ L_{i,a}=L_i+\frac{2aA}{Kv},\quad0\le a\le N.
+\]
+We consider only indices \(i\ge0\) for which the last node lies in \(I\).
+Discard an entire segment whenever any of its nodes is unsafe.
+Let \(\mathcal I_n\) be the set of retained original indices and \(J_*\) its
+cardinality. For \(i\in\mathcal I_n\), write
+\[
+ U_i=\{\max_{0\le a\le N}S_{L_{i,a}}>h\}.
+\]
+
+\begin{lemma}[Deletion of unsafe segments and control over all original separations]\label{lem:paperpackets}
+For the parameters fixed above,
+\[
+ J_*\sim\frac{Kv|I|}{2P_0},\qquad
+ \frac{J_*}{u\sqrt n}\longrightarrow\frac{c_p|I|}{2P_0}.
+\]
+Let \(c=174/121\). The sum over all unordered pairs of retained segments satisfies
+\[
+ \limsup_{n\to\infty}\frac{ue^h}{J_*}
+ \sum_{\substack{i,j\in\mathcal I_n\\i<j}}P(U_i\cap U_j)
+ \le\phi(0)e^{4/(3w)}(N+1)^2
+ \frac{e^{-cD/4}}{1-e^{-cP_0/4}}.
+\]
+\end{lemma}
+\begin{proof}
+First count the segments before deletion. The condition \(L_{i,N}\le11/9\)
+is equivalent to \(iP_0+T\le Kv|I|/2\). Thus for sufficiently large \(n\) their
+number is
+\[
+ J_0=\left\lfloor\frac{Kv|I|/2-T}{P_0}\right\rfloor+1
+ =\frac{Kv|I|}{2P_0}+O_{T,D}(1).
+\]
+Requiring the last node to lie in \(I\) changes the count by at most a bounded
+\(O(T/P_0+1)\) term.
+
+In the coordinate \(x=K(L-1)\), the safety condition excludes the radius-two
+band around each defect. Since \(L\in I\), the corresponding range is
+\(x\in[K/9,2K/9]\), an interval of length \(K/9\).
+For sufficiently large \(K\), at most one periodic copy of each defect has an
+exclusion band that meets this range. A band meeting an endpoint is counted
+once. In the length coordinate the width of each band is at most \(4/K\).
+For each fixed node index \(a\), the points \(L_{i,a}\) form a grid of spacing
+\(\Delta_n=2P_0/(Kv)\) as \(i\) varies. A band of width \(4/K\) contains at
+most
+\[
+ \frac{4/K}{\Delta_n}+2=\frac{2v}{P_0}+2
+\]
+such points. Summing over the \(N+1\) node indices and all defects, the number
+of discarded segments is therefore at most
+\[
+ (N+1)|\mathcal D|\left(\frac{2v}{P_0}+2\right).
+\]
+The smallest power-of-two label scale satisfies \(v\le B<2v\), and
+\(|\mathcal D|=(B-1)(B-2)<4v^2\). The number discarded is therefore
+\(O_{T,A,D}(v^3)\). Overlapping bands or multiple unsafe nodes in one segment
+lead only to overcounting. By the growth prescription, \(K/v^r\to\infty\)
+for each fixed \(r>0\); in particular \(v^3/(Kv)=v^2/K\to0\). It follows that
+\[
+ J_*=J_0-O_{T,A,D}(v^3)
+ \sim\frac{Kv|I|}{2P_0}.
+\]
+Using \(v=u^2\) and the exact identity \(K=c_p\sqrt n/u\) now gives
+\(J_* /(u\sqrt n)\to c_p|I|/(2P_0)\).
+
+We bound the intersections by grouping the pairs according to their
+\emph{original index difference}. For retained indices \(i<j\), write
+\(q=j-i\ge1\). For every pair of node indices \(a,b\),
+\begin{align*}
+ L_{j,b}-L_{i,a}
+ &=\frac{2\{qP_0+(b-a)A\}}{Kv},\\
+ r_{q,a,b}:=qP_0+(b-a)A
+ &\ge qP_0-T=D+(q-1)P_0>0.
+\end{align*}
+The positive gap \(D\) therefore orders the two segments at every pair of nodes.
+There is no requirement that \(P_0/A\) be an integer. Consecutive retained
+segments can be separated by a large original grid distance \(q\), so we keep
+the original indices throughout. For each fixed \(q\), at most one
+\(j=i+q\) accompanies each retained \(i\), giving at most \(J_*\) pairs.
+Moreover,
+\[
+ U_i\cap U_j\subseteq
+ \bigcup_{a,b=0}^N(E_{L_{i,a}}\cap E_{L_{j,b}}),
+\]
+so we sum over all \((N+1)^2\) node pairs.
+
+Put \(\tau=r_{q,a,b}/v\) and first consider \(0<\tau\le1/8\).
+For fixed \(q,a,b\), the distance parameter \(r_{q,a,b}\) is finite and
+positive, so as \(v\to\infty\) this pair eventually lies in the near range.
+The sharp fixed-distance bound in Proposition~\ref{prop:paperallpairs} gives
+\[
+ \limsup_n\sup_{
+ \substack{L,J\text{ safe}\\J-L=2r_{q,a,b}/(Kv)}}
+ ue^hP(E_L\cap E_J)
+ \le\phi(0)e^{4/(3w)}e^{-cr_{q,a,b}/4}.
+\]
+If a given dimension has no such node pair, its contribution is zero.
+Fix an integer \(Q\). Summing over the finitely many \(q\le Q\) and using
+the pair count for each original separation, we obtain
+\begin{align*}
+ \limsup_n\frac{ue^h}{J_*}
+ \sum_{\substack{i<j\\j-i\le Q}}P(U_i\cap U_j)
+ &\le\phi(0)e^{4/(3w)}
+ \sum_{q=1}^Q\sum_{a,b=0}^Ne^{-cr_{q,a,b}/4}\\
+ &\le\phi(0)e^{4/(3w)}(N+1)^2
+ \sum_{q=1}^Qe^{-c[D+(q-1)P_0]/4}.
+\end{align*}
+All relevant pairs with \(q\le Q\) eventually lie in the near range, so the
+sharp limiting estimate applies to this finite sum.
+
+For near-range pairs with \(q>Q\), use the uniform finite-dimensional bound
+\(Ce^{-cr/8}\) from the same proposition. Its constant may depend on the
+fixed parameters but not on \(n,q,L,J\). The total normalized contribution
+is at most
+\[
+ C(N+1)^2\sum_{q>Q}e^{-c[D+(q-1)P_0]/8}.
+\]
+This geometric tail vanishes as \(Q\to\infty\). First let \(n\to\infty\) with
+\(Q\) fixed, then let \(Q\to\infty\). The near-range contribution is bounded by
+\[
+ \phi(0)e^{4/(3w)}(N+1)^2
+ \sum_{q\ge1}e^{-c[D+(q-1)P_0]/4}
+ =\phi(0)e^{4/(3w)}(N+1)^2
+ \frac{e^{-cD/4}}{1-e^{-cP_0/4}}.
+\]
+The separate tail estimate avoids using the fixed-distance \(o(1)\) error
+uniformly over growing \(q\).
+
+For fixed \(a,b\), the middle range \(v/8\le qP_0+(b-a)A\le v\) contains
+at most \(7v/(8P_0)+2=O_{T,A,D}(v)\) original separations.
+Each term satisfies \(ue^hP(E_L\cap E_J)\le Ce^{-v/25}\), so the normalized
+middle-range contribution is \(O_{p,w,T,A,D}(v)e^{-v/25}\to0\).
+The lengths lie in \(I\), so \(\tau=K|L-J|/2\le K|I|/2=K/18\).
+The far range \(1\le\tau\le K/18\) therefore contains
+\(O_{T,A,D}(Kv)\) original separations. Its normalized contribution is at most
+\[
+ O_{p,w,T,A,D}(Kv)e^{-v/25}.
+\]
+Since \(v\ge16\log n\) and \(Kv=c_p\sqrt{nv}=O_p(\sqrt{n\log n})\),
+\[
+ Kv e^{-v/25}
+ \le C_p\sqrt{n\log n}\,n^{-16/25}
+ =C_p\sqrt{\log n}\,n^{-7/50}\longrightarrow0.
+\]
+Assign each shared endpoint to one of its neighboring ranges. The three
+disjoint ranges then exhaust all distinct node lengths. Summing the three
+bounds over node intersections and segment pairs proves the result.
+No independence of the segment events is needed. The comparison error in the
+proposition carries the actual affinity factor \(H_{LJ}^n\), which preserves
+the decay in the middle and far ranges.
+\end{proof}
+\subsection{Finite-mass truncation and proof of the main theorem}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $p,T,A,N,D,w$ as above and write
+\[
+ G_w(L)=E\exp\!\left(\max_{0\le a\le N}
+ X_{1/w,\lambda(L)}(aA)\right),\qquad
+ \lambda(L)=\frac{58}{9L^2}.
+\]
+The finite-node maximum identity \eqref{eq:paperwinner} gives
+\[
+ ue^hP(U_i)=\phi(0)G_w(L_i)+\varepsilon_{i,n},
+ \qquad\sup_{i\in\mathcal I_n}|\varepsilon_{i,n}|\longrightarrow0.
+\]
+This identity uses the actual length, the actual $q_{L}$, and the individual tilt of each $U_i$.
+It requires neither identical laws for the packets nor variance equal to $v$.
+
+The function $G_w$ is continuous and bounded on the closed interval $I$. Indeed, the finite Gaussian vector
+has mean and covariance continuous in $\lambda(L)$, which gives weak convergence. The bound
+\[
+ E e^{2\max_aX_{1/w,\lambda}(aA)}
+ \le\sum_{a=0}^NEe^{2X_{1/w,\lambda}(aA)}
+ \le(N+1)e^{\lambda_{\max}T}
+\]
+gives uniform integrability on the compact parameter interval, hence continuity of the expected exponentiated maximum.
+The original base point mesh has spacing $\Delta_n=2P_0/(Kv)\to0$. The final-node condition excludes only
+a strip of length $2T/(Kv)$ at the right edge of $I$. Thus the sum over all original base points satisfies
+\[
+ \Delta_n\sum_{i\text{ original base points}}G_w(L_i)\longrightarrow\int_I G_w(L)\,dL.
+\]
+The safety deletion removes $o(Kv)$ base points. Since $G_w$ is bounded, the contribution of the deleted terms times $\Delta_n$
+is $o(1)$ in absolute value. Thus the same Riemann sum limit holds for $\mathcal I_n$.
+The uniform remainders also contribute at most
+\[
+ \frac1{u\sqrt n}\left|\sum_{i\in\mathcal I_n}\varepsilon_{i,n}\right|
+ \le\frac{J_*}{u\sqrt n}\sup_i|\varepsilon_{i,n}|\longrightarrow0.
+\]
+Since $Kv/(u\sqrt n)=c_p$, we obtain the full first-order limit
+\begin{equation}\label{eq:paperfirstsum}
+ \frac{e^h}{\sqrt n}\sum_{i\in\mathcal I_n}P(U_i)
+ \longrightarrow\frac{c_p\phi(0)}{2P_0}\int_I G_w(L)\,dL.
+\end{equation}
+The preceding lemma and the asymptotic count of packets also give
+\begin{equation}\label{eq:papersecondsum}
+ \limsup_n\frac{e^h}{\sqrt n}
+ \sum_{\substack{i,j\in\mathcal I_n\\i<j}}P(U_i\cap U_j)
+ \le\frac{c_p|I|\phi(0)}{2P_0}e^{4/(3w)}(N+1)^2
+ \frac{e^{-cD/4}}{1-e^{-cP_0/4}}.
+\end{equation}
+In each finite dimension, apply the second-order Bonferroni inequality first:
+\[
+ P\left(\bigcup_{i\in\mathcal I_n}U_i\right)
+ \ge\sum_iP(U_i)-\sum_{i<j}P(U_i\cap U_j).
+\]
+Each $S_{L_{i,a}}$ is a finite sum of measurable functions, and a packet has only $N+1$ nodes,
+so $U_i$ is measurable. For fixed $n$ the number $J_*$ of packets is also finite; both the union and
+the second-order Bonferroni inequality involve only finitely many events.
+The first-order limit \eqref{eq:paperfirstsum} and the second-order bound \eqref{eq:papersecondsum}
+allow us to retain their difference in the subsequent $n$ limit.
+
+We now turn the periodic construction into an actual $L^1(\mathbb R^n)$ witness. Write
+$F_n(x)=\prod_{a=1}^n\rho(x_a)$ for the periodic product. For every common side length $L$,
+Fubini's theorem gives the exact factorization of the centered cube average
+\[
+ L^{-n}\int_{[-L/2,L/2]^n}F_n(x+y)\,dy
+ =\prod_{a=1}^n\left(\frac1L\int_{-L/2}^{L/2}\rho(x_a+y)\,dy\right)
+ =\prod_{a=1}^nY_L(x_a)=e^{S_L(x)}.
+\]
+Thus on $\bigcup_iU_i$, at least one actual centered cube average strictly exceeds $e^h$.
+All scales use the same coordinates; the product formula does not make events at different scales independent.
+
+Put $R=n^2$ and define
+\[
+ f_n(x)=\mathbf1_{[-R,R]^n}(x)F_n(x).
+\]
+The one-dimensional factor is strictly positive and bounded, with mass $1$ per period. Hence $f_n$ is nonnegative, bounded, and compactly supported, and
+\[
+ \|f_n\|_1=\prod_{a=1}^n\int_{-R}^R\rho(x_a)\,dx_a=(2R)^n.
+\]
+For centers in the inner box $[-R+1,R-1]^n$, all the side lengths in use satisfy $L\in I\subset(1,2)$,
+so the cube half-side lengths are less than $1$ and the cubes lie inside the outer box $[-R,R]^n$.
+Their averages therefore equal those of $F_n$.
+The measurable event $\bigcup_iU_i$ is $1$-periodic in each coordinate. The inner box has integer side length
+$2R-2$, so partitioning it into unit period cells gives the exact event volume
+\[
+ (2R-2)^nP^{\otimes n}\left(\bigcup_iU_i\right).
+\]
+Using the threshold $e^h$ in the weak-type ratio yields
+\begin{align*}
+ C_n&\ge\frac{e^h|\{M_nf_n>e^h\}|}{\|f_n\|_1}\\
+ &\ge e^h\left(1-\frac1R\right)^n
+ P^{\otimes n}\left(\bigcup_iU_i\right).
+\end{align*}
+Measurability of the maximal function does not require a weak-type inequality. For any
+$f\in L^1(\mathbb R^n)$ and fixed center $x$, as $L\to L_0>0$,
+the volume of the symmetric difference of the two centered cubes tends to zero. Absolute continuity of the Lebesgue integral gives
+convergence to zero of the integral of $|f|$ over that difference. Since $L^{-n}\to L_0^{-n}$,
+the map $L\mapsto A_L|f|(x)$ is continuous. The supremum in $M_nf(x)$ can therefore be taken over
+the countable set of positive rational $L$. Each $A_L|f|$ is a measurable convolution integral,
+so $M_nf$ and its strict superlevel sets are measurable.
+Bernoulli's inequality gives
+\[
+ \left(1-\frac1{n^2}\right)^n\ge1-\frac1n\longrightarrow1.
+\]
+Thus truncation does not change the normalized limiting lower bound. Combining Bonferroni with the two sums above yields,
+for every fixed choice of finite parameters,
+\begin{align*}
+ \liminf_{n\to\infty}\frac{C_n}{\sqrt n}
+ \ge\frac{c_p\phi(0)}{2(T+D)}\left[
+ \int_I G_w(L)\,dL
+ -|I|e^{4/(3w)}(N+1)^2
+ \frac{e^{-cD/4}}{1-e^{-c(T+D)/4}}\right].
+\end{align*}
+
+Keep $p,T,A,N,D$ fixed and next let
+$w\to\infty$ in the numerical lower bound that has already been established. At each of the finitely many nodes, the box kernel
+$b_{[0,t]}=\mathbf1_{[0,t]}*\chi_{1/w}$ converges in $L^2$ to
+$\mathbf1_{[0,t]}$. The finite-vector convergence and uniform integrability above therefore give
+\[
+ G_w(L)\longrightarrow
+ E\exp\!\left(\max_{0\le a\le N}
+ \{\sqrt{\lambda(L)}B(aA)-\lambda(L)aA/2\}\right)
+ =H_{\kappa(L)}(T,A)
+\]
+uniformly in $L\in I$, where
+$\kappa(L)=\lambda(L)/2=29/(9L^2)$.
+Uniformity also follows by compactness: any sequence of base points witnessing failure has a subsequence along which
+$\lambda(L)$ converges, and the same finite Gaussian convergence and second exponential-moment bound exclude failure.
+Also $e^{4/(3w)}\to1$. Therefore
+\begin{equation}\label{eq:paperfinitebound}
+ \liminf_n\frac{C_n}{\sqrt n}\ge
+ \frac{c_p\phi(0)}{2(T+D)}
+ \left[\int_I H_{\kappa(L)}(T,A)\,dL
+ -|I|(N+1)^2\frac{e^{-cD/4}}{1-e^{-c(T+D)/4}}\right].
+\end{equation}
+This limit in $w$ does not alter the preceding dimension limit: the right-hand bounds already hold for all finite
+$w$, while the left-hand quantity stays fixed.
+
+For each integer $T\ge2$, choose
+\[
+ A=T^{-2},\qquad N=T^3,\qquad D=(32/c)\log T.
+\]
+For any such $T$, the parameters $A,N,D$ remain finite and fixed. To use the finite-node argument,
+first take finite $w\ge\max(4,T^2)$, then take the dimension limit along all integers $n$,
+and only then take the supremum over $w$, obtaining \eqref{eq:paperfinitebound}.
+Next let the integer $T\to\infty$ in the resulting numerical bounds. We have
+$D/T=(32/c)(\log T)/T\to0$, and
+\begin{align*}
+ (N+1)^2\frac{e^{-cD/4}}{1-e^{-c(T+D)/4}}
+ &=(T^3+1)^2\frac{T^{-8}}{1-e^{-c(T+D)/4}}
+ =O(T^{-2}).
+\end{align*}
+The denominator tends to $1$ and in particular has a positive uniform lower bound for all sufficiently large $T$.
+The mesh estimate in Lemma~\ref{lem:papermesh} also gives
+\[
+ \sup_{L\in I}\left|\frac{H_{\kappa(L)}(T,T^{-2})}T-\kappa(L)\right|
+ \longrightarrow0,
+\]
+so we can integrate over the fixed bounded interval $I$.
+Divide the numerator and denominator of \eqref{eq:paperfinitebound} by $T$. The intersection term, after division by
+$T$, is $O(T^{-3})$. For each fixed $p<1$ we obtain
+\begin{align*}
+ \liminf_n\frac{C_n}{\sqrt n}
+ &\ge\frac{c_p\phi(0)}2\int_{10/9}^{11/9}\frac{29}{9L^2}\,dL\\
+ &=\frac{(3p/\sqrt{29})(1/\sqrt{2\pi})}{2}
+ \frac{29}{9}\left(\frac9{10}-\frac9{11}\right)\\
+ &=\frac{(3p/\sqrt{29})(1/\sqrt{2\pi})}{2}\frac{29}{110}
+ =p\frac{87}{220\sqrt{58\pi}}.
+\end{align*}
+Finally, take the supremum over the numerical lower bounds already established for all fixed $0<p<1$ to get
+\[
+ \liminf_n\frac{C_n}{\sqrt n}\ge\frac{87}{220\sqrt{58\pi}}.
+\]
+This step does not set $p=1$ in the original density. Every actual finite-parameter witness uses a strictly positive background.
+\end{proof}
+
+\begin{corollary}[Uniformity in dimension and regularity of the witnesses]\label{cor:paperwitness}
+For every $b<87/(220\sqrt{58\pi})$, there is an $n_b$ such that every integer $n\ge n_b$ satisfies
+$C_n\ge b\sqrt n$. In each such dimension, a nonnegative, bounded, compactly supported truncated product
+witnesses the lower bound. Its one-dimensional periodic factor is strictly positive, has mass $1$ per period, and has height
+$O_b(\log n)$.
+\end{corollary}
+\begin{proof}
+To obtain an actual witness, we retain a strict margin: the supremum defining the optimal constant need not be attained.
+Write $C_*=87/(220\sqrt{58\pi})$, choose $b_1$ so that
+$\max(b,0)<b_1<C_*$, and choose a fixed $p<1$ such that $pC_*>b_1$.
+The finite-$T$ bound above tends to $pC_*$ as $T\to\infty$.
+We can therefore choose a finite integer $T$ and the corresponding finite $A=T^{-2}$, $N=T^3$, and
+$D=(32/c)\log T$ so that the right-hand side of \eqref{eq:paperfinitebound} is strictly larger than $b_1$.
+For these fixed parameters the bound with finite box width converges to this right-hand side as $w\to\infty$.
+Hence a finite $w\ge\max(4,T^2)$ can also be chosen such that the fixed-parameter lower bound, before taking $w\to\infty$,
+is still strictly larger than $b_1$.
+
+For these final fixed $p,T,A,N,D,w$, denote the normalized weak-type ratio of the actual truncated witness by
+\[
+ \mathcal R_n=\frac{e^h|\{M_nf_n>e^h\}|}{\|f_n\|_1\sqrt n}.
+\]
+The first-order limit, the second-order bound, and the volume loss together give
+$\liminf_n\mathcal R_n>b_1>b$.
+By the definition of the limit inferior, there is a parameter-dependent common threshold beyond which every integer $n$ satisfies
+$\mathcal R_n>b$. Since $C_n/\sqrt n\ge\mathcal R_n$, this gives the desired actual witness.
+
+To see that the threshold covers all sufficiently large integer dimensions, for each integer $n$ the growth prescription
+chooses the largest $K=2^d-1$ such that $v=9p^2n/(29K^2)\ge16\log n$.
+The next allowable period, $2K+1$, does not satisfy this inequality, so
+\[
+ 16\log n\le v<(2+1/K)^2\,16\log n.
+\]
+It follows that $v=\Theta_p(\log n)$ and $K\asymp_p\sqrt{n/\log n}$,
+and $K/v^r\to\infty$ for every fixed $r$. The smallest power of two $B\ge v$
+satisfies $B<2v$. Thus the finite-field existence threshold $K+1>H(B)$,
+the sufficient conditions for the complete kernel, positivity, and the probability comparisons with fixed parameters
+all hold beyond a common threshold. The same two-sided estimates hold across period changes, without selecting a subsequence of dimensions.
+Take $n_b$ to be the maximum of these finitely many thresholds and the threshold for $\mathcal R_n>b$.
+
+Finally, the analytic upper and lower bounds for the original density give
+\[
+ \rho(x)\ge1-p-\frac{20pH_M}{3K},\qquad
+ \rho(x)\le1-p+pwv+\frac{20pH_M}{3K},
+ \quad H_M=\sum_{m\le M}\frac1m.
+\]
+Since $p<1$ is fixed and $H_M/K\to0$, the eventual lower bound is at least $(1-p)/2>0$.
+Since $v=O_p(\log n)$ and $w$ is fixed, the one-dimensional height is $O_b(\log n)$.
+The mass per period is exactly $1$ because each peak has mass $1/K$ and the finite low-frequency term has mean zero.
+The product is bounded in each fixed $n$. Multiplying it by the indicator of the finite box makes it compactly supported, so it belongs to
+$L^1(\mathbb R^n)$. Here $O_b(\log n)$ bounds the height of the one-dimensional factor, not that of the entire
+$n$-dimensional product.
+\end{proof}
+
+\begin{remark}[Order of quantifiers]
+First fix the finite parameters and take $n\to\infty$ through all integers. Then, in the numerical lower bound,
+take $w\to\infty$, thereafter the integer $T\to\infty$, and finally the supremum as $p\uparrow1$.
+A fixed choice of finite parameters and its actual truncated witness realize every strictly smaller coefficient.
+The proof gives neither an error rate uniform in $T,N,w$ growing simultaneously with $n$ nor an explicit $n_b$.
+\end{remark}
+
+\section{Applications: the constant and the scope of the lower bound}\label{sec:discussion}
+\begin{proof}[Proof of Theorem~\ref{thm:rational}]
+Using $\pi<22/7$ and
+\[
+ (68/5)^2-58\cdot\frac{22}{7}=\frac{468}{175}>0
+\]
+we obtain
+\[
+ C_*>\frac{87}{2992}=\frac1{35}+\frac{53}{104720}>\frac1{35}.
+\]
+Theorem~\ref{thm:main} and the definition of the limit inferior give the result.
+\end{proof}
+
+The constant $C_*$ is the integral of the local Brownian exceedance intensity over the scale interval $I=[10/9,11/9]$, up to the prefactor below.
+Specifically, the intensity $\kappa(L)=29/(9L^2)$ gives
+\[
+ \int_{10/9}^{11/9}\kappa(L)\,dL=\frac{29}{110},\qquad
+ \frac{3}{2\sqrt{29}}\phi(0)\frac{29}{110}=C_*.
+\]
+Numerically, $C_*\approx0.0292959535703970$. This decimal is for comparison only;
+the rational inequality above establishes $C_*>1/35$.
+
+Each test function belongs to $L^1\cap L^\infty$, but its supremum norm grows with the dimension.
+The limits are taken in a specified order so that the background remains strictly positive in the construction
+and each Gaussian comparison involves a fixed finite-dimensional vector. The proof does not give an explicit dimension threshold or imply
+$C_n\ge\sqrt n/35$ for every low dimension. Accordingly, the accompanying numerical report separates deterministic arithmetic checks, finite-parameter experiments, and
+asymptotic statements.
+
+Together with Theorem A, the lower bound gives
+\[
+ \sqrt n\lesssim C_n\lesssim n\log(e+n).
+\]
+It remains open in this analysis whether a matching square-root upper bound holds or whether the lower bound can be improved beyond square-root order.
+
+\begin{thebibliography}{99}
+\bibitem{SS1983} E. M. Stein and J.-O. Strömberg.
+Behavior of maximal functions in $\mathbb R^n$ for large $n$.
+\emph{Arkiv för Matematik}, 21 (1983), 259--269.
+\href{https://doi.org/10.1007/BF02384314}{doi:10.1007/BF02384314}.
+\bibitem{Aldaz2011} J. M. Aldaz.
+The weak type $(1,1)$ bounds for the maximal function associated to cubes grow to infinity with the dimension.
+\emph{Annals of Mathematics}, 173 (2011), 1013--1023.
+\href{https://doi.org/10.4007/annals.2011.173.2.10}{doi:10.4007/annals.2011.173.2.10}.
+\bibitem{Aubrun2009} G. Aubrun.
+Maximal inequality for high-dimensional cubes.
+\emph{Confluentes Mathematici}, 1 (2009), no.~2, 169--179.
+\href{https://doi.org/10.1142/S1793744209000067}{doi:10.1142/S1793744209000067}.
+\bibitem{IS2013} A. S. Iakovlev and J.-O. Strömberg.
+Lower bounds for the weak type $(1,1)$ estimate for the maximal function associated to cubes in high dimensions.
+\emph{Mathematical Research Letters}, 20 (2013), no.~5, 907--918.
+\href{https://doi.org/10.4310/MRL.2013.v20.n5.a7}{doi:10.4310/MRL.2013.v20.n5.a7}.
+\bibitem{Bourgain2012} J. Bourgain.
+On the Hardy--Littlewood maximal function for the cube.
+Preprint, 2012. \href{https://arxiv.org/abs/1212.2661}{arXiv:1212.2661}.
+\bibitem{Raic2019} M. Raič.
+A multivariate Berry--Esseen theorem with explicit constants.
+\emph{Bernoulli}, 25 (2019), no.~4A, 2824--2853.
+\href{https://doi.org/10.3150/18-BEJ1072}{doi:10.3150/18-BEJ1072}.
+\bibitem{Shevtsova2011} I. Shevtsova.
+On the absolute constants in the Berry--Esseen type inequalities for identically distributed summands.
+Preprint, 2011. \href{https://arxiv.org/abs/1111.6554}{arXiv:1111.6554}.
+\end{thebibliography}
+
+\end{document}
