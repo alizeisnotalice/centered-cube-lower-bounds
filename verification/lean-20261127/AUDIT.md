@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：34 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：38 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -19,7 +19,8 @@
 | 引理 `lem:density` 第一式：`sup_{\|z\|=1} \|∑_{l<K} ε_l(1+l/K)z^l\| ≤ 15√K` | `RudinDensity.weighted_bound` | `weightedSum_abel`、`rsPrefix_bound` | **完整**（本轮新增；Abel 求和，常数 10√K+5√K=15√K） |
 | 引理 `lem:density` 第二式：`1/2 ≤ ρ_K ≤ 3/2` | `RudinDensity.rho_bounds` | `weighted_bound` | **完整**（本轮新增） |
 | 引理 `lem:density` 第三式：`∫_T ρ_K dm_1 = 1` | — | — | 未接入：需先证 `ρ_K` 等于论文的余弦级数（缺口 G2），再逐项积分 |
-| 式 `eq:variances`：`E S_t = E d_t = 0`，`V_K(t)`、`σ_t²` 恒等式 | — | — | 未接入（缺口 G3） |
+| 式 `eq:variances` 的三角正交性：`∫₀¹cos(2πmx)cos(2πnx)dx = ½δ_{mn}` | `Trig.integral_cos_mul_cos_two_pi` | `Trig.integral_cos_two_pi_mul_int` | **完整**（本轮新增） |
+| 式 `eq:variances`：`E S_t = E d_t = 0`，`V_K(t)`、`σ_t²` 恒等式 | — | `Trig` | **部分**：正交性底座已证；恒等式本身还需 `S_t` 的余弦级数（依赖 G2）并按 `Finset.sum` 展开，未接入（缺口 G3） |
 | `eq:center`：`V_K(t_0)=K/4`、`σ_{t_0}=1/(90πK)` | — | — | 未接入（同上） |
 | 引理 `lem:bounded`：`‖Y_t‖_∞ ≤ B=5√8` | — | — | 未接入（依赖 G2、G3） |
 | 引理 `lem:finite-kernel`、`lem:continuous-kernel`、`lem:quadratic`、`lem:global` | — | — | 未接入（尺度协方差，依赖 G3） |
@@ -51,8 +52,9 @@
 - **G2（√n/log n，确定性）** `F_{l+1}-F_l = ε_l z^l` 且 `ε_l ∈ {±1}`：把 `RudinShapiro.polys` 的
   `P`、`Q` 两个分量同时展开为系数和（`Q_q(z)=∑_{l<2^q} ε_{2^q-1-l} z^l` 型的反转关系）。
   做完后可把 `rho` 改写成论文的余弦级数，并用 `∫₀¹cos(2πmx)=0` 得到 `∫ρ_K=1`。
-- **G3（两稿共用）** 式 `eq:variances`：需要 `∫₀¹cos(2πmx)cos(2πnx) dx = ½δ_{mn}` 一类的
-  三角正交性（Mathlib 有 `intervalIntegral.integral_cos` 与 `integral_comp_mul_left`，可自行搭建）。
+- **G3（两稿共用）** 式 `eq:variances`：三角正交性 `∫₀¹cos(2πmx)cos(2πnx) dx = ½δ_{mn}` 已在
+  `Trig.integral_cos_mul_cos_two_pi` 中证完（`m,n>0`）；余下是把 `S_t` 写成余弦级数后按 `Finset.sum`
+  展开，故仍依赖 G2。
 - **G4（√n/log n）** 引理 `lem:md` 的一致中偏差：指数倾斜、`ψ'''` 控制、Berry–Esseen、
   换测度与区间质量。这是该稿最重的一块，也是「不能用固定阈值 CLT 替代」的那一块。
 - **G5（√n/log n）** 概率模型的装配：同一组 `U_1,…,U_n` 下的 `X_t`、`F_t`、`G_t`，
@@ -63,7 +65,8 @@
 
 ## 本轮实际推进（按要求的三句式）
 
-- **本轮证明的此前缺失命题**：`lem:density` 的 `15√K` 加权估计（Abel 求和）与 `1/2 ≤ ρ_K ≤ 3/2`；
+- **本轮证明的此前缺失命题**：`lem:density` 的 `15√K` 加权估计（Abel 求和）、`1/2 ≤ ρ_K ≤ 3/2`、
+  三角正交性 `∫₀¹cos cos = ½δ`（`Trig`）、`∫₀¹cos(2πkx)` 与 `∫₀¹sin(2πkx)` 的整周期积分；
   `C_n` 作为上确界的模型锁定（含截断极大算子）；`C_* > 1/35`（实数域）；`h → liminf`、
   `liminf → √n/35` 两个方向的量词转换。
 - **本轮接上的主定理依赖**：`sqrtLog_of_truncated_halo` 已接到 `SqrtLogLowerBound`

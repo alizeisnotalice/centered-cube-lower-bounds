@@ -20,6 +20,7 @@
 | `All.lean`、`lakefile.lean`、`lean-toolchain`、`lake-manifest.json` | 构建入口与版本锁定 |
 | `Cubes.lean`、`LogTensor.lean`、`RudinShapiro.lean` | 2026-11-27 冻结快照的逐字节副本（哈希见 `REUSE.sha256`） |
 | `Model.lean` | `C_n` 的定义与最小上界性质、截断极大算子、`ℝ≥0∞ ↔ ℝ` 转换 |
+| `Trig.lean` | 整周期三角积分：`∫₀¹cos(2πkx)`、`∫₀¹sin(2πkx)`、`∫₀¹cos²`、`∫₀¹cos cos = ½δ` |
 | `Abel.lean` | Rudin–Shapiro 密度的 Abel 求和、`15√K` 估计、`1/2 ≤ ρ_K ≤ 3/2` |
 | `SqrtLimit.lean` | 显式常数 `87/(220√(58π))`、`C_* > 1/35`、liminf 与「`√n/35`」的互推 |
 | `SqrtLogWiring.lean` | `HaloData` ⇒ `SqrtLogLowerBound` 的装配 |

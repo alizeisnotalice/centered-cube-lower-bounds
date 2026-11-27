@@ -17,6 +17,7 @@ import Cubes
 import LogTensor
 import RudinShapiro
 import Model
+import Trig
 import Abel
 import SqrtLimit
 import SqrtLogWiring
