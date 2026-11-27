@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：55 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：61 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -14,7 +14,8 @@
 | 论文命题（`paper/sqrt-log/source`） | Lean 声明 | 依赖 | 状态 |
 |---|---|---|---|
 | 模型：`M_n`、`C_n`（式 (1)） | `Cubes.maximal` / `Cubes.weakConstant` | — | 完整（快照） |
-| 引理 `lem:transfer`：环面水平集 → `C_n ≥ λ m_n(E)(1-R⁻¹)ⁿ` | `Cubes.lower_bound_of_average_on_set`、`Cubes.truncation_retention`、`Cubes.halo_of_truncated_average` | `volume_cube` | **部分**：ℝⁿ 一侧完整；周期提升的测度恒等式 `\|π⁻¹(E) ∩ [-R+1,R-1]ⁿ\| = (2R-2)ⁿ m_n(E)` 未接入（缺口 G1） |
+| 引理 `lem:transfer`：环面水平集 → `C_n ≥ λ m_n(E)(1-R⁻¹)ⁿ` | `Cubes.lower_bound_of_average_on_set`、`Cubes.truncation_retention`、`Cubes.halo_of_truncated_average` | `volume_cube` | **部分**：ℝⁿ 一侧完整；周期提升的测度恒等式未接入（缺口 G1） |
+| `‖f_n‖₁ = (2R)ⁿ` 的一维因子：`∫_{-R}^{R} ρ_K = 2R` | `RudinDensity.integral_rho_box`、`integral_periodic_nat`、`integral_periodic_neg`、`rho_add_one` | `integral_rho` | **完整（一维）**（本轮新增）：`n` 维的 Fubini 乘积步骤未接入（G1b） |
 | 引理 `lem:rudin`：`\|∑_{l<N} ε_l z^l\| ≤ 5√N` | `RudinShapiro.prefix_bound`；`RudinDensity.rsPrefix_bound` | `prefixes_full`、`energy` | 完整（对递归前缀多项式） |
 | 系数识别：`P_q(z)=∑_{j<2^q} ε_j z^j`，`Q_q` 同，且 `ε_j ∈ {±1}` | `RudinDensity.polys_coef`、`RudinDensity.coef_unit` | `coef`、`coef_succ_of_lt` | **完整**（本轮新增）：显式系数族 `coef`，两条递推分支 `coef_succ_of_lt/ge` |
 | 前缀是多项式：`(prefixes z q n).1`、`.2` 均为 `∑_{j<n} c_j z^j`；`rsPrefix` 同 | `RudinDensity.prefixes_poly`、`self_prefix_poly`、`rsPrefix_poly` | `polys_coef` | **完整**（本轮新增） |
@@ -50,11 +51,10 @@
 
 ## 缺口清单（按「离闭合最近」排序）
 
-- **G1（√n/log n，确定性，最小）** 周期提升的测度恒等式：对可测 `E ⊆ Tⁿ`，
-  `\|π⁻¹(E) ∩ [-R+1,R-1]ⁿ\| = (2R-2)ⁿ m_n(E)`，以及 `‖ind_{[-R,R]ⁿ}·H̃_n‖₁ = (2R)ⁿ`。
-  论文位置：`foundations.tex` 引理 `lem:transfer` 的证明；`main-proof.tex` 中 `‖f_n‖₁` 一段。
-  形式化所需：`[0,1)ⁿ` 单位胞分解 + `volume_pi` 的可数可加，约 300–500 行。做完这一条，
-  `lem:transfer` 与论文的 `‖f_n‖₁` 即可全部落地，`HaloData.mass` / `HaloData.volume_ge` 只剩概率输入。
+- **G1（√n/log n，确定性）** 周期提升的测度恒等式。一维质量部分已闭合：
+  `∫_{-R}^{R} ρ_K = 2R`（`Periodic.lean`）。**尚缺** G1a：集合版本
+  `\|π⁻¹(E) ∩ [-R+1,R-1]ⁿ\| = (2R-2)ⁿ m_n(E)`；G1b：`n` 维 Fubini 乘积
+  `∫_{[-R,R]ⁿ} ∏ρ(x_i) = (2R)ⁿ`。两者都是测度论搬运，不含研究性内容。
 - **G2（√n/log n，确定性）** 系数与级数。已证：`P_q`、`Q_q` 的系数是显式的 `±1` 族
   （`polys_coef` + `coef_unit`，`coef_succ_of_lt` 给出沿层的稳定性），且递归前缀都是多项式
   （`prefixes_poly`），且截断相容（`prefixes_trunc`）——即 `rsPrefix` 的系数就是 `coef`。
@@ -72,7 +72,7 @@
 ## 本轮实际推进（按要求的三句式）
 
 - **本轮证明的此前缺失命题**：`lem:density` 三式全部；`eq:variances` 的均值与方差恒等式；
-  三角正交性、整周期复指数积分、Rudin–Shapiro 系数展开与 `±1` 性；
+  `ρ_K` 的周期性与连续性、`∫_{-R}^{R} ρ_K = 2R`（一维质量）；
   `C_n` 作为上确界的模型锁定（含截断极大算子）；`C_* > 1/35`（实数域）；`h → liminf`、
   `liminf → √n/35` 两个方向的量词转换。
 - **本轮接上的主定理依赖**：`sqrtLog_of_truncated_halo` 已接到 `SqrtLogLowerBound`

@@ -184,6 +184,16 @@ Note: This linter can be disabled with `set_option linter.unusedVariables false`
 'CenteredCube.RudinDensity.integral_Sfun' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_Sfun_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_scaled_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Periodic.lean ===
+Periodic.lean:73:4: warning: Unused tactic linter: `push_cast` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CenteredCube.RudinDensity.zof_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rho_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_periodic_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.continuous_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_periodic_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_rho_box' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]

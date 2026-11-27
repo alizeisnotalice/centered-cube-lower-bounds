@@ -20,6 +20,7 @@ import Model
 import Coefficients
 import Trig
 import Abel
+import Periodic
 import Variance
 import RhoNormalise
 import SqrtLimit
