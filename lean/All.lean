@@ -28,6 +28,7 @@ import Center
 import Bounded
 import Dirichlet
 import Window
+import ClosedForm
 import Variance
 import RhoNormalise
 import SqrtLimit

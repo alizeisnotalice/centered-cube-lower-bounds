@@ -20,7 +20,7 @@
 
 本机复用了同版本 Mathlib 的既有构建产物：`lean/.lake/packages` 是指向另一份
 v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入提交）。因此本机的
-`lake build` 只重新 elaboration 本仓库的 22 个模块，耗时约 2–3 分钟；数值见 `build.log`。
+`lake build` 只重新 elaboration 本仓库的 23 个模块，耗时约 2–3 分钟；数值见 `build.log`。
 在干净机器上按上面两条命令执行即可得到同样的 olean，不需要这个符号链接。
 
 ## 干净检出复现
@@ -41,7 +41,7 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
 ## 本轮结果
 
 - `build.log`：`Build completed successfully (5608 jobs)`。
-- `axioms.txt`：105 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
+- `axioms.txt`：111 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
   `sorryAx` 出现 0 次。
 
 `propext`、`Classical.choice`、`Quot.sound` 是 Lean/Mathlib 的标准公理，本文件原样列出，
@@ -61,6 +61,7 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
 | `Abel.lean` | `rsPrefix`、Abel 求和、`15√K` 加权估计、`1/2 ≤ ρ_K ≤ 3/2` |
 | `CosineForm.lean` | `ρ_K` 的余弦级数 |
 | `Average.lean` | 余弦平均、正弦恒等式与式 (3.1) 的装配 |
+| `ClosedForm.lean` | 式 (3.5) 的闭式 |
 | `Window.lean` | `eq:window-bounds` 与窗口下的 `‖Y_t‖_∞` |
 | `Dirichlet.lean` | `eq:exact-covariance` 与 `D_K` |
 | `Bounded.lean` | `lem:bounded` 的 sup 范数界 |
