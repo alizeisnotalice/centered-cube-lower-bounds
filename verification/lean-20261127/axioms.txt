@@ -229,6 +229,22 @@ Note: This linter can be disabled with `set_option linter.unusedTactic false`
 'CenteredCube.RudinDensity.integral_d_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.sigmaSq_center' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.sigma_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Bounded.lean ===
+Bounded.lean:71:47: warning: This simp argument is unused:
+  Complex.mul_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_im, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im,
+    mul_one, mul_zero, add_zero, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CenteredCube.RudinDensity.two_mul_sin_mul_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rsPrefix_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.Sfun_eq_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.Sexp_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.norm_Sexp_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_Sfun_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_Y_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]

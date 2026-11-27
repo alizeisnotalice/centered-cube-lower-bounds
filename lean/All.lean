@@ -25,6 +25,7 @@ import Average
 import Periodic
 import Product
 import Center
+import Bounded
 import Variance
 import RhoNormalise
 import SqrtLimit

@@ -28,6 +28,7 @@ lean_lib «Average»
 lean_lib «Periodic»
 lean_lib «Product»
 lean_lib «Center»
+lean_lib «Bounded»
 lean_lib «Variance»
 lean_lib «RhoNormalise»
 lean_lib «SqrtLimit»
