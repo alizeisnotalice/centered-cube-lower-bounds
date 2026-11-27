@@ -8,6 +8,7 @@
 (cd paper/sqrt-log/source && latexmk -xelatex -interaction=nonstopmode -halt-on-error manuscript-zh.tex)
 (cd paper/sqrt-log/source && latexmk -xelatex -interaction=nonstopmode -halt-on-error manuscript-en.tex)
 (cd paper/sqrt/source && latexmk -xelatex -interaction=nonstopmode -halt-on-error paper.tex)
+(cd paper/sqrt/source && latexmk -xelatex -interaction=nonstopmode -halt-on-error manuscript-en.tex)
 ```
 
 ## 计算材料
