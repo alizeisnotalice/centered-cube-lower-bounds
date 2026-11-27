@@ -199,15 +199,13 @@ Note: This linter can be disabled with `set_option linter.unusedVariables false`
 'CenteredCube.RudinDensity.re_ofReal_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.rho_eq_cos_series' depends on axioms: [propext, Classical.choice, Quot.sound]
 === Average.lean ===
-Average.lean:72:53: warning: Variable name `hr` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hr
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
 'CenteredCube.RudinDensity.average_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.sin_pi_mul_rfun' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.average_term'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_cos_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_cos_sum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_rho_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.average_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
 === Periodic.lean ===
 Periodic.lean:73:4: warning: Unused tactic linter: `push_cast` does not change the goal.
 
@@ -218,6 +216,12 @@ Note: This linter can be disabled with `set_option linter.unusedTactic false`
 'CenteredCube.RudinDensity.continuous_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_periodic_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_rho_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Product.lean ===
+'CenteredCube.box_eq_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.tensorRho_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.continuous_tensorRho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_prod_rho_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.absMass_indicator_tensorRho' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]

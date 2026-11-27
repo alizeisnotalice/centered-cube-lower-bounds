@@ -23,6 +23,7 @@ import Abel
 import CosineForm
 import Average
 import Periodic
+import Product
 import Variance
 import RhoNormalise
 import SqrtLimit

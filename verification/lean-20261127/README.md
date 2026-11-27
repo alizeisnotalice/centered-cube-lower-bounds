@@ -20,7 +20,7 @@
 
 本机复用了同版本 Mathlib 的既有构建产物：`lean/.lake/packages` 是指向另一份
 v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入提交）。因此本机的
-`lake build` 只重新 elaboration 本仓库的 16 个模块，耗时约 2–3 分钟；数值见 `build.log`。
+`lake build` 只重新 elaboration 本仓库的 18 个模块，耗时约 2–3 分钟；数值见 `build.log`。
 在干净机器上按上面两条命令执行即可得到同样的 olean，不需要这个符号链接。
 
 ## 干净检出复现
@@ -42,7 +42,7 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
 ## 本轮结果
 
 - `build.log`：`Build completed successfully (5608 jobs)`。
-- `axioms.txt`：66 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
+- `axioms.txt`：78 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
   `sorryAx` 出现 0 次。
 
 `propext`、`Classical.choice`、`Quot.sound` 是 Lean/Mathlib 的标准公理，本文件原样列出，
@@ -61,7 +61,8 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
 | `Trig.lean` | 整周期三角积分与 `∫cos cos = ½δ` 正交性 |
 | `Abel.lean` | `rsPrefix`、Abel 求和、`15√K` 加权估计、`1/2 ≤ ρ_K ≤ 3/2` |
 | `CosineForm.lean` | `ρ_K` 的余弦级数 |
-| `Average.lean` | 余弦平均与正弦恒等式 |
+| `Average.lean` | 余弦平均、正弦恒等式与式 (3.1) 的装配 |
+| `Product.lean` | 张量密度与 `n` 维质量 |
 | `Periodic.lean` | 周期性与一维箱质量 |
 | `Variance.lean` | `S_t` 的均值与方差恒等式 |
 | `RhoNormalise.lean` | 整周期复指数积分与 `∫ρ_K=1` |

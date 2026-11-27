@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：69 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：78 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -15,7 +15,7 @@
 |---|---|---|---|
 | 模型：`M_n`、`C_n`（式 (1)） | `Cubes.maximal` / `Cubes.weakConstant` | — | 完整（快照） |
 | 引理 `lem:transfer`：环面水平集 → `C_n ≥ λ m_n(E)(1-R⁻¹)ⁿ` | `Cubes.lower_bound_of_average_on_set`、`Cubes.truncation_retention`、`Cubes.halo_of_truncated_average` | `volume_cube` | **部分**：ℝⁿ 一侧完整；周期提升的测度恒等式未接入（缺口 G1） |
-| `‖f_n‖₁ = (2R)ⁿ` 的一维因子：`∫_{-R}^{R} ρ_K = 2R` | `RudinDensity.integral_rho_box`、`integral_periodic_nat`、`integral_periodic_neg`、`rho_add_one` | `integral_rho` | **完整（一维）**（本轮新增）：`n` 维的 Fubini 乘积步骤未接入（G1b） |
+| `‖f_n‖₁ = (2R)ⁿ`：一维因子与 `n` 维乘积 | `RudinDensity.integral_rho_box`、`integral_periodic_nat`、`integral_periodic_neg`、`rho_add_one`；`RudinDensity.integral_prod_rho_box`、`absMass_indicator_tensorRho`、`tensorRho` | `integral_rho`、`integral_fintype_prod_eq_prod`、`Measure.restrict_pi_pi` | **完整**（本轮新增）：`∫_{[-R,R]ⁿ}∏ρ_K(x_i)=(2R)ⁿ`，且 `absMass ((box n R).indicator (tensorRho K n)) = ofReal ((2R)ⁿ)`，即 `HaloData.mass` 的形状 |
 | 引理 `lem:rudin`：`\|∑_{l<N} ε_l z^l\| ≤ 5√N` | `RudinShapiro.prefix_bound`；`RudinDensity.rsPrefix_bound` | `prefixes_full`、`energy` | 完整（对递归前缀多项式） |
 | 系数识别：`P_q(z)=∑_{j<2^q} ε_j z^j`，`Q_q` 同，且 `ε_j ∈ {±1}` | `RudinDensity.polys_coef`、`RudinDensity.coef_unit` | `coef`、`coef_succ_of_lt` | **完整**（本轮新增）：显式系数族 `coef`，两条递推分支 `coef_succ_of_lt/ge` |
 | 前缀是多项式：`(prefixes z q n).1`、`.2` 均为 `∑_{j<n} c_j z^j`；`rsPrefix` 同 | `RudinDensity.prefixes_poly`、`self_prefix_poly`、`rsPrefix_poly` | `polys_coef` | **完整**（本轮新增） |
@@ -28,9 +28,9 @@
 | 式 `eq:variances` 的三角正交性：`∫₀¹cos(2πmx)cos(2πnx)dx = ½δ_{mn}` | `Trig.integral_cos_mul_cos_two_pi` | `Trig.integral_cos_two_pi_mul_int` | **完整**（本轮新增） |
 | 式 `eq:variances`：`E S_t = 0`，`V_K(t) = ½∑ sin²` | `RudinDensity.integral_Sfun`、`integral_Sfun_sq`、`integral_cos_series_sq` | `Trig`、`weightedSum_eq_series`、`coef_unit` | **完整**（本轮新增） |
 | 尺度协方差 `∫₀¹ S_t S_s = ½∑ sin_t sin_s` | `RudinDensity.integral_cos_series_mul`、`integral_Sfun_mul` | `Trig.integral_cos_mul_cos_two_pi` | **完整**（本轮新增）；与稿件 `(K/4)[Re D_K(t-s)−Re D_K(t+s)]` 的等价（乘积化和）未接入 |
-| 式 `eq:variances` 的 `σ_t²`（`= V_K(t)/(900π²K³r²)`） | `RudinDensity.integral_scaled_sq` | `integral_Sfun_sq` | **条件性**：缩放步骤已证；`d_t = S_t/(30πK^{3/2}r(t))`（式 (3.1)）尚缺装配 |
+| 式 `eq:variances` 的 `σ_t²`（`= V_K(t)/(900π²K³r²)`） | `RudinDensity.integral_scaled_sq`、`average_rho` | `integral_Sfun_sq`、`integral_rho_shift` | **完整**（本轮新增）：`d_t = S_t/(30πK^{3/2}r(t))` 已由 `average_rho` 给出 |
 | `ρ_K` 的显式余弦级数（式 (1.2)） | `RudinDensity.rho_eq_cos_series`、`zof_pow_eq`、`re_ofReal_mul_zof_pow` | `weightedSum_eq_series`、`coef_unit` | **完整**（本轮新增） |
-| 式 (3.1) 的构件：余弦平均 `(1/r)∫cos = cos·sin(πmr)/(πmr)`、`sin(π(K+l)r(t)) = (-1)^{K+l}sin(2πt(1+l/K))`、逐项代数 | `RudinDensity.average_cos`、`sin_pi_mul_rfun`、`average_term'` | `integral_cos`、`Real.sin_add_nat_mul_pi` | **完整**（逐项）；整体装配（把 `(1/r)∫ρ_K` 拆成 `1 + c/r·Σ` 的除法记账）未接入（G3′） |
+| 式 (3.1)：`(1/r)∫_{x-r/2}^{x+r/2}ρ_K = 1 + S_t/(30πK^{3/2}r)` | `RudinDensity.average_cos`、`sin_pi_mul_rfun`、`average_term'`、`integral_cos_shift`、`integral_cos_sum_shift`、`integral_rho_shift`、`average_rho` | `integral_cos`、`Real.sin_add_nat_mul_pi`、`integral_finsetSum` | **完整**（本轮闭合 G3′）：先证无 `1/r` 的 `∫ = r + S_t/(30πK^{3/2})`，再除以 `r` |
 | `eq:center`：`V_K(t_0)=K/4`、`σ_{t_0}=1/(90πK)` | — | — | 未接入（同上） |
 | 引理 `lem:bounded`：`‖Y_t‖_∞ ≤ B=5√8` | — | — | 未接入（依赖 G2、G3） |
 | 引理 `lem:finite-kernel`、`lem:continuous-kernel`、`lem:quadratic`、`lem:global` | — | — | 未接入（尺度协方差，依赖 G3） |
@@ -54,16 +54,17 @@
 
 ## 缺口清单（按「离闭合最近」排序）
 
-- **G1（√n/log n，确定性）** 周期提升的测度恒等式。一维质量部分已闭合：
-  `∫_{-R}^{R} ρ_K = 2R`（`Periodic.lean`）。**尚缺** G1a：集合版本
-  `\|π⁻¹(E) ∩ [-R+1,R-1]ⁿ\| = (2R-2)ⁿ m_n(E)`；G1b：`n` 维 Fubini 乘积
-  `∫_{[-R,R]ⁿ} ∏ρ(x_i) = (2R)ⁿ`。两者都是测度论搬运，不含研究性内容。
+- **G1（√n/log n，确定性）** 周期提升的测度恒等式。一维质量（`∫_{-R}^{R}ρ_K=2R`）与
+  `n` 维乘积（`∫_{[-R,R]ⁿ}∏ρ_K(x_i)=(2R)ⁿ`，含 `absMass` 形式）都已闭合。
+  **尚缺** G1a：集合版本 `\|π⁻¹(E) ∩ [-R+1,R-1]ⁿ\| = (2R-2)ⁿ m_n(E)`——
+  这是唯一剩下的测度论搬运，不含研究性内容。
 - **G2（√n/log n，确定性）** 系数与级数。已证：`P_q`、`Q_q` 的系数是显式的 `±1` 族
   （`polys_coef` + `coef_unit`，`coef_succ_of_lt` 给出沿层的稳定性），且递归前缀都是多项式
   （`prefixes_poly`），且截断相容（`prefixes_trunc`）——即 `rsPrefix` 的系数就是 `coef`。
   已完成：`∫ρ_K=1`（`integral_rho`）。G2 **闭合**——`lem:density` 三式全部形式化。
 - **G3（两稿共用）** 式 `eq:variances`：**已闭合**（`Variance.lean`）——`E S_t = 0`、
-  `∫S_t² = ½∑sin²` 都已证；`σ_t²` 只剩式 (3.1) 的 `d_t = S_t/c` 未接入（属一维精确平均，G3′）。
+  `∫S_t² = ½∑sin²`、尺度协方差都已证；`σ_t²` 所需的 `d_t = S_t/c` 由式 (3.1) 的
+  完整装配（`average_rho`）给出，G3′ **闭合**。
 - **G4（√n/log n）** 引理 `lem:md` 的一致中偏差：指数倾斜、`ψ'''` 控制、Berry–Esseen、
   换测度与区间质量。这是该稿最重的一块，也是「不能用固定阈值 CLT 替代」的那一块。
 - **G5（√n/log n）** 概率模型的装配：同一组 `U_1,…,U_n` 下的 `X_t`、`F_t`、`G_t`，
@@ -72,16 +73,17 @@
   有限面比较）、局部越阈（倾斜 + 带漂移 Brownian 最大值 + 网格逼近）、安全删除后的段数与
   成对交集、有限质量 L¹ 见证。目前只有链尾（`C_*`、liminf 转换）落地。
 
-## 本轮实际推进（按要求的三句式）
+## 本轮（第三轮）实际推进
 
-- **本轮证明的此前缺失命题**：`lem:density` 三式全部；`eq:variances` 的均值与方差恒等式；
-  `ρ_K` 的周期性与连续性、`∫_{-R}^{R} ρ_K = 2R`（一维质量）；
-  `C_n` 作为上确界的模型锁定（含截断极大算子）；`C_* > 1/35`（实数域）；`h → liminf`、
-  `liminf → √n/35` 两个方向的量词转换。
-- **本轮接上的主定理依赖**：`sqrtLog_of_truncated_halo` 已接到 `SqrtLogLowerBound`
-  （`sqrtLogLowerBound_of_haloData`）；`√n` 稿的「`∀b<C_*` 形式 ⇒ liminf ⇒ 推论」已闭合。
-- **最小剩余缺口**：G1（周期提升测度恒等式）。它不是研究性缺口，但工作量最大；
-  G2 次之。两篇主定理本身仍**未**形式化，不能用本轮结果替代。
+- **本轮证明的此前缺失命题**：式 (3.1) 的完整装配——`integral_cos_shift`
+  （`∫cos = cos·sin(πmr)/(πm)`，`r` 与 `1/r` 相消）、`integral_cos_sum_shift`（逐项求和）、
+  `integral_rho_shift`（`∫ρ_K = r + S_t/(30πK^{3/2})`）、`average_rho`（除以 `r` 的稿件原式）；
+  以及 `n` 维质量——`integral_prod_rho_box`（`∫_{[-R,R]ⁿ}∏ρ_K=(2R)ⁿ`）与
+  `absMass_indicator_tensorRho`（`HaloData.mass` 的 `absMass` 形式）。
+- **本轮接上的主定理依赖**：`HaloData` 的 `mass` 字段现在有可调用的定理；
+  `σ_t²`（`eq:variances` 最后一式）现可闭合；G3′ 从「构件已证、装配未做」变为**闭合**。
+- **最小剩余缺口**：G1a（周期提升的集合版测度恒等式）。其后是 G4（一致中偏差）、
+  G5（网格装配）、G6（√n 稿构造链）。两篇主定理本身仍**未**形式化。
 
 ## 未声称的内容
 
