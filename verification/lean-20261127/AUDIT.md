@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：61 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：66 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -27,7 +27,9 @@
 | 引理 `lem:density` 第三式：`∫_T ρ_K dm_1 = 1` | `RudinDensity.integral_rho` | `integral_re_mul_zof_pow`、`weightedSum_eq_series`、`Trig` | **完整**（本轮新增）：所有频率为 `K+l ≥ 1`，逐项均值为零 |
 | 式 `eq:variances` 的三角正交性：`∫₀¹cos(2πmx)cos(2πnx)dx = ½δ_{mn}` | `Trig.integral_cos_mul_cos_two_pi` | `Trig.integral_cos_two_pi_mul_int` | **完整**（本轮新增） |
 | 式 `eq:variances`：`E S_t = 0`，`V_K(t) = ½∑ sin²` | `RudinDensity.integral_Sfun`、`integral_Sfun_sq`、`integral_cos_series_sq` | `Trig`、`weightedSum_eq_series`、`coef_unit` | **完整**（本轮新增） |
-| 式 `eq:variances` 的 `σ_t²`（`= V_K(t)/(900π²K³r²)`） | `RudinDensity.integral_scaled_sq` | `integral_Sfun_sq` | **条件性**：缩放步骤已证；`d_t = S_t/(30πK^{3/2}r(t))`（式 (3.1)，一维精确平均）未接入 |
+| 式 `eq:variances` 的 `σ_t²`（`= V_K(t)/(900π²K³r²)`） | `RudinDensity.integral_scaled_sq` | `integral_Sfun_sq` | **条件性**：缩放步骤已证；`d_t = S_t/(30πK^{3/2}r(t))`（式 (3.1)）尚缺装配 |
+| `ρ_K` 的显式余弦级数（式 (1.2)） | `RudinDensity.rho_eq_cos_series`、`zof_pow_eq`、`re_ofReal_mul_zof_pow` | `weightedSum_eq_series`、`coef_unit` | **完整**（本轮新增） |
+| 式 (3.1) 的两个构件：余弦平均 `(1/r)∫cos = cos·sin(πmr)/(πmr)`、`sin(π(K+l)r(t)) = (-1)^{K+l}sin(2πt(1+l/K))` | `RudinDensity.average_cos`、`sin_pi_mul_rfun` | `integral_cos`、`Real.sin_add_nat_mul_pi` | **完整**（本轮新增）；把它们装配成 `d_t = S_t/c` 的求和步骤未接入（G3′） |
 | `eq:center`：`V_K(t_0)=K/4`、`σ_{t_0}=1/(90πK)` | — | — | 未接入（同上） |
 | 引理 `lem:bounded`：`‖Y_t‖_∞ ≤ B=5√8` | — | — | 未接入（依赖 G2、G3） |
 | 引理 `lem:finite-kernel`、`lem:continuous-kernel`、`lem:quadratic`、`lem:global` | — | — | 未接入（尺度协方差，依赖 G3） |

@@ -23,6 +23,8 @@ lean_lib «Model»
 lean_lib «Coefficients»
 lean_lib «Trig»
 lean_lib «Abel»
+lean_lib «CosineForm»
+lean_lib «Average»
 lean_lib «Periodic»
 lean_lib «Variance»
 lean_lib «RhoNormalise»

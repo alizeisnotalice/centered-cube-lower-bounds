@@ -20,6 +20,8 @@ import Model
 import Coefficients
 import Trig
 import Abel
+import CosineForm
+import Average
 import Periodic
 import Variance
 import RhoNormalise

@@ -23,6 +23,8 @@
 | `Coefficients.lean` | 系数族 `coef`、`P_q`/`Q_q` 的级数展开、系数 `±1`、前缀的多项式表示 |
 | `Trig.lean` | 整周期三角积分：`∫₀¹cos(2πkx)`、`∫₀¹sin(2πkx)`、`∫₀¹cos²`、`∫₀¹cos cos = ½δ` |
 | `Abel.lean` | Rudin–Shapiro 密度的 Abel 求和、`15√K` 估计、`1/2 ≤ ρ_K ≤ 3/2` |
+| `CosineForm.lean` | `ρ_K` 的实余弦级数（式 (1.2)） |
+| `Average.lean` | 余弦平均公式与 `sin(π(K+l)r(t))` 恒等式（式 (3.1) 的构件） |
 | `Periodic.lean` | `ρ_K` 的周期性与连续性、周期函数整区间积分、`∫_{-R}^{R}ρ_K = 2R` |
 | `Variance.lean` | `S_t` 的余弦级数、`E S_t = 0`、`V_K(t) = ½∑sin²`、缩放步骤 |
 | `RhoNormalise.lean` | 整周期复指数积分、`∫₀¹ρ_K = 1`（`lem:density` 第三式） |

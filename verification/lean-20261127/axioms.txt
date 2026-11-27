@@ -184,6 +184,13 @@ Note: This linter can be disabled with `set_option linter.unusedVariables false`
 'CenteredCube.RudinDensity.integral_Sfun' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_Sfun_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_scaled_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CosineForm.lean ===
+'CenteredCube.RudinDensity.zof_pow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.re_ofReal_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rho_eq_cos_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Average.lean ===
+'CenteredCube.RudinDensity.average_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sin_pi_mul_rfun' depends on axioms: [propext, Classical.choice, Quot.sound]
 === Periodic.lean ===
 Periodic.lean:73:4: warning: Unused tactic linter: `push_cast` does not change the goal.
 
