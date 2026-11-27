@@ -28,8 +28,8 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
     ./verification/lean-20261127/clean-checkout.sh
 
 脚本从本分支 `git clone` 到一个空目录，接上同版本 Mathlib（或 `lake exe cache get`）后执行
-`lake build`。本次运行的输出存于 `clean-checkout.log`：`Build completed successfully (7204 jobs)`，
-105 条公理诊断，0 次 `sorryAx`。
+`lake build`。本次运行的输出存于 `clean-checkout.log`：`Build completed successfully (7206 jobs)`，
+111 条公理诊断，0 次 `sorryAx`。
 
 ## 逐文件复核
 
