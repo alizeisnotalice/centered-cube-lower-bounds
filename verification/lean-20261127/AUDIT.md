@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：95 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：105 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -33,7 +33,8 @@
 | `ρ_K` 的显式余弦级数（式 (1.2)） | `RudinDensity.rho_eq_cos_series`、`zof_pow_eq`、`re_ofReal_mul_zof_pow` | `weightedSum_eq_series`、`coef_unit` | **完整**（本轮新增） |
 | 式 (3.1)：`(1/r)∫_{x-r/2}^{x+r/2}ρ_K = 1 + S_t/(30πK^{3/2}r)` | `RudinDensity.average_cos`、`sin_pi_mul_rfun`、`average_term'`、`integral_cos_shift`、`integral_cos_sum_shift`、`integral_rho_shift`、`average_rho` | `integral_cos`、`Real.sin_add_nat_mul_pi`、`integral_finsetSum` | **完整**（本轮闭合 G3′）：先证无 `1/r` 的 `∫ = r + S_t/(30πK^{3/2})`，再除以 `r` |
 | `eq:center`：`V_K(t_0)=K/4`、`σ_{t_0}=1/(90πK)`，`t_0=K/4`、`4∣K` | `RudinDensity.VK_center`、`sigmaSq_center`、`sigma_center`、`rfun_center`、`integral_d_sq` | `Real.sin_sq_eq_half_sub`、`Real.cos_nat_mul_pi`、`integral_Sfun_sq` | **完整**（本轮新增）：`V_K`、`sigmaSq`、`sigma` 显式定义；`E d_t² = σ_t²` 由 `integral_scaled_sq` 接上 |
-| 引理 `lem:bounded`：`sup_x\|S_t(x)\| ≤ 5√K`，`‖Y_t‖_∞ ≤ 5√8` | `RudinDensity.abs_Sfun_le`、`abs_Y_le`、`Sfun_eq_im`、`Sexp_eq`、`norm_Sexp_le` | `rsPrefix_bound`、`two_mul_sin_mul_cos` | **完整（上界部分）**（本轮新增）：`S_t = ½(Im E(t/K+x)+Im E(t/K−x))`，每个 `E(w)=(-1)^K e^{2πiKw}F_K(-e^{2πiw})`，模 ≤ `5√K`；`‖Y_t‖_∞ ≤ 5√8` 以窗口下界 `V_K ≥ K/8` 为前提（该前提未接入） |
+| 引理 `lem:bounded`：`sup_x\|S_t(x)\| ≤ 5√K`，`‖Y_t‖_∞ ≤ 5√8` | `RudinDensity.abs_Sfun_le`、`abs_Y_le`、`abs_Y_le_window`、`Sfun_eq_im`、`Sexp_eq`、`norm_Sexp_le` | `rsPrefix_bound`、`two_mul_sin_mul_cos` | **完整**（本轮闭合）：`S_t = ½(Im E(t/K+x)+Im E(t/K−x))`，`\|E\| ≤ 5√K`；窗口条件由 `VK_window` 提供 |
+| 式 `eq:window-bounds`：`7/6 ≤ r(t) ≤ 11/6`、`\|V_K(t)−K/4\| ≤ 1/2`、`K/8 ≤ V_K ≤ 3K/8` | `RudinDensity.rfun_window`、`VK_window`、`sin_window`、`abs_VK_sub_center`、`VK_eq_center_sub`、`norm_Dsum_le_two`、`Dsum_factor` | `Real.sin_sq_eq_half_sub`、`geom_sum_eq`、`Real.cos_le_cos_of_nonneg_of_le_pi` | **完整**（本轮新增）：`V_K = K/4 − ¼∑cos(4πt(1+l/K))`；几何和 `\|∑e^{4πit(1+l/K)}\| = \|sin(2πt)\|/\|sin(2πt/K)\| ≤ 2` |
 | 引理 `lem:finite-kernel`、`lem:continuous-kernel`、`lem:quadratic`、`lem:global` | — | — | 未接入（尺度协方差，依赖 G3） |
 | 引理 `lem:md`：一致中偏差 | — | — | 未接入（缺口 G4） |
 | 引理 `lem:rounding`、`lem:thresholds`、`lem:one-point`、`lem:two-point`、命题 `prop:sum`、`prop:conditions` | — | — | 未接入（缺口 G4/G5） |
@@ -84,12 +85,13 @@
   `eq:center` 的两式——`V_K(K/4) = K/4`、`σ_{K/4} = 1/(90πK)`（`4 ∣ K`），
   以及 `E d_t² = σ_t²`（`integral_d_sq`）；
   `lem:bounded` 的 sup 范数部分——`sup_x|S_t| ≤ 5√K`（`abs_Sfun_le`），
-  以及条件形式 `‖Y_t‖_∞ ≤ 5√8`（`abs_Y_le`，前提是窗口下界 `V_K ≥ K/8`）；
-  `eq:exact-covariance`——`∫S_tS_s = (K/4)[Re D_K(t−s)−Re D_K(t+s)]` 与 `|D_K|≤1`。
+  `‖Y_t‖_∞ ≤ 5√8`（`abs_Y_le` + `abs_Y_le_window`）；
+  `eq:exact-covariance`——`∫S_tS_s = (K/4)[Re D_K(t−s)−Re D_K(t+s)]` 与 `|D_K|≤1`；
+  `eq:window-bounds` 的全部三式（`rfun_window`、`VK_window`、`sin_window`）。
 - **本轮接上的主定理依赖**：`HaloData` 的 `mass` 字段现在有可调用的定理；
   `σ_t²`（`eq:variances` 最后一式）现可闭合；G3′ 从「构件已证、装配未做」变为**闭合**。
-- **最小剩余缺口**：G1a（周期提升的集合版测度恒等式）。其后是 G4（一致中偏差）、
-  G5（网格装配）、G6（√n 稿构造链）。两篇主定理本身仍**未**形式化。
+- **最小剩余缺口**：G1a（周期提升的集合版测度恒等式）与 G4（一致中偏差 `lem:md`）。
+  其后是 G5（网格装配）、G6（√n 稿构造链）、式 (3.5) 的闭式。两篇主定理本身仍**未**形式化。
 
 ## 未声称的内容
 

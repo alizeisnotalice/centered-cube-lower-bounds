@@ -27,6 +27,7 @@ import Product
 import Center
 import Bounded
 import Dirichlet
+import Window
 import Variance
 import RhoNormalise
 import SqrtLimit

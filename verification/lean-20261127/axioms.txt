@@ -274,6 +274,47 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 'CenteredCube.RudinDensity.two_mul_sin_mul_sin' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_Sfun_mul_eq_DK' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.norm_DK_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Window.lean ===
+Window.lean:92:29: warning: This simp argument is unused:
+  Complex.add_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.mul_re, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Window.lean:92:61: warning: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Window.lean:94:24: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, mul_one, mul_zero, add_zero, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Window.lean:118:38: warning: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CenteredCube.RudinDensity.VK_eq_center_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rfun_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.Dsum_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.Dsum_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.norm_geom_sum_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.norm_Dsum_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sin_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_VK_sub_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.VK_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_Y_le_window' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]
