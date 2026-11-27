@@ -61,8 +61,38 @@ theorem sin_pi_mul_rfun {K : ℕ} (hK : 1 ≤ K) (l : ℕ) (t : ℝ) :
     ring
   rw [harg, Real.sin_add_nat_mul_pi]
 
+
+/-- The manuscript's `r(t) = 1 + 2t/K`. -/
+noncomputable def rfun (K : ℕ) (t : ℝ) : ℝ := 1 + 2 * t / (K : ℝ)
+
+/-- **Termwise algebra of the exact average.**  Using
+`sin(π(K+l)r) = (-1)^{K+l} sin(2πt(1+l/K))` and `(1+l/K)/(K+l) = 1/K`, the `l`-th
+term of the averaged density equals the `l`-th term of `S_t/(30πK^{3/2}r)`. -/
+theorem average_term {K : ℕ} (hK : 1 ≤ K) (t x : ℝ) (hr : 0 < rfun K t) (l : ℕ) :
+    (1 / (30 * Real.sqrt (K : ℝ))) / rfun K t
+        * (((1 : ℝ) + (l : ℝ) / (K : ℝ)) * (coef K l).1.re)
+        * (Real.cos (((K + l : ℕ) : ℝ) * (2 * Real.pi) * x)
+            * (Real.sin (Real.pi * ((K + l : ℕ) : ℝ) * rfun K t)
+              / (Real.pi * ((K + l : ℕ) : ℝ))))
+      = (1 / (30 * Real.pi * (K : ℝ) * Real.sqrt (K : ℝ) * rfun K t))
+        * ((coef K l).1.re * (-1 : ℝ) ^ (K + l)
+            * Real.sin (2 * Real.pi * t * (1 + (l : ℝ) / (K : ℝ)))
+            * Real.cos (((K + l : ℕ) : ℝ) * (2 * Real.pi) * x)) := by
+  have hsin := sin_pi_mul_rfun hK l t
+  have hKl : ((K + l : ℕ) : ℝ) = (K : ℝ) + (l : ℝ) := by push_cast; ring
+  have hK0 : (0 : ℝ) < (K : ℝ) := by exact_mod_cast (by omega : 0 < K)
+  have hKl0 : (0 : ℝ) < ((K + l : ℕ) : ℝ) := by
+    rw [hKl]; linarith
+  have hpi : (0 : ℝ) < Real.pi := Real.pi_pos
+  simp only [rfun] at *
+  rw [hsin]
+  rw [hKl]
+  field_simp
+
+
 end RudinDensity
 end CenteredCube
 
 #print axioms CenteredCube.RudinDensity.average_cos
 #print axioms CenteredCube.RudinDensity.sin_pi_mul_rfun
+#print axioms CenteredCube.RudinDensity.average_term

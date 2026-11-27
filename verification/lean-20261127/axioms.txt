@@ -189,8 +189,15 @@ Note: This linter can be disabled with `set_option linter.unusedVariables false`
 'CenteredCube.RudinDensity.re_ofReal_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.rho_eq_cos_series' depends on axioms: [propext, Classical.choice, Quot.sound]
 === Average.lean ===
+Average.lean:71:53: warning: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
 'CenteredCube.RudinDensity.average_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.sin_pi_mul_rfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.average_term' depends on axioms: [propext, Classical.choice, Quot.sound]
 === Periodic.lean ===
 Periodic.lean:73:4: warning: Unused tactic linter: `push_cast` does not change the goal.
 
