@@ -222,6 +222,13 @@ Note: This linter can be disabled with `set_option linter.unusedTactic false`
 'CenteredCube.RudinDensity.continuous_tensorRho' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_prod_rho_box' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.absMass_indicator_tensorRho' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Center.lean ===
+'CenteredCube.RudinDensity.sum_range_neg_one_pow_two_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.VK_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rfun_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_d_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sigmaSq_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sigma_center' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]

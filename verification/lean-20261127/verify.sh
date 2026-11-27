@@ -8,7 +8,7 @@ export PATH="$HOME/.elan/bin:$PATH"
 out="../verification/lean-20261127/axioms.txt"
 : > "$out"
 status=0
-for f in LowerBounds Cubes LogTensor RudinShapiro Model Coefficients Trig Abel RhoNormalise Variance CosineForm Average Periodic Product SqrtLimit SqrtLogWiring All; do
+for f in LowerBounds Cubes LogTensor RudinShapiro Model Coefficients Trig Abel RhoNormalise Variance CosineForm Average Periodic Product Center SqrtLimit SqrtLogWiring All; do
   echo "=== $f.lean ===" >> "$out"
   if lake env lean "$f.lean" >> "$out" 2>&1; then
     echo "[ok] $f" >&2

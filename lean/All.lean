@@ -24,6 +24,7 @@ import CosineForm
 import Average
 import Periodic
 import Product
+import Center
 import Variance
 import RhoNormalise
 import SqrtLimit
