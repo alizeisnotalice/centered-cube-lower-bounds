@@ -33,7 +33,7 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
 ## 本轮结果
 
 - `build.log`：`Build completed successfully (5608 jobs)`。
-- `axioms.txt`：43 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
+- `axioms.txt`：47 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
   `sorryAx` 出现 0 次。
 
 `propext`、`Classical.choice`、`Quot.sound` 是 Lean/Mathlib 的标准公理，本文件原样列出，

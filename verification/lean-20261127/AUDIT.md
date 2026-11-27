@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：46 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：47 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
