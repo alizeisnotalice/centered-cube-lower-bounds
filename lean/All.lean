@@ -26,6 +26,7 @@ import Periodic
 import Product
 import Center
 import Bounded
+import Dirichlet
 import Variance
 import RhoNormalise
 import SqrtLimit

@@ -245,6 +245,35 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 'CenteredCube.RudinDensity.norm_Sexp_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.abs_Sfun_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.abs_Y_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Dirichlet.lean ===
+Dirichlet.lean:47:29: warning: This simp argument is unused:
+  Complex.add_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.mul_re, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Dirichlet.lean:47:61: warning: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Dirichlet.lean:49:24: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, mul_one, mul_zero, add_zero, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CenteredCube.RudinDensity.ReDK_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.two_mul_sin_mul_sin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_Sfun_mul_eq_DK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.norm_DK_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]
