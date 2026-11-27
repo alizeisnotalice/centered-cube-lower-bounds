@@ -36,6 +36,35 @@ Note: This linter can be disabled with `set_option linter.unreachableTactic fals
 'CenteredCube.maximalTrunc_le_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.weakRatio_trunc_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.ofReal_le_weakConstant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Coefficients.lean ===
+Coefficients.lean:48:6: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Coefficients.lean:54:6: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Coefficients.lean:140:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Coefficients.lean:146:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Coefficients.lean:155:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Coefficients.lean:164:14: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+'CenteredCube.RudinDensity.polys_coef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.prefixes_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.self_prefix_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.coef_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
 === Trig.lean ===
 Trig.lean:33:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
 
@@ -70,12 +99,7 @@ Hint: Replace the deprecated name:
 'CenteredCube.Trig.integral_cos_sq_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Trig.integral_cos_mul_cos_two_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
 === Abel.lean ===
-Abel.lean:71:42: warning: Variable name `hK` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hK
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CenteredCube.RudinDensity.rsPrefix_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.rsPrefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.weightedSum_abel' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.weighted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

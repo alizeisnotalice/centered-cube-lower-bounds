@@ -20,6 +20,7 @@ lean_lib «Cubes»
 lean_lib «LogTensor»
 lean_lib «RudinShapiro»
 lean_lib «Model»
+lean_lib «Coefficients»
 lean_lib «Trig»
 lean_lib «Abel»
 lean_lib «SqrtLimit»

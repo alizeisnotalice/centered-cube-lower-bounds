@@ -17,6 +17,7 @@ import Cubes
 import LogTensor
 import RudinShapiro
 import Model
+import Coefficients
 import Trig
 import Abel
 import SqrtLimit

@@ -25,6 +25,7 @@ that `ρ_K` therefore equals the displayed real cosine series (which would give
 recursion; neither is assumed anywhere below.
 -/
 import RudinShapiro
+import Coefficients
 import Mathlib.Algebra.BigOperators.Module
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.Complex.Trigonometric
@@ -57,6 +58,11 @@ theorem rsPrefix_bound {z : ℂ} (hz : ‖z‖ = 1) (N : ℕ) :
 theorem rsPrefix_zero (z : ℂ) : rsPrefix z 0 = 0 := by
   simp [rsPrefix, RudinShapiro.prefixes]
 
+/-- `rsPrefix z N` is a polynomial in `z` of degree `< N` (from `Coefficients`). -/
+theorem rsPrefix_poly (N : ℕ) (z : ℂ) : ∃ c : ℕ → ℂ,
+    rsPrefix z N = ∑ j ∈ range N, c j * z ^ j :=
+  self_prefix_poly N z
+
 /-- The weighted sum `∑_{l<K} ε_l (1 + l/K) z^l`, written with
 `ε_l z^l = F_{l+1} - F_l`. -/
 noncomputable def weightedSum (z : ℂ) (K : ℕ) : ℂ :=
@@ -68,7 +74,7 @@ theorem sum_prefix_diff (z : ℂ) (n : ℕ) :
   rw [Finset.sum_range_sub (fun i => rsPrefix z i) n, rsPrefix_zero, sub_zero]
 
 /-- Abel summation, in the form needed here. -/
-theorem weightedSum_abel {z : ℂ} {K : ℕ} (hK : 1 ≤ K) :
+theorem weightedSum_abel {z : ℂ} {K : ℕ} (_hK : 1 ≤ K) :
     weightedSum z K =
       ((1 : ℂ) + (((K - 1 : ℕ) : ℂ) / (K : ℂ))) * rsPrefix z K -
         (1 / (K : ℂ)) * ∑ i ∈ range (K - 1), rsPrefix z (i + 1) := by
@@ -190,6 +196,7 @@ theorem rho_bounds {K : ℕ} (hK : 1 ≤ K) (x : ℝ) :
 end RudinDensity
 end CenteredCube
 
+#print axioms CenteredCube.RudinDensity.rsPrefix_poly
 #print axioms CenteredCube.RudinDensity.rsPrefix_bound
 #print axioms CenteredCube.RudinDensity.weightedSum_abel
 #print axioms CenteredCube.RudinDensity.weighted_bound

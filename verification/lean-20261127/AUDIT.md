@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：38 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：43 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -15,7 +15,9 @@
 |---|---|---|---|
 | 模型：`M_n`、`C_n`（式 (1)） | `Cubes.maximal` / `Cubes.weakConstant` | — | 完整（快照） |
 | 引理 `lem:transfer`：环面水平集 → `C_n ≥ λ m_n(E)(1-R⁻¹)ⁿ` | `Cubes.lower_bound_of_average_on_set`、`Cubes.truncation_retention`、`Cubes.halo_of_truncated_average` | `volume_cube` | **部分**：ℝⁿ 一侧完整；周期提升的测度恒等式 `\|π⁻¹(E) ∩ [-R+1,R-1]ⁿ\| = (2R-2)ⁿ m_n(E)` 未接入（缺口 G1） |
-| 引理 `lem:rudin`：`\|∑_{l<N} ε_l z^l\| ≤ 5√N` | `RudinShapiro.prefix_bound`；`RudinDensity.rsPrefix_bound` | `prefixes_full`、`energy` | 完整（对递归前缀多项式）。系数序列 `ε_l ∈ {±1}` 与 `P_q(z)=∑_{l<2^q} ε_l z^l` 的同一性未接入（缺口 G2） |
+| 引理 `lem:rudin`：`\|∑_{l<N} ε_l z^l\| ≤ 5√N` | `RudinShapiro.prefix_bound`；`RudinDensity.rsPrefix_bound` | `prefixes_full`、`energy` | 完整（对递归前缀多项式） |
+| 系数识别：`P_q(z)=∑_{j<2^q} ε_j z^j`，`Q_q` 同，且 `ε_j ∈ {±1}` | `RudinDensity.polys_coef`、`RudinDensity.coef_unit` | `coef`、`coef_succ_of_lt` | **完整**（本轮新增）：显式系数族 `coef`，两条递推分支 `coef_succ_of_lt/ge` |
+| 前缀是多项式：`(prefixes z q n).1`、`.2` 均为 `∑_{j<n} c_j z^j`；`rsPrefix` 同 | `RudinDensity.prefixes_poly`、`self_prefix_poly`、`rsPrefix_poly` | `polys_coef` | **完整**（本轮新增） |
 | 引理 `lem:density` 第一式：`sup_{\|z\|=1} \|∑_{l<K} ε_l(1+l/K)z^l\| ≤ 15√K` | `RudinDensity.weighted_bound` | `weightedSum_abel`、`rsPrefix_bound` | **完整**（本轮新增；Abel 求和，常数 10√K+5√K=15√K） |
 | 引理 `lem:density` 第二式：`1/2 ≤ ρ_K ≤ 3/2` | `RudinDensity.rho_bounds` | `weighted_bound` | **完整**（本轮新增） |
 | 引理 `lem:density` 第三式：`∫_T ρ_K dm_1 = 1` | — | — | 未接入：需先证 `ρ_K` 等于论文的余弦级数（缺口 G2），再逐项积分 |
@@ -49,9 +51,11 @@
   论文位置：`foundations.tex` 引理 `lem:transfer` 的证明；`main-proof.tex` 中 `‖f_n‖₁` 一段。
   形式化所需：`[0,1)ⁿ` 单位胞分解 + `volume_pi` 的可数可加，约 300–500 行。做完这一条，
   `lem:transfer` 与论文的 `‖f_n‖₁` 即可全部落地，`HaloData.mass` / `HaloData.volume_ge` 只剩概率输入。
-- **G2（√n/log n，确定性）** `F_{l+1}-F_l = ε_l z^l` 且 `ε_l ∈ {±1}`：把 `RudinShapiro.polys` 的
-  `P`、`Q` 两个分量同时展开为系数和（`Q_q(z)=∑_{l<2^q} ε_{2^q-1-l} z^l` 型的反转关系）。
-  做完后可把 `rho` 改写成论文的余弦级数，并用 `∫₀¹cos(2πmx)=0` 得到 `∫ρ_K=1`。
+- **G2（√n/log n，确定性）** 系数与级数。已证：`P_q`、`Q_q` 的系数是显式的 `±1` 族
+  （`polys_coef` + `coef_unit`，`coef_succ_of_lt` 给出沿层的稳定性），且递归前缀都是多项式
+  （`prefixes_poly`）。**尚缺**：`prefixes z q n` 等于 `polys z q` 的长度 `n` 截断（等价地：
+  `rsPrefix` 的系数就是 `coef`），据此把 `rho` 改写成论文的余弦级数，并由 `Trig.integral_cos_two_pi_mul_int`
+  得 `∫ρ_K=1`。
 - **G3（两稿共用）** 式 `eq:variances`：三角正交性 `∫₀¹cos(2πmx)cos(2πnx) dx = ½δ_{mn}` 已在
   `Trig.integral_cos_mul_cos_two_pi` 中证完（`m,n>0`）；余下是把 `S_t` 写成余弦级数后按 `Finset.sum`
   展开，故仍依赖 G2。
@@ -66,7 +70,8 @@
 ## 本轮实际推进（按要求的三句式）
 
 - **本轮证明的此前缺失命题**：`lem:density` 的 `15√K` 加权估计（Abel 求和）、`1/2 ≤ ρ_K ≤ 3/2`、
-  三角正交性 `∫₀¹cos cos = ½δ`（`Trig`）、`∫₀¹cos(2πkx)` 与 `∫₀¹sin(2πkx)` 的整周期积分；
+  三角正交性 `∫₀¹cos cos = ½δ`（`Trig`）、`∫₀¹cos(2πkx)` 与 `∫₀¹sin(2πkx)` 的整周期积分、
+  Rudin–Shapiro 两个多项式的系数展开与 `±1` 性（`Coefficients`）；
   `C_n` 作为上确界的模型锁定（含截断极大算子）；`C_* > 1/35`（实数域）；`h → liminf`、
   `liminf → √n/35` 两个方向的量词转换。
 - **本轮接上的主定理依赖**：`sqrtLog_of_truncated_halo` 已接到 `SqrtLogLowerBound`

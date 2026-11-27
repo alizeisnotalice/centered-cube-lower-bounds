@@ -20,7 +20,7 @@
 
 本机复用了同版本 Mathlib 的既有构建产物：`lean/.lake/packages` 是指向另一份
 v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入提交）。因此本机的
-`lake build` 只重新 elaboration 本仓库的 10 个模块，耗时约 2–3 分钟；数值见 `build.log`。
+`lake build` 只重新 elaboration 本仓库的 11 个模块，耗时约 2–3 分钟；数值见 `build.log`。
 在干净机器上按上面两条命令执行即可得到同样的 olean，不需要这个符号链接。
 
 ## 逐文件复核
@@ -33,7 +33,7 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
 ## 本轮结果
 
 - `build.log`：`Build completed successfully (5608 jobs)`。
-- `axioms.txt`：38 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
+- `axioms.txt`：43 条 `#print axioms`，全部为 `[propext, Classical.choice, Quot.sound]`；
   `sorryAx` 出现 0 次。
 
 `propext`、`Classical.choice`、`Quot.sound` 是 Lean/Mathlib 的标准公理，本文件原样列出，
@@ -48,6 +48,7 @@ v4.36.0 检出的符号链接（`.lake/` 已被 `.gitignore` 排除，不进入�
 | `LogTensor.lean` | 冻结快照副本：对数余项、张量阈值、Bonferroni 计数 |
 | `RudinShapiro.lean` | 冻结快照副本：`P/Q` 递推、单位圆能量、`5√N` 前缀界 |
 | `Model.lean` | 模型锁定：`C_n` 的上确界刻画、截断极大算子、`ℝ≥0∞ ↔ ℝ` 转换 |
+| `Coefficients.lean` | `Rudin–Shapiro` 的系数展开、`±1` 性与前缀多项式 |
 | `Trig.lean` | 整周期三角积分与 `∫cos cos = ½δ` 正交性 |
 | `Abel.lean` | `rsPrefix`、Abel 求和、`15√K` 加权估计、`1/2 ≤ ρ_K ≤ 3/2` |
 | `SqrtLimit.lean` | `C_*`、`C_* > 1/35`、`h → liminf`、`liminf → √n/35` |
