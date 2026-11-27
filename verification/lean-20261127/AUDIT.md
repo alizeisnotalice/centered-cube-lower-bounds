@@ -29,7 +29,7 @@
 | 式 `eq:variances`：`E S_t = 0`，`V_K(t) = ½∑ sin²` | `RudinDensity.integral_Sfun`、`integral_Sfun_sq`、`integral_cos_series_sq` | `Trig`、`weightedSum_eq_series`、`coef_unit` | **完整**（本轮新增） |
 | 式 `eq:variances` 的 `σ_t²`（`= V_K(t)/(900π²K³r²)`） | `RudinDensity.integral_scaled_sq` | `integral_Sfun_sq` | **条件性**：缩放步骤已证；`d_t = S_t/(30πK^{3/2}r(t))`（式 (3.1)）尚缺装配 |
 | `ρ_K` 的显式余弦级数（式 (1.2)） | `RudinDensity.rho_eq_cos_series`、`zof_pow_eq`、`re_ofReal_mul_zof_pow` | `weightedSum_eq_series`、`coef_unit` | **完整**（本轮新增） |
-| 式 (3.1) 的构件：余弦平均 `(1/r)∫cos = cos·sin(πmr)/(πmr)`、`sin(π(K+l)r(t)) = (-1)^{K+l}sin(2πt(1+l/K))`、逐项代数 | `RudinDensity.average_cos`、`sin_pi_mul_rfun`、`average_term` | `integral_cos`、`Real.sin_add_nat_mul_pi` | **完整**（逐项）；整体装配（把 `(1/r)∫ρ_K` 拆成 `1 + c/r·Σ` 的除法记账）未接入（G3′） |
+| 式 (3.1) 的构件：余弦平均 `(1/r)∫cos = cos·sin(πmr)/(πmr)`、`sin(π(K+l)r(t)) = (-1)^{K+l}sin(2πt(1+l/K))`、逐项代数 | `RudinDensity.average_cos`、`sin_pi_mul_rfun`、`average_term'` | `integral_cos`、`Real.sin_add_nat_mul_pi` | **完整**（逐项）；整体装配（把 `(1/r)∫ρ_K` 拆成 `1 + c/r·Σ` 的除法记账）未接入（G3′） |
 | `eq:center`：`V_K(t_0)=K/4`、`σ_{t_0}=1/(90πK)` | — | — | 未接入（同上） |
 | 引理 `lem:bounded`：`‖Y_t‖_∞ ≤ B=5√8` | — | — | 未接入（依赖 G2、G3） |
 | 引理 `lem:finite-kernel`、`lem:continuous-kernel`、`lem:quadratic`、`lem:global` | — | — | 未接入（尺度协方差，依赖 G3） |

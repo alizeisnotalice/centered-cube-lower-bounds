@@ -15,6 +15,7 @@ and the trigonometric identity `sin(π(K+l)r(t)) = (-1)^{K+l} sin(2πt(1+l/K))`.
 This file proves both ingredients and the average formula for `ρ_K`.
 -/
 import CosineForm
+import Variance
 
 open MeasureTheory intervalIntegral Finset
 open scoped BigOperators
@@ -90,9 +91,28 @@ theorem average_term {K : ℕ} (hK : 1 ≤ K) (t x : ℝ) (hr : 0 < rfun K t) (l
   field_simp
 
 
+
+/-- Termwise algebra without the outer `1/r`: the `l`-th summand of the integral
+equals the `l`-th summand of `S_t/(30πK^{3/2})`. -/
+theorem average_term' {K : ℕ} (hK : 1 ≤ K) (t x : ℝ) (l : ℕ) :
+    (1 / (30 * Real.sqrt (K : ℝ)))
+        * (((1 : ℝ) + (l : ℝ) / (K : ℝ)) * (coef K l).1.re)
+        * (Real.cos (((K + l : ℕ) : ℝ) * (2 * Real.pi) * x)
+            * (Real.sin (Real.pi * ((K + l : ℕ) : ℝ) * rfun K t)
+              / (Real.pi * ((K + l : ℕ) : ℝ))))
+      = (1 / (30 * Real.pi * (K : ℝ) * Real.sqrt (K : ℝ)))
+        * ((coef K l).1.re * (-1 : ℝ) ^ (K + l)
+            * Real.sin (2 * Real.pi * t * (1 + (l : ℝ) / (K : ℝ)))
+            * Real.cos (((K + l : ℕ) : ℝ) * (2 * Real.pi) * x)) := by
+  have hsin := sin_pi_mul_rfun hK l t
+  have hKl : ((K + l : ℕ) : ℝ) = (K : ℝ) + (l : ℝ) := by push_cast; ring
+  simp only [rfun] at *
+  rw [hsin, hKl]
+  field_simp
+
 end RudinDensity
 end CenteredCube
 
 #print axioms CenteredCube.RudinDensity.average_cos
 #print axioms CenteredCube.RudinDensity.sin_pi_mul_rfun
-#print axioms CenteredCube.RudinDensity.average_term
+#print axioms CenteredCube.RudinDensity.average_term'

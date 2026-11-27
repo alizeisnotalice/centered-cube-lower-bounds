@@ -1,9 +1,9 @@
-ℹ [3959/5265] Built LowerBounds (348ms)
+ℹ [1663/2199] Built LowerBounds (397ms)
 info: LowerBounds.lean:29:0: 'CenteredCubeLowerBounds.frequency_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: LowerBounds.lean:30:0: 'CenteredCubeLowerBounds.pi_bound_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: LowerBounds.lean:31:0: 'CenteredCubeLowerBounds.square_root_constant_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: LowerBounds.lean:32:0: 'CenteredCubeLowerBounds.square_root_constant_squared' does not depend on any axioms
-⚠ [7158/7188] Built LogTensor (2.7s)
+⚠ [7158/7188] Built LogTensor (2.0s)
 warning: LogTensor.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Deriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: LogTensor.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: LogTensor.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -27,7 +27,7 @@ warning: LogTensor.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib
 warning: LogTensor.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: LogTensor.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: LogTensor.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [7160/7188] Built RudinShapiro (2.8s)
+⚠ [7160/7188] Built RudinShapiro (2.0s)
 warning: RudinShapiro.lean: imports `Mathlib.Analysis.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: RudinShapiro.lean: imports `Mathlib.Analysis.SpecialFunctions.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: RudinShapiro.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -45,7 +45,7 @@ warning: RudinShapiro.lean: imports `Mathlib.Tactic.Linarith` from package `math
 warning: RudinShapiro.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: RudinShapiro.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: RudinShapiro.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [7162/7188] Built Cubes (4.1s)
+⚠ [7162/7188] Built Cubes (2.3s)
 warning: Cubes.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Cubes.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Cubes.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -73,7 +73,49 @@ warning: Cubes.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, wh
 warning: Cubes.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Cubes.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Cubes.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [7164/7188] Built Coefficients (1.9s)
+⚠ [7164/7188] Built Trig (2.3s)
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean:33:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:82:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:135:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:138:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Trig.lean:139:40: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Trig.lean:141:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:146:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+info: Trig.lean:152:0: 'CenteredCube.Trig.integral_cos_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Trig.lean:153:0: 'CenteredCube.Trig.integral_sin_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Trig.lean:154:0: 'CenteredCube.Trig.integral_cos_sq_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Trig.lean:155:0: 'CenteredCube.Trig.integral_cos_mul_cos_two_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7165/7188] Ran Trig:irArts
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [7166/7188] Built Coefficients (1.7s)
 warning: Coefficients.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Coefficients.lean: imports `Mathlib.Analysis.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Coefficients.lean:48:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
@@ -114,10 +156,10 @@ info: Coefficients.lean:338:0: 'CenteredCube.RudinDensity.self_prefix_poly' depe
 info: Coefficients.lean:339:0: 'CenteredCube.RudinDensity.coef_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Coefficients.lean:340:0: 'CenteredCube.RudinDensity.prefixes_trunc' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Coefficients.lean:341:0: 'CenteredCube.RudinDensity.prefixes_stable_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-⚠ [7165/7188] Ran Coefficients:irArts
+⚠ [7167/7188] Ran Coefficients:irArts
 warning: Coefficients.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Coefficients.lean: imports `Mathlib.Analysis.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-ℹ [7166/7188] Built Model (1.0s)
+ℹ [7168/7188] Built Model (1.7s)
 info: Model.lean:156:0: 'CenteredCube.paperWeakConstant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Model.lean:157:0: 'CenteredCube.weakConstant_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Model.lean:158:0: 'CenteredCube.le_weakConstant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -125,51 +167,9 @@ info: Model.lean:159:0: 'CenteredCube.exists_weakRatio_gt' depends on axioms: [p
 info: Model.lean:160:0: 'CenteredCube.maximalTrunc_le_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Model.lean:161:0: 'CenteredCube.weakRatio_trunc_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Model.lean:162:0: 'CenteredCube.ofReal_le_weakConstant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [7168/7188] Built SqrtLogWiring (1.0s)
+ℹ [7170/7188] Built SqrtLogWiring (1.7s)
 info: SqrtLogWiring.lean:56:0: 'CenteredCube.sqrtLogLowerBound_of_haloData' depends on axioms: [propext, Classical.choice, Quot.sound]
-⚠ [7170/7188] Built Trig (6.5s)
-warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: Trig.lean: imports `Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: Trig.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: Trig.lean:33:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
-
-Hint: Replace the deprecated name:
-  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-warning: Trig.lean:82:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
-
-Hint: Replace the deprecated name:
-  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-warning: Trig.lean:135:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
-
-Hint: Replace the deprecated name:
-  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-warning: Trig.lean:138:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
-
-Hint: Replace the deprecated name:
-  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
-warning: Trig.lean:139:40: `if_pos` has been deprecated: Use `ite_eq_left` instead
-
-Hint: Replace the deprecated name:
-  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
-warning: Trig.lean:141:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
-
-Hint: Replace the deprecated name:
-  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-warning: Trig.lean:146:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
-
-Hint: Replace the deprecated name:
-  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
-info: Trig.lean:152:0: 'CenteredCube.Trig.integral_cos_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: Trig.lean:153:0: 'CenteredCube.Trig.integral_sin_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: Trig.lean:154:0: 'CenteredCube.Trig.integral_cos_sq_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: Trig.lean:155:0: 'CenteredCube.Trig.integral_cos_mul_cos_two_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
-⚠ [7171/7188] Ran Trig:irArts
-warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: Trig.lean: imports `Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: Trig.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [7172/7188] Built Abel (2.0s)
+⚠ [7172/7188] Built Abel (1.6s)
 warning: Abel.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Abel.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Abel.lean: imports `Mathlib.Analysis.Complex.Trigonometric` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -184,7 +184,7 @@ info: Abel.lean:230:0: 'CenteredCube.RudinDensity.rho_bounds' depends on axioms:
 warning: Abel.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Abel.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Abel.lean: imports `Mathlib.Analysis.Complex.Trigonometric` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [7174/7188] Built SqrtLimit (1.9s)
+⚠ [7174/7188] Built SqrtLimit (1.7s)
 warning: SqrtLimit.lean: imports `Mathlib.Analysis.Real.Pi.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: SqrtLimit.lean: imports `Mathlib.Order.LiminfLimsup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 info: SqrtLimit.lean:141:0: 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -196,7 +196,7 @@ info: SqrtLimit.lean:146:0: 'CenteredCube.sqrt_div_35_eventually_toReal' depends
 ⚠ [7175/7188] Ran SqrtLimit:irArts
 warning: SqrtLimit.lean: imports `Mathlib.Analysis.Real.Pi.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: SqrtLimit.lean: imports `Mathlib.Order.LiminfLimsup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [7176/7188] Built RhoNormalise (1.9s)
+⚠ [7176/7188] Built RhoNormalise (1.6s)
 warning: RhoNormalise.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: RhoNormalise.lean:99:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
 
@@ -244,11 +244,11 @@ info: RhoNormalise.lean:151:0: 'CenteredCube.RudinDensity.integral_re_mul_zof_po
 info: RhoNormalise.lean:152:0: 'CenteredCube.RudinDensity.integral_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
 ⚠ [7177/7188] Ran RhoNormalise:irArts
 warning: RhoNormalise.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-ℹ [7178/7188] Built CosineForm (2.1s)
+ℹ [7178/7188] Built CosineForm (1.9s)
 info: CosineForm.lean:83:0: 'CenteredCube.RudinDensity.zof_pow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: CosineForm.lean:84:0: 'CenteredCube.RudinDensity.re_ofReal_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: CosineForm.lean:85:0: 'CenteredCube.RudinDensity.rho_eq_cos_series' depends on axioms: [propext, Classical.choice, Quot.sound]
-⚠ [7180/7188] Built Periodic (2.1s)
+⚠ [7180/7188] Built Periodic (1.9s)
 warning: Periodic.lean:73:4: Unused tactic linter: `push_cast` does not change the goal.
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
@@ -258,7 +258,7 @@ info: Periodic.lean:139:0: 'CenteredCube.RudinDensity.integral_periodic_nat' dep
 info: Periodic.lean:140:0: 'CenteredCube.RudinDensity.continuous_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Periodic.lean:141:0: 'CenteredCube.RudinDensity.integral_periodic_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Periodic.lean:142:0: 'CenteredCube.RudinDensity.integral_rho_box' depends on axioms: [propext, Classical.choice, Quot.sound]
-⚠ [7182/7188] Built Variance (2.2s)
+⚠ [7182/7188] Built Variance (1.0s)
 warning: Variance.lean:71:68: `if_pos` has been deprecated: Use `ite_eq_left` instead
 
 Hint: Replace the deprecated name:
@@ -281,16 +281,16 @@ info: Variance.lean:173:0: 'CenteredCube.RudinDensity.integral_cos_series_sq' de
 info: Variance.lean:174:0: 'CenteredCube.RudinDensity.integral_Sfun' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Variance.lean:175:0: 'CenteredCube.RudinDensity.integral_Sfun_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Variance.lean:176:0: 'CenteredCube.RudinDensity.integral_scaled_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
-⚠ [7184/7188] Built Average (1.9s)
-warning: Average.lean:71:53: Variable name `hr` is not explicitly referenced.
+⚠ [7184/7188] Built Average (1.8s)
+warning: Average.lean:72:53: Variable name `hr` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _hr
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-info: Average.lean:96:0: 'CenteredCube.RudinDensity.average_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: Average.lean:97:0: 'CenteredCube.RudinDensity.sin_pi_mul_rfun' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: Average.lean:98:0: 'CenteredCube.RudinDensity.average_term' depends on axioms: [propext, Classical.choice, Quot.sound]
-✔ [7186/7188] Built All (1.7s)
+info: Average.lean:116:0: 'CenteredCube.RudinDensity.average_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:117:0: 'CenteredCube.RudinDensity.sin_pi_mul_rfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:118:0: 'CenteredCube.RudinDensity.average_term'' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [7186/7188] Built All (1.6s)
 Build completed successfully (7188 jobs).
-lake build  19.12s user 15.57s system 219% cpu 15.837 total
+lake build  19.37s user 14.16s system 240% cpu 13.921 total
