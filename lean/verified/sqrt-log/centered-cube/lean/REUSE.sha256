@@ -1,0 +1,8 @@
+# sha256 of the frozen snapshot and of the copies used by the build target
+# snapshot: lean/sqrt-log-20261127/  copies: lean/
+b413e1b81e78a72b686b7c514333054f27c316e5f6ecf0a44feaddc0343dbfa4  sqrt-log-20261127/Cubes.lean
+0d17b65bf52f37a8244a8b3e174396d1cdd4bce1c59a7fdddc556b4a6cfcc315  sqrt-log-20261127/LogTensor.lean
+cfb826a3131127c4f0590eeee41a00299c67f2ff748d334af9d50e50ae8b35ad  sqrt-log-20261127/RudinShapiro.lean
+b413e1b81e78a72b686b7c514333054f27c316e5f6ecf0a44feaddc0343dbfa4  Cubes.lean
+0d17b65bf52f37a8244a8b3e174396d1cdd4bce1c59a7fdddc556b4a6cfcc315  LogTensor.lean
+cfb826a3131127c4f0590eeee41a00299c67f2ff748d334af9d50e50ae8b35ad  RudinShapiro.lean

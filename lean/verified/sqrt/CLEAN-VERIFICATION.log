@@ -1,0 +1,1128 @@
+Lean (version 4.36.0, x86_64-unknown-linux-gnu, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)
+Mathlib: fc4f59e577feb1a4956671bc04ac18aaaf8cd842
+
+Clean project replay: 402/402. Project outputs were emitted from staged sources using only Mathlib dependency cache. After source-local corrections the replay retained unchanged, hash-matching successful modules.
+
+=== BrownianExpectation ===
+'CubeBrownian.maxExpFormula_div_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.exp_layercake' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WeightedGridError ===
+'CubeBrownian.weighted_grid_lintegral_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WeightedModulusTail ===
+'CubeBrownian.weighted_modulus_exp_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== DiscreteReflection ===
+'CubeBrownian.firstCross_endpoint_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== DiscreteGridReflection ===
+'CubeBrownian.firstCross_grid_endpoint_CDF' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianGridLaw ===
+'CubeBrownian.brownian_gridLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FirstCrossValue ===
+'CubeBrownian.measurable_firstCrossValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianGridCDF ===
+'CubeBrownian.brownian_grid_CDF' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GridTelescoping ===
+=== DyadicGrid ===
+'CubeBrownian.dyadicBelow_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ContinuousGridReflection ===
+'CubeBrownian.crossing_overshoot_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== DyadicFirstCross ===
+'CubeBrownian.dyadicOvershoot_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ReflectionLimit ===
+'CubeBrownian.endpoint_reflection_CDF_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianCalculus ===
+'CubeBrownian.Φ_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianTailIntegrals ===
+'CubeBrownian.gaussian_I1_integrable_and_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.gaussian_I2_integrable_and_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ExpectationOfTail ===
+'CubeBrownian.exp_expectation_of_reflected_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianTilt ===
+'CubeBrownian.gaussian_zero_tilt_eq_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ReflectedEndpointReduction ===
+'CubeBrownian.gaussianReal_upper_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.reflected_tail_of_endpoint_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== JointReflectionReduction ===
+'CubeBrownian.tilted_expectation_of_joint_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ReflectionDecomposition ===
+'CubeBrownian.reflect_endpoint_decompose' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianJointReflection ===
+'CubeBrownian.brownian_jointEndpointReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CountableSupremum ===
+=== BrownianMaximum ===
+=== ProductTilt ===
+'CubeMD.tilted_pi_eq_pi_tilted' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianFiniteTilt ===
+'CubeBrownian.finite_partition_terminal_tilt' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteTiltTransport ===
+'CubeBrownian.dyadicIncrements_tilt_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== DriftedBrownianMaximum ===
+'CubeBrownian.paperBrownian_reflected_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.paperBrownian_exp_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualMeshGeometry ===
+'CubeBrownian.meshGrid_path_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianMeasurableVersion ===
+'CubeBrownian.paperBrownian_exp_expectation_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.paperBrownian_reflected_tail_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.paperBrownian_expectation_div_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianMaximalBound ===
+'CubeBrownian.brownian_absolute_max_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianUniformContinuous ===
+=== GridAnchorTilt ===
+'CubeBrownian.brownian_anchor_tilt_grid_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== LocalGridTransport ===
+'CubeBrownian.absolute_cell_tail_eq_of_dyadic' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== AnchorCellGrid ===
+'CubeBrownian.anchorCellTimes_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== AnchorCellLaw ===
+'CubeBrownian.anchorCell_dyadic_centered_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== AnchorCellBound ===
+'CubeBrownian.anchorCell_drifted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualWeightedMesh ===
+'CubeBrownian.meshModulus_anchor_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualMeshError ===
+'CubeBrownian.actual_weighted_grid_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== MeshAsymptotic ===
+'CubeBrownian.mesh_error_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperMesh ===
+'CubeBrownian.paperMesh_exact_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteWinner ===
+'CubeBrownian.finiteWinner_tilted_sum_expMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianWinner ===
+'CubeBrownian.finiteWinner_gaussian_tilted_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ExpMaxCoupling ===
+'CubeBrownian.exp_abs_sub_young' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.gaussian_half_variance_exp_second_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ExpMaxExpectation ===
+'CubeBrownian.expMax_expectation_young' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IsonormalCoupling ===
+'CubeBrownian.isoScore_coupled_second_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairedSpanIsonormal ===
+'CubeBrownian.pairedSpanIsonormal_hasLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BoxNodeApproximation ===
+'CubeBrownian.boxNode_L2_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.centeredBoxNode_L2_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.centeredBoxNode_eq_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IsonormalBrownianLaw ===
+'CubeBrownian.isonormal_step_isPreBrownian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.isoScore_step_eq_brownian_score' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteBrownianLaw ===
+'CubeBrownian.gaussian_finite_map_eq_of_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.paired_raw_grid_expectation_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CanonicalFiniteGrid ===
+'CubeBrownian.finite_isonormal_expMax_eq_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.canonical_stepGrid_eq_Brownian' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairedFiniteUniform ===
+'CubeBrownian.canonical_finite_grid_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWindowPulse ===
+'CenteredCubeSqrt.pulseOverlap_bounded' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.pulseOverlap_zero_far' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.smoothedWindowPulse_eq_overlap' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.smoothedWindowPulse_integral' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.smoothedWindowPulse_bounds' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.smoothedWindowPulse_zero_of_outside' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.scaled_window_pulse_inner' depends on axioms: [propext, choice, Quot.sound]
+=== CenteredBoxActualPulse ===
+'CubeBrownian.centeredBoxNodeL2_sq_eq_actualPulse' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualFiniteSmoothing ===
+'CubeBrownian.canonical_centeredBox_grid_uniform_Brownian' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianDyadicClock ===
+'CubeBrownian.dyadicIndex_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.dyadic_round_dist_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.dyadicIndex_close_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== DyadicContinuousLimit ===
+'CubeBrownian.dyadic_approx_tendsto_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.dyadicLimit_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianContinuousModification ===
+'CubeBrownian.brownian_dyadic_modification' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CanonicalPreBrownian ===
+'CubeBrownian.paperWienerCylinder_isPreBrownian' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianIncrementControl ===
+'CubeBrownian.preBrownian_increment_abs_fourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.preBrownian_increment_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BrownianDyadicProbability ===
+'CubeBrownian.preBrownian_ae_dyadic_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.preBrownian_ae_dyadic_approx' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CanonicalBrownianContinuous ===
+'CubeBrownian.preBrownian_has_dyadic_continuous_modification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.paperWienerBrownian_isBrownian' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualBrownianMeshLower ===
+'CubeBrownian.actualSmoothedGridMean_unconditional_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.actualSmoothedGridMean_eventually_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualAmplitudeScale ===
+'CubeSqrtProbability.actual_amplitude_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltMean ===
+'CubeSqrtProbability.single_tilt_log_mean_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltIncrement ===
+'CubeSqrtProbability.true_log_increment_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_log_increment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltIntegratedMean ===
+'CubeSqrtProbability.single_tilt_log_mean_integrated' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltRawCovariance ===
+'CubeSqrtProbability.tilted_two_increment_product_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltIntegratedCovariance ===
+'CubeSqrtProbability.single_tilt_raw_increment_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltMomentExpansion ===
+'CubeSqrtProbability.single_tilt_log_difference_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltCenteredCovariance ===
+'CubeSqrtProbability.true_single_tilt_centered_increment_covariance' depends on axioms: [propext,
+=== TrueTiltLimits ===
+'CubeSqrtProbability.true_winner_tilted_mean_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_tilted_covariance_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltBaseline ===
+'CubeSqrtProbability.true_winner_base_mean_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_base_mean_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_base_inc_cov_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_base_variance_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltBaselineLimits ===
+'CubeSqrtProbability.true_winner_base_mean_difference_tendsto' depends on axioms: [propext,
+'CubeSqrtProbability.true_winner_base_variance_difference_tendsto' depends on axioms: [propext,
+=== TrueTiltCrossLimits ===
+'CubeSqrtProbability.true_winner_base_inc_cov_difference_tendsto' depends on axioms: [propext,
+=== TrueTiltPolarization ===
+'CubeSqrtProbability.raw_inc_cross_polarization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_tilted_covariance_of_distances' depends on axioms: [propext,
+=== TrueTiltAlongDimensions ===
+'CubeSqrtProbability.true_winner_tilted_mean_tendsto_along_dimensions' depends on axioms: [propext,
+'CubeSqrtProbability.true_winner_tilted_covariance_tendsto_along_dimensions' depends on axioms: [propext,
+'CubeSqrtProbability.true_winner_tilted_covariance_of_distances_along_dimensions' depends on axioms: [propext,
+'CubeSqrtProbability.true_winner_base_mean_difference_tendsto_along_dimensions' depends on axioms: [propext,
+'CubeSqrtProbability.true_winner_base_variance_difference_tendsto_along_dimensions' depends on axioms: [propext,
+'CubeSqrtProbability.true_winner_base_inc_cov_difference_tendsto_along_dimensions' depends on axioms: [propext,
+=== PolyhedralSandwich ===
+'CubeSqrtProbability.polyhedral_difference_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SmoothFaceCutoff ===
+'CubeSqrtProbability.smoothFaceCutoff_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.smoothFaceCutoff_eq_one_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.smoothFaceCutoff_eq_zero_of_not_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SmoothTransitionBounds ===
+'CubeSqrtProbability.exists_bound_iteratedDeriv_smoothTransition' depends on axioms: [propext,
+=== SmoothProductBounds ===
+'CubeSqrtProbability.smooth_finite_product_iteratedDeriv_bound' depends on axioms: [propext,
+=== SmoothFaceDerivative ===
+'CubeSqrtProbability.exists_smoothFace_directional_third_bound' depends on axioms: [propext,
+=== SmoothTaylor ===
+'CubeSqrtProbability.unit_segment_taylor_second_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== DirectionalMoments ===
+'CubeSqrtProbability.iteratedDeriv_line_eq_iteratedFDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CoordinateMomentMatch ===
+'CubeSqrtProbability.multilinear_contraction_integral_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== LindebergReplacement ===
+'CubeSqrtProbability.one_replacement_of_matching_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.replacement_telescope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.replacement_under_common_background' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SmoothOneStep ===
+'CubeSqrtProbability.exists_smoothFace_one_replacement' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ConvolutionReplacement ===
+'CubeSqrtProbability.sumLaw_shift_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PolyhedralStrips ===
+'CubeSqrtProbability.gaussian_face_event_strip_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SmoothFaceComparison ===
+'CubeSqrtProbability.smooth_face_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SmoothIIDPolyhedral ===
+'CubeSqrtProbability.exists_smooth_iid_polyhedral_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianThirdMoment ===
+'CubeSqrtProbability.gaussian_marginal_third_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianCovarianceMatch ===
+'CubeSqrtProbability.posSemidef_rawSecondMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianCompanion ===
+'CubeSqrtProbability.centeredGaussianCompanion_second_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SumLawTransfer ===
+'CubeSqrtProbability.sumLaw_of_actual_iid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.sumLaw_shiftedGaussian_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualIidFaceBound ===
+'CubeSqrtProbability.exists_actual_iid_bounded_face_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianFacetSum ===
+'CubeSqrtProbability.gaussian_centered_facet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.gaussian_sumLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.gaussian_sumLaw_linear_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianFacetSumMoments ===
+'CubeSqrtProbability.gaussian_sumLaw_linear_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.gaussian_sumLaw_linear_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.gaussian_sumLaw_linear_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualFaceEncoding ===
+'CubeSqrtProbability.winnerFacet_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualCenteredFaceLaw ===
+'CubeSqrtProbability.centered_facet_coordinate_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualFaceMoments ===
+'CubeSqrtProbability.centered_facet_raw_matrix_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.winnerFacetScore_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.log_perturbation_winnerFacetScore_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ThinLayerLimit ===
+'CubeBrownian.thinLayer_weighted_gaussian_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianResidual ===
+'CubeBrownian.gaussian_residual_indep' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianFaceKernel ===
+'CubeBrownian.gaussian_face_weighted_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.gaussian_weighted_original_face' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WeightedTail ===
+'CubeSqrtProbability.weighted_tail_layercake' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianFaceLayercake ===
+'CubeBrownian.gaussian_face_layercake' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WeightedFaceError ===
+'CubeSqrtProbability.exp_weighted_Ioi_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WeightedWinnerComparison ===
+'CubeBrownian.weighted_winner_face_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FaceWeightedTransfer ===
+'CubeSqrtProbability.shifted_facet_window_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.weighted_error_of_facet_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianFacetProjection ===
+'CubeSqrtProbability.winnerFacetProjection_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.winnerFacet_shifted_sum_hasGaussianLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianFacetCoordinateMoments ===
+'CubeSqrtProbability.gaussian_companion_affine_coord_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.gaussian_companion_affine_coord_cov' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.gaussian_companion_affine_coord_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueWinnerGaussianModel ===
+'CubeSqrtProbability.trueWinnerFacetMatrix_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.trueWinnerGaussian_joint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.trueWinnerGaussian_anchor_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.trueWinnerGaussian_anchor_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.trueWinnerGaussian_relative_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.trueWinnerGaussian_relative_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.trueWinnerGaussian_anchor_relative_covariance' depends on axioms: [propext,
+=== GaussianWeakFaces ===
+'CubeBrownian.gaussian_tendstoInDistribution_of_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.gaussian_finite_faces_tendsto_of_weak' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianWeakFacesTwoSpaces ===
+'CubeBrownian.gaussian_tendstoInDistribution_of_moments_twoSpaces' depends on axioms: [propext,
+=== GaussianRegressionLaw ===
+'CubeBrownian.gaussian_regression_face_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianRegressionLawTwoSpaces ===
+'CubeBrownian.gaussian_regression_face_limit_twoSpaces' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianWinnerThinLimit ===
+'CubeBrownian.gaussian_winner_thinLayer_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianResidualMoments ===
+'CubeBrownian.gaussian_regression_projected_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianWinnerProjectedLimit ===
+'CubeBrownian.gaussian_winner_projected_thinLayer_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianWinnerProjectedLimitTwoSpaces ===
+'CubeBrownian.gaussian_winner_projected_thinLayer_tendsto_twoSpaces' depends on axioms: [propext,
+=== GaussianRegressionAsymptotic ===
+'CubeBrownian.gaussian_regression_corrections_vanish' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.gaussian_regression_projected_moment_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianWinnerRawLimit ===
+'CubeBrownian.gaussian_winner_raw_thinLayer_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianWinnerRawLimitTwoSpaces ===
+'CubeBrownian.gaussian_winner_raw_thinLayer_tendsto_twoSpaces' depends on axioms: [propext,
+=== GaussianResidualTilt ===
+'CubeBrownian.gaussian_tilt_difference_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IsonormalTilt ===
+'CubeBrownian.isonormal_tilt_finite_gram_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.isoScore_tilt_difference_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IsonormalScoreMoments ===
+'CubeBrownian.isoScore_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.isoScore_finite_hasGaussianLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianNullHyperplane ===
+'CubeBrownian.gaussian_measure_null_hyperplane' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IsonormalWinnerLimitLaw ===
+'CubeBrownian.isonormal_winner_face_sum_expMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IsonormalEuclidWinner ===
+'CubeBrownian.isoEuclidScores_winner_null_face' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteGaussianWinnerCoordinate ===
+'CubeBrownian.finiteGaussianWinner_coordinate_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteProjectedMoments ===
+'CubeBrownian.finite_coordinate_moments_imply_projected' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteWinnerProjectionGlue ===
+'CubeSqrtProbability.finite_euclid_covariance_dual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.finite_euclid_regression_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteWinnerEntrywise ===
+'CubeSqrtProbability.finite_winner_limit_of_entrywise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.finite_winner_limit_of_entrywise_eventually' depends on axioms: [propext,
+=== WinnerScalarNormalization ===
+'CubeSqrtProbability.eventually_abs_le_of_tendsto_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.winner_anchor_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RawWinnerReanchor ===
+'CubeSqrtProbability.raw_reanchor_cross_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.raw_reanchor_variance_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueWinnerMomentLimitAlongDimensions ===
+'CubeSqrtProbability.true_esscher_gaussian_winner_limit_along_dimensions' depends on axioms: [propext,
+=== GaussianFacetNull ===
+'CubeSqrtProbability.gaussian_companion_sum_ae_opposite' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualGaussianFacetSign ===
+'CubeSqrtProbability.true_winner_gaussian_facet_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltPeriod ===
+'CubeSqrtProbability.unitPeriodLaw_isProbabilityMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.unitPeriod_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.unitPeriod_rawSq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.unitPeriod_rawIncCross' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltProductLaw ===
+'CubeSqrtProbability.true_product_tilt_eq_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_tilt_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueTiltIidSumLaw ===
+'CubeSqrtProbability.true_product_tilt_score_sumLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualFaceEstimate ===
+'CubeSqrtProbability.exists_true_tilt_winner_face_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualWinnerWeightEstimate ===
+'CubeSqrtProbability.exists_true_tilt_winner_weight_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FixedFaceRate ===
+'CubeSqrtProbability.fixed_face_weighted_rate_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualWinnerRate ===
+'CubeSqrtProbability.actual_winner_weight_rate_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WinnerFacetRateInputs ===
+'CubeSqrtProbability.winner_facet_third_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.winner_facet_strip_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WinnerThreshold ===
+'CubeBrownian.finiteWinner_threshold_layercake' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualWinnerWeight ===
+'CubeBrownian.finiteWinner_exceedance_eq_sum_faceWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FiniteWinnerMainTerm ===
+'CubeBrownian.finiteWinner_exceedance_main_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TrueWinnerWeightAsymptotic ===
+'CubeSqrtProbability.trueWinnerFacetMatrix_diag_sqrt_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_facetRelative_scoreSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_weight_difference_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualFacetNondegenerateAlongDimensions ===
+'CubeSqrtProbability.actual_winner_facet_nondegenerate_along_dimensions' depends on axioms: [propext,
+=== WinnerFaceRatesAlongDimensions ===
+'CubeSqrtProbability.fixed_face_weighted_rate_zero_along_dimensions' depends on axioms: [propext,
+'CubeSqrtProbability.actual_winner_weight_rate_zero_along_dimensions' depends on axioms: [propext,
+=== TrueWinnerWeightAsymptoticAlongDimensions ===
+'CubeSqrtProbability.trueWinnerFacetMatrix_diag_sqrt_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_facetRelative_scoreSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.true_winner_weight_difference_tendsto_along_dimensions' depends on axioms: [propext,
+=== TrueFixedWindowMainTermAlongDimensions ===
+'CubeSqrtProbability.true_fixed_window_exceedance_main_term_along_dimensions' depends on axioms: [propext,
+=== SqrtPhysicalCarry ===
+'CenteredCubeSqrt.label_carry_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.label_carry_mod_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.physical_atom_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPhysicalCountingCore ===
+'CenteredCubeSqrt.regular_physical_count_core' depends on axioms: [propext, Quot.sound]
+'CenteredCubeSqrt.small_positive_physical_count_core' depends on axioms: [propext, Quot.sound]
+=== SqrtPhysicalCounting ===
+'CenteredCubeSqrt.physical_count_from_regular_fibers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.physical_count_small_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPhysicalOrdinalFibers ===
+'CenteredCubeSqrt.lower_ordinal_lag_count' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.upper_ordinal_lag_count' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.two_regular_ordinal_lag_count' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtPhysicalCircleCount ===
+'CenteredCubeSqrt.circular_atom_count_neg' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.circular_atom_count_zero' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.modEq_phase_iff' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.circular_atom_count_as_lags' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtLocalWindowArithmetic ===
+'CenteredCubeSqrt.local_fine_window_pullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.padded_integer_window_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.local_both_mirror_carries_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.local_same_direction_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPeriodicPulse ===
+'CenteredCubeSqrt.periodic_pulse_overlap_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.periodic_two_centers_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.centeredPeriodRep_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.periodicWindowPulse_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.wrapped_pulse_equals_linear_on_first_support' depends on axioms: [propext,
+=== SqrtAtomResidue ===
+'CenteredCubeSqrt.sum_atom_difference_residue_kernel' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.atomResidueLift_injective' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.paperAtom_diff_centeredRep' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.circular_atom_hits_eq_residue_fiber' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtPulseTrain ===
+'CenteredCubeSqrt.atomPulseTrain_correlation' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtPulseTrainMeans ===
+'CenteredCubeSqrt.smoothedWindowPulse_reflect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.pulseOverlap_reflect_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.atomPulseTrain_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPeriodicBoxDensity ===
+'CenteredCubeSqrt.periodicBoxDensity_small_interval' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtAtomCellMass ===
+'CenteredCubeSqrt.paper_atom_box_strict_cell' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.only_own_site_in_cell' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.atomBoxSum_cell_mass' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtActualAtomicIncrement ===
+'CenteredCubeSqrt.actualAtomicWindow_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualAtomDiscrepancy ===
+'CenteredCubeSqrt.actualAtomicPrimitive_abs_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualAtomicWindow_abs_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualAtomicWindow_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPlateauPolynomial ===
+'CenteredCubeSqrt.plateauCoeff_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.plateauCoeff_amplitude' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.plateau_polynomial_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.plateauPoly_no_wrap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.plateau_normalized_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.plateauSpectralCoeff_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RudinShapiro ===
+'CenteredCube.RudinShapiro.prefixes_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinShapiro.energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinShapiro.prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinShapiro.prefix_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Coefficients ===
+'CenteredCube.RudinDensity.polys_coef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.prefixes_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.self_prefix_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.coef_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.prefixes_trunc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.prefixes_stable_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Abel ===
+'CenteredCube.RudinDensity.rsPrefix_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rsPrefix_eq_coef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.weightedSum_eq_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rsPrefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.weightedSum_abel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.weighted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rho_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Trig ===
+'CenteredCube.Trig.integral_cos_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.Trig.integral_sin_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.Trig.integral_cos_sq_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.Trig.integral_cos_mul_cos_two_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RhoNormalise ===
+'CenteredCube.RudinDensity.integral_exp_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_re_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Variance ===
+'CenteredCube.RudinDensity.integral_cos_series_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_cos_series_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_Sfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_Sfun_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_scaled_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_Sfun_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLocalLowSpectrum ===
+'CenteredCubeSqrt.actualLowSpectrum_difference_L2' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CosineForm ===
+'CenteredCube.RudinDensity.zof_pow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.re_ofReal_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rho_eq_cos_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Average ===
+'CenteredCube.RudinDensity.average_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sin_pi_mul_rfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.average_term'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_cos_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_cos_sum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_rho_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.average_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualDensityWindow ===
+'CenteredCubeSqrt.actualWindowPerturbation_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWindowIncrement_atomic_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWindowUniformBounds ===
+'CenteredCubeSqrt.actual_compensated_window_abs_le_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.localLength_inverse_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPeriodL2 ===
+'CenteredCubeSqrt.periodL2Sq_three_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.abs_periodInner_young' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWindowRemainderL2 ===
+'CenteredCubeSqrt.actualWindowRemainder_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWindowRemainder_L2_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPeriodL2Error ===
+'CenteredCubeSqrt.periodL2Sq_add_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.abs_periodInner_uniform_L1' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtBadIndex ===
+'CenteredCubeSqrt.nonzeroBinary_card' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.unequalLabels_card' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.productCollision_card' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.manuscriptBadDegree_sum' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtFiniteField ===
+'CenteredCubeSqrt.labelField_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelField_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.label_polynomial_zero_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLabelAvoidance ===
+'CenteredCubeSqrt.exists_avoid_polynomial_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLabelLinearForms ===
+'CenteredCubeSqrt.eval_label_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelForm_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelForm_short_shift_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelForm_totalDegree_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLabelNeighbor ===
+'CenteredCubeSqrt.eval_label_at_binary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.two_label_forms_simultaneously_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.neighbor_ratio_polynomial_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLabelSidonPolynomial ===
+'CenteredCubeSqrt.eq_label_of_kernel_inclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelForm_mul_injective_unordered' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtBadPolynomials ===
+'CenteredCubeSqrt.manuscriptBadPolynomial_nonzero' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.manuscriptBadPolynomial_degree' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtLabelBudget ===
+'CenteredCubeSqrt.labelBudget_lt_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtQualifiedLabels ===
+'CenteredCubeSqrt.manuscriptBadDegree_sum_eq_real' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.exists_manuscript_label_vector' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.label_vector_values' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtActualLabelChoice ===
+'CenteredCubeSqrt.actual_manuscript_qualified_labels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_label_linearIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.manuscriptShortShifts_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_manuscript_label_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLabelRatios ===
+'CenteredCubeSqrt.nontrivial_ratio_pair_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.translate_intersection_nonzero_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.no_intersection_outside_ratio_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLabelSpace ===
+'CenteredCubeSqrt.labelValue_mem_labelSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelSpace_nonzero_is_labelValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_labelSpace_Sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtBinaryCoding ===
+'CenteredCubeSqrt.binaryLabelEquiv_val' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.binaryLabelEquiv_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtCyclicStates ===
+'CenteredCubeSqrt.finite_field_primitive_powers_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.cyclicStateEquiv_integer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.cyclicStateEquiv_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtTracePairing ===
+'CenteredCubeSqrt.actual_label_trace_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_label_trace_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_binary_fiber_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtTraceRank ===
+'CenteredCubeSqrt.actual_traceLabel_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtTraceNonzeroFiber ===
+'CenteredCubeSqrt.finite_linear_nonzero_fiber' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtJointTrace ===
+'CenteredCubeSqrt.jointTrace_rank' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.jointTrace_nonzero_fiber' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.jointTrace_regular_fiber' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtActualCyclicFibers ===
+'CenteredCubeSqrt.phaseLabel_joint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.phaseLabel_fiber_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtOverlapRank ===
+'CenteredCubeSqrt.overlap_nonzero_iff_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.traceOverlap_regular_bot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.defect_overlap_rank_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtDefectHyperplane ===
+'CenteredCubeSqrt.traceMatchForm_surj' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.traceMatchForm_compatible' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.traceDefect_image_hyperplane' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtPaperLabelCount ===
+'CenteredCubeSqrt.actual_defect_matching_labels' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.manuscript_zero_cyclic_label_count' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.manuscript_regular_cyclic_label_count' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.manuscript_defective_cyclic_label_count' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtOrdinalCyclicLabels ===
+'CenteredCubeSqrt.regular_ordinal_cyclic_label_count' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtPhysicalPaperCounts ===
+'CenteredCubeSqrt.manuscript_physical_count_small_nat' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.manuscript_physical_count_small_int' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.actual_regular_ordinal_fiber' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.manuscript_physical_count_regular' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtLocalResidueBudget ===
+'CenteredCubeSqrt.physicalWindowResidues_card_bound' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.physical_overlap_sum_budget' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtActualLocalWeights ===
+'CenteredCubeSqrt.actual_atom_weight_mirror' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.atomWeight_zero' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.actual_atom_weight_small' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtLocalAtomicCorrelations ===
+'CenteredCubeSqrt.actual_same_side_correlation_budget' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.actual_mirror_correlation_budget' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtCenteredPulseMoments ===
+'CenteredCubeSqrt.period_one_two_family_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtAtomicWindowCovariance ===
+'CenteredCubeSqrt.actual_local_atomic_covariance' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtAtomicWindowL1 ===
+'CenteredCubeSqrt.actual_atomic_increment_L1' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualLocalVariance ===
+'CenteredCubeSqrt.actual_local_variance_finite' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtActualLocalScalarBudget ===
+'CenteredCubeSqrt.actualLocalMainError_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperParameterChoice ===
+'CenteredCubeSqrt.paper_v_period_prescription' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_first_binary_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperParameterGrowth ===
+'CenteredCubeSqrt.paper_dyadic_choice_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_period_growth_of_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperMeshChoice ===
+'CenteredCubeSqrt.paperMeshParameters_of_binary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_binary_mesh_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtMidpointQuantizer ===
+'CenteredCubeSqrt.midpointError_in_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.midpointError_abs_in_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtMidpointCellIntegrals ===
+'CenteredCubeSqrt.scaledMidpointError_cell_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.scaledMidpointError_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtMidpointWholePeriod ===
+'CenteredCubeSqrt.midpointError_period_power_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.midpointError_period_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawCellEnergy ===
+'CenteredCubeSqrt.label_cell_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.label_zero_energy_le_third' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawPrimitive ===
+'CenteredCubeSqrt.actualRawPrimitive_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualRawPrimitive_in_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualRawPrimitive_intervalIntegrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawRegularPair ===
+'CenteredCubeSqrt.raw_regular_pair_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawCorrelation ===
+'CenteredCubeSqrt.rawCorrelation_cell_decomp' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawCellAverage ===
+'CenteredCubeSqrt.cellPrimitive_label_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.rawCellUniformPair_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawRotation ===
+'CenteredCubeSqrt.unitRotatedInner_abs_le_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawDiagonalArithmetic ===
+'CenteredCubeSqrt.one_cell_average_raw_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawZeroCorrelation ===
+'CenteredCubeSqrt.actual_raw_zero_correlation_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawRegularCorrelation ===
+'CenteredCubeSqrt.actual_raw_regular_correlation_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawWindowCovariance ===
+'CenteredCubeSqrt.rawWindow_covariance_from_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRatioCount ===
+'CenteredCubeSqrt.labelRatioSet_ncard' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.labelRatio_injective' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtRatioExclusions ===
+'CenteredCubeSqrt.labelRatioSet_one_notMem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelRatioSet_no_neighbor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.labelRatioSet_excludes_short' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtCyclicDefects ===
+'CenteredCubeSqrt.cyclicDefects_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.cyclicDefects_zero_notMem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.cyclicDefects_step_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtCyclicSafety ===
+'CenteredCubeSqrt.cyclicDefects_short_excluded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.cyclicDefects_zero_union_nonadjacent' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtSafeCoarseLifts ===
+'CenteredCubeSqrt.actualSafeLifts_regular_coarse' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawDiagonalSafe ===
+'CenteredCubeSqrt.actual_raw_regular_correlation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualRawSafeDiagonal ===
+'CenteredCubeSqrt.actual_raw_safe_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawTranslationCounts ===
+'CenteredCubeSqrt.rawIntervalCount_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.rawIntervalCount_period_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawTranslationL2 ===
+'CenteredCubeSqrt.rawWindow_both_sign_increment_L2' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtBoxExpectation ===
+'CenteredCubeSqrt.shiftedPeriodGram_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.realSmoothed_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtBoxGramIdentity ===
+'CenteredCubeSqrt.double_shiftedGram_is_smoothed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.double_shiftDifferenceGram_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawCellExtended ===
+'CenteredCubeSqrt.actualRawPrimitive_extended_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtSmoothedPrimitiveCell ===
+'CenteredCubeSqrt.actualSmoothedPrimitive_cell_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtSmoothedPrimitiveAverage ===
+'CenteredCubeSqrt.actualAtomicPrimitive_is_box_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualAtomicWindow_is_box_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== UniformBoxDistance ===
+'CubeSqrtEnd.integral_abs_sub_on_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.integral_double_abs_sub_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.uniform_box_expected_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.uniform_centered_box_expected_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtBoxGramError ===
+'CenteredCubeSqrt.actual_atomic_box_gram_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualBaselineIncrement ===
+'CenteredCubeSqrt.actual_baseline_increment_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualWindowCentered ===
+'CenteredCubeSqrt.actualAtomicPrimitive_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWindowPerturbation_integral_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPeriodicBoxHarmonic ===
+'CenteredCubeSqrt.periodic_box_cosine_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWindowHarmonicShift ===
+'CenteredCubeSqrt.box_harmonic_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWindowHarmonicFubini ===
+'CenteredCubeSqrt.box_window_fubini' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_single_box_window_cosine' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtUnitPhaseTaylor ===
+'CenteredCubeSqrt.unit_phase_Taylor_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtAtomFourierRemainder ===
+'CenteredCubeSqrt.atom_phase_sum_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtTraceCharacter ===
+'CenteredCubeSqrt.defect_walsh_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperGaussNorm ===
+'CenteredCubeSqrt.actual_paperGauss_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperGaussActualSum ===
+'CenteredCubeSqrt.paperGauss_as_exp_trace_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualPhaseWeights ===
+'CenteredCubeSqrt.exact_phaseOffset_character_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.phaseBitWeight_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paperAtomOffset_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualAtomFourierBound ===
+'CenteredCubeSqrt.coarsePhase_cancel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_weighted_atom_phase_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperAtomicFourier ===
+'CenteredCubeSqrt.paper_atom_Fourier_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualWindowHarmonic ===
+'CenteredCubeSqrt.actual_atomic_window_harmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.atomCosineMoment_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtAtomicSpectralCross ===
+'CenteredCubeSqrt.actual_atomic_spectral_cross_expression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_atomic_spectral_cross_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPlateauFourier ===
+'CenteredCubeSqrt.cosineFourth_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.sine_four_square_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPlateauFourierExact ===
+'CenteredCubeSqrt.paper_plateau_series_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPlateauTail ===
+'CenteredCubeSqrt.inverseFourth_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_plateau_finite_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPlateauLowVariance ===
+'CenteredCubeSqrt.actualLowSpectrum_variance_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualLowSpectrum_variance_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtSpectralMixedGram ===
+'CenteredCubeSqrt.actualLowSpectrum_inner_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.shifted_harmonic_product_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtSpectralGramLower ===
+'CenteredCubeSqrt.actualLowSpectrum_cross_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtKernelDiagonal ===
+'CenteredCubeSqrt.paper_kernel_diagonal_assembly' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtSafeWitnessGramDiagonal ===
+'CenteredCubeSqrt.actualWitnessGram_diagonal_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWitnessGramCauchy ===
+'CenteredCubeSqrt.witnessGram_entry_cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtGramNormalization ===
+'CenteredCubeSqrt.normalizedEntry_le_eight' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtReferenceKernelGap ===
+'CenteredCubeSqrt.normalized_kernel_small_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.normalized_kernel_medium_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualNearReference ===
+'CenteredCubeSqrt.actual_near_reference_cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_near_reference_one_add_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawNearRepresentation ===
+'CenteredCubeSqrt.actual_raw_near_correlation_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawNearEnergy ===
+'CenteredCubeSqrt.rawNearMain_abs_energy_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtMidpointPrefix ===
+'CenteredCubeSqrt.scaledMidpointError_prefix_abs_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualMidpointPrefix ===
+'CenteredCubeSqrt.actual_midpoint_prefix_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtNearQuantizer ===
+'CenteredCubeSqrt.same_label_pair_mean_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.midpointError_abs_le_half_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtTriangularFubini ===
+'CenteredCubeSqrt.triangular_prefix_Fubini' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtMidpointWeighted ===
+'CenteredCubeSqrt.weighted_midpoint_left_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.weighted_midpoint_right_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawNearQuantitative ===
+'CenteredCubeSqrt.rawNearMain_quantization_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawNearBound ===
+'CenteredCubeSqrt.actual_raw_near_correlation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtRawNearReflection ===
+'CenteredCubeSqrt.actual_raw_near_reflected_correlation_bound' depends on axioms: [propext,
+=== SqrtSafeWitnessNearEntry ===
+'CenteredCubeSqrt.actual_raw_near_window_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWitnessGram_near_entry_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualNearNormalized ===
+'CenteredCubeSqrt.actual_near_gap_normalize_scalar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWitnessGram_normalized_near_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualFarCarries ===
+'CenteredCubeSqrt.actualRaw_far_covariance_from_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_far_nonzero_carries' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualKernelMargins ===
+'CenteredCubeSqrt.actualWitnessGram_normalized_near_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_near_gap_lower_scalar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualLowSpectrum_cross_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_normalized_reference_near_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.kernel_far_ratio_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualFarNormalized ===
+'CenteredCubeSqrt.actualWitnessGram_smoothing_cross_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWitnessGram_normalized_far_assembly' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtKernelEventually ===
+'CenteredCubeSqrt.normalized_kernel_eventually_finite_budgets' depends on axioms: [propext,
+'CenteredCubeSqrt.normalized_kernel_uniform_far_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.normalized_kernel_uniform_near_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtKernelBudgetLimits ===
+'CenteredCubeSqrt.paper_kernel_budgets_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperCrossRateSource ===
+'CubeSqrtEnd.coarsePaperCross_with_smoothing_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.scale_sq_div_sqrt_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.coarsePaperCross_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.coarsePaperCross_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperParameterRates ===
+'CenteredCubeSqrt.actual_cross_smoothing_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_mesh_scaled_vanishing' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperWalshCount ===
+'CenteredCubeSqrt.manuscript_defective_walsh_count' depends on axioms: [propext, choice, Quot.sound]
+=== OrdinalWalsh ===
+'CenteredCubeSqrt.defective_ordinal_walsh_count' depends on axioms: [propext, choice, Quot.sound]
+=== WalshPrimitive ===
+'CenteredCubeSqrt.walshCell_moment' depends on axioms: [propext, choice, Quot.sound]
+=== WalshBitSplit ===
+'CenteredCubeSqrt.binaryWalsh_snoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.binaryOrdinal_snoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WalshPrefixRecursion ===
+'CenteredCubeSqrt.walshNat_succ_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.walshPrefix_succ_second_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWalshEnergyArithmetic ===
+'CenteredCubeSqrt.walsh_block_energy_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WalshBalanced ===
+'CenteredCubeSqrt.walshPrefix_end_zero_of_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.walshDiscreteEnergy_repeat' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WalshPrimitiveStep ===
+'CenteredCubeSqrt.walshCellPrimitive_mid_step' depends on axioms: [propext, choice, Quot.sound]
+=== WalshDiscreteEnergy ===
+'CenteredCubeSqrt.walshDiscreteEnergy_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WalshContinuousEnergy ===
+'CenteredCubeSqrt.walsh_primitive_energy_exact' depends on axioms: [propext, choice, Quot.sound]
+=== WalshEnergyHierarchy ===
+'CenteredCubeSqrt.walshEnergy_distinct' depends on axioms: [propext, choice, Quot.sound]
+=== DefectWeighted ===
+'CenteredCubeSqrt.defective_ordinal_walsh_sum' depends on axioms: [propext, choice, Quot.sound]
+=== ActualWalshCorrelation ===
+'CenteredCubeSqrt.actual_raw_correlation_from_split_pair_laws' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.actual_walsh_match_of_defect' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.raw_left_walsh_factor' depends on axioms: [propext, choice, Quot.sound]
+'CenteredCubeSqrt.raw_right_walsh_factor' depends on axioms: [propext, choice, Quot.sound]
+=== FarUniqueCorrection ===
+'CenteredCubeSqrt.actual_raw_far_unique_correction' depends on axioms: [propext, choice, Quot.sound]
+=== WalshShiftCauchy ===
+'CenteredCubeSqrt.walshShift_distinct_le_Q' depends on axioms: [propext, choice, Quot.sound]
+=== FarRawBound ===
+'CenteredCubeSqrt.actual_raw_far_cap' depends on axioms: [propext, choice, Quot.sound]
+=== SqrtActualSafeKernel ===
+'CenteredCubeSqrt.actualWitnessGram_uniform_safe_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualKernelClosed ===
+'CenteredCubeSqrt.actualWitnessGram_exact_qualified_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualKernelBundle ===
+'CenteredCubeSqrt.actualWitnessGram_complete_kernel_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperBudgetEligibility ===
+'CenteredCubeSqrt.paper_actual_kernel_finite_budgets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_actual_relative_error_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtPaperKernelChoice ===
+'CenteredCubeSqrt.actualPaperKernelConclusions_of_label' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_all_integer_dimensions_actual_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualLocalAsymptoticError ===
+'CenteredCubeSqrt.actualLocalSource_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtWindowPulseNormExact ===
+'CenteredCubeSqrt.pulseOverlap_self_exact_above_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualLocalAsymptotic ===
+'CenteredCubeSqrt.local_actual_window_error_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.local_actual_window_increment_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualLocalBaselineLimit ===
+'CenteredCubeSqrt.local_actual_baseline_increment_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedCount ===
+'CubeSqrtOverlap.spacing_grid_band_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.raw_packet_count_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.packet_deletions_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedCountLimit ===
+'CubeSqrtOverlap.retained_packet_ratio_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.retained_eventually_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualDeletionBands ===
+'CubeSqrtOverlap.actual_unsafe_packet_deletions' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperPacketGeometry ===
+'CubeSqrtOverlap.paper_packet_node_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.paper_unsafe_packet_deletion_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperPacketCountRates ===
+'CubeSqrtOverlap.paper_deletion_fraction_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.paper_raw_endpoint_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.paper_scaled_deletions_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedInverseSquare ===
+'CubeSqrtOverlap.inverse_square_retained_lower_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedFirstSum ===
+'CubeSqrtOverlap.reinforced_first_sum_inverse_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.paper_retained_count_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.paper_retained_count_step_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualPacketDeletion ===
+'CenteredCubeSqrt.integer_periodic_defect_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_retained_packets_deletion_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualPacketCountLimits ===
+'CenteredCubeSqrt.paper_actual_product_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_actual_packet_count_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtAllIntegerPackets ===
+'CenteredCubeSqrt.actualPacketChoice_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.paper_all_integer_dimensions_actual_packets' depends on axioms: [propext,
+=== SqrtActualPacketLocal ===
+'CenteredCubeSqrt.actual_v_exact_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualPacketChoice_local_source_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualPacketLocalLimit ===
+'CenteredCubeSqrt.packet_actual_local_limit_along_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualLocalPolarization ===
+'CenteredCubeSqrt.scaled_anchoredGram_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.scaled_periodInner_cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWindowPerturbation_continuous_length_fixed' depends on axioms: [propext,
+=== SqrtActualSourceMoments ===
+'CenteredCubeSqrt.actual_perturbation_normalized_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_perturbation_inner_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_safe_q_relative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_source_uniform_amplitude' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_amp_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_v_sq_over_n_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtActualSourceRateTransfer ===
+'CenteredCubeSqrt.actual_q_rate_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualLocalAlongDimensions ===
+'CenteredCubeSqrt.local_actual_window_error_eventually_dims' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.local_actual_window_increment_tendsto_dims' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.local_actual_baseline_increment_bounded_dims' depends on axioms: [propext,
+'CenteredCubeSqrt.packet_actual_local_limit_along_anchor_dims' depends on axioms: [propext,
+'CenteredCubeSqrt.actual_q_rate_transfer_dims' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualWindowLaw ===
+'CubeSqrtProbability.actual_window_amplitude_and_centering' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtProbability.actual_window_raw_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtCertifiedActualSource ===
+'CenteredCubeSqrt.certified_actual_family_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.certified_actual_family_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BoxNodeNondegenerate ===
+'CubeBrownian.centeredBoxNodeL2_ne_of_separated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.centeredBoxNodeL2_sq_ge_of_separated' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPacketWinnerLimitAlongDimensions ===
+'CubeSqrtProbability.actual_packet_winner_limit_along_anchor_dimensions' depends on axioms: [propext,
+=== CompactSafeUniform ===
+'CubeBrownian.uniform_of_compact_parameter_sequential' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CanonicalGridScale ===
+'CubeBrownian.canonicalFiniteGridExp_continuous_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PacketLambdaContinuity ===
+'CubeSqrtProbability.packet_ref_scale_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPacketWinnerUniform ===
+'CubeSqrtProbability.actual_packet_winner_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Cubes ===
+'CenteredCube.volume_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.halo_of_truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.lower_bound_of_average_on_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncation_retention' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrtLog_of_truncated_halo' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IntegerCells ===
+'CenteredCube.openIntBox_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.cellRep_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtCellMeasure ===
+'CenteredCube.open_box_event_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.open_box_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SharpTruncationTransfer ===
+'CenteredCube.truncation_retention_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncation_retention_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sharp_transfer_of_truncated_halo' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PeriodicHaloTransferSqrt ===
+'CenteredCube.weakConstant_ge_periodic_log_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.cubeAverage_of_productSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.truncation_mass_of_periodic_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.intervalSource_periodic_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPeriodicSource ===
+'CenteredCubeSqrt.weakConstant_ge_actual_witness_iid_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWitnessDensity_unit_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWitnessDensity_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actualWitnessDensity_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperScalarClosure ===
+'CubeSqrtEnd.paper_packet_asymptotic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.paperConstant_gt_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.paper_intensity_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.paper_constant_from_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtEnd.paper_bound_close_last_parameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtLowerLiminf ===
+'CenteredCube.sqrtWeakConstant_eventually_of_normalized_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrtNormalizedWeakConstant_liminf_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.eventually_one_thirty_fifth_of_exact_liminf' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedBonferroni ===
+'CubeSqrtOverlap.retained_bonferroni_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.packet_intersection_le_double_node_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPacketEndgame ===
+'CenteredCubeSqrt.actual_packet_credits_bonferroni' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_packet_credit_to_weakConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.sqrt_eventually_of_actual_packet_credits' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPairMoments ===
+'CenteredCubeSqrt.actual_windowPerturbation_uniform_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_windowPerturbation_period_covariance' depends on axioms: [propext,
+'CenteredCubeSqrt.actual_paper_pair_moment_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_paper_pair_moment_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairGramInterface ===
+'CenteredCubeSqrt.actual_paper_pair_cov_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.actual_pair_moment_lower_of_relative' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== AffinityTransfer ===
+'CubeSqrtPair.affinity_product_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.avgAffinity_eq_hellinger' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairBoundedSource ===
+'CubeSqrtPair.logPair_density_ratio_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.logPair_linear_error_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TiltVarianceSandwich ===
+'CubeSqrtPair.tilted_variance_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairStdDev ===
+'CubeSqrtPair.sqrt_variance_reverse_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairVarianceStability ===
+'CubeSqrtPair.linear_pair_variance_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.actual_logPair_sqrt_variance_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ProbabilityApproximation.ChenShao.Leaves ===
+=== ProbabilityApproximation.ChenShao.Concentration ===
+=== ProbabilityApproximation.Stein.IndicatorSolution ===
+=== ProbabilityApproximation.ChenShao.UniformBerryEsseen ===
+=== BerryClosedCDF ===
+'CubeMD.finite_row_berry_closed_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.fin_row_berry_closed_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IIDScalarBerry ===
+'CubeSqrtPair.iid_scalar_berry_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RateError ===
+'CubeMD.tail_bound_of_rate_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.interval_error_of_cdf_errors' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GaussianStrip ===
+'CubeMD.normal_comparison_half_open_strips' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.cdf_closed_to_open' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== WeightedNormalTail ===
+'CubeSqrtPair.weighted_tail_normal_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.gaussian_density_weighted_le_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FourthMomentThird ===
+'CubeSqrtPair.centered_third_le_sd_fourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperPair ===
+'CubeSqrtPair.paper_pair_actual' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BoundedPair ===
+'CubeSqrtPair.paper_pair_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== HellingerDecay ===
+'CubeSqrtPair.hellinger_deficit_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.hellinger_pow_le_exp_deficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairKernelDecay ===
+'CubeSqrtPair.kernel_affinity_exp_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.kernel_middle_far_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.kernel_near_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairUniformPrefactor ===
+'CubeSqrtPair.actual_pair_uniform_prefactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairFixedDistance ===
+'CubeSqrtPair.actual_pair_sd_ratio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairFixedEnvelope ===
+'CubeSqrtPair.kernel_fixed_distance_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtPair.pair_fixed_distance_limit_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperAllPairs ===
+'CubeSqrtPair.paper_allpairs_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPaperPairBound ===
+'CenteredCubeSqrt.actual_qualified_pair_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperEventMeasurability ===
+'CenteredCubeSqrt.actualPaperScaleEvent_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPairFromKernel ===
+'CenteredCubeSqrt.actual_pair_probability_from_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedNear ===
+'CubeSqrtOverlap.retained_near_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedReindex ===
+'CubeSqrtOverlap.retained_row_as_original_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.retained_far_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RetainedOverlap ===
+'CubeSqrtOverlap.retained_packet_overlap_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperPacketGapDomain ===
+'CubeSqrtOverlap.paper_packet_tau_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualRetainedPairOverlap ===
+'CenteredCubeSqrt.actual_qualified_retained_packet_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPacketOverlapEndpoint ===
+'CenteredCubeSqrt.actual_retained_overlap_from_packet_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPairScalarRates ===
+'CenteredCubeSqrt.actual_pair_dimension_conditions' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperPacketOverlapChoice ===
+'CenteredCubeSqrt.paper_actual_packet_overlap_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PacketFarRates ===
+'CubeSqrtOverlap.retained_far_rate_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperPacketFarRate ===
+'CenteredCubeSqrt.paper_all_integer_far_packet_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== AllIntegerPacketOverlap ===
+'CenteredCubeSqrt.paper_r23_eventually_global_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PacketGapRates ===
+'CubeSqrtOverlap.retained_gap_mesh_overlap_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeSqrtOverlap.retained_gap_div_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperPairGlobalGap ===
+'CenteredCubeSqrt.paper_pair_global_gap_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FinitePacketEvent ===
+'CubeSqrtProbability.finite_packet_exceedance_eq_iUnion' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPacketCompatibility ===
+'CenteredCubeSqrt.paper_packet_prob_eq_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.canonical_box_grid_reference_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtManuscriptStatements ===
+'CenteredCube.sqrt_manuscript_scope_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrt_manuscript_rational_of_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualSqrtFinalScalar ===
+'CubeBrownian.paper_lower_coefficient_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeBrownian.exact_main_from_actual_finite_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtCoherentPaperSource ===
+'CenteredCubeSqrt.paper_coherent_certified_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CertifiedSourceWithKernel ===
+'CenteredCubeSqrt.CertifiedActualFamilyWithKernel.forget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.certified_actual_family_with_kernel_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.certified_actual_family_with_kernel_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCubeSqrt.certified_actual_family_with_kernel_eventually' depends on axioms: [propext,
+=== CoherentSourceWithChoice ===
+'CenteredCubeSqrt.paper_coherent_certified_source_with_choice' depends on axioms: [propext,
+=== SqrtActualPacketFirstSum ===
+'CenteredCubeSqrt.actual_packet_score_first_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualSqrtFiniteMain ===
+'CenteredCubeSqrt.paper_actual_finite_eventual_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== SqrtExactMain ===
+'CenteredCube.sqrt_manuscript_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.sqrt_manuscript_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+=== Literal original theorem audit ===
+'replayed_original_sqrt_liminf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'replayed_original_rational_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+PairExponents ScalePairs PairTotals LagCutoff PairBudgets FourRegions LagAssembly QuadraticKernel FarKernel ContinuousGap GlobalKernel BandCovariance KernelMoments TwoPoint ProbabilityScores PointNumeric ActualPairs ActualSingles HaloUnion Overlap GridUnion GridArithmetic AsymptoticRounding RoundedHeight GridLimits HeightComparison BudgetLimits EventualBudgets BudgetConversion IntegerCells CellMeasure
+PhysicalGrid PeriodicEndgame PaperSqrtLog

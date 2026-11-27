@@ -1,0 +1,2 @@
+import ProbabilityApproximation.ChenShao.UniformBerryEsseen
+#print axioms ProbabilityTheory.uniformBerryEsseen_thirdMoment

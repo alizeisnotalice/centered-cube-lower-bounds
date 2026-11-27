@@ -1,0 +1,1224 @@
+Toolchain: Lean (version 4.36.0, x86_64-unknown-linux-gnu, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)
+Mathlib pinned git HEAD: fc4f59e577feb1a4956671bc04ac18aaaf8cd842
+ℹ [2687/3037] Built LowerBounds (871ms)
+info: LowerBounds.lean:29:0: 'CenteredCubeLowerBounds.frequency_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LowerBounds.lean:30:0: 'CenteredCubeLowerBounds.pi_bound_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LowerBounds.lean:31:0: 'CenteredCubeLowerBounds.square_root_constant_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LowerBounds.lean:32:0: 'CenteredCubeLowerBounds.square_root_constant_squared' does not depend on any axioms
+⚠ [7164/7210] Built LogTensor (4.0s)
+warning: LogTensor.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Deriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean:18:30: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogTensor.lean:18:34: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LogTensor.lean:18:34: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+info: LogTensor.lean:65:0: 'CenteredCube.log_one_add_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogTensor.lean:66:0: 'CenteredCube.exp_lt_product_of_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LogTensor.lean:67:0: 'CenteredCube.bonferroni_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7165/7210] Ran LogTensor:irArts
+warning: LogTensor.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Deriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LogTensor.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [7166/7210] Built RudinShapiro (5.6s)
+warning: RudinShapiro.lean: imports `Mathlib.Analysis.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Analysis.SpecialFunctions.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: RudinShapiro.lean:145:0: 'CenteredCube.RudinShapiro.prefixes_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RudinShapiro.lean:146:0: 'CenteredCube.RudinShapiro.energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RudinShapiro.lean:147:0: 'CenteredCube.RudinShapiro.prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RudinShapiro.lean:148:0: 'CenteredCube.RudinShapiro.prefix_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7167/7210] Ran RudinShapiro:irArts
+warning: RudinShapiro.lean: imports `Mathlib.Analysis.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Analysis.SpecialFunctions.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RudinShapiro.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [7168/7210] Built Cubes (5.7s)
+warning: Cubes.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Analysis.SpecialFunctions.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Algebra.Order.Ring.Pow` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: Cubes.lean:204:0: 'CenteredCube.volume_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Cubes.lean:205:0: 'CenteredCube.truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Cubes.lean:206:0: 'CenteredCube.halo_of_truncated_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Cubes.lean:207:0: 'CenteredCube.lower_bound_of_average_on_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Cubes.lean:208:0: 'CenteredCube.truncation_retention' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Cubes.lean:210:0: 'CenteredCube.sqrtLog_of_truncated_halo' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7169/7210] Ran Cubes:irArts
+warning: Cubes.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Analysis.SpecialFunctions.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Algebra.Order.Ring.Pow` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Cubes.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [7170/7210] Built Trig (8.2s)
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean:33:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:82:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:135:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:138:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Trig.lean:139:40: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Trig.lean:141:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Trig.lean:146:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+info: Trig.lean:152:0: 'CenteredCube.Trig.integral_cos_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Trig.lean:153:0: 'CenteredCube.Trig.integral_sin_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Trig.lean:154:0: 'CenteredCube.Trig.integral_cos_sq_two_pi_mul_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Trig.lean:155:0: 'CenteredCube.Trig.integral_cos_mul_cos_two_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7171/7210] Ran Trig:irArts
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Trig.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [7172/7210] Built Model (4.7s)
+info: Model.lean:156:0: 'CenteredCube.paperWeakConstant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Model.lean:157:0: 'CenteredCube.weakConstant_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Model.lean:158:0: 'CenteredCube.le_weakConstant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Model.lean:159:0: 'CenteredCube.exists_weakRatio_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Model.lean:160:0: 'CenteredCube.maximalTrunc_le_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Model.lean:161:0: 'CenteredCube.weakRatio_trunc_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Model.lean:162:0: 'CenteredCube.ofReal_le_weakConstant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7174/7210] Built SqrtLogWiring (5.4s)
+info: SqrtLogWiring.lean:56:0: 'CenteredCube.sqrtLogLowerBound_of_haloData' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7176/7210] Built Coefficients (6.1s)
+warning: Coefficients.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Coefficients.lean: imports `Mathlib.Analysis.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Coefficients.lean:48:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Coefficients.lean:54:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Coefficients.lean:140:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Coefficients.lean:146:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Coefficients.lean:155:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Coefficients.lean:164:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Coefficients.lean:240:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Coefficients.lean:244:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+info: Coefficients.lean:336:0: 'CenteredCube.RudinDensity.polys_coef' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Coefficients.lean:337:0: 'CenteredCube.RudinDensity.prefixes_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Coefficients.lean:338:0: 'CenteredCube.RudinDensity.self_prefix_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Coefficients.lean:339:0: 'CenteredCube.RudinDensity.coef_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Coefficients.lean:340:0: 'CenteredCube.RudinDensity.prefixes_trunc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Coefficients.lean:341:0: 'CenteredCube.RudinDensity.prefixes_stable_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7177/7210] Ran Coefficients:irArts
+warning: Coefficients.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Coefficients.lean: imports `Mathlib.Analysis.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [7178/7210] Built SqrtLimit (3.7s)
+warning: SqrtLimit.lean: imports `Mathlib.Analysis.Real.Pi.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SqrtLimit.lean: imports `Mathlib.Order.LiminfLimsup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: SqrtLimit.lean:141:0: 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SqrtLimit.lean:142:0: 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SqrtLimit.lean:143:0: 'CenteredCube.liminf_sqrt_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SqrtLimit.lean:144:0: 'CenteredCube.sqrt_div_35_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SqrtLimit.lean:145:0: 'CenteredCube.sqrt_div_35_of_liminf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SqrtLimit.lean:146:0: 'CenteredCube.sqrt_div_35_eventually_toReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7179/7210] Ran SqrtLimit:irArts
+warning: SqrtLimit.lean: imports `Mathlib.Analysis.Real.Pi.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SqrtLimit.lean: imports `Mathlib.Order.LiminfLimsup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [7180/7210] Built Abel (3.2s)
+warning: Abel.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Abel.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Abel.lean: imports `Mathlib.Analysis.Complex.Trigonometric` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: Abel.lean:224:0: 'CenteredCube.RudinDensity.rsPrefix_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Abel.lean:225:0: 'CenteredCube.RudinDensity.rsPrefix_eq_coef' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Abel.lean:226:0: 'CenteredCube.RudinDensity.weightedSum_eq_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Abel.lean:227:0: 'CenteredCube.RudinDensity.rsPrefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Abel.lean:228:0: 'CenteredCube.RudinDensity.weightedSum_abel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Abel.lean:229:0: 'CenteredCube.RudinDensity.weighted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Abel.lean:230:0: 'CenteredCube.RudinDensity.rho_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7181/7210] Ran Abel:irArts
+warning: Abel.lean: imports `Mathlib.Algebra.BigOperators.Module` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Abel.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Abel.lean: imports `Mathlib.Analysis.Complex.Trigonometric` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [7182/7210] Built RhoNormalise (3.4s)
+warning: RhoNormalise.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: RhoNormalise.lean:99:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RhoNormalise.lean:84:6: This simp argument is unused:
+  Complex.cos_ofReal_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, Complex.sin_ofReal_re, Complex.cos_ofReal_im, Complex.sin_ofReal_im,
+    mul_zero, mul_one, sub_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RhoNormalise.lean:84:29: This simp argument is unused:
+  Complex.sin_ofReal_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, Complex.cos_ofReal_re, Complex.cos_ofReal_im, Complex.sin_ofReal_im,
+    mul_zero, mul_one, sub_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RhoNormalise.lean:84:52: This simp argument is unused:
+  Complex.cos_ofReal_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, Complex.cos_ofReal_re, Complex.sin_ofReal_re, Complex.sin_ofReal_im,
+    mul_zero, mul_one, sub_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RhoNormalise.lean:85:6: This simp argument is unused:
+  Complex.sin_ofReal_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, Complex.cos_ofReal_re, Complex.sin_ofReal_re, Complex.cos_ofReal_im,
+    mul_zero, mul_one, sub_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: RhoNormalise.lean:149:0: 'CenteredCube.RudinDensity.integral_exp_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RhoNormalise.lean:150:0: 'CenteredCube.RudinDensity.integral_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RhoNormalise.lean:151:0: 'CenteredCube.RudinDensity.integral_re_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RhoNormalise.lean:152:0: 'CenteredCube.RudinDensity.integral_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7183/7210] Ran RhoNormalise:irArts
+warning: RhoNormalise.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [7184/7210] Built CosineForm (3.3s)
+info: CosineForm.lean:83:0: 'CenteredCube.RudinDensity.zof_pow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CosineForm.lean:84:0: 'CenteredCube.RudinDensity.re_ofReal_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CosineForm.lean:85:0: 'CenteredCube.RudinDensity.rho_eq_cos_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7186/7210] Built Periodic (3.3s)
+warning: Periodic.lean:73:4: Unused tactic linter: `push_cast` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: Periodic.lean:137:0: 'CenteredCube.RudinDensity.zof_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Periodic.lean:138:0: 'CenteredCube.RudinDensity.rho_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Periodic.lean:139:0: 'CenteredCube.RudinDensity.integral_periodic_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Periodic.lean:140:0: 'CenteredCube.RudinDensity.continuous_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Periodic.lean:141:0: 'CenteredCube.RudinDensity.integral_periodic_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Periodic.lean:142:0: 'CenteredCube.RudinDensity.integral_rho_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7188/7210] Built Variance (5.2s)
+warning: Variance.lean:71:68: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Variance.lean:79:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Variance.lean:146:68: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Variance.lean:154:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Variance.lean:189:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Variance.lean:230:65: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: Variance.lean:287:0: 'CenteredCube.RudinDensity.integral_cos_series_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Variance.lean:288:0: 'CenteredCube.RudinDensity.integral_cos_series_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Variance.lean:289:0: 'CenteredCube.RudinDensity.integral_Sfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Variance.lean:290:0: 'CenteredCube.RudinDensity.integral_Sfun_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Variance.lean:291:0: 'CenteredCube.RudinDensity.integral_scaled_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Variance.lean:292:0: 'CenteredCube.RudinDensity.integral_Sfun_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7190/7210] Built Product (3.2s)
+warning: Product.lean: imports `Mathlib.MeasureTheory.Integral.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: Product.lean:108:0: 'CenteredCube.box_eq_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Product.lean:109:0: 'CenteredCube.RudinDensity.tensorRho_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Product.lean:110:0: 'CenteredCube.RudinDensity.continuous_tensorRho' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Product.lean:111:0: 'CenteredCube.RudinDensity.integral_prod_rho_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Product.lean:112:0: 'CenteredCube.RudinDensity.absMass_indicator_tensorRho' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7191/7210] Ran Product:irArts
+warning: Product.lean: imports `Mathlib.MeasureTheory.Integral.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [7192/7210] Built Average (3.2s)
+info: Average.lean:229:0: 'CenteredCube.RudinDensity.average_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:230:0: 'CenteredCube.RudinDensity.sin_pi_mul_rfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:231:0: 'CenteredCube.RudinDensity.average_term'' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:232:0: 'CenteredCube.RudinDensity.integral_cos_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:233:0: 'CenteredCube.RudinDensity.integral_cos_sum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:234:0: 'CenteredCube.RudinDensity.integral_rho_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Average.lean:235:0: 'CenteredCube.RudinDensity.average_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7194/7210] Built Center (2.9s)
+info: Center.lean:136:0: 'CenteredCube.RudinDensity.sum_range_neg_one_pow_two_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Center.lean:137:0: 'CenteredCube.RudinDensity.VK_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Center.lean:138:0: 'CenteredCube.RudinDensity.rfun_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Center.lean:139:0: 'CenteredCube.RudinDensity.integral_d_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Center.lean:140:0: 'CenteredCube.RudinDensity.sigmaSq_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Center.lean:141:0: 'CenteredCube.RudinDensity.sigma_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7196/7210] Built Bounded (3.3s)
+warning: Bounded.lean:71:47: This simp argument is unused:
+  Complex.mul_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_im, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im,
+    mul_one, mul_zero, add_zero, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: Bounded.lean:201:0: 'CenteredCube.RudinDensity.two_mul_sin_mul_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Bounded.lean:202:0: 'CenteredCube.RudinDensity.rsPrefix_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Bounded.lean:203:0: 'CenteredCube.RudinDensity.Sfun_eq_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Bounded.lean:204:0: 'CenteredCube.RudinDensity.Sexp_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Bounded.lean:205:0: 'CenteredCube.RudinDensity.norm_Sexp_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Bounded.lean:206:0: 'CenteredCube.RudinDensity.abs_Sfun_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Bounded.lean:207:0: 'CenteredCube.RudinDensity.abs_Y_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7198/7210] Built Dirichlet (3.5s)
+warning: Dirichlet.lean:47:29: This simp argument is unused:
+  Complex.add_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.mul_re, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Dirichlet.lean:47:61: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Dirichlet.lean:49:24: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, mul_one, mul_zero, add_zero, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: Dirichlet.lean:108:0: 'CenteredCube.RudinDensity.ReDK_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Dirichlet.lean:109:0: 'CenteredCube.RudinDensity.two_mul_sin_mul_sin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Dirichlet.lean:110:0: 'CenteredCube.RudinDensity.integral_Sfun_mul_eq_DK' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Dirichlet.lean:111:0: 'CenteredCube.RudinDensity.norm_DK_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7200/7210] Built Window (4.7s)
+warning: Window.lean:92:29: This simp argument is unused:
+  Complex.add_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.mul_re, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Window.lean:92:61: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re,
+    Complex.I_im, mul_one, mul_zero, add_zero, zero_add, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Window.lean:94:24: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, mul_one, mul_zero, add_zero, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Window.lean:118:38: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: Window.lean:272:0: 'CenteredCube.RudinDensity.VK_eq_center_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:273:0: 'CenteredCube.RudinDensity.rfun_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:274:0: 'CenteredCube.RudinDensity.Dsum_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:275:0: 'CenteredCube.RudinDensity.Dsum_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:276:0: 'CenteredCube.RudinDensity.norm_geom_sum_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:277:0: 'CenteredCube.RudinDensity.norm_Dsum_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:278:0: 'CenteredCube.RudinDensity.sin_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:279:0: 'CenteredCube.RudinDensity.abs_VK_sub_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:280:0: 'CenteredCube.RudinDensity.VK_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Window.lean:281:0: 'CenteredCube.RudinDensity.abs_Y_le_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7202/7210] Built ClosedForm (3.6s)
+warning: ClosedForm.lean:45:6: This simp argument is unused:
+  Complex.sub_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.sub_re, Complex.add_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im,
+    Complex.mul_re, Complex.mul_im, Complex.one_re, Complex.add_im, mul_zero, mul_one, add_zero, zero_add, sub_zero,
+    zero_mul, Complex.ofReal_one, Complex.ofReal_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ClosedForm.lean:46:36: This simp argument is unused:
+  Complex.ofReal_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.sub_re, Complex.add_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im,
+    Complex.mul_re, Complex.mul_im, Complex.one_re, Complex.sub_im, Complex.add_im, mul_zero, mul_one, add_zero,
+    zero_add, sub_zero, zero_mul, Complex.ofReal_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ClosedForm.lean:49:15: This simp argument is unused:
+  Complex.sub_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.add_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im, Complex.mul_re,
+    Complex.mul_im, Complex.one_re, Complex.one_im, Complex.sub_im, Complex.add_im, mul_zero, mul_one, add_zero,
+    zero_add, sub_zero, zero_mul, Complex.ofReal_one, Complex.ofReal_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ClosedForm.lean:50:66: This simp argument is unused:
+  Complex.one_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.sub_re, Complex.add_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im,
+    Complex.mul_re, Complex.mul_im, Complex.one_im, Complex.sub_im, Complex.add_im, mul_zero, mul_one, add_zero,
+    zero_add, sub_zero, zero_mul, Complex.ofReal_one, Complex.ofReal_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ClosedForm.lean:52:36: This simp argument is unused:
+  Complex.ofReal_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Complex.sub_re, Complex.add_re, Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im,
+    Complex.mul_re, Complex.mul_im, Complex.one_re, Complex.one_im, Complex.sub_im, Complex.add_im, mul_zero, mul_one,
+    add_zero, zero_add, sub_zero, zero_mul, Complex.ofReal_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ClosedForm.lean:200:0: 'CenteredCube.RudinDensity.mul_assoc4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ClosedForm.lean:201:0: 'CenteredCube.RudinDensity.exp_mul_I_sub_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ClosedForm.lean:202:0: 'CenteredCube.RudinDensity.exp_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ClosedForm.lean:203:0: 'CenteredCube.RudinDensity.DK_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ClosedForm.lean:204:0: 'CenteredCube.RudinDensity.DK_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ClosedForm.lean:205:0: 'CenteredCube.RudinDensity.norm_DK_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7204/7210] Built Kernel (6.1s)
+info: Kernel.lean:279:0: 'CenteredCube.RudinDensity.kappa_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kernel.lean:280:0: 'CenteredCube.RudinDensity.sin_add_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kernel.lean:281:0: 'CenteredCube.RudinDensity.abs_ReDK_add_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kernel.lean:282:0: 'CenteredCube.RudinDensity.abs_ReDK_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kernel.lean:283:0: 'CenteredCube.RudinDensity.lts_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Kernel.lean:284:0: 'CenteredCube.RudinDensity.finite_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [7206/7210] Built Continuous (3.7s)
+warning: Continuous.lean:63:37: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: Continuous.lean:245:0: 'CenteredCube.RudinDensity.abs_cos_sub_abs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Continuous.lean:246:0: 'CenteredCube.RudinDensity.abs_cos_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Continuous.lean:247:0: 'CenteredCube.RudinDensity.integral_cos_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Continuous.lean:248:0: 'CenteredCube.RudinDensity.abs_endpoint_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Continuous.lean:249:0: 'CenteredCube.RudinDensity.Rfun_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Continuous.lean:250:0: 'CenteredCube.RudinDensity.abs_ReDK_sub_Rfun_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Continuous.lean:251:0: 'CenteredCube.RudinDensity.continuous_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [7208/7210] Built All (2.7s)
+Build completed successfully (7210 jobs).
+ProbabilityApproximation/ChenShao/Leaves.lean:38:37: warning: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ProbabilityApproximation/ChenShao/Leaves.lean:45:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ProbabilityApproximation/ChenShao/Concentration.lean:57:15: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:57:25: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:65:15: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:65:25: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:127:6: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:134:6: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:378:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:381:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:384:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:400:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:403:14: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:406:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:856:17: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:857:17: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:875:19: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/Concentration.lean:877:19: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:39:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:432:6: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:439:6: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:768:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:839:2: warning: Unused tactic linter: `all_goals` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:2385:28: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:2421:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ProbabilityApproximation/ChenShao/UniformBerryEsseen.lean:2800:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'ProbabilityTheory.uniformBerryEsseen_thirdMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.finite_row_berry_closed_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.fin_row_berry_closed_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+ProductTilt.lean:20:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'CubeMD.tilted_pi_eq_pi_tilted' depends on axioms: [propext, Classical.choice, Quot.sound]
+TiltedMoments.lean:31:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+TiltedMoments.lean:24:29: warning: Variable name `hb0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CubeMD.all_real_tilts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.tilted_third_abs_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+TiltedBerryRow.lean:62:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+TiltedBerryRow.lean:63:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+TiltedBerryRow.lean:64:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'CubeMD.tilted_iid_normal_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+IidLawTransfer.lean:24:31: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+IidLawTransfer.lean:24:31: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CubeMD.iid_sum_tail_eq_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.standardized_strip_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+MDWindow.lean:13:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+MDWindow.lean:13:25: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CubeMD.window_root_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.tail_bound_of_rate_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.interval_error_of_cdf_errors' depends on axioms: [propext, Classical.choice, Quot.sound]
+CGFThird.lean:20:28: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+CGFThird.lean:20:24: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+CGFThird.lean:20:28: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+CGFThird.lean:22:8: warning: automatically included section variable(s) unused in theorem `_private.CGFThird.0.CubeMD.tiltRaw_eq`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+CGFThird.lean:58:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'CubeMD.third_cgf_central_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.abs_third_cgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+CGFTaylor.lean:6:50: warning: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+CGFTaylor.lean:24:51: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+CGFTaylor.lean:24:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+CGFTaylor.lean:24:51: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+CGFTaylor.lean:24:63: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+CGFTaylor.lean:32:50: warning: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+CGFTaylor.lean:71:35: warning: This simp argument is unused:
+  cgf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [f, mgf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+CGFTaylor.lean:71:39: warning: This simp argument is unused:
+  mgf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [f, cgf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CubeMD.cgf_taylor_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.normalized_saddle_with_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+TiltTransfer.lean:111:84: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+TiltTransfer.lean:111:80: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+TiltTransfer.lean:111:84: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CubeMD.tilted_tail_of_strip_masses' depends on axioms: [propext, Classical.choice, Quot.sound]
+GaussianStrip.lean:16:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+GaussianStrip.lean:43:55: warning: This simp argument is unused:
+  and_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [not_lt]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+GaussianStrip.lean:43:65: warning: This simp argument is unused:
+  not_lt
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CubeMD.normal_comparison_half_open_strips' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.cdf_closed_to_open' depends on axioms: [propext, Classical.choice, Quot.sound]
+NormalTailTransfer.lean:10:0: warning: automatically included section variable(s) unused in theorem `CubeMD.preimage_standardized_strip`:
+  [MeasurableSpace Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+NormalTailTransfer.lean:38:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+NormalTailTransfer.lean:42:2: warning: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'CubeMD.preimage_standardized_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.tilted_tail_of_normal_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.md_lower_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.md_upper_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.md_nonnegative_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.finish_md_numeric' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModerateDeviation.lean:107:37: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ModerateDeviation.lean:111:37: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ModerateDeviation.lean:107:33: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ModerateDeviation.lean:107:37: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ModerateDeviation.lean:111:33: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ModerateDeviation.lean:111:37: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CubeMD.iid_moderate_deviation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.iid_moderate_deviation_of_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairExponents ===
+'CenteredCube.RudinDensity.reciprocal_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.pair_exp_near_lag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.four_region_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ScalePairs ===
+'CenteredCube.RudinDensity.sum_forwardPairs_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sum_forwardPairs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sum_forwardPairs_triangular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.forwardPairs_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairTotals ===
+'CenteredCube.RudinDensity.sum_gaussian_lags_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== LagCutoff ===
+LagCutoff.lean:3:0: warning: 
+'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by
+
+import Mathlib.Basic.Real.Basic
+'CenteredCube.RudinDensity.card_lag_subset_of_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.bounded_lag_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PairBudgets ===
+'CenteredCube.RudinDensity.sum_near_lag_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sum_far_pairs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FourRegions ===
+FourRegions.lean:47:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+'CenteredCube.RudinDensity.region_sum_le_lags' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.four_region_sum_le_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== LagAssembly ===
+'CenteredCube.RudinDensity.four_region_actual_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== QuadraticKernel ===
+'CenteredCube.RudinDensity.dirichlet_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.covariance_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FarKernel ===
+'CenteredCube.RudinDensity.norm_DK_far' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.covariance_far' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ContinuousGap ===
+ContinuousGap.lean:40:2: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ContinuousGap.lean:40:6: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ContinuousGap.lean:40:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ContinuousGap.lean:90:8: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ContinuousGap.lean:90:8: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CenteredCube.RudinDensity.Rfun_uniform_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.Rfun_uniform_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GlobalKernel ===
+'CenteredCube.RudinDensity.covariance_global' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.globalMu_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.globalNu_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.exists_global_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BandCovariance ===
+BandCovariance.lean:73:46: warning: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CenteredCube.RudinDensity.band0_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.covariance_band2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.covariance_band3' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== KernelMoments ===
+KernelMoments.lean:27:5: warning: Variable name `hVs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hVs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CenteredCube.RudinDensity.normalizedScore_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.normalizedScore_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.normalizedScore_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sumScore_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sumScore_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.covariance_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== TwoPoint ===
+TwoPoint.lean:29:36: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+TwoPoint.lean:55:2: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+TwoPoint.lean:55:6: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+TwoPoint.lean:55:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CenteredCube.RudinDensity.sumScore_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.two_point_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.pairThreshold_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ProbabilityScores ===
+'CenteredCube.RudinDensity.pair_law_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.pair_law_var' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.pair_measure_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PointNumeric ===
+'CenteredCube.RudinDensity.two_point_numeric' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualPairs ===
+'CenteredCube.RudinDensity.two_point_actual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== ActualSingles ===
+'CenteredCube.RudinDensity.one_point_actual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== HaloUnion ===
+'CenteredCube.RudinDensity.half_marginal_halo_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Overlap ===
+'CenteredCube.RudinDensity.finite_overlap_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GridUnion ===
+'CenteredCube.RudinDensity.grid_union_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GridArithmetic ===
+GridArithmetic.lean:13:46: warning: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+GridArithmetic.lean:77:2: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+GridArithmetic.lean:77:6: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+GridArithmetic.lean:77:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CenteredCube.RudinDensity.paperGrid_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.paperGrid_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.paperGrid_lag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.roundedFour_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.paperK_center_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== AsymptoticRounding ===
+AsymptoticRounding.lean:44:2: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AsymptoticRounding.lean:44:6: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+AsymptoticRounding.lean:44:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CenteredCube.RudinDensity.log_div_paperA_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.paperA_tends_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.paperK_tends_top_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== RoundedHeight ===
+RoundedHeight.lean:35:4: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+RoundedHeight.lean:35:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CenteredCube.RudinDensity.rounded_height_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.rounded_height_error_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== GridLimits ===
+'CenteredCube.RudinDensity.paperU_tends_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.paperU_sq_over_K_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== HeightComparison ===
+HeightComparison.lean:35:4: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HeightComparison.lean:35:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+HeightComparison.lean:52:4: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HeightComparison.lean:52:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CenteredCube.RudinDensity.height_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.grid_exp_mass_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.grid_exp_mass_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BudgetLimits ===
+BudgetLimits.lean:66:2: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BudgetLimits.lean:66:6: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+BudgetLimits.lean:66:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CenteredCube.RudinDensity.mid_ratio_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.outer_ratio_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.theta_u_sq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== EventualBudgets ===
+EventualBudgets.lean:37:2: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+EventualBudgets.lean:37:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CenteredCube.RudinDensity.exists_fixed_spacing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.eventually_overlap_ratios' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== BudgetConversion ===
+'CenteredCube.RudinDensity.budget_convert_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.budget_convert_far' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== IntegerCells ===
+IntegerCells.lean:31:8: warning: `measurable_pi_lambda` has been deprecated: Use `Measurable.of_eval` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵a̵s̵u̵r̵a̵b̵l̵e̵_̵p̵i̵_̵l̵a̵m̵b̵d̵a̵M̲e̲a̲s̲u̲r̲a̲b̲l̲e̲.̲o̲f̲_̲e̲v̲a̲l̲
+'CenteredCube.openIntBox_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.cellRep_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== CellMeasure ===
+CellMeasure.lean:50:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+CellMeasure.lean:80:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'CenteredCube.open_box_event_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.open_box_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+GoodEvent.lean:23:13: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+GoodEvent.lean:37:13: warning: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+GoodEvent.lean:83:6: warning: Unused tactic linter: `change (b - -b) / 2 = b` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+GoodEvent.lean:95:42: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+GoodEvent.lean:95:46: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+GoodEvent.lean:95:46: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CubeMD.quadraticGood_compl_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.quadraticGood_bad_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+PointThreshold.lean:10:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PointThreshold.lean:10:22: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+PointThreshold.lean:68:29: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+PointThreshold.lean:68:25: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+PointThreshold.lean:68:29: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CubeMD.singleThreshold_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.scale_displacement_of_ratios' depends on axioms: [propext, Classical.choice, Quot.sound]
+PointGrowth.lean:33:44: warning: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CubeMD.eventually_log_fourth_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubeMD.onepoint_conditions_from_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+ActualGood.lean:38:88: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:38:92: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:45:56: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:67:52: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:38:92: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ActualGood.lean:45:56: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ActualGood.lean:67:52: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ActualGood.lean:121:26: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:121:30: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:127:51: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:130:25: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ActualGood.lean:121:30: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ActualGood.lean:127:51: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ActualGood.lean:130:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CenteredCube.RudinDensity.physical_threshold_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.point_quadratic_good_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.one_point_good_actual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.eventually_onepoint_conditions' depends on axioms: [propext, Classical.choice, Quot.sound]
+HitProduct.lean:27:48: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HitProduct.lean:27:52: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HitProduct.lean:27:52: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+HitProduct.lean:52:55: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HitProduct.lean:52:59: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HitProduct.lean:65:50: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HitProduct.lean:65:54: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HitProduct.lean:52:59: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+HitProduct.lean:65:54: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+HitProduct.lean:105:26: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+HitProduct.lean:105:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CenteredCube.RudinDensity.pointDeviation_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.average_rho_eq_pointDeviation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.point_log_numeric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.hitPoint_product_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.hitPoint_intervalAverage_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.measurableSet_hitPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.hitPoint_subset_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+TensorAverage.lean:26:43: warning: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+TensorAverage.lean:105:2: warning: Unused tactic linter: `change
+  (1 / r) * (∫ y in (x i + (z i : ℝ) - r / 2)..(x i + (z i : ℝ) + r / 2), rho K y) =
+    (1 / r) * (∫ y in (x i - r / 2)..(x i + r / 2), rho K y)` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CenteredCube.RudinDensity.tensorRho_add_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_tensorRho_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.cubeAverage_tensor_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.unit_cell_mass_tensorRho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.hitPoint_cubeAverage_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.cubeAverage_tensor_add_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.hitUnion_cubeAverage_witness_translate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CenteredCube.RudinDensity.eventually_twopoint_conditions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.eventually_twopoint_conditions_globalNu' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+=== PhysicalGrid ===
+'CenteredCube.RudinDensity.eventually_scale_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.lower_from_grid_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.paper_hit_cube_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PeriodicEndgame ===
+'CenteredCube.box_event_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.haloDataOfProductCell' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== PaperSqrtLog ===
+'CenteredCube.RudinDensity.paper_grid_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.eventually_paper_grid_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sqrtLogLowerBound_paper' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== FinalAudit ===
+'centered_cube_lower_bound_sqrt_div_log_clean' depends on axioms: [propext, Classical.choice, Quot.sound]

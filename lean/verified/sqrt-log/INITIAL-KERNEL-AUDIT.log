@@ -1,0 +1,3 @@
+'CenteredCube.RudinDensity.paper_grid_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.eventually_paper_grid_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sqrtLogLowerBound_paper' depends on axioms: [propext, Classical.choice, Quot.sound]

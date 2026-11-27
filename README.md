@@ -37,3 +37,11 @@ The reproduction guide covers manuscript builds and finite numerical checks. The
 ## Citation
 
 [v1.0.0](https://github.com/alizeisnotalice/centered-cube-lower-bounds/releases/tag/v1.0.0) archives both manuscripts. Use the BibTeX entry for the paper you cite. [Square-root paper](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt/citation.bib) · [Rudin–Shapiro paper](https://github.com/alizeisnotalice/centered-cube-lower-bounds/blob/v1.0.0/paper/sqrt-log/citation.bib)
+
+
+## Verified Lean proofs / 已验收的 Lean 证明
+
+- [√n lower bound / √n 下界](lean/verified/sqrt/README.md): exact manuscript liminf constant `87 / (220√(58π))` along all positive integer dimensions; separate eventual `√n/35` corollary. Entrypoint: [SqrtExactMain.lean](lean/verified/sqrt/SqrtExactMain.lean).
+- [√n/log n lower bound / √n/log n 下界](lean/verified/sqrt-log/README.md): unconditional manuscript lower bound for every sufficiently large integer dimension. Independent statement audit: [FinalAudit.lean](lean/verified/sqrt-log/geometry/FinalAudit.lean).
+
+Both directories include pinned-toolchain replay instructions and the axiom audits.
