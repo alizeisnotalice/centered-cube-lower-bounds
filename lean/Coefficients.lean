@@ -211,6 +211,125 @@ theorem coef_unit : ∀ (q j : ℕ), j < 2 ^ q →
       · simpa using hunit
       · rcases hunit with h1 | h1 <;> simp [h1]
 
+
+/-- **Truncation compatibility.**  For `n ≤ 2^q` the stored prefix of length `n` *is*
+the length-`n` truncation of the two recursive polynomials, so its coefficients are
+the `coef q j`. -/
+theorem prefixes_trunc : ∀ (q n : ℕ), n ≤ 2 ^ q → ∀ z : ℂ,
+    (RudinShapiro.prefixes z q n).1 = ∑ j ∈ range n, (coef q j).1 * z ^ j ∧
+    (RudinShapiro.prefixes z q n).2 = ∑ j ∈ range n, (coef q j).2 * z ^ j := by
+  intro q
+  induction q with
+  | zero =>
+    intro n hn z
+    have hn' : n = 0 ∨ n = 1 := by omega
+    rcases hn' with rfl | rfl
+    · constructor <;> simp [RudinShapiro.prefixes]
+    · constructor <;> simp [RudinShapiro.prefixes, coef]
+  | succ q ih =>
+    intro n hn z
+    by_cases h : n ≤ 2 ^ q
+    · obtain ⟨h1, h2⟩ := ih n h z
+      have hcoef1 : ∀ j, j < 2 ^ q → (coef (q + 1) j).1 = (coef q j).1 := by
+        intro j hj
+        rw [coef_succ_of_lt hj]
+      have hcoef2 : ∀ j, j < 2 ^ q → (coef (q + 1) j).2 = (coef q j).1 := by
+        intro j hj
+        rw [coef_succ_of_lt hj]
+      constructor
+      · simp only [RudinShapiro.prefixes, if_pos h]
+        rw [h1]
+        exact Finset.sum_congr rfl (fun j hj => by
+          rw [hcoef1 j (lt_of_lt_of_le (Finset.mem_range.mp hj) h)])
+      · simp only [RudinShapiro.prefixes, if_pos h]
+        rw [h1]
+        exact Finset.sum_congr rfl (fun j hj => by
+          rw [hcoef2 j (lt_of_lt_of_le (Finset.mem_range.mp hj) h)])
+    · have hm : 0 < 2 ^ q := pow_pos (by norm_num) q
+      have hmn : 2 ^ q < n := lt_of_not_ge h
+      have hnm : n - 2 ^ q ≤ 2 ^ q := by
+        rw [pow_succ] at hn
+        omega
+      obtain ⟨-, hS⟩ := ih (n - 2 ^ q) hnm z
+      obtain ⟨hP, -⟩ := polys_coef q z
+      have hdefP : (RudinShapiro.prefixes z (q + 1) n).1
+          = (RudinShapiro.polys z q).1
+            + z ^ (2 ^ q) * (RudinShapiro.prefixes z q (n - 2 ^ q)).2 := by
+        simp [RudinShapiro.prefixes, h]
+      have hdefQ : (RudinShapiro.prefixes z (q + 1) n).2
+          = (RudinShapiro.polys z q).1
+            - z ^ (2 ^ q) * (RudinShapiro.prefixes z q (n - 2 ^ q)).2 := by
+        simp [RudinShapiro.prefixes, h]
+      have hsplit : n = 2 ^ q + (n - 2 ^ q) := (Nat.add_sub_cancel' (le_of_lt hmn)).symm
+      have hfirst : ∀ j, j < 2 ^ q → coef (q + 1) j = ((coef q j).1, (coef q j).1) :=
+        fun j hj => coef_succ_of_lt hj
+      have hsecond : ∀ i, i < n - 2 ^ q → coef (q + 1) (2 ^ q + i) =
+          ((coef q i).2, -((coef q i).2)) := by
+        intro i hi
+        rw [coef_succ_of_ge (by omega)]
+        simp
+      constructor
+      · rw [hdefP, hP, hS, Finset.mul_sum]
+        conv_rhs => rw [hsplit]
+        rw [Finset.sum_range_add]
+        have e1 : (∑ j ∈ range (2 ^ q), (coef q j).1 * z ^ j)
+            = ∑ j ∈ range (2 ^ q), (coef (q + 1) j).1 * z ^ j :=
+          Finset.sum_congr rfl (fun j hj => by rw [hfirst j (Finset.mem_range.mp hj)])
+        have e2 : (∑ i ∈ range (n - 2 ^ q), z ^ (2 ^ q) * ((coef q i).2 * z ^ i))
+            = ∑ i ∈ range (n - 2 ^ q), (coef (q + 1) (2 ^ q + i)).1 * z ^ (2 ^ q + i) := by
+          refine Finset.sum_congr rfl (fun i hi => ?_)
+          rw [hsecond i (Finset.mem_range.mp hi), pow_add]
+          ring
+        rw [e1, e2]
+      · rw [hdefQ, hP, hS, Finset.mul_sum]
+        conv_rhs => rw [hsplit]
+        rw [Finset.sum_range_add]
+        have e1 : (∑ j ∈ range (2 ^ q), (coef q j).1 * z ^ j)
+            = ∑ j ∈ range (2 ^ q), (coef (q + 1) j).2 * z ^ j := by
+          refine Finset.sum_congr rfl (fun j hj => ?_)
+          rw [hfirst j (Finset.mem_range.mp hj)]
+        have e2 : (∑ i ∈ range (n - 2 ^ q), z ^ (2 ^ q) * ((coef q i).2 * z ^ i))
+            = - ∑ i ∈ range (n - 2 ^ q), (coef (q + 1) (2 ^ q + i)).2 * z ^ (2 ^ q + i) := by
+          rw [← Finset.sum_neg_distrib]
+          refine Finset.sum_congr rfl (fun i hi => ?_)
+          rw [hsecond i (Finset.mem_range.mp hi), pow_add]
+          ring
+        rw [e1, e2]
+        ring
+
+
+/-- `N ≤ 2^N`. -/
+theorem le_two_pow_self : ∀ N : ℕ, N ≤ 2 ^ N
+  | 0 => by simp
+  | n + 1 => by
+    have h1 : 1 ≤ 2 ^ n := Nat.one_le_two_pow
+    have ih : n ≤ 2 ^ n := le_two_pow_self n
+    rw [pow_succ, mul_two]
+    omega
+
+/-- **Cross-level stability.**  Once the level reaches `N`, the stored prefix of
+length `N` no longer changes; in particular `rsPrefix z N = (prefixes z K N).1` for
+every `K ≥ N`. -/
+theorem prefixes_stable_le : ∀ (q N : ℕ), N ≤ q → ∀ z : ℂ,
+    (RudinShapiro.prefixes z q N).1 = (RudinShapiro.prefixes z N N).1
+  | 0, N, hN => by
+    have hN0 : N = 0 := by omega
+    subst hN0
+    intro z
+    rfl
+  | q + 1, N, hN => by
+    intro z
+    rcases Nat.eq_or_lt_of_le hN with heq | hlt
+    · rw [← heq]
+    · have hNq : N ≤ q := Nat.lt_succ_iff.mp hlt
+      have hN2 : N ≤ 2 ^ q := by
+        cases N with
+        | zero => exact Nat.zero_le _
+        | succ k =>
+          exact (le_two_pow_self (k + 1)).trans (Nat.pow_le_pow_right (by norm_num) hNq)
+      rw [RudinShapiro.prefix_stable z q N hN2]
+      exact prefixes_stable_le q N hNq z
+
 end RudinDensity
 end CenteredCube
 
@@ -218,3 +337,5 @@ end CenteredCube
 #print axioms CenteredCube.RudinDensity.prefixes_poly
 #print axioms CenteredCube.RudinDensity.self_prefix_poly
 #print axioms CenteredCube.RudinDensity.coef_unit
+#print axioms CenteredCube.RudinDensity.prefixes_trunc
+#print axioms CenteredCube.RudinDensity.prefixes_stable_le

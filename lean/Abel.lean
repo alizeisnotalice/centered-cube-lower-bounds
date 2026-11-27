@@ -193,10 +193,37 @@ theorem rho_bounds {K : ℕ} (hK : 1 ≤ K) (x : ℝ) :
     unfold rho
     linarith
 
+
+/-- **The coefficients of the weighted sum.**  For `l < K`, the difference of the
+two prefixes is exactly the `l`-th Rudin–Shapiro term `ε_l z^l`, with `ε_l` the
+`±1` coefficient of `P_K`. -/
+theorem rsPrefix_eq_coef {K l : ℕ} (hl : l < K) (z : ℂ) :
+    rsPrefix z (l + 1) - rsPrefix z l = (coef K l).1 * z ^ l := by
+  have hK : K ≤ 2 ^ K := le_two_pow_self K
+  have h1 : rsPrefix z (l + 1) = (RudinShapiro.prefixes z K (l + 1)).1 := by
+    unfold rsPrefix
+    exact (prefixes_stable_le K (l + 1) (by omega) z).symm
+  have h2 : rsPrefix z l = (RudinShapiro.prefixes z K l).1 := by
+    unfold rsPrefix
+    exact (prefixes_stable_le K l (by omega) z).symm
+  rw [h1, h2, (prefixes_trunc K (l + 1) (by omega) z).1,
+    (prefixes_trunc K l (by omega) z).1, Finset.sum_range_succ]
+  ring
+
+/-- The weighted sum is the manuscript's `∑_{l<K} ε_l (1 + l/K) z^l`, with the
+explicit coefficients of `P_K`. -/
+theorem weightedSum_eq_series {K : ℕ} (_hK : 1 ≤ K) (z : ℂ) :
+    weightedSum z K = ∑ l ∈ range K, ((1 : ℂ) + (l : ℂ) / (K : ℂ)) * ((coef K l).1 * z ^ l) := by
+  unfold weightedSum
+  exact Finset.sum_congr rfl (fun l hl => by
+    rw [rsPrefix_eq_coef (Finset.mem_range.mp hl) z])
+
 end RudinDensity
 end CenteredCube
 
 #print axioms CenteredCube.RudinDensity.rsPrefix_poly
+#print axioms CenteredCube.RudinDensity.rsPrefix_eq_coef
+#print axioms CenteredCube.RudinDensity.weightedSum_eq_series
 #print axioms CenteredCube.RudinDensity.rsPrefix_bound
 #print axioms CenteredCube.RudinDensity.weightedSum_abel
 #print axioms CenteredCube.RudinDensity.weighted_bound

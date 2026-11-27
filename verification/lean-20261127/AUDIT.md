@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：43 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：46 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -18,6 +18,9 @@
 | 引理 `lem:rudin`：`\|∑_{l<N} ε_l z^l\| ≤ 5√N` | `RudinShapiro.prefix_bound`；`RudinDensity.rsPrefix_bound` | `prefixes_full`、`energy` | 完整（对递归前缀多项式） |
 | 系数识别：`P_q(z)=∑_{j<2^q} ε_j z^j`，`Q_q` 同，且 `ε_j ∈ {±1}` | `RudinDensity.polys_coef`、`RudinDensity.coef_unit` | `coef`、`coef_succ_of_lt` | **完整**（本轮新增）：显式系数族 `coef`，两条递推分支 `coef_succ_of_lt/ge` |
 | 前缀是多项式：`(prefixes z q n).1`、`.2` 均为 `∑_{j<n} c_j z^j`；`rsPrefix` 同 | `RudinDensity.prefixes_poly`、`self_prefix_poly`、`rsPrefix_poly` | `polys_coef` | **完整**（本轮新增） |
+| 截断相容：`n ≤ 2^q` 时前缀就是 `P_q`、`Q_q` 的长度 `n` 截断，系数即 `coef q j` | `RudinDensity.prefixes_trunc` | `polys_coef`、`prefixes_poly` | **完整**（本轮新增） |
+| 跨层稳定：`K ≥ N` 时 `rsPrefix z N = (prefixes z K N).1` | `RudinDensity.prefixes_stable_le` | `RudinShapiro.prefix_stable` | **完整**（本轮新增） |
+| 加权和即论文级数：`weightedSum z K = ∑_{l<K} ε_l(1+l/K) z^l`，`ε_l=(coef K l).1∈{±1}` | `RudinDensity.rsPrefix_eq_coef`、`weightedSum_eq_series` | `prefixes_trunc`、`prefixes_stable_le`、`coef_unit` | **完整**（本轮新增） |
 | 引理 `lem:density` 第一式：`sup_{\|z\|=1} \|∑_{l<K} ε_l(1+l/K)z^l\| ≤ 15√K` | `RudinDensity.weighted_bound` | `weightedSum_abel`、`rsPrefix_bound` | **完整**（本轮新增；Abel 求和，常数 10√K+5√K=15√K） |
 | 引理 `lem:density` 第二式：`1/2 ≤ ρ_K ≤ 3/2` | `RudinDensity.rho_bounds` | `weighted_bound` | **完整**（本轮新增） |
 | 引理 `lem:density` 第三式：`∫_T ρ_K dm_1 = 1` | — | — | 未接入：需先证 `ρ_K` 等于论文的余弦级数（缺口 G2），再逐项积分 |
@@ -53,9 +56,9 @@
   `lem:transfer` 与论文的 `‖f_n‖₁` 即可全部落地，`HaloData.mass` / `HaloData.volume_ge` 只剩概率输入。
 - **G2（√n/log n，确定性）** 系数与级数。已证：`P_q`、`Q_q` 的系数是显式的 `±1` 族
   （`polys_coef` + `coef_unit`，`coef_succ_of_lt` 给出沿层的稳定性），且递归前缀都是多项式
-  （`prefixes_poly`）。**尚缺**：`prefixes z q n` 等于 `polys z q` 的长度 `n` 截断（等价地：
-  `rsPrefix` 的系数就是 `coef`），据此把 `rho` 改写成论文的余弦级数，并由 `Trig.integral_cos_two_pi_mul_int`
-  得 `∫ρ_K=1`。
+  （`prefixes_poly`），且截断相容（`prefixes_trunc`）——即 `rsPrefix` 的系数就是 `coef`。
+  **尚缺**：把 `rho` 的复指数形式改写成论文的实余弦级数（用到 `ε_l` 为实数），
+  再由 `Trig.integral_cos_two_pi_mul_int` 逐项积分得 `∫ρ_K=1`。系数侧已无缺口。
 - **G3（两稿共用）** 式 `eq:variances`：三角正交性 `∫₀¹cos(2πmx)cos(2πnx) dx = ½δ_{mn}` 已在
   `Trig.integral_cos_mul_cos_two_pi` 中证完（`m,n>0`）；余下是把 `S_t` 写成余弦级数后按 `Finset.sum`
   展开，故仍依赖 G2。
