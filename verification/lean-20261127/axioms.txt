@@ -161,6 +161,29 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 'CenteredCube.RudinDensity.integral_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_re_mul_zof_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.integral_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Variance.lean ===
+Variance.lean:71:68: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+Variance.lean:79:12: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Variance.lean:115:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+Variance.lean:156:65: warning: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CenteredCube.RudinDensity.integral_cos_series_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_Sfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_Sfun_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_scaled_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]
