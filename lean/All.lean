@@ -29,6 +29,7 @@ import Bounded
 import Dirichlet
 import Window
 import ClosedForm
+import Kernel
 import Variance
 import RhoNormalise
 import SqrtLimit

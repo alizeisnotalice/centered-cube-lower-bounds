@@ -367,6 +367,13 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 'CenteredCube.RudinDensity.DK_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.DK_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.norm_DK_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Kernel.lean ===
+'CenteredCube.RudinDensity.kappa_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.sin_add_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_ReDK_add_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_ReDK_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.lts_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.finite_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]
