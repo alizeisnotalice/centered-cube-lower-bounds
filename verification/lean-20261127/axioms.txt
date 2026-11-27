@@ -374,6 +374,20 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 'CenteredCube.RudinDensity.abs_ReDK_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.lts_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.RudinDensity.finite_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+=== Continuous.lean ===
+Continuous.lean:63:37: warning: Variable name `hK` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CenteredCube.RudinDensity.abs_cos_sub_abs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_cos_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.integral_cos_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_endpoint_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.Rfun_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.abs_ReDK_sub_Rfun_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CenteredCube.RudinDensity.continuous_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
 === SqrtLimit.lean ===
 'CenteredCube.Cstar_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CenteredCube.Cstar_gt_one_div_35' depends on axioms: [propext, Classical.choice, Quot.sound]

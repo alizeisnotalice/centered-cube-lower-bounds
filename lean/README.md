@@ -25,6 +25,7 @@
 | `Abel.lean` | Rudin–Shapiro 密度的 Abel 求和、`15√K` 估计、`1/2 ≤ ρ_K ≤ 3/2` |
 | `CosineForm.lean` | `ρ_K` 的实余弦级数（式 (1.2)） |
 | `Average.lean` | 余弦平均、`sin(π(K+l)r(t))` 恒等式、式 (3.1) 的完整装配（`integral_rho_shift`、`average_rho`） |
+| `Continuous.lean` | `R(τ)`、Riemann 和误差、`lem:continuous-kernel` |
 | `Kernel.lean` | `κ_K`、`l_{t,s}`、`lem:finite-kernel`（`8/K`） |
 | `ClosedForm.lean` | 式 (3.5)：`D_K` 闭式与 `\|D_K\|` 模长公式 |
 | `Window.lean` | `eq:window-bounds` 三式、`\|∑e^{4πit(1+l/K)}\|≤2`、`‖Y_t‖_∞≤5√8`（窗口） |

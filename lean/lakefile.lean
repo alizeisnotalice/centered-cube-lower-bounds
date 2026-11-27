@@ -33,6 +33,7 @@ lean_lib «Dirichlet»
 lean_lib «Window»
 lean_lib «ClosedForm»
 lean_lib «Kernel»
+lean_lib «Continuous»
 lean_lib «Variance»
 lean_lib «RhoNormalise»
 lean_lib «SqrtLimit»

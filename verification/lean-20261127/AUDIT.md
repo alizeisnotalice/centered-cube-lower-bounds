@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：117 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：124 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -36,7 +36,8 @@
 | 引理 `lem:bounded`：`sup_x\|S_t(x)\| ≤ 5√K`，`‖Y_t‖_∞ ≤ 5√8` | `RudinDensity.abs_Sfun_le`、`abs_Y_le`、`abs_Y_le_window`、`Sfun_eq_im`、`Sexp_eq`、`norm_Sexp_le` | `rsPrefix_bound`、`two_mul_sin_mul_cos` | **完整**（本轮闭合）：`S_t = ½(Im E(t/K+x)+Im E(t/K−x))`，`\|E\| ≤ 5√K`；窗口条件由 `VK_window` 提供 |
 | 式 `eq:window-bounds`：`7/6 ≤ r(t) ≤ 11/6`、`\|V_K(t)−K/4\| ≤ 1/2`、`K/8 ≤ V_K ≤ 3K/8` | `RudinDensity.rfun_window`、`VK_window`、`sin_window`、`abs_VK_sub_center`、`VK_eq_center_sub`、`norm_Dsum_le_two`、`Dsum_factor` | `Real.sin_sq_eq_half_sub`、`geom_sum_eq`、`Real.cos_le_cos_of_nonneg_of_le_pi` | **完整**（本轮新增）：`V_K = K/4 − ¼∑cos(4πt(1+l/K))`；几何和 `\|∑e^{4πit(1+l/K)}\| = \|sin(2πt)\|/\|sin(2πt/K)\| ≤ 2` |
 | 引理 `lem:finite-kernel`：`\|κ_K(t,s)−Re D_K(t−s)\| ≤ 8/K` | `RudinDensity.finite_kernel`、`kappa_eq`、`lts_bounds`、`abs_ReDK_add_le`、`abs_ReDK_le`、`sin_add_window` | `integral_Sfun_mul_eq_DK`、`norm_DK_eq`、`VK_window` | **完整**（本轮新增）：`κ_K = [Re D(t−s)−Re D(t+s)]/l_{t,s}`，`1−2/K ≤ l_{t,s} ≤ 1+2/K`，`\|Re D(t+s)\| ≤ 2/K` |
-| 引理 `lem:continuous-kernel`、`lem:quadratic`、`lem:global` | — | `finite_kernel` | 未接入（依赖网格与中偏差） |
+| 引理 `lem:continuous-kernel`：`\|κ_K(t,s)−R(t−s)\| ≤ (2πH+8)/K`，含 `\|D_K(τ)−𝒦(τ)\| ≤ 2πH/K` | `RudinDensity.continuous_kernel`、`abs_ReDK_sub_Rfun_le`、`abs_endpoint_error`、`Rfun_eq_sum`、`abs_cos_sub_le` | `finite_kernel`、`ReDK_eq`、`intervalIntegral.norm_integral_le_of_norm_le_const` | **完整**（本轮新增）：`R(τ)=∫_1^2cos(2πτy)dy`；左端点 Riemann 和误差 `2πH/K` |
+| 引理 `lem:quadratic`、`lem:global` | — | `continuous_kernel` | 未接入（依赖网格与中偏差） |
 | 引理 `lem:md`：一致中偏差 | — | — | 未接入（缺口 G4） |
 | 引理 `lem:rounding`、`lem:thresholds`、`lem:one-point`、`lem:two-point`、命题 `prop:sum`、`prop:conditions` | — | — | 未接入（缺口 G4/G5） |
 | 定理 `thm:main`：`∃ c>0, ∃ n₀, ∀ n≥n₀, C_n ≥ c√n/log n` | `Cubes.SqrtLogLowerBound`；装配 `sqrtLogLowerBound_of_haloData` | `sqrtLog_of_truncated_halo` | **条件性**：由「每个充分大 `n` 都有 `HaloData n c`」推出 `SqrtLogLowerBound`，常数 `c e^{-5/2}/2`；`HaloData` 本身未构造 |
@@ -90,7 +91,9 @@
   `eq:exact-covariance`——`∫S_tS_s = (K/4)[Re D_K(t−s)−Re D_K(t+s)]` 与 `|D_K|≤1`；
   `eq:window-bounds` 的全部三式（`rfun_window`、`VK_window`、`sin_window`）；
   式 (3.5) 的闭式与模长公式（`DK_closed`、`norm_DK_eq`）；
-  `lem:finite-kernel`——`κ_K` 的定义与 `\|κ_K(t,s)−Re D_K(t−s)\| ≤ 8/K`。
+  `lem:finite-kernel`——`κ_K` 的定义与 `\|κ_K(t,s)−Re D_K(t−s)\| ≤ 8/K`；
+  `lem:continuous-kernel`——`R(τ)`、Riemann 和误差 `\|Re D_K(τ)−R(τ)\| ≤ 2πH/K`
+  与 `\|κ_K(t,s)−R(t−s)\| ≤ (2πH+8)/K`。
 - **本轮接上的主定理依赖**：`HaloData` 的 `mass` 字段现在有可调用的定理；
   `σ_t²`（`eq:variances` 最后一式）现可闭合；G3′ 从「构件已证、装配未做」变为**闭合**。
 - **最小剩余缺口**：G1a（周期提升的集合版测度恒等式）与 G4（一致中偏差 `lem:md`）。
