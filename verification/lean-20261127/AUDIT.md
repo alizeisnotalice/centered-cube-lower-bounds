@@ -6,7 +6,7 @@
 - 提交基线：`bf9e6f5`（工作树干净，`v1.0.0` 未改动）。
 - 工具链：Lean `4.36.0`，Mathlib `v4.36.0`（`fc4f59e577feb1a4956671bc04ac18aaaf8cd842`），见 `lean/lake-manifest.json`。
 - 构建：`lake build`（目标 `All`），日志 `build.log`；公理报告 `axioms.txt`。
-- 公理：47 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
+- 公理：51 条 `#print axioms` 全部只依赖 `[propext, Classical.choice, Quot.sound]`，`sorryAx` 计数 0。
 - 复用：`lean/{Cubes,LogTensor,RudinShapiro}.lean` 是 `lean/sqrt-log-20261127/` 冻结快照的逐字节副本，哈希见 `lean/REUSE.sha256`；快照目录未改动。
 
 ## A. √n/log n 稿
@@ -23,7 +23,7 @@
 | 加权和即论文级数：`weightedSum z K = ∑_{l<K} ε_l(1+l/K) z^l`，`ε_l=(coef K l).1∈{±1}` | `RudinDensity.rsPrefix_eq_coef`、`weightedSum_eq_series` | `prefixes_trunc`、`prefixes_stable_le`、`coef_unit` | **完整**（本轮新增） |
 | 引理 `lem:density` 第一式：`sup_{\|z\|=1} \|∑_{l<K} ε_l(1+l/K)z^l\| ≤ 15√K` | `RudinDensity.weighted_bound` | `weightedSum_abel`、`rsPrefix_bound` | **完整**（本轮新增；Abel 求和，常数 10√K+5√K=15√K） |
 | 引理 `lem:density` 第二式：`1/2 ≤ ρ_K ≤ 3/2` | `RudinDensity.rho_bounds` | `weighted_bound` | **完整**（本轮新增） |
-| 引理 `lem:density` 第三式：`∫_T ρ_K dm_1 = 1` | — | — | 未接入：需先证 `ρ_K` 等于论文的余弦级数（缺口 G2），再逐项积分 |
+| 引理 `lem:density` 第三式：`∫_T ρ_K dm_1 = 1` | `RudinDensity.integral_rho` | `integral_re_mul_zof_pow`、`weightedSum_eq_series`、`Trig` | **完整**（本轮新增）：所有频率为 `K+l ≥ 1`，逐项均值为零 |
 | 式 `eq:variances` 的三角正交性：`∫₀¹cos(2πmx)cos(2πnx)dx = ½δ_{mn}` | `Trig.integral_cos_mul_cos_two_pi` | `Trig.integral_cos_two_pi_mul_int` | **完整**（本轮新增） |
 | 式 `eq:variances`：`E S_t = E d_t = 0`，`V_K(t)`、`σ_t²` 恒等式 | — | `Trig` | **部分**：正交性底座已证；恒等式本身还需 `S_t` 的余弦级数（依赖 G2）并按 `Finset.sum` 展开，未接入（缺口 G3） |
 | `eq:center`：`V_K(t_0)=K/4`、`σ_{t_0}=1/(90πK)` | — | — | 未接入（同上） |
@@ -57,8 +57,7 @@
 - **G2（√n/log n，确定性）** 系数与级数。已证：`P_q`、`Q_q` 的系数是显式的 `±1` 族
   （`polys_coef` + `coef_unit`，`coef_succ_of_lt` 给出沿层的稳定性），且递归前缀都是多项式
   （`prefixes_poly`），且截断相容（`prefixes_trunc`）——即 `rsPrefix` 的系数就是 `coef`。
-  **尚缺**：把 `rho` 的复指数形式改写成论文的实余弦级数（用到 `ε_l` 为实数），
-  再由 `Trig.integral_cos_two_pi_mul_int` 逐项积分得 `∫ρ_K=1`。系数侧已无缺口。
+  已完成：`∫ρ_K=1`（`integral_rho`）。G2 **闭合**——`lem:density` 三式全部形式化。
 - **G3（两稿共用）** 式 `eq:variances`：三角正交性 `∫₀¹cos(2πmx)cos(2πnx) dx = ½δ_{mn}` 已在
   `Trig.integral_cos_mul_cos_two_pi` 中证完（`m,n>0`）；余下是把 `S_t` 写成余弦级数后按 `Finset.sum`
   展开，故仍依赖 G2。
@@ -72,9 +71,8 @@
 
 ## 本轮实际推进（按要求的三句式）
 
-- **本轮证明的此前缺失命题**：`lem:density` 的 `15√K` 加权估计（Abel 求和）、`1/2 ≤ ρ_K ≤ 3/2`、
-  三角正交性 `∫₀¹cos cos = ½δ`（`Trig`）、`∫₀¹cos(2πkx)` 与 `∫₀¹sin(2πkx)` 的整周期积分、
-  Rudin–Shapiro 两个多项式的系数展开与 `±1` 性（`Coefficients`）；
+- **本轮证明的此前缺失命题**：`lem:density` 三式全部——`15√K` 加权估计、`1/2 ≤ ρ_K ≤ 3/2`、
+  `∫ρ_K=1`；三角正交性 `∫₀¹cos cos = ½δ`；整周期复指数积分；Rudin–Shapiro 系数展开与 `±1` 性；
   `C_n` 作为上确界的模型锁定（含截断极大算子）；`C_* > 1/35`（实数域）；`h → liminf`、
   `liminf → √n/35` 两个方向的量词转换。
 - **本轮接上的主定理依赖**：`sqrtLog_of_truncated_halo` 已接到 `SqrtLogLowerBound`

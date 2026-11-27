@@ -20,5 +20,6 @@ import Model
 import Coefficients
 import Trig
 import Abel
+import RhoNormalise
 import SqrtLimit
 import SqrtLogWiring
